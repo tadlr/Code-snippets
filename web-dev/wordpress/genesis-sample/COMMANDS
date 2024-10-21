@@ -1,0 +1,6 @@
+Filtrando scripts y CSS en común (solo el directorio actual, no recursivo):
+	1. find . -maxdepth 1 -print0 -name '*.html' | xargs -0 grep "js" | grep src ó find . -maxdepth 1 -print0 -name '*.html' | xargs -0 grep "js" | grep href
+	2. Almacenar STDOUT en un archivo
+	3. cat ARCHIVO | sed -e "s/.*src=\"\(.*\)\" .*/\1/g" | cut -d '"' -f 4
+	4. Guardar STDOUT en ese archivo nuevamente
+	5. cat ARCHIVO | sort | uniq para mostrar los resultados finales

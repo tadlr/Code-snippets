@@ -1,0 +1,361 @@
+.offset-x {
+  &-mobile-31 {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-left, 31px, 500);
+      @include vw(padding-right, 31px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-left: 31px;
+      padding-right: 31px;
+    }
+  }
+
+  &-mobile-35 {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-left, 35px, 500);
+      @include vw(padding-right, 35px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+  }
+
+  &-mobile-38 {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-left, 38px, 500);
+      @include vw(padding-right, 38px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-left: 38px;
+      padding-right: 38px;
+    }
+  }
+
+  &-mobile-40 {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-left, 40px, 500);
+      @include vw(padding-right, 40px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  &-mobile-47 {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-left, 47px, 500);
+      @include vw(padding-right, 47px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-left: 47px;
+      padding-right: 47px;
+    }
+  }
+
+  &-mobile-62 {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-left, 62px, 500);
+      @include vw(padding-right, 62px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-left: 62px;
+      padding-right: 62px;
+    }
+  }
+
+  &-mobile-74 {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-left, 74px, 500);
+      @include vw(padding-right, 74px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-left: 74px;
+      padding-right: 74px;
+    }
+  }
+
+  &-desktop-35 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 35px);
+      @include vw(padding-right, 35px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+  }
+
+  &-desktop-126 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 126px);
+      @include vw(padding-right, 126px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 126px;
+      padding-right: 126px;
+    }
+  }
+
+  &-desktop-129 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 129px);
+      @include vw(padding-right, 129px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 129px;
+      padding-right: 129px;
+    }
+  }
+
+  &-desktop-164 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 164px);
+      @include vw(padding-right, 164px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 164px;
+      padding-right: 164px;
+    }
+  }
+
+  &-desktop-158 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 158px);
+      @include vw(padding-right, 158px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 158px;
+      padding-right: 158px;
+    }
+  }
+
+  &-desktop-172 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 172px);
+      @include vw(padding-right, 172px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 172px;
+      padding-right: 172px;
+    }
+  }
+
+  &-desktop-196 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 196px);
+      @include vw(padding-right, 196px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 196px;
+      padding-right: 196px;
+    }
+  }
+
+  &-desktop-201 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 201px);
+      @include vw(padding-right, 201px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 201px;
+      padding-right: 201px;
+    }
+  }
+
+  &-desktop-203 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 203px);
+      @include vw(padding-right, 203px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 203px;
+      padding-right: 203px;
+    }
+  }
+
+  &-desktop-215 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 215px);
+      @include vw(padding-right, 165px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 215px;
+      padding-right: 165px;
+    }
+  }
+
+  &-desktop-260 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 260px);
+      @include vw(padding-right, 260px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 260px;
+      padding-right: 260px;
+    }
+  }
+
+  &-desktop-276 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 276px);
+      @include vw(padding-right, 276px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 276px;
+      padding-right: 276px;
+    }
+  }
+
+  &-desktop-279 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 279px);
+      @include vw(padding-right, 279px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 279px;
+      padding-right: 279px;
+    }
+  }
+
+  &-desktop-287 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 287px);
+      @include vw(padding-right, 287px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 287px;
+      padding-right: 287px;
+    }
+  }
+
+  &-desktop-304 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 304px);
+      @include vw(padding-right, 304px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 304px;
+      padding-right: 304px;
+    }
+  }
+
+  &-desktop-320 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 320px);
+      @include vw(padding-right, 320px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 320px;
+      padding-right: 320px;
+    }
+  }
+
+  &-desktop-325 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 325px);
+      @include vw(padding-right, 325px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 325px;
+      padding-right: 325px;
+    }
+  }
+
+  &-desktop-327 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 327px);
+      @include vw(padding-right, 327px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 327px;
+      padding-right: 327px;
+    }
+  }
+
+  &-desktop-330 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 330px);
+      @include vw(padding-right, 330px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 330px;
+      padding-right: 330px;
+    }
+  }
+
+  &-desktop-333 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 333px);
+      @include vw(padding-right, 333px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 333px;
+      padding-right: 333px;
+    }
+  }
+
+  &-desktop-426 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 426px);
+      @include vw(padding-right, 426px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 426px;
+      padding-right: 426px;
+    }
+  }
+
+  &-desktop-453 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 453px);
+      @include vw(padding-right, 453px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 453px;
+      padding-right: 453px;
+    }
+  }
+
+  &-desktop-503 {
+    @media screen and ($min1024) {
+      @include vw(padding-left, 503px);
+      @include vw(padding-right, 503px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 503px;
+      padding-right: 503px;
+    }
+  }
+}

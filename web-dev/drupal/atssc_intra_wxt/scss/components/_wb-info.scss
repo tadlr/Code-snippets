@@ -1,0 +1,62 @@
+#wb-info {
+  background: $light-greyish;
+  border-top: 1px solid $gray-lighter;
+
+  .block-legal {
+    @media screen and (min-width: $screen-sm-min) {
+      @include no-padding;
+    }
+
+    ul {
+      font-size: 0;
+
+      li {
+        font-size: $font-size-base;
+        margin-bottom: 0;
+
+        @media screen and (max-width: $screen-xs-max) {
+          float: none;
+        }
+      }
+    }
+  }
+
+  .container-fluid {
+    padding-bottom: 0;
+
+    @media screen and (min-width: $screen-sm-min) {
+      .canada-logo {
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-bottom: 25px;
+      }
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      .canada-logo {
+        // border-top: 1px solid $gray-lighter;
+        padding-top: 20px;
+        margin-bottom: 15px;
+        text-align: center;
+        display: inline-block;
+
+        img {
+          height: 30px;
+        }
+      }
+      .atssc-logo {
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-top: $padding-xs;
+
+    nav {
+      padding: 0;
+    }
+  }
+}

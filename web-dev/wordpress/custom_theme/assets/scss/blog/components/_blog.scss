@@ -1,0 +1,479 @@
+img[data-src] {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  will-change: opacity;
+}
+
+/* appear animation */
+img[data-src][src] {
+  opacity: 1;
+}
+
+// Related articles - single article page
+.related-articles {
+  margin-top: 60px;
+  padding-bottom: 50px;
+
+  > div {
+    transition: opacity 0.3s ease;
+  }
+
+  @media screen and ($min1024) {
+    // @include vw((margin-top, 30px);
+    // @include vw((padding-bottom, 45px);
+  }
+
+  @media screen and ($min1920) {
+    margin-top: 50px;
+  }
+
+  .related-articles-wrap {
+    // display: flex;
+    // align-items: flex-start;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    &.blog-grid-wrap {
+      justify-content: flex-start;
+    }
+
+    //  @media screen and ($mobile_all){
+    //   flex-direction: column;
+    // }
+
+    @media screen and ($tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and ($mobile) {
+      display: block !important;
+      grid-auto-columns: unset !important;
+      grid-auto-rows: unset !important;
+      grid-template-columns: unset !important;
+      gap: unset !important;
+    }
+
+    @media screen and ($min1024) {
+      // @include vw((margin-top, 32px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 32px;
+    }
+
+    .related-post-item {
+      // width: 50%;
+      // margin-top: 50px;
+      @media screen and ($min1024) {
+        justify-items: flex-start;
+        align-content: flex-start;
+        display: grid;
+      }
+
+      @media screen and ($mobile_all) {
+        margin-top: 50px;
+        // width: 50%;
+
+        &:not(:first-of-type) {
+          margin-top: 50px;
+        }
+      }
+
+      @media screen and ($mobile_sm) {
+        width: 100%;
+      }
+
+      @media screen and ($mobile_lg) {
+        width: 100%;
+      }
+
+      @media screen and ($min1024) {
+        // width: 33.3%;
+        // width: calc(33.3% - 40px);
+        // margin: 0px 20px 40px 20px;
+      }
+
+      @media screen and ($min1440) {
+        // width: 33.3%;
+        // width: calc(33.3% - 40px);
+        // margin: 0px 20px 40px 20px;
+      }
+
+      @media screen and ($min1920) {
+        // width: 33.3%;
+        // width: calc(33.3% - 40px);
+        // margin: 0px 20px 40px 20px;
+      }
+
+      h3,
+      .h3 {
+        width: 93%;
+      }
+
+      .single-article-title {
+        text-transform: none;
+
+        a {
+          color: $blue-1;
+        }
+      }
+
+      .related-reading-time {
+        color: $gray-22;
+      }
+    }
+  }
+
+  .related-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+
+    .post-date {
+      min-width: 150px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.blog-post-thumbnail {
+  object-fit: cover;
+
+  @media screen and ($mobile_sm) {
+    // @include vw((width, 490px, 500);
+    // @include vw((height, 300px, 500);
+  }
+
+  @media screen and ($mobile_lg) {
+    width: 490px;
+    height: 300px;
+  }
+
+  @media screen and ($mobile_all) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and ($min1024) {
+    // @include vw((width, 510px);
+    // @include vw((height, 340px);
+  }
+
+  @media screen and ($min1920) {
+    width: 510px;
+    height: 340px;
+  }
+}
+
+.reading-time {
+  a {
+    color: $blue-1;
+  }
+}
+
+// Blog page
+.blog-banner {
+  background: $blue-1;
+  background: rgba(0, 0, 0, 0%);
+  p,
+  h1 {
+    text-shadow: 1px 1px #151515;
+  }
+}
+
+// Blog holder
+.blog-holder {
+  // background-color: $white;
+  padding-top: 45px;
+}
+
+// Newsletter
+.newsletter-signup-wrap {
+  background-color: $blue-1;
+  padding: 30px;
+
+  @media screen and ($min1024) {
+    // @include vw((margin-bottom, 50px);
+    // @include vw((padding-top, 55px);
+    // @include vw((padding-left, 84px);
+    // @include vw((padding-right, 84px);
+    // @include vw((padding-bottom, 46px);
+  }
+
+  .newsletter-inner-holder {
+    position: relative;
+    z-index: 4;
+
+    @media screen and ($min1024) {
+      max-width: 750px;
+    }
+  }
+
+  .newsletter-description {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  .newsletter-background-img {
+    background-size: cover;
+  }
+}
+
+.posts-filter {
+  select {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+// Blog pagination
+.blog-pagination {
+  text-align: center;
+
+  @media screen and ($min1024) {
+    // @include vw((padding-top, 50px);
+    // @include vw((padding-bottom, 50px);
+  }
+
+  @media screen and ($mobile_all) {
+    padding-bottom: 40px;
+  }
+
+  a {
+    font-size: 21px;
+    color: $blue-1;
+    display: inline-block;
+    padding: 0 10px;
+
+    &.active {
+      color: $green-1;
+      font-size: $contentPadding;
+      font-weight: 700;
+    }
+  }
+
+  span {
+    color: $blue-1;
+    font-size: 20px;
+  }
+}
+
+.blog-external-links {
+  @media screen and ($min1024) {
+    // @include vw((margin-top, 50px);
+  }
+}
+
+.blog-contact-item {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid $blue-1;
+    padding: 20px 0;
+    text-decoration: none !important;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline !important;
+    }
+
+    @media screen and ($mobile_sm) {
+      @include vw(font-size, 24px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 24px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(font-size, 24px);
+    }
+
+    p {
+      color: $blue-1 !important;
+      font-family: $redhat !important;
+      transition: color 0.3s ease;
+      &:hover,
+      &:focus {
+        color: $blue-1 !important;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      color: $blue-1;
+
+      p {
+        color: $blue-1 !important;
+        text-decoration: none !important;
+        font-family: $redhat !important;
+      }
+    }
+
+    @media screen and ($min1920) {
+      font-size: 24px;
+    }
+    .icon {
+      margin-right: 30px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+// Search blog form and results page
+
+#searchform {
+  margin-top: 30px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and ($mobile) {
+      &:not(.input-group-append) {
+        flex-direction: column;
+      }
+    }
+
+    input[type='text'] {
+      border-radius: 50px;
+      padding: 18px 15px;
+
+      @media screen and ($min1024) {
+        // @include vw((font-size, 18px);
+        // @include vw((padding, 18px 15px);
+        margin-right: 20px;
+      }
+
+      @media screen and ($min1920) {
+        font-size: $ft-18;
+        padding: 18px 15px;
+      }
+
+      @media screen and ($mobile) {
+        padding: 14px 15px;
+        margin-bottom: 10px;
+      }
+    }
+
+    input[type='submit'] {
+      font-weight: 700;
+      width: 230px;
+
+      @media screen and ($mobile) {
+        width: 100%;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.small-thumbnail {
+  img {
+    object-fit: cover;
+
+    @media screen and ($mobile_sm) {
+      // @include vw((width, 490px, 500);
+      // @include vw((height, 300px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      width: 490px;
+      height: 300px;
+    }
+
+    @media screen and ($mobile_all) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and ($min1024) {
+      // @include vw((width, 510px);
+      // @include vw((height, 340px);
+    }
+
+    @media screen and ($min1920) {
+      width: 510px;
+      height: 340px;
+    }
+  }
+}
+
+.archive-pagination {
+  text-align: center;
+  width: 100%;
+
+  @media screen and ($min1024) {
+    // @include vw((padding-top, 100px);
+    // @include vw((padding-bottom, 100px);
+  }
+
+  @media screen and ($mobile_all) {
+    padding-bottom: 40px;
+  }
+
+  span {
+    font-size: 21px;
+    color: $blue-1;
+    display: inline-block;
+    padding: 0 10px;
+
+    &.current {
+      color: $green-1;
+      font-size: $contentPadding;
+      font-weight: 700;
+    }
+  }
+
+  .page-numbers {
+    color: $blue-1;
+    font-size: 20px;
+    margin: 0 10px;
+
+    &.prev {
+      display: none !important;
+    }
+
+    &.next {
+      display: none !important;
+    }
+  }
+}
+
+// Search results
+.back-to-blog {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+
+  &:hover,
+  &:focus {
+    img {
+      margin-right: 10px;
+      transition: margin-right 0.3s ease;
+    }
+  }
+
+  img {
+    margin-right: 20px;
+    transform: rotate(-180deg);
+    transition: margin-right 0.3s ease;
+  }
+}

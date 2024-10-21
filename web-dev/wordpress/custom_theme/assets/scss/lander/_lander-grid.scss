@@ -1,0 +1,48 @@
+.sk-lander--16415 {
+  .sk-lander {
+    .container {
+      max-width: unset;
+
+      @media screen and ($desktop) {
+        padding-left: 146px;
+        padding-right: 146px;
+      }
+
+      @media screen and ($tablet) {
+        padding-left: 64px;
+        padding-right: 64px;
+      }
+
+      @media screen and ($mobile) {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+
+    .header .container-lg {
+      max-width: unset;
+
+      @media screen and ($desktop) {
+        .content-wrap {
+          padding-left: 146px;
+          padding-right: 146px;
+        }
+      }
+
+      @media screen and ($tablet) {
+        .content-wrap {
+          padding-left: 64px;
+          padding-right: 64px;
+        }
+      }
+
+      @media screen and ($mobile) {
+        padding-left: 0px;
+        padding-right: 0px;
+        .content-wrap {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

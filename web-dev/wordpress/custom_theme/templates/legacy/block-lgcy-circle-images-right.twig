@@ -1,0 +1,161 @@
+{% set background_color = (field.background_color)? field.background_color: 'blue' %}
+{% set bgColor = background_color == 'blue' ? '' : 'bg-white' %}
+{% set textColor = background_color == 'blue' ? 'c-white' : 'c-blue-1' %}
+
+<div
+  data-scroll-section
+  class='customTheme-block sk-block circle-images-right circle-info-blue-section prel offset-x-desktop-35 ov-hidden image-{{ image_position }} {{ bgColor }} image-3-{{ hide_image_3 }}'
+  {{ scroll_to_id }}
+>
+  <div class='max-w-container w-1850 prel op-0'>
+    <div class='image-group'>
+      {% if image_position == 'right' %}
+        <div class='images-wrap images-top'>
+          <div class='inner-circles-wrap inner-left-circle circle-opacity'>
+            <div class='inner-circle-base'></div>
+            <div class='inner-circle-outer'></div>
+            <div class='inner-circle-core'></div>
+          </div>
+          <div class='inner-img-wrap'>
+            {% if image_one %}
+              {# <img data-src='{{ image_one }}' alt='{{ image_one_alt }}' class='b-lazy circle-img'> #}
+              {{ Image(image_one, "img-300-300", {width: 300, height: 300, class: 'circle-img' } ) }}
+            {% endif %}
+          </div>
+          <div class='inner-circles-wrap inner-right-circle circle-border'>
+            <svg class='border-svg' viewBox='0 0 115 115'>
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="57" />
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="37" />
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="14" />
+            </svg>
+          </div>
+        </div>
+        {% if hide_image_3 == false %}
+          <div class='images-wrap images-bot'>
+            <div class='inner-circles-wrap inner-left-circle circle-full'>
+              <div class='inner-circle-base'></div>
+              <div class='inner-circle-outer'></div>
+              <div class='inner-circle-core'></div>
+            </div>
+            <div class='inner-img-wrap'>
+              {% if image_two %}
+                {# <img data-src='{{ image_two }}' alt='{{ image_two_alt }}' class='b-lazy circle-img'> #}
+                {{ Image(image_two, "img-300-300", {width: 300, height: 300, class: 'circle-img' } ) }}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% else %}
+        <div class='images-wrap images-top'>
+          <div class='inner-circles-wrap inner-left-circle circle-opacity mobile'>
+            <div class='inner-circle-base'></div>
+            <div class='inner-circle-outer'></div>
+            <div class='inner-circle-core'></div>
+          </div>
+          <div class='inner-img-wrap'>
+            {% if image_one %}
+              {# <img data-src='{{ image_one }}' alt='{{ image_one_alt }}' class='b-lazy circle-img'> #}
+              {{ Image(image_one, "img-300-300", {width: 300, height: 300, class: 'circle-img' } ) }}
+            {% endif %}
+          </div>
+          <div class='inner-circles-wrap inner-left-circle circle-opacity desktop'>
+            <div class='inner-circle-base'></div>
+            <div class='inner-circle-outer'></div>
+            <div class='inner-circle-core'></div>
+          </div>
+          <div class='inner-circles-wrap inner-right-circle circle-border mobile'>
+            <svg class='border-svg' viewBox='0 0 115 115'>
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="57" />
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="37" />
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="14" />
+            </svg>
+          </div>
+        </div>
+        <div class='images-wrap images-mid'>
+          <div class='inner-circles-wrap inner-left-circle circle-full mobile'>
+            <div class='inner-circle-base'></div>
+            <div class='inner-circle-outer'></div>
+            <div class='inner-circle-core'></div>
+          </div>
+          <div class='inner-img-wrap'>
+            {% if image_two %}
+              {# <img data-src='{{ image_two }}' alt='{{ image_two_alt }}' class='b-lazy circle-img'> #}
+              {{ Image(image_two, "img-300-300", {width: 300, height: 300, class: 'circle-img' } ) }}
+            {% endif %}
+          </div>
+          <div class='inner-circles-wrap inner-right-circle circle-border desktop'>
+            <svg class='border-svg' viewBox='0 0 115 115'>
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="57" />
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="37" />
+              <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="14" />
+            </svg>
+          </div>
+        </div>
+        {% if hide_image_3 == false %}
+          <div class='images-wrap images-bot d-none d-tablet-flex d-desktop-flex'>
+            <div class='inner-circles-wrap inner-left-circle circle-full desktop'>
+              <div class='inner-circle-base'></div>
+              <div class='inner-circle-outer'></div>
+              <div class='inner-circle-core'></div>
+            </div>
+            <div class='inner-circles-wrap inner-right-circle circle-border desktop'>
+              <svg class='border-svg' viewBox='0 0 115 115'>
+                <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="57" />
+                <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="37" />
+                <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="14" />
+              </svg>
+            </div>
+            <div class='inner-img-wrap'>
+              {% if image_three %}
+                {# <img data-src='{{ image_three }}' alt='{{ image_three_alt }}' class='b-lazy circle-img'> #}
+                {{ Image(image_three, "img-300-300", {width: 300, height: 300, class: 'circle-img' } ) }}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <div class='txt-content content-wrap offset-x-desktop-164 offset-x-mobile-47 prel'>
+      {% if block_heading_editor %}
+        <h2 class='block-heading {{ textColor }} heading-anim'>
+          {{ block_heading_editor | striptags }}
+        </h2>
+      {% endif %}
+
+      {% if block_subheading_editor %}
+        <h3 class='block-subheading {{ textColor }} anim-translate-y heading-anim'>
+          {{ block_subheading_editor | striptags }}
+        </h3>
+      {% endif %}
+
+      <div class='txt-post-rtf {{ textColor }}'>
+        {{ block_content }}
+      </div>
+
+      {% if cta_text %}
+        {%
+          set cta_options = {
+          'yes': { 'target': '_blank', 'href': cta_link },
+          'same': { 'target': '_self', 'href': cta_link },
+          'modal': { 'href': '#', 'class': 'header-open-form-btn open-form-modal' },
+          'section': { 'href': '#', 'class': 'scroll-to-section-btn anchor-link', 'data-target': cta_scroll_to_section },
+          'no': { 'href': '#', 'class': 'scroll-to-section-btn btn-scroll-to-footer', 'data-target': '.inner-pages-contact-section' }
+          }[external_link]
+        %}
+        <a
+          href='{{ cta_options.href }}'
+          target='{{ cta_options.target|default('_self') }}'
+          class='btn-default btn-green-1 section-color-blue {{ cta_options.class|default('') }}'
+          data-target='{{ cta_options['data-target']|default('') }}'
+        >
+          <span class='btn-bg-el'></span>
+          <span class='btn-txt'>
+            {{ cta_text }}
+          </span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+  <!-- .container -->
+</div>

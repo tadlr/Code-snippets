@@ -1,0 +1,41 @@
+{
+  "name": "custom_theme/customThemetheme",
+  "description": "WP theme of the customTheme website",
+  "autoload": {
+    "psr-4": {
+      "CustomTheme\\CustomThemetheme\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "email": "grodriguez@customThememerchants.com",
+      "name": "grodriguez"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "segmentio/analytics-php": "^2.0",
+    "twig/cache-extra": "^3.10",
+    "macwinnie/twig-php-function": "^1.0",
+    "macwinnie/twig-extensions": "^1.0",
+    "parisek/twig-attribute": "^1.4",
+    "timber/timber": "^2.2",
+    "djboris88/timber-commented-include": "dev-master",
+    "hellonico/timber-dump-extension": "^2.0"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2"
+    },
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}

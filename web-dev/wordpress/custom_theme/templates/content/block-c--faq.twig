@@ -1,0 +1,62 @@
+{% if is_preview %}
+  [C] FAQ section
+{% endif %}
+{% set ctaText = field.cta_text %}
+{% set ctaLink = field.cta_link %}
+{% set faqTitle = field.faq_title %}
+{% set scroll_to_id = '' %}
+{% if field.scroll_to_section_id is not empty %}
+  {% set scroll_to_id = 'data-link-scroll-target-section-id="' ~ field.scroll_to_section_id ~ '"' %}
+{% endif %}
+
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} sk-block block--c'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='container'>
+    <div class='faq-block content-block'>
+      {% if field.faq_title.heading_text %}
+        {% set headingText = field.faq_title.heading_text %}
+        {% set headingColor = fieldfaq_title.heading_color %}
+        <h2 style='color:{{ headingColor }}'>
+          {{ headingText }}
+        </h2>
+      {% endif %}
+      {% if field.faq_content %}
+        <div class='faq-content'>
+          {{ field.faq_content }}
+        </div>
+      {% endif %}
+      <div class='faq-questions-wrap'>
+        {% if field.faq_body %}
+          {% for faq_body in field.faq_body %}
+            {% set FAQClass = faq_body.opened == 'Yes' ? 'faq-question preopened-item' : 'faq-question' %}
+            <div class='{{ FAQClass }}'>
+              <h3 class='faq-question-title'>
+                {{ faq_body.question }}
+                <button
+                  aria-label='Button to view hidden content'
+                  class='dropdown-arrow-btn js-faq-dropdown-btn'
+                ></button>
+              </h3>
+              <div class='dropdown-content-wrap'>
+                <div class='dropdown-content'>
+                  {{ faq_body.answer }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      {% if field.faq_footer %}
+        <div class='py-5'>
+          {% set footer = field.faq_footer %}
+          {% include 'field/field--footer.twig' %}
+        </div>
+      {% endif %}
+      {% include 'field/field--cta-btn.twig' %}
+    </div>
+  </div>
+</div>

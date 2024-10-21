@@ -1,0 +1,1991 @@
+{
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "5c31a358b149583f4862c1e6fb344edd",
+  "packages": [
+    {
+      "name": "djboris88/timber-commented-include",
+      "version": "dev-master",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/djboris88/timber-commented-include.git",
+        "reference": "63fdac73a3d0530aa886df73caeb2005278cb7fd"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/djboris88/timber-commented-include/zipball/63fdac73a3d0530aa886df73caeb2005278cb7fd",
+        "reference": "63fdac73a3d0530aa886df73caeb2005278cb7fd",
+        "shasum": ""
+      },
+      "require": {
+        "djboris88/twig-commented-include": "^2.0",
+        "php": ">=5.6"
+      },
+      "default-branch": true,
+      "type": "library",
+      "autoload": {
+        "files": ["functions.php"],
+        "psr-4": {
+          "Djboris88\\Timber\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["GPL-3.0"],
+      "authors": [
+        {
+          "name": "Boris Đemrovski",
+          "email": "djboris88@gmail.com",
+          "role": "developer"
+        }
+      ],
+      "description": "Twig extension for Timber which outputs HTML comments before and after the `include` tag",
+      "homepage": "https://github.com/djboris88/timber-include-comments",
+      "keywords": ["comments", "debug", "html", "twig"],
+      "support": {
+        "issues": "https://github.com/djboris88/timber-commented-include/issues",
+        "source": "https://github.com/djboris88/timber-commented-include/tree/master"
+      },
+      "time": "2024-07-17T12:07:17+00:00"
+    },
+    {
+      "name": "djboris88/twig-commented-include",
+      "version": "2.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/djboris88/twig-commented-include.git",
+        "reference": "3becd7a3fa3e9473474623a748e62c0e6015edc3"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/djboris88/twig-commented-include/zipball/3becd7a3fa3e9473474623a748e62c0e6015edc3",
+        "reference": "3becd7a3fa3e9473474623a748e62c0e6015edc3",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=5.6",
+        "twig/twig": "^2.0|^3.0"
+      },
+      "require-dev": {
+        "symfony/framework-bundle": "^2.7|^3.2",
+        "symfony/twig-bundle": "^2.7|^3.2"
+      },
+      "suggest": {
+        "symfony/framework-bundle": "The framework bundle to integrate the extension into Symfony",
+        "symfony/twig-bundle": "The twig bundle to integrate the extension into Symfony"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Djboris88\\Twig\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["GPL-3.0"],
+      "authors": [
+        {
+          "name": "Boris Đemrovski",
+          "email": "djboris88@gmail.com",
+          "role": "developer"
+        }
+      ],
+      "description": "Twig extension which outputs HTML comments before and after the `include` tag",
+      "homepage": "https://github.com/djboris88/twig-include-comments",
+      "keywords": ["comments", "debug", "html", "twig"],
+      "support": {
+        "issues": "https://github.com/djboris88/twig-commented-include/issues",
+        "source": "https://github.com/djboris88/twig-commented-include/tree/2.0.0"
+      },
+      "time": "2024-01-16T21:27:45+00:00"
+    },
+    {
+      "name": "drupal/core-render",
+      "version": "10.3.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/drupal/core-render.git",
+        "reference": "1e55aa17d858ae90f71bef2e1df1a300a380ffcb"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/drupal/core-render/zipball/1e55aa17d858ae90f71bef2e1df1a300a380ffcb",
+        "reference": "1e55aa17d858ae90f71bef2e1df1a300a380ffcb",
+        "shasum": ""
+      },
+      "require": {
+        "drupal/core-utility": "^10.3",
+        "php": ">=8.1.0"
+      },
+      "type": "library",
+      "extra": {
+        "_readme": [
+          "This file was partially generated automatically. See: https://www.drupal.org/node/3293830"
+        ]
+      },
+      "autoload": {
+        "psr-4": {
+          "Drupal\\Component\\Render\\": ""
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["GPL-2.0-or-later"],
+      "description": "Renders placeholder variables for HTML and plain-text display.",
+      "homepage": "https://www.drupal.org/project/drupal",
+      "keywords": ["drupal"],
+      "support": {
+        "source": "https://github.com/drupal/core-render/tree/10.3.1"
+      },
+      "time": "2024-07-04T11:33:45+00:00"
+    },
+    {
+      "name": "drupal/core-utility",
+      "version": "10.3.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/drupal/core-utility.git",
+        "reference": "db3b8a20f73149e55e8f04434c1d4e2ee6aa901f"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/drupal/core-utility/zipball/db3b8a20f73149e55e8f04434c1d4e2ee6aa901f",
+        "reference": "db3b8a20f73149e55e8f04434c1d4e2ee6aa901f",
+        "shasum": ""
+      },
+      "require": {
+        "masterminds/html5": "^2.7",
+        "php": ">=8.1.0"
+      },
+      "type": "library",
+      "extra": {
+        "_readme": [
+          "This file was partially generated automatically. See: https://www.drupal.org/node/3293830"
+        ]
+      },
+      "autoload": {
+        "psr-4": {
+          "Drupal\\Component\\Utility\\": ""
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["GPL-2.0-or-later"],
+      "description": "Mostly static utility classes for string, xss, array, image, and other commonly needed manipulations.",
+      "homepage": "https://www.drupal.org/project/drupal",
+      "keywords": ["drupal"],
+      "support": {
+        "source": "https://github.com/drupal/core-utility/tree/10.3.1"
+      },
+      "time": "2024-06-17T20:29:14+00:00"
+    },
+    {
+      "name": "graham-campbell/result-type",
+      "version": "v1.1.3",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/GrahamCampbell/Result-Type.git",
+        "reference": "3ba905c11371512af9d9bdd27d99b782216b6945"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/3ba905c11371512af9d9bdd27d99b782216b6945",
+        "reference": "3ba905c11371512af9d9bdd27d99b782216b6945",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.2.5 || ^8.0",
+        "phpoption/phpoption": "^1.9.3"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "^8.5.39 || ^9.6.20 || ^10.5.28"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "GrahamCampbell\\ResultType\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Graham Campbell",
+          "email": "hello@gjcampbell.co.uk",
+          "homepage": "https://github.com/GrahamCampbell"
+        }
+      ],
+      "description": "An Implementation Of The Result Type",
+      "keywords": [
+        "Graham Campbell",
+        "GrahamCampbell",
+        "Result Type",
+        "Result-Type",
+        "result"
+      ],
+      "support": {
+        "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
+        "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.3"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/GrahamCampbell",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/graham-campbell/result-type",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-07-20T21:45:45+00:00"
+    },
+    {
+      "name": "haydenpierce/class-finder",
+      "version": "0.4.4",
+      "source": {
+        "type": "git",
+        "url": "git@gitlab.com:hpierce1102/ClassFinder.git",
+        "reference": "94c602870ddf8d4fa2d67fb9bae637d88f9bd76e"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://gitlab.com/api/v4/projects/hpierce1102%2FClassFinder/repository/archive.zip?sha=94c602870ddf8d4fa2d67fb9bae637d88f9bd76e",
+        "reference": "94c602870ddf8d4fa2d67fb9bae637d88f9bd76e",
+        "shasum": ""
+      },
+      "require": {
+        "ext-json": "*",
+        "php": ">=5.3"
+      },
+      "require-dev": {
+        "mikey179/vfsstream": "^1.6",
+        "phpunit/phpunit": "~9.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "HaydenPierce\\ClassFinder\\": "src/",
+          "HaydenPierce\\ClassFinder\\UnitTest\\": "test/unit"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Hayden Pierce",
+          "email": "hayden@haydenpierce.com"
+        }
+      ],
+      "description": "A library that can provide of a list of classes in a given namespace",
+      "time": "2022-09-26T22:42:59+00:00"
+    },
+    {
+      "name": "hellonico/timber-dump-extension",
+      "version": "2.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/nlemoine/timber-dump-extension.git",
+        "reference": "c1a4269ec4cda8542c068972ee76cee0d5c9d041"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/nlemoine/timber-dump-extension/zipball/c1a4269ec4cda8542c068972ee76cee0d5c9d041",
+        "reference": "c1a4269ec4cda8542c068972ee76cee0d5c9d041",
+        "shasum": ""
+      },
+      "require": {
+        "symfony/twig-bridge": "^6 || ^7",
+        "symfony/var-dumper": "^6 || ^7",
+        "wecodemore/wordpress-early-hook": "^1.2"
+      },
+      "type": "library",
+      "autoload": {
+        "files": ["functions.php"],
+        "psr-4": {
+          "HelloNico\\Timber\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["GPL-3.0+"],
+      "authors": [
+        {
+          "name": "Nicolas Lemoine",
+          "email": "nico@n5s.dev",
+          "homepage": "https://n5s.dev/"
+        }
+      ],
+      "description": "Provides Symfony VarDumper component for Timber",
+      "homepage": "https://github.com/nlemoine/timber-dump-extension",
+      "keywords": ["VarDumper", "symfony", "timber", "twig", "wordpress"],
+      "support": {
+        "issues": "https://github.com/nlemoine/timber-dump-extension/issues",
+        "source": "https://github.com/nlemoine/timber-dump-extension/tree/2.0.0"
+      },
+      "time": "2024-03-08T12:20:18+00:00"
+    },
+    {
+      "name": "macwinnie/twig-extensions",
+      "version": "1.0.120",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/macwinnie/twig-extension.git",
+        "reference": "7e23c5240579f0aede3e2b498a10dd6607630295"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/macwinnie/twig-extension/zipball/7e23c5240579f0aede3e2b498a10dd6607630295",
+        "reference": "7e23c5240579f0aede3e2b498a10dd6607630295",
+        "shasum": ""
+      },
+      "require": {
+        "haydenpierce/class-finder": "^0.4.3",
+        "php": "^7.4 || ^8.0",
+        "vlucas/phpdotenv": "^5.3"
+      },
+      "require-dev": {
+        "behat/behat": "^3.8",
+        "phpunit/phpunit": "^9.5",
+        "twig/extra-bundle": "^3.3",
+        "twig/twig": "^3.3"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "macwinnie\\TwigExtensions\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["CC-BY-SA-4.0"],
+      "authors": [
+        {
+          "name": "Martin Winter",
+          "email": "dev@macwinnie.me"
+        }
+      ],
+      "description": "Improving Twig by some filters, functions, etc.",
+      "support": {
+        "issues": "https://github.com/macwinnie/twig-extension/issues",
+        "source": "https://github.com/macwinnie/twig-extension/tree/1.0.120"
+      },
+      "time": "2024-07-28T23:25:27+00:00"
+    },
+    {
+      "name": "macwinnie/twig-php-function",
+      "version": "1.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/macwinnie/twig-php-function.git",
+        "reference": "47aeebe0128d5f1a2dbea4436d78e5e8fa860e73"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/macwinnie/twig-php-function/zipball/47aeebe0128d5f1a2dbea4436d78e5e8fa860e73",
+        "reference": "47aeebe0128d5f1a2dbea4436d78e5e8fa860e73",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.4 || ^8.0",
+        "twig/twig": "^1.28 || ^2.0 || ^3.0"
+      },
+      "require-dev": {
+        "phpspec/phpspec": "^4.3.4 || ^5.0 || ^6.0",
+        "phpunit/phpunit": "^6.5"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Umpirsky\\Twig\\Extension\\": "src/Umpirsky/Twig/Extension/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Saša Stamenković",
+          "email": "umpirsky@gmail.com"
+        },
+        {
+          "name": "macwinnie",
+          "email": "dev@macwinnie.me"
+        }
+      ],
+      "description": "Call (almost) any PHP function from your Twig templates.",
+      "support": {
+        "source": "https://github.com/macwinnie/twig-php-function/tree/1.0.0"
+      },
+      "time": "2023-04-17T22:12:01+00:00"
+    },
+    {
+      "name": "masterminds/html5",
+      "version": "2.9.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/Masterminds/html5-php.git",
+        "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
+        "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
+        "shasum": ""
+      },
+      "require": {
+        "ext-dom": "*",
+        "php": ">=5.3.0"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "^4.8.35 || ^5.7.21 || ^6 || ^7 || ^8 || ^9"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "2.7-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Masterminds\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Matt Butcher",
+          "email": "technosophos@gmail.com"
+        },
+        {
+          "name": "Matt Farina",
+          "email": "matt@mattfarina.com"
+        },
+        {
+          "name": "Asmir Mustafic",
+          "email": "goetas@gmail.com"
+        }
+      ],
+      "description": "An HTML5 parser and serializer.",
+      "homepage": "http://masterminds.github.io/html5-php",
+      "keywords": [
+        "HTML5",
+        "dom",
+        "html",
+        "parser",
+        "querypath",
+        "serializer",
+        "xml"
+      ],
+      "support": {
+        "issues": "https://github.com/Masterminds/html5-php/issues",
+        "source": "https://github.com/Masterminds/html5-php/tree/2.9.0"
+      },
+      "time": "2024-03-31T07:05:07+00:00"
+    },
+    {
+      "name": "parisek/twig-attribute",
+      "version": "v1.4.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/parisek/twig-attribute.git",
+        "reference": "7888e3eb085b7c7fd828e5bbd172ea3adaff12d0"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/parisek/twig-attribute/zipball/7888e3eb085b7c7fd828e5bbd172ea3adaff12d0",
+        "reference": "7888e3eb085b7c7fd828e5bbd172ea3adaff12d0",
+        "shasum": ""
+      },
+      "require": {
+        "drupal/core-render": "^9.0|^10.0",
+        "drupal/core-utility": "^9.0|^10.0",
+        "php": ">=8.1.0",
+        "twig/twig": "^2.4|^3.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Parisek\\Twig\\": "",
+          "Drupal\\Component\\Attribute\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["GPL-2.0-or-later"],
+      "description": "A Twig extension for adding attributes to an element",
+      "homepage": "https://github.com/parisek/twig-attribute",
+      "keywords": ["attribute", "twig"],
+      "support": {
+        "issues": "https://github.com/parisek/twig-attribute/issues",
+        "source": "https://github.com/parisek/twig-attribute/tree/v1.4.1"
+      },
+      "time": "2023-09-24T13:20:51+00:00"
+    },
+    {
+      "name": "phpoption/phpoption",
+      "version": "1.9.3",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/schmittjoh/php-option.git",
+        "reference": "e3fac8b24f56113f7cb96af14958c0dd16330f54"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/e3fac8b24f56113f7cb96af14958c0dd16330f54",
+        "reference": "e3fac8b24f56113f7cb96af14958c0dd16330f54",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.2.5 || ^8.0"
+      },
+      "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8.2",
+        "phpunit/phpunit": "^8.5.39 || ^9.6.20 || ^10.5.28"
+      },
+      "type": "library",
+      "extra": {
+        "bamarni-bin": {
+          "bin-links": true,
+          "forward-command": false
+        },
+        "branch-alias": {
+          "dev-master": "1.9-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "PhpOption\\": "src/PhpOption/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["Apache-2.0"],
+      "authors": [
+        {
+          "name": "Johannes M. Schmitt",
+          "email": "schmittjoh@gmail.com",
+          "homepage": "https://github.com/schmittjoh"
+        },
+        {
+          "name": "Graham Campbell",
+          "email": "hello@gjcampbell.co.uk",
+          "homepage": "https://github.com/GrahamCampbell"
+        }
+      ],
+      "description": "Option Type for PHP",
+      "keywords": ["language", "option", "php", "type"],
+      "support": {
+        "issues": "https://github.com/schmittjoh/php-option/issues",
+        "source": "https://github.com/schmittjoh/php-option/tree/1.9.3"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/GrahamCampbell",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-07-20T21:41:07+00:00"
+    },
+    {
+      "name": "psr/cache",
+      "version": "3.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/php-fig/cache.git",
+        "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/php-fig/cache/zipball/aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+        "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.0.0"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "1.0.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Psr\\Cache\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "PHP-FIG",
+          "homepage": "https://www.php-fig.org/"
+        }
+      ],
+      "description": "Common interface for caching libraries",
+      "keywords": ["cache", "psr", "psr-6"],
+      "support": {
+        "source": "https://github.com/php-fig/cache/tree/3.0.0"
+      },
+      "time": "2021-02-03T23:26:27+00:00"
+    },
+    {
+      "name": "psr/container",
+      "version": "2.0.2",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/php-fig/container.git",
+        "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+        "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.4.0"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "2.0.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Psr\\Container\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "PHP-FIG",
+          "homepage": "https://www.php-fig.org/"
+        }
+      ],
+      "description": "Common Container Interface (PHP FIG PSR-11)",
+      "homepage": "https://github.com/php-fig/container",
+      "keywords": [
+        "PSR-11",
+        "container",
+        "container-interface",
+        "container-interop",
+        "psr"
+      ],
+      "support": {
+        "issues": "https://github.com/php-fig/container/issues",
+        "source": "https://github.com/php-fig/container/tree/2.0.2"
+      },
+      "time": "2021-11-05T16:47:00+00:00"
+    },
+    {
+      "name": "psr/log",
+      "version": "3.0.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/php-fig/log.git",
+        "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
+        "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.0.0"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "3.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Psr\\Log\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "PHP-FIG",
+          "homepage": "https://www.php-fig.org/"
+        }
+      ],
+      "description": "Common interface for logging libraries",
+      "homepage": "https://github.com/php-fig/log",
+      "keywords": ["log", "psr", "psr-3"],
+      "support": {
+        "source": "https://github.com/php-fig/log/tree/3.0.0"
+      },
+      "time": "2021-07-14T16:46:02+00:00"
+    },
+    {
+      "name": "segmentio/analytics-php",
+      "version": "2.1.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/segmentio/analytics-php.git",
+        "reference": "776e0157958b4754fc232b779302b0133f8c18c5"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/segmentio/analytics-php/zipball/776e0157958b4754fc232b779302b0133f8c18c5",
+        "reference": "776e0157958b4754fc232b779302b0133f8c18c5",
+        "shasum": ""
+      },
+      "require": {
+        "ext-json": "*",
+        "php": "^7.4 || ^8.0"
+      },
+      "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+        "overtrue/phplint": "^3.0",
+        "php-parallel-lint/php-parallel-lint": "^1.3",
+        "phpunit/phpunit": "~9.5",
+        "roave/security-advisories": "dev-latest",
+        "slevomat/coding-standard": "^7.0",
+        "squizlabs/php_codesniffer": "^3.6"
+      },
+      "suggest": {
+        "ext-curl": "For using the curl HTTP client",
+        "ext-zlib": "For using compression"
+      },
+      "bin": ["bin/analytics"],
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Segment\\": "lib/",
+          "Segment\\Test\\": "test/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Segment.io <friends@segment.com>",
+          "homepage": "https://segment.com/"
+        }
+      ],
+      "description": "Segment Analytics PHP Library",
+      "homepage": "https://segment.com/libraries/php",
+      "keywords": ["analytics", "analytics.js", "segment", "segmentio"],
+      "support": {
+        "issues": "https://github.com/segmentio/analytics-php/issues",
+        "source": "https://github.com/segmentio/analytics-php/tree/2.1.0"
+      },
+      "time": "2023-03-28T16:55:19+00:00"
+    },
+    {
+      "name": "symfony/cache",
+      "version": "v7.1.3",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/cache.git",
+        "reference": "8ac37acee794372f9732fe8a61a8221f6762148e"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/cache/zipball/8ac37acee794372f9732fe8a61a8221f6762148e",
+        "reference": "8ac37acee794372f9732fe8a61a8221f6762148e",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.2",
+        "psr/cache": "^2.0|^3.0",
+        "psr/log": "^1.1|^2|^3",
+        "symfony/cache-contracts": "^2.5|^3",
+        "symfony/deprecation-contracts": "^2.5|^3.0",
+        "symfony/service-contracts": "^2.5|^3",
+        "symfony/var-exporter": "^6.4|^7.0"
+      },
+      "conflict": {
+        "doctrine/dbal": "<3.6",
+        "symfony/dependency-injection": "<6.4",
+        "symfony/http-kernel": "<6.4",
+        "symfony/var-dumper": "<6.4"
+      },
+      "provide": {
+        "psr/cache-implementation": "2.0|3.0",
+        "psr/simple-cache-implementation": "1.0|2.0|3.0",
+        "symfony/cache-implementation": "1.1|2.0|3.0"
+      },
+      "require-dev": {
+        "cache/integration-tests": "dev-master",
+        "doctrine/dbal": "^3.6|^4",
+        "predis/predis": "^1.1|^2.0",
+        "psr/simple-cache": "^1.0|^2.0|^3.0",
+        "symfony/config": "^6.4|^7.0",
+        "symfony/dependency-injection": "^6.4|^7.0",
+        "symfony/filesystem": "^6.4|^7.0",
+        "symfony/http-kernel": "^6.4|^7.0",
+        "symfony/messenger": "^6.4|^7.0",
+        "symfony/var-dumper": "^6.4|^7.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Component\\Cache\\": ""
+        },
+        "classmap": ["Traits/ValueWrapper.php"],
+        "exclude-from-classmap": ["/Tests/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Provides extended PSR-6, PSR-16 (and tags) implementations",
+      "homepage": "https://symfony.com",
+      "keywords": ["caching", "psr6"],
+      "support": {
+        "source": "https://github.com/symfony/cache/tree/v7.1.3"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-07-17T06:10:24+00:00"
+    },
+    {
+      "name": "symfony/cache-contracts",
+      "version": "v3.5.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/cache-contracts.git",
+        "reference": "df6a1a44c890faded49a5fca33c2d5c5fd3c2197"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/df6a1a44c890faded49a5fca33c2d5c5fd3c2197",
+        "reference": "df6a1a44c890faded49a5fca33c2d5c5fd3c2197",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.1",
+        "psr/cache": "^3.0"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-main": "3.5-dev"
+        },
+        "thanks": {
+          "name": "symfony/contracts",
+          "url": "https://github.com/symfony/contracts"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Contracts\\Cache\\": ""
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Generic abstractions related to caching",
+      "homepage": "https://symfony.com",
+      "keywords": [
+        "abstractions",
+        "contracts",
+        "decoupling",
+        "interfaces",
+        "interoperability",
+        "standards"
+      ],
+      "support": {
+        "source": "https://github.com/symfony/cache-contracts/tree/v3.5.0"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-04-18T09:32:20+00:00"
+    },
+    {
+      "name": "symfony/deprecation-contracts",
+      "version": "v3.5.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/deprecation-contracts.git",
+        "reference": "0e0d29ce1f20deffb4ab1b016a7257c4f1e789a1"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/0e0d29ce1f20deffb4ab1b016a7257c4f1e789a1",
+        "reference": "0e0d29ce1f20deffb4ab1b016a7257c4f1e789a1",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.1"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-main": "3.5-dev"
+        },
+        "thanks": {
+          "name": "symfony/contracts",
+          "url": "https://github.com/symfony/contracts"
+        }
+      },
+      "autoload": {
+        "files": ["function.php"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "A generic function and convention to trigger deprecation notices",
+      "homepage": "https://symfony.com",
+      "support": {
+        "source": "https://github.com/symfony/deprecation-contracts/tree/v3.5.0"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-04-18T09:32:20+00:00"
+    },
+    {
+      "name": "symfony/polyfill-ctype",
+      "version": "v1.30.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/polyfill-ctype.git",
+        "reference": "0424dff1c58f028c451efff2045f5d92410bd540"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/0424dff1c58f028c451efff2045f5d92410bd540",
+        "reference": "0424dff1c58f028c451efff2045f5d92410bd540",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.1"
+      },
+      "provide": {
+        "ext-ctype": "*"
+      },
+      "suggest": {
+        "ext-ctype": "For best performance"
+      },
+      "type": "library",
+      "extra": {
+        "thanks": {
+          "name": "symfony/polyfill",
+          "url": "https://github.com/symfony/polyfill"
+        }
+      },
+      "autoload": {
+        "files": ["bootstrap.php"],
+        "psr-4": {
+          "Symfony\\Polyfill\\Ctype\\": ""
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Gert de Pagter",
+          "email": "BackEndTea@gmail.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Symfony polyfill for ctype functions",
+      "homepage": "https://symfony.com",
+      "keywords": ["compatibility", "ctype", "polyfill", "portable"],
+      "support": {
+        "source": "https://github.com/symfony/polyfill-ctype/tree/v1.30.0"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-05-31T15:07:36+00:00"
+    },
+    {
+      "name": "symfony/polyfill-mbstring",
+      "version": "v1.30.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/polyfill-mbstring.git",
+        "reference": "fd22ab50000ef01661e2a31d850ebaa297f8e03c"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fd22ab50000ef01661e2a31d850ebaa297f8e03c",
+        "reference": "fd22ab50000ef01661e2a31d850ebaa297f8e03c",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.1"
+      },
+      "provide": {
+        "ext-mbstring": "*"
+      },
+      "suggest": {
+        "ext-mbstring": "For best performance"
+      },
+      "type": "library",
+      "extra": {
+        "thanks": {
+          "name": "symfony/polyfill",
+          "url": "https://github.com/symfony/polyfill"
+        }
+      },
+      "autoload": {
+        "files": ["bootstrap.php"],
+        "psr-4": {
+          "Symfony\\Polyfill\\Mbstring\\": ""
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Symfony polyfill for the Mbstring extension",
+      "homepage": "https://symfony.com",
+      "keywords": ["compatibility", "mbstring", "polyfill", "portable", "shim"],
+      "support": {
+        "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.30.0"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-06-19T12:30:46+00:00"
+    },
+    {
+      "name": "symfony/polyfill-php80",
+      "version": "v1.30.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/polyfill-php80.git",
+        "reference": "77fa7995ac1b21ab60769b7323d600a991a90433"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/77fa7995ac1b21ab60769b7323d600a991a90433",
+        "reference": "77fa7995ac1b21ab60769b7323d600a991a90433",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.1"
+      },
+      "type": "library",
+      "extra": {
+        "thanks": {
+          "name": "symfony/polyfill",
+          "url": "https://github.com/symfony/polyfill"
+        }
+      },
+      "autoload": {
+        "files": ["bootstrap.php"],
+        "psr-4": {
+          "Symfony\\Polyfill\\Php80\\": ""
+        },
+        "classmap": ["Resources/stubs"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Ion Bazan",
+          "email": "ion.bazan@gmail.com"
+        },
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+      "homepage": "https://symfony.com",
+      "keywords": ["compatibility", "polyfill", "portable", "shim"],
+      "support": {
+        "source": "https://github.com/symfony/polyfill-php80/tree/v1.30.0"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-05-31T15:07:36+00:00"
+    },
+    {
+      "name": "symfony/service-contracts",
+      "version": "v3.5.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/service-contracts.git",
+        "reference": "bd1d9e59a81d8fa4acdcea3f617c581f7475a80f"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/service-contracts/zipball/bd1d9e59a81d8fa4acdcea3f617c581f7475a80f",
+        "reference": "bd1d9e59a81d8fa4acdcea3f617c581f7475a80f",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.1",
+        "psr/container": "^1.1|^2.0",
+        "symfony/deprecation-contracts": "^2.5|^3"
+      },
+      "conflict": {
+        "ext-psr": "<1.1|>=2"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-main": "3.5-dev"
+        },
+        "thanks": {
+          "name": "symfony/contracts",
+          "url": "https://github.com/symfony/contracts"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Contracts\\Service\\": ""
+        },
+        "exclude-from-classmap": ["/Test/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Generic abstractions related to writing services",
+      "homepage": "https://symfony.com",
+      "keywords": [
+        "abstractions",
+        "contracts",
+        "decoupling",
+        "interfaces",
+        "interoperability",
+        "standards"
+      ],
+      "support": {
+        "source": "https://github.com/symfony/service-contracts/tree/v3.5.0"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-04-18T09:32:20+00:00"
+    },
+    {
+      "name": "symfony/translation-contracts",
+      "version": "v3.5.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/translation-contracts.git",
+        "reference": "b9d2189887bb6b2e0367a9fc7136c5239ab9b05a"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/b9d2189887bb6b2e0367a9fc7136c5239ab9b05a",
+        "reference": "b9d2189887bb6b2e0367a9fc7136c5239ab9b05a",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.1"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-main": "3.5-dev"
+        },
+        "thanks": {
+          "name": "symfony/contracts",
+          "url": "https://github.com/symfony/contracts"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Contracts\\Translation\\": ""
+        },
+        "exclude-from-classmap": ["/Test/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Generic abstractions related to translation",
+      "homepage": "https://symfony.com",
+      "keywords": [
+        "abstractions",
+        "contracts",
+        "decoupling",
+        "interfaces",
+        "interoperability",
+        "standards"
+      ],
+      "support": {
+        "source": "https://github.com/symfony/translation-contracts/tree/v3.5.0"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-04-18T09:32:20+00:00"
+    },
+    {
+      "name": "symfony/twig-bridge",
+      "version": "v7.1.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/twig-bridge.git",
+        "reference": "96e6e12a63db80bcedefc012042d2cb2d1a015f8"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/twig-bridge/zipball/96e6e12a63db80bcedefc012042d2cb2d1a015f8",
+        "reference": "96e6e12a63db80bcedefc012042d2cb2d1a015f8",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.2",
+        "symfony/translation-contracts": "^2.5|^3",
+        "twig/twig": "^3.9"
+      },
+      "conflict": {
+        "phpdocumentor/reflection-docblock": "<3.2.2",
+        "phpdocumentor/type-resolver": "<1.4.0",
+        "symfony/console": "<6.4",
+        "symfony/form": "<6.4",
+        "symfony/http-foundation": "<6.4",
+        "symfony/http-kernel": "<6.4",
+        "symfony/mime": "<6.4",
+        "symfony/serializer": "<6.4",
+        "symfony/translation": "<6.4",
+        "symfony/workflow": "<6.4"
+      },
+      "require-dev": {
+        "egulias/email-validator": "^2.1.10|^3|^4",
+        "league/html-to-markdown": "^5.0",
+        "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
+        "symfony/asset": "^6.4|^7.0",
+        "symfony/asset-mapper": "^6.4|^7.0",
+        "symfony/console": "^6.4|^7.0",
+        "symfony/dependency-injection": "^6.4|^7.0",
+        "symfony/emoji": "^7.1",
+        "symfony/expression-language": "^6.4|^7.0",
+        "symfony/finder": "^6.4|^7.0",
+        "symfony/form": "^6.4|^7.0",
+        "symfony/html-sanitizer": "^6.4|^7.0",
+        "symfony/http-foundation": "^6.4|^7.0",
+        "symfony/http-kernel": "^6.4|^7.0",
+        "symfony/intl": "^6.4|^7.0",
+        "symfony/mime": "^6.4|^7.0",
+        "symfony/polyfill-intl-icu": "~1.0",
+        "symfony/property-info": "^6.4|^7.0",
+        "symfony/routing": "^6.4|^7.0",
+        "symfony/security-acl": "^2.8|^3.0",
+        "symfony/security-core": "^6.4|^7.0",
+        "symfony/security-csrf": "^6.4|^7.0",
+        "symfony/security-http": "^6.4|^7.0",
+        "symfony/serializer": "^6.4.3|^7.0.3",
+        "symfony/stopwatch": "^6.4|^7.0",
+        "symfony/translation": "^6.4|^7.0",
+        "symfony/web-link": "^6.4|^7.0",
+        "symfony/workflow": "^6.4|^7.0",
+        "symfony/yaml": "^6.4|^7.0",
+        "twig/cssinliner-extra": "^2.12|^3",
+        "twig/inky-extra": "^2.12|^3",
+        "twig/markdown-extra": "^2.12|^3"
+      },
+      "type": "symfony-bridge",
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Bridge\\Twig\\": ""
+        },
+        "exclude-from-classmap": ["/Tests/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Fabien Potencier",
+          "email": "fabien@symfony.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Provides integration for Twig with various Symfony components",
+      "homepage": "https://symfony.com",
+      "support": {
+        "source": "https://github.com/symfony/twig-bridge/tree/v7.1.1"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-05-31T14:57:53+00:00"
+    },
+    {
+      "name": "symfony/var-dumper",
+      "version": "v7.1.3",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/var-dumper.git",
+        "reference": "86af4617cca75a6e28598f49ae0690f3b9d4591f"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/var-dumper/zipball/86af4617cca75a6e28598f49ae0690f3b9d4591f",
+        "reference": "86af4617cca75a6e28598f49ae0690f3b9d4591f",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.2",
+        "symfony/polyfill-mbstring": "~1.0"
+      },
+      "conflict": {
+        "symfony/console": "<6.4"
+      },
+      "require-dev": {
+        "ext-iconv": "*",
+        "symfony/console": "^6.4|^7.0",
+        "symfony/http-kernel": "^6.4|^7.0",
+        "symfony/process": "^6.4|^7.0",
+        "symfony/uid": "^6.4|^7.0",
+        "twig/twig": "^3.0.4"
+      },
+      "bin": ["Resources/bin/var-dump-server"],
+      "type": "library",
+      "autoload": {
+        "files": ["Resources/functions/dump.php"],
+        "psr-4": {
+          "Symfony\\Component\\VarDumper\\": ""
+        },
+        "exclude-from-classmap": ["/Tests/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+      "homepage": "https://symfony.com",
+      "keywords": ["debug", "dump"],
+      "support": {
+        "source": "https://github.com/symfony/var-dumper/tree/v7.1.3"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-07-26T12:41:01+00:00"
+    },
+    {
+      "name": "symfony/var-exporter",
+      "version": "v7.1.2",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/var-exporter.git",
+        "reference": "b80a669a2264609f07f1667f891dbfca25eba44c"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/var-exporter/zipball/b80a669a2264609f07f1667f891dbfca25eba44c",
+        "reference": "b80a669a2264609f07f1667f891dbfca25eba44c",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.2"
+      },
+      "require-dev": {
+        "symfony/property-access": "^6.4|^7.0",
+        "symfony/serializer": "^6.4|^7.0",
+        "symfony/var-dumper": "^6.4|^7.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Component\\VarExporter\\": ""
+        },
+        "exclude-from-classmap": ["/Tests/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Allows exporting any serializable PHP data structure to plain PHP code",
+      "homepage": "https://symfony.com",
+      "keywords": [
+        "clone",
+        "construct",
+        "export",
+        "hydrate",
+        "instantiate",
+        "lazy-loading",
+        "proxy",
+        "serialize"
+      ],
+      "support": {
+        "source": "https://github.com/symfony/var-exporter/tree/v7.1.2"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-06-28T08:00:31+00:00"
+    },
+    {
+      "name": "timber/timber",
+      "version": "v2.2.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/timber/timber.git",
+        "reference": "5fc65f235323e8119fddc3cadbfef39ec97a663a"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/timber/timber/zipball/5fc65f235323e8119fddc3cadbfef39ec97a663a",
+        "reference": "5fc65f235323e8119fddc3cadbfef39ec97a663a",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^8.1",
+        "twig/twig": "^3.5"
+      },
+      "require-dev": {
+        "ergebnis/composer-normalize": "^2.28",
+        "php-parallel-lint/php-parallel-lint": "^1.3",
+        "php-stubs/acf-pro-stubs": "^6.0",
+        "php-stubs/wp-cli-stubs": "^2.0",
+        "phpro/grumphp": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.7",
+        "phpunit/phpunit": "^9.0",
+        "rector/rector": "^1.0",
+        "squizlabs/php_codesniffer": "^3.0",
+        "symplify/easy-coding-standard": "^12.0",
+        "szepeviktor/phpstan-wordpress": "^1.1",
+        "twig/cache-extra": "^3.3",
+        "wpackagist-plugin/advanced-custom-fields": "^6.0",
+        "wpackagist-plugin/co-authors-plus": "^3.6",
+        "yoast/wp-test-utils": "^1.2"
+      },
+      "suggest": {
+        "php-coveralls/php-coveralls": "^2.0 for code coverage",
+        "twig/cache-extra": "For using the cache tag in Twig"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Timber\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Erik van der Bas",
+          "email": "erik@basedonline.nl",
+          "homepage": "https://basedonline.nl"
+        },
+        {
+          "name": "Lukas Gächter",
+          "email": "lukas.gaechter@mind.ch",
+          "homepage": "https://www.mind.ch"
+        },
+        {
+          "name": "Nicolas Lemoine",
+          "email": "nico@n5s.dev",
+          "homepage": "https://n5s.dev"
+        },
+        {
+          "name": "Jared Novack",
+          "email": "jared@upstatement.com",
+          "homepage": "https://upstatement.com"
+        },
+        {
+          "name": "Timber Community",
+          "homepage": "https://github.com/timber/timber"
+        }
+      ],
+      "description": "Create WordPress themes with beautiful OOP code and the Twig Template Engine",
+      "homepage": "https://timber.upstatement.com",
+      "keywords": ["templating", "themes", "timber", "twig", "wordpress"],
+      "support": {
+        "docs": "https://timber.github.io/docs/",
+        "issues": "https://github.com/timber/timber/issues",
+        "source": "https://github.com/timber/timber"
+      },
+      "funding": [
+        {
+          "url": "https://opencollective.com/timber",
+          "type": "open_collective"
+        }
+      ],
+      "time": "2024-05-15T13:47:33+00:00"
+    },
+    {
+      "name": "twig/cache-extra",
+      "version": "v3.10.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/twigphp/cache-extra.git",
+        "reference": "7ffded2e8b466686436c0179dfaac6738ed1a113"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/twigphp/cache-extra/zipball/7ffded2e8b466686436c0179dfaac6738ed1a113",
+        "reference": "7ffded2e8b466686436c0179dfaac6738ed1a113",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.2.5",
+        "symfony/cache": "^5.4|^6.4|^7.0",
+        "twig/twig": "^3.9"
+      },
+      "require-dev": {
+        "symfony/phpunit-bridge": "^6.4|^7.0"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Twig\\Extra\\Cache\\": ""
+        },
+        "exclude-from-classmap": ["/Tests/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Fabien Potencier",
+          "email": "fabien@symfony.com",
+          "homepage": "http://fabien.potencier.org",
+          "role": "Lead Developer"
+        }
+      ],
+      "description": "A Twig extension for Symfony Cache",
+      "homepage": "https://twig.symfony.com",
+      "keywords": ["cache", "html", "twig"],
+      "support": {
+        "source": "https://github.com/twigphp/cache-extra/tree/v3.10.0"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/twig/twig",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-05-11T07:35:57+00:00"
+    },
+    {
+      "name": "twig/twig",
+      "version": "v3.10.3",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/twigphp/Twig.git",
+        "reference": "67f29781ffafa520b0bbfbd8384674b42db04572"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/twigphp/Twig/zipball/67f29781ffafa520b0bbfbd8384674b42db04572",
+        "reference": "67f29781ffafa520b0bbfbd8384674b42db04572",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.2.5",
+        "symfony/deprecation-contracts": "^2.5|^3",
+        "symfony/polyfill-ctype": "^1.8",
+        "symfony/polyfill-mbstring": "^1.3",
+        "symfony/polyfill-php80": "^1.22"
+      },
+      "require-dev": {
+        "psr/container": "^1.0|^2.0",
+        "symfony/phpunit-bridge": "^5.4.9|^6.4|^7.0"
+      },
+      "type": "library",
+      "autoload": {
+        "files": [
+          "src/Resources/core.php",
+          "src/Resources/debug.php",
+          "src/Resources/escaper.php",
+          "src/Resources/string_loader.php"
+        ],
+        "psr-4": {
+          "Twig\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["BSD-3-Clause"],
+      "authors": [
+        {
+          "name": "Fabien Potencier",
+          "email": "fabien@symfony.com",
+          "homepage": "http://fabien.potencier.org",
+          "role": "Lead Developer"
+        },
+        {
+          "name": "Twig Team",
+          "role": "Contributors"
+        },
+        {
+          "name": "Armin Ronacher",
+          "email": "armin.ronacher@active-4.com",
+          "role": "Project Founder"
+        }
+      ],
+      "description": "Twig, the flexible, fast, and secure template language for PHP",
+      "homepage": "https://twig.symfony.com",
+      "keywords": ["templating"],
+      "support": {
+        "issues": "https://github.com/twigphp/Twig/issues",
+        "source": "https://github.com/twigphp/Twig/tree/v3.10.3"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/twig/twig",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-05-16T10:04:27+00:00"
+    },
+    {
+      "name": "vlucas/phpdotenv",
+      "version": "v5.6.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/vlucas/phpdotenv.git",
+        "reference": "a59a13791077fe3d44f90e7133eb68e7d22eaff2"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/a59a13791077fe3d44f90e7133eb68e7d22eaff2",
+        "reference": "a59a13791077fe3d44f90e7133eb68e7d22eaff2",
+        "shasum": ""
+      },
+      "require": {
+        "ext-pcre": "*",
+        "graham-campbell/result-type": "^1.1.3",
+        "php": "^7.2.5 || ^8.0",
+        "phpoption/phpoption": "^1.9.3",
+        "symfony/polyfill-ctype": "^1.24",
+        "symfony/polyfill-mbstring": "^1.24",
+        "symfony/polyfill-php80": "^1.24"
+      },
+      "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8.2",
+        "ext-filter": "*",
+        "phpunit/phpunit": "^8.5.34 || ^9.6.13 || ^10.4.2"
+      },
+      "suggest": {
+        "ext-filter": "Required to use the boolean validator."
+      },
+      "type": "library",
+      "extra": {
+        "bamarni-bin": {
+          "bin-links": true,
+          "forward-command": false
+        },
+        "branch-alias": {
+          "dev-master": "5.6-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Dotenv\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["BSD-3-Clause"],
+      "authors": [
+        {
+          "name": "Graham Campbell",
+          "email": "hello@gjcampbell.co.uk",
+          "homepage": "https://github.com/GrahamCampbell"
+        },
+        {
+          "name": "Vance Lucas",
+          "email": "vance@vancelucas.com",
+          "homepage": "https://github.com/vlucas"
+        }
+      ],
+      "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+      "keywords": ["dotenv", "env", "environment"],
+      "support": {
+        "issues": "https://github.com/vlucas/phpdotenv/issues",
+        "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.1"
+      },
+      "funding": [
+        {
+          "url": "https://github.com/GrahamCampbell",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2024-07-20T21:52:34+00:00"
+    },
+    {
+      "name": "wecodemore/wordpress-early-hook",
+      "version": "1.2.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/wecodemore/wordpress-early-hook.git",
+        "reference": "4a54f490dd1d5a87aa8b8470592df0ec4620be8e"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/wecodemore/wordpress-early-hook/zipball/4a54f490dd1d5a87aa8b8470592df0ec4620be8e",
+        "reference": "4a54f490dd1d5a87aa8b8470592df0ec4620be8e",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.1 < 8.4"
+      },
+      "require-dev": {
+        "inpsyde/php-coding-standards": "^1.0.0",
+        "phpunit/phpunit": "^7.5.20 || ^9.6.4",
+        "roave/security-advisories": "dev-latest",
+        "roots/wordpress-no-content": ">=6.1.1",
+        "vimeo/psalm": "^4.30.0"
+      },
+      "type": "library",
+      "autoload": {
+        "files": ["wordpress-early-hook.php"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Giuseppe Mazzapica",
+          "email": "giuseppe.mazzapica@gmail.com",
+          "homepage": "https://gmazzap.me",
+          "role": "Developer"
+        }
+      ],
+      "description": "Small library to safely add WordPress hooks before WordPress is loaded.",
+      "keywords": [
+        "actions",
+        "filters",
+        "hooks",
+        "wordpress",
+        "wordpress actions",
+        "wordpress filters",
+        "wordpress hooks",
+        "wp",
+        "wp actions",
+        "wp filters",
+        "wp hooks"
+      ],
+      "support": {
+        "issues": "https://github.com/wecodemore/wordpress-early-hook/issues",
+        "source": "https://github.com/wecodemore/wordpress-early-hook"
+      },
+      "time": "2024-01-08T14:44:02+00:00"
+    }
+  ],
+  "packages-dev": [],
+  "aliases": [],
+  "minimum-stability": "dev",
+  "stability-flags": {
+    "djboris88/timber-commented-include": 20
+  },
+  "prefer-stable": true,
+  "prefer-lowest": false,
+  "platform": [],
+  "platform-dev": [],
+  "platform-overrides": {
+    "php": "8.2"
+  },
+  "plugin-api-version": "2.6.0"
+}

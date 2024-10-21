@@ -1,0 +1,32 @@
+.policies-and-guidelines {
+  @include report-top;
+
+  #wb-cont {
+    &.text-center {
+      @extend .container;
+    }
+  }
+  &.full {
+    .box {
+      @extend .container;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+    .toc {
+      margin-top: $padding-xs;
+    }
+  }
+
+  .container-fw {
+    margin-bottom: 35px;
+  }
+
+  .policies {
+    .views-field-field-kind,
+    .views-field-field-type {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}

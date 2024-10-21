@@ -1,0 +1,25 @@
+{%
+  set attributes = create_attribute({
+  'id': sectionID,
+  'data-link-scroll-target-section-id': sectionID,
+  'class': [
+  'content-block-holder',
+  'sk-block',
+  block.block_name,
+  (block_id)? 'block--'~ block_id: '',
+  field.full_width_with_background == 'Yes' ? 'full-width-bg' : '',
+  section_classes,
+  first_block ? 'sk-ftblck' : '',
+  last_block ? 'sk-lstblck' : '',
+  block.className
+
+  ]
+  })
+%}
+{% block block_base %}
+  {% block sk_block %}
+    <section {{ attributes }}>
+      {% block block_content -%}{%- endblock %}
+    </section>
+  {% endblock %}
+{% endblock %}

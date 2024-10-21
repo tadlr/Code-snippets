@@ -1,0 +1,39 @@
+{% set formClass = showForm ? 'mt-5' : 'd-none d-lg-block hide-m-form' %}
+<div class='column col-sm-12 col-md-6 col-lg-6 section-image'>
+  {% if field.design == 'ac' or field.design == 'aa' %}
+    <div class='image'>
+      {{ Image(field.bg_image, 'full',  {width: 1200, height: 425, class: 'media-lander w-100'}) }}
+    </div>
+  {% endif %}
+  <div class='column-inner'>
+    {% if field.design == 'ae' %}
+      <div class='image d-none d-mobile-block d-tablet-block d-desktop-block'>
+        {{ Image(field.bg_image, 'full',  {width: 1200, height: 425, class: 'media-lander w-100'}) }}
+      </div>
+    {% endif %}
+    {% if content_area.cta_type == 'form' and content_area.form_position == 'image' %}
+      {% if content_area.form %}
+        <div class='form-cta form-float sk-sticky'>
+          {% if content_area.form_heading %}
+            <h2 class='form-heading h3 pt-2 c-blue-1'>{{ content_area.form_heading }}</h2>
+          {% endif %}
+          {% if content_area.form_subheading %}
+            <p class='form-subheading c-blue-1'>
+              {{ content_area.form_subheading }}
+            </p>
+          {% endif %}
+          <div class='form-block-area'>
+            <div class='form--container-blg'>
+              {{ content_area.form }}
+            </div>
+          </div>
+          {% if content_area.bellow_form %}
+            <div class='form-footer'>
+              {{ content_area.bellow_form }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

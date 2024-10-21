@@ -1,0 +1,40 @@
+.block-report-problem-block {
+  margin-top: 0;
+
+  details {
+    @include no-padding;
+    margin-top: 0 !important;
+
+    summary {
+      border-color: $gray-lighter !important;
+      margin: 0;
+      text-align: left;
+
+      @media screen and (max-width: $screen-sm-max) {
+        letter-spacing: normal;
+        line-height: normal;
+        white-space: normal;
+      }
+    }
+
+    .well {
+      @include padded;
+      @extend .bg-default;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    form {
+      legend {
+        margin-bottom: $padding-small;
+        padding-bottom: $padding-small;
+      }
+
+      button.form-submit {
+        margin-top: $padding-small;
+        padding: 10px $padding;
+      }
+    }
+  }
+}

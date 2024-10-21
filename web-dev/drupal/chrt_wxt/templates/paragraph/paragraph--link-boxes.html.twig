@@ -1,0 +1,116 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{# conditions #}
+{% set has_title = content.field_title.0|render|trim %}
+
+{# Title options #}
+{% set title_text = content.field_title.0 %}
+{% set section_id = content.field_id.0|render|trim %}
+{% set title_tag = (content.field_heading_tag.0|render|trim is not empty) ? content.field_heading_tag.0 : 'h2' %}
+{% set title_alignment = content.field_title_position.0|render|trim %}
+
+
+
+{# Section's HTML tag #}
+{% set wrapper_tag = (has_title) ? 'section' : 'div' %}
+
+{# Section Classes #}
+{%
+  set classes = [
+	  'page-section',
+    'clearfix',
+    'vertical-padding',
+    'paragraph',
+    paragraph.bundle|clean_class,
+    view_mode|clean_class,
+    content.field_custom_classes.0|render
+  ]
+%}
+
+{% set title_attributes = create_attribute() %}
+
+{% if section_id is not empty %}
+	{% set attributes = attributes.setAttribute('id', section_id) %}
+{% endif %}
+
+{% set title_classes = [
+  "content-title",
+  title_alignment
+] %}
+
+{% set excluded_fields = [
+  'field_title',
+  'field_heading_tag',
+  'field_title_position'
+] %}
+
+{% block paragraph %}
+
+	<{{ wrapper_tag }}{{ attributes.addClass(classes) }}>
+
+		<div class="container">
+			{% block content %}
+				<div class="row">
+        {{ title_suffix }}
+
+					{# add h2/title #}
+					{% if has_title %}
+						<div class="col-xs-12">
+							{% if has_title %}
+								<{{ title_tag }}{{ title_attributes.addClass(title_classes) }}>
+									{{ content.field_title.0['#context']['value']|raw }}
+								</{{ title_tag }}>
+							{% endif %}
+						</div>
+					{% endif %}
+
+          <div class="col-xs-12 boxes">
+					  {{ content|without(excluded_fields) }}
+          </div>
+
+				</div>
+			{% endblock %}
+		</div>
+
+	</{{ wrapper_tag }}>
+
+{% endblock paragraph %}

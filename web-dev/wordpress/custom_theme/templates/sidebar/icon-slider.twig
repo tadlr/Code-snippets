@@ -1,0 +1,38 @@
+<div class='slider-container sk-slider' data-single-slide='true'>
+  <div class='slider-element'>
+    <div class='blaze-container blaze-slider'>
+      <div class='blaze-track-container'>
+        <div class='blaze-track'>
+          {% for index,icon in content.slider %}
+            <div class='slide' data-mh='slider-content-{{sectionID}}'>
+              <div class='icons--item'>
+                {% if icon.image %}
+                  <div class='img--wrap'>
+                    {{ Image(icon.image, 'img-200-200', {'width':200, 'height': 200}) }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class='slider-holder'>
+        <button
+          class='slider-control blaze-prev d-none'
+          data-btn-for='{{uid}}'
+        >
+          <span class='visually-hidden'>{{ 'previous' | t }}</span>
+        </button>
+        <button
+          class='slider-control blaze-next d-none'
+          data-btn-for='{{uid}}'
+        >
+          <span class='visually-hidden'>{{ 'next' | t }}</span>
+        </button>
+      </div>
+      <div class='pagination-wrapper'>
+        <div class='blaze-pagination'></div>
+      </div>
+    </div>
+  </div>
+</div>

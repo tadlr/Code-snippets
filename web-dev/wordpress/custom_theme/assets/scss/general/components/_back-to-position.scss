@@ -1,0 +1,99 @@
+#scroll-back-tooltip {
+  transition: all 500ms ease-in-out;
+  .tooltip-scroll {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+
+    font-size: 13px;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    transition: all 500ms ease-in-out;
+    .closing {
+      line-height: 1;
+      display: block;
+      font-size: 12px;
+      font-weight: 300;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+    .tooltip-content {
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-right: transparent;
+      color: white;
+      padding: 5px 10px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 0, 0, 0.8);
+        color: $blue-1;
+      }
+    }
+    .tooltip-close-btn {
+      font-size: 15px;
+      color: $white;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-left: transparent;
+      border-right: transparent;
+      transition: all 0.3s ease-in-out;
+      padding: 10px;
+      span {
+        font-size: 15px;
+        color: $white;
+      }
+      svg {
+        fill: $white;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 0, 0, 0.8);
+        color: $red-1;
+        svg {
+          fill: $red-1;
+        }
+      }
+    }
+    .tooltip-skip-btn {
+      font-size: 15px;
+      color: $white;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-left: transparent;
+      padding: 10px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      span {
+        transition: all 0.3s ease-in-out;
+        font-size: 15px;
+        color: $white;
+      }
+      svg {
+        fill: $white;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 0, 0, 0.8);
+        color: $red-1;
+        svg {
+          fill: $red-1;
+        }
+      }
+    }
+  }
+  &.hiding {
+    opacity: 0;
+    // visibility: hidden;
+    // transform: translateY(100%);
+  }
+}

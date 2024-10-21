@@ -1,0 +1,13 @@
+// IE only
+@mixin ie {
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+// Microsoft Edge only
+@mixin edge {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}

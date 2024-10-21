@@ -1,0 +1,70 @@
+@mixin accordion_label{
+  @include padded-small;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  color: $text-color!important;
+  font-size: $font-size-h5;
+  list-style-type: none;
+  margin: 0;
+  position: relative;
+  transition: all 400ms;
+
+  &:before{
+    background: url('../assets/svg/arrow-right-white.svg') no-repeat center center / auto 48px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: all 400ms;
+  }
+
+  &:focus{
+    outline: none;
+  }
+
+  &:hover,
+  &:focus{
+    text-decoration: none;
+    color: inherit
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    &:before{
+      height: $padding-large;
+      left: -#{$padding-large};
+      width: $padding-large;
+    }
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    background: linear-gradient(90deg, $brand-primary $padding, $white $padding);
+    padding-left: $padding-large;
+    margin: 0;
+
+    &:before{
+      background-size: 35px;
+      height: $padding;
+      left: 0;
+      width: $padding;
+    }
+  }
+}
+
+@mixin open_accordion_label{
+  border-color: $brand-primary;
+
+  &:before{
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    border-bottom-color: transparentize($brand-primary,.5);
+  }
+}
+
+@mixin accordion_content{
+  @include padded-small;
+  transition: all 400ms;
+}

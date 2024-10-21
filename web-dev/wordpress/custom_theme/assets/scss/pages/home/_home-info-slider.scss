@@ -1,0 +1,307 @@
+.info-slider-section-home {
+  .bg-image {
+    z-index: 1;
+    background-size: cover;
+    background-position: 50% 0%;
+
+    @media screen and ($mobile_all) {
+      background-position: 40% 0%;
+    }
+  }
+
+  .swiper-slide {
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    &.swiper-slide-active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+      pointer-events: all;
+    }
+  }
+
+  .swiper-nav-btn {
+    transition: opacity 0.5s $easeOutSine;
+
+    &.swiper-prev:hover .scroll-btn-img,
+    &.swiper-prev:focus .scroll-btn-img {
+      animation: swiper-nav-hover-prev 1.5s ease-in-out infinite;
+    }
+
+    &.swiper-next:hover .scroll-btn-img,
+    &.swiper-next:focus .scroll-btn-img {
+      animation: swiper-nav-hover-next 1.5s ease-in-out infinite;
+    }
+  }
+
+  .swiper-nav-btn-wrap {
+    transition: opacity 0.5s $easeOutSine;
+    position: absolute;
+    backface-visibility: hidden;
+    z-index: 5;
+    @media screen and ($mobile_sm) {
+      @include vw(bottom, 125px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      bottom: 125px;
+    }
+    @media screen and ($min1024) {
+      @include vw(top, 709px);
+    }
+    @media screen and ($min1920) {
+      top: 709px;
+    }
+  }
+
+  .swiper-nav-btn-wrap-prev {
+    left: calc(50% - 50px);
+    transform: translateX(-50%) rotate(90deg);
+    @media screen and ($min1024) {
+      transform: rotate(90deg);
+      @include vw(left, 1504px);
+    }
+    @media screen and ($min1920) {
+      left: 1504px;
+    }
+  }
+
+  .swiper-nav-btn-wrap-next {
+    left: calc(50% + 50px);
+    transform: translateX(-50%) rotate(-90deg);
+    @media screen and ($min1024) {
+      transform: rotate(-90deg);
+      @include vw(left, 1620px);
+    }
+    @media screen and ($min1920) {
+      left: 1620px;
+    }
+  }
+
+  .txt-size-12 {
+    @include background-contrast-fix;
+    @media screen and ($mobile_sm) {
+      @include vw(margin-bottom, 38px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      margin-bottom: 38px;
+    }
+    @media screen and ($min1024) {
+      @include vw(margin-left, 5px);
+      @include vw(margin-bottom, 59px);
+    }
+
+    @media screen and ($min1920) {
+      margin-left: 5px;
+      margin-bottom: 59px;
+    }
+  }
+
+  .txt-content {
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(margin-left, 5px);
+      @include vw(width, 690px);
+    }
+
+    @media screen and ($min1920) {
+      margin-left: 5px;
+      width: 690px;
+    }
+  }
+
+  .max-w-container {
+    z-index: 3;
+  }
+
+  .content-wrap {
+    z-index: 3;
+    @media screen and ($mobile_sm) {
+      @include vw(padding-top, 328px, 500);
+      @include vw(padding-bottom, 227px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      padding-top: 328px;
+      padding-bottom: 227px;
+    }
+    @media screen and ($min1024) {
+      @include vw(padding-top, 227px);
+      @include vw(padding-bottom, 206px);
+    }
+
+    @media screen and ($min1920) {
+      padding-top: 227px;
+      padding-bottom: 206px;
+    }
+  }
+
+  .quotes-img-wrap {
+    width: 52px;
+    height: 37px;
+    @media screen and ($mobile_sm) {
+      @include vw(margin-bottom, 39px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      margin-bottom: 39px;
+    }
+    @media screen and ($min1024) {
+      @include vw(margin-left, 5px);
+      @include vw(margin-bottom, 26px);
+    }
+
+    @media screen and ($min1920) {
+      margin-left: 5px;
+      margin-bottom: 26px;
+    }
+  }
+
+  .txt-size-44 {
+    @media screen and ($mobile_all) {
+      letter-spacing: 0.1px;
+    }
+  }
+
+  .txt-size-18 {
+    opacity: 0;
+    @media screen and ($mobile_all) {
+      line-height: 1.85;
+    }
+    @media screen and ($mobile_sm) {
+      @include vw(letter-spacing, 1.15px, 500);
+      @include vw(margin-top, 10px, 500);
+      @include vw(padding-left, 37px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      letter-spacing: 1.15px;
+      margin-top: 10px;
+      padding-left: 37px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 44px);
+      @include vw(padding-left, 38px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 44px;
+      padding-left: 38px;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      background-color: $white;
+      backface-visibility: hidden;
+      height: 1px;
+      width: 14px;
+      top: calc(0.75em + 4px);
+      left: 1px;
+
+      @media screen and ($min1024) {
+        top: calc(0.75em + 2px);
+        left: 2px;
+      }
+    }
+  }
+
+  .section-heart-red-svg {
+    z-index: 2;
+    position: absolute;
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    .st0 {
+      fill: $red-2;
+    }
+
+    .st1 {
+      opacity: 0.7;
+      fill: $red-2;
+    }
+
+    &:not(.smaller-heart-top) {
+      @media screen and ($min1024) {
+        bottom: 0;
+        @include vw(left, -37px);
+        @include vw(width, 451px);
+      }
+
+      @media screen and ($min1920) {
+        left: -37px;
+        width: 451px;
+      }
+    }
+
+    &.smaller-heart-top {
+      @media screen and ($min1024) {
+        @include vw(bottom, 594px);
+        @include vw(left, 852px);
+        @include vw(width, 83px);
+      }
+
+      @media screen and ($min1920) {
+        bottom: 594px;
+        left: 852px;
+        width: 83px;
+      }
+    }
+  }
+
+  .section-heart-paths-canvas {
+    z-index: 2;
+    position: absolute;
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 445px);
+      @include vw(height, 453px);
+    }
+
+    @media screen and ($min1920) {
+      width: 445px;
+      height: 453px;
+    }
+  }
+
+  .paths-icon-1 {
+    @media screen and ($min1024) {
+      bottom: 0;
+      @include vw(right, -182px);
+    }
+
+    @media screen and ($min1920) {
+      right: -182px;
+    }
+  }
+
+  .paths-icon-2 {
+    @media screen and ($min1024) {
+      bottom: 0;
+      @include vw(right, 262px);
+    }
+
+    @media screen and ($min1920) {
+      right: 262px;
+    }
+  }
+
+  .paths-icon-3 {
+    @media screen and ($min1024) {
+      @include vw(bottom, 452px);
+      @include vw(right, -182px);
+    }
+
+    @media screen and ($min1920) {
+      bottom: 452px;
+      right: -182px;
+    }
+  }
+}

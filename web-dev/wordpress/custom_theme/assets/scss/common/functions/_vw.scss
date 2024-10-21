@@ -1,0 +1,27 @@
+@use 'sass:math';
+$viewport_width: 1920px;
+
+@function getVM($values, $viewport: $viewport_width) {
+  $property_values: (); // Initialize an empty list
+
+  @for $i from 1 through length($values) {
+    $px_value: nth($values, $i);
+    $vw_value: 0vw;
+
+    // If the pixel value isn't 0, convert it to vw
+    @if $px_value != 0px and $px_value != 0 {
+      $vw_value: numberRound(math.div($px_value, $viewport) * 100, 3);
+      @if unit($vw_value) == 'px' {
+        $vw_value: strip-unit($vw_value); // Make the value unitless
+      }
+    }
+    // Else, the vw_value remains 0vw
+
+    $property_values: append(
+      $property_values,
+      $vw_value + vw
+    ); // Append the calculated value to the list
+  }
+
+  @return $property_values; // Return the list of values
+}

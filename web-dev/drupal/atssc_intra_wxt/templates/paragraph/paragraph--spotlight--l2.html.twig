@@ -1,0 +1,15 @@
+{% extends "paragraph--spotlight.html.twig" %}
+
+{% block content %}
+  <h2 class="spotlight-title eqht-trgt">
+    {% if content.field_url.0|render is not empty %}
+      <a href="{{ content.field_url.0 }}" title="{{ content.field_title.0 }}" class="stretched-link">
+    {% endif %}
+
+    {{ content.field_title.0 }}
+
+    {% if content.field_url.0|render is not empty %}
+      </a>
+    {% endif %}
+  </h2>
+{% endblock %}

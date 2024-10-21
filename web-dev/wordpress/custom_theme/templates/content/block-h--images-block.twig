@@ -1,0 +1,59 @@
+{% if is_preview %}
+  [J] Three columns with icons
+{% endif %}
+{% block content %}
+  {% set heading = field.heading %}
+  {% set blockHeading = field.block_heading %}
+  {% set content = field.content %}
+  {% set footer = field.footer %}
+  {% set classes = (field.full_width_with_background == 'Yes') ? "full-width-bg" : "" %}
+  {% set classes = classes ~ (blockHeading ? " w-content" : "") %}
+  {% set classes = classes ~ (footer ? " w-footer" : "") %}
+  {% set extraClasses = field.section_classes %}
+  <div
+    id='{{ sectionID }}'
+    class='content-block-holder {{ classes }} {{ extraClasses }} sk-block block--h'
+    data-link-scroll-target-section-id='{{sectionID}}'
+  >
+    <div class='container'>
+      <div class='row'>
+        {{ include('field/field--full-w-heading.twig', { heading: blockHeading, content: content }) }}
+        <div class='images-block content-block'>
+          {% if heading %}
+            <p class='txt-size-12 c-blue-1 ff-libre upper fw-400 ltr-spc-pos-2_8 section-title'>{{ heading }}</p>
+          {% endif %}
+          <div class='row px-0 d-flex justify-content-lg-start justify-content-sm-center align-items-center'>
+            {% if fn('have_rows', 'images') %}
+              {% for row in fn('get_field', 'images') %}
+                <div
+                  class='image-item col-xs-2 col-md-4 col-lg-2 py-4 mx-0 text-center'
+                  data-mh='company-h'
+                >
+                  {% if row.link %}
+                    <a href='{{ row['link'] }}' rel='noopener noreferrer' target='_blank' class='image-item-link'>
+                  {% endif %}
+                  {% set image = row['image'] %}
+                  <div class='company-logo' data-mh='company-logo-h'>
+                    {{ Image(image, 'full', {'class':'header-img', 'width': 150, 'height': 50}) }}
+                  </div>
+                  {% if row.subheading %}
+                    <p class='company-name' data-mh='company-name-h'>{{ row.subheading }}</p>
+                  {% endif %}
+                  {% if row.link %}
+                    </a>
+                  {% endif %}
+                  <div class='company-logo visually-hidden' data-mh='company-logo-h'></div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        {% if footer %}
+          <div class='content-block plain-txt-block op-0'>
+            {{ footer | raw }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

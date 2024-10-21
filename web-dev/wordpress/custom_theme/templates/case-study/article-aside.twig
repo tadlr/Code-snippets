@@ -1,0 +1,19 @@
+<div class='sk-sticky'>
+  <div class='posts-sidebar'>
+    {% for index,content in field.slidebar_content %}
+      {% set layout = content.acf_fc_layout %}
+
+      {% if layout == 'slider' %}
+        <div class='d-none d-desktop-block'>
+          {% include 'sidebar/icon-col.twig' %}
+        </div>
+        {# {% elseif layout == 'icon_slider' %}
+        {% include 'icon-slider.twig' %}
+        {% elseif layout == 'icon_row' %}
+        {% include 'icon-row.twig' %}
+        {% elseif layout == 'blog_icons' %}
+        {% include 'blog-icons.twig' %} #}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

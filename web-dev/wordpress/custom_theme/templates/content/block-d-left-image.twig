@@ -1,0 +1,42 @@
+{% if is_preview %}
+  [D] Left side image
+{% endif %}
+{% set left_image = field.left_image %}
+{% set heading = left_image.heading %}
+{% set content = left_image.content %}
+{% set headingColor = left_image.heading_color %}
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} sk-block block--d media-content-block'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='container'>
+    <div class='media-block media-left video-media content-block row row-eq-height'>
+      <div class='txt-content op-0 col-sm-12 col-lg-6'>
+        {% set regexPattern = '~^<h(\d+)>.*<\/h\1>$~' %}
+        {% if heading starts with '<h' or heading matches regexPattern %}
+          {{ heading }}
+        {% else %}
+          <h2>
+            {{ heading|striptags('<br><span>') }}
+          </h2>
+        {% endif %}
+        {% if content %}
+          <div class='mt-3'>
+            {{ content | raw }}
+          </div>
+        {% endif %}
+        {% include 'field/field--cta-btn.twig' %}
+      </div>
+      
+      <div class='img-wrap col-sm-12 d-flex justify-content-center col-lg-6 h-100'>
+        <div class='img-content'>
+          {% if left_image.image %}
+            {{ Image(left_image.image, 'img-450-450', {'width':450, 'height': 450}) }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

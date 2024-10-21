@@ -1,0 +1,76 @@
+/**
+ * FILEPATH: /Users/tay/AC-Git/goodeals-rn/src/styles/DealsCard.css
+ *
+ * This CSS file contains styles for the DealsCard component.
+ */
+
+/**
+ * Styles for the featured-row class.
+ */
+.featured-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 8;
+}
+
+/**
+ * Styles for the deal-card class.
+ */
+.deal-card {
+  width: 48%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 8;
+}
+
+/**
+ * Styles for the top-container class.
+ */
+.top-container {
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: space-around; */
+  /* gap: 5; */
+  margin-bottom: 0;
+  margin-top: 10;
+}
+
+/**
+ * Styles for the featured-card class.
+ */
+.featured-card {
+  width: 200;
+  padding: 0 20;
+  border-radius: 8;
+}
+
+/**
+ * Styles for the featured-card-image class.
+ */
+.featured-card-image {
+  width: 106;
+  height: 100%;
+  border-radius: 8;
+}
+
+/**
+ * Styles for the store-logo class.
+ */
+.store-logo {
+  width: 28;
+  height: 28;
+}
+
+.store-logo-details {
+  width: 20;
+  height: 20;
+}
+
+/**
+ * Styles for the product-image class.
+ */
+.product-image {
+  height: 80;
+  width: 92;
+  border-radius: 8;
+}

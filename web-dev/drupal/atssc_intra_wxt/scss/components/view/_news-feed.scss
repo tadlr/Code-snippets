@@ -1,0 +1,87 @@
+.news-filters {
+  background-color: $light;
+
+  > .container {
+    position: relative;
+  }
+
+  .views-exposed-form .form--inline {
+    display: grid;
+    column-gap: 50px;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    row-gap: 20px;
+    width: 100%;
+  }
+
+  .control-label {
+    color: $brand-primary;
+    margin-right: 15px;
+  }
+
+  .form-item {
+    display: flex;
+    align-items: center;
+
+    .control-label {
+      min-width: 75px;
+    }
+    .select-wrapper {
+      flex-grow: 1;
+    }
+  }
+
+  .form-item-search {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .form-item-type {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .form-item-year {
+    grid-column: 2;
+    grid-row: 2;
+
+    .form-control {
+      display: inline-block;
+      padding-right: 70px;
+    }
+  }
+
+  .form-item-field-topics {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .form-item-items-per-page {
+    text-align: right;
+    grid-column: 3;
+    grid-row: 1;
+
+    .select-wrapper {
+      display: inline-block;
+    }
+  }
+
+  .form-actions {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
+
+.view-news-feed {
+  .content.row {
+    display: flex;
+    align-items: center;
+
+    h3 {
+      margin-top: 0px;
+    }
+
+    .news--date {
+      margin-bottom: 0px;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{# page-bk7--multicircles #}
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('inner-info-img-video-section ov-hidden prel offset-x-mobile-38 offset-x-desktop-325') %}
+
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% set sectionHeading = field.section_heading %}
+  {% set sectionImage = field.section_image %}
+  {% set headingColour = field.section_heading_color %}
+  {% set sectionContent = field.section_content %}
+  {% set videoText  = field.video_text %}
+
+  <div class='max-w-container w-1265 prel sk-content-block'>
+    <div class='block--elements'>
+      <div class='main-img-wrapper'>
+        {{ Image(sectionImage, 'img-500-500', {'class' : 'section-main-img', 'width' : 500, 'height' : 500}) }}
+      </div>
+      <div class='img-circles-wrap d-mobile-none'>
+        <div class='background-target-circle-transparent low-opacity'>
+          <div class='background-target-circle-inner'></div>
+        </div>
+        <div class='background-target-circle-transparent'>
+          <div class='background-target-circle-inner'></div>
+        </div>
+        <div class='circles-img-wrap'>
+          <div
+            class='img-wrapper aspect-ratio-1-1'
+            style="background-image: url('{{ wp_get_attachment_image_url(field["circle-image-1"], "img-330-330") }}')"
+          >
+            {# {{ Image(field["circle-image-1"], 'img-330-330', {'class' : 'section-circle-img', 'width' : 330, 'height' : 330}) }} #}
+          </div>
+        </div>
+        <div class='circles-img-wrap'>
+          <div
+            class='img-wrapper aspect-ratio-1-1'
+            style="background-image: url('{{ wp_get_attachment_image_url(field["circle-image-2"], "img-330-330") }}')"
+          >
+            {# {{ Image(field["circle-image-2"], 'img-330-330', {'class' : 'section-circle-img', 'width' : 330, 'height' : 330}) }} #}
+          </div>
+        </div>
+        <div class='circles-img-wrap'>
+          <div
+            class='img-wrapper aspect-ratio-1-1'
+            style="background-image: url('{{ wp_get_attachment_image_url(field["circle-image-3"], "img-330-330") }}')"
+          >
+            {# {{ Image(field["circle-image-3"], 'img-330-330', {'class' : 'section-circle-img', 'width' : 330, 'height' : 330}) }} #}
+          </div>
+        </div>
+        <div class='btn-wrap'>
+          {% if (field.video_embed_link) %}
+            <button
+              data-video-id='{{video_id}}'
+              data-video-embed-id='{{video_id}}'
+              class='btn-play-video-plain txt-size-24 lh-1_2 ltr-spc-pos-0_2 c-blue-1 fw-600'
+            >
+              <span class='play-video-plain-icon'></span>
+              <span class='btn-txt'>{{ videoText }}</span>
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class='txt-content prel'>
+      <h2
+        class='h1 txt-size-100 txt-size-60-m lh-1 c-blue-1 ltr-spc-pos-1 heading-anim'
+        style='color:{{headingColour}}'
+      >
+        {{ sectionHeading|striptags('<b><strong><a>') }}
+      </h2>
+      <div class='txt-post-rtf fw-400 c-blue-1 txt-size-18 lh-1_66 ltr-spc-pos-0_3'>
+        {{ sectionContent }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

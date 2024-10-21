@@ -1,0 +1,1 @@
+{"version":3,"sources":["four-columns.scss","four-columns.css"],"names":[],"mappings":"AAEE,uBACE,8BCDJ","file":"four-columns.css","sourcesContent":["@import 'block-base';\n.block--k {\n  .txt-content {\n    margin-bottom: 1.3rem !important;\n  }\n}\n",".block--k .txt-content {\n  margin-bottom: 1.3rem !important;\n}"]}

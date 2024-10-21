@@ -1,0 +1,108 @@
+.block--sk1.sk-hero-ac {
+  background-position: top right;
+  background-size: 55%;
+  position: relative;
+
+  @media screen and ($mobile) {
+    background-image: unset;
+    background-size: 0px;
+  }
+  .container-fw {
+    position: relative;
+  }
+
+  .section-image {
+    overflow: hidden;
+    @media screen and ($mobile) {
+      display: none !important;
+      margin-top: 0 !important;
+    }
+
+    &:before {
+      @media screen and ($min720) {
+        content: '';
+        position: absolute;
+        width: 35%;
+        height: 100%;
+        left: 0;
+        background-image: url($ROOT_PATH + 'media/svgs/hero-circle.svg');
+        background-repeat: no-repeat;
+
+        background-size: 140px 100%;
+        z-index: 1;
+      }
+      @media screen and ($max990) {
+        background-size: 50px 100%;
+      }
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    picture {
+      height: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+      }
+    }
+  }
+
+  picture {
+    display: flex;
+  }
+
+  .column-content {
+    @media screen and ($mobile) {
+      padding-top: 2rem !important;
+      // padding-bottom: 2rem;
+    }
+    // @media screen and (max-width: 500px) {
+    //     margin-top: 80px;
+    // }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @media screen and ($mobile) {
+      z-index: -1;
+    }
+  }
+  .column-content {
+    position: relative;
+    background-color: $blue-1;
+    h1,
+    p,
+    ul,
+    li,
+    .title-highlight {
+      color: $white;
+    }
+  }
+
+  .mobile-pic {
+    @media screen and ($mobile) {
+      position: relative;
+      z-index: -1;
+
+      img {
+        max-height: 450px;
+        object-fit: cover;
+
+        object-position: top center;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      margin-top: 80px;
+    }
+  }
+}

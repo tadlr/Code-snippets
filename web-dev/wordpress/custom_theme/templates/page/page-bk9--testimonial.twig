@@ -1,0 +1,85 @@
+{# page-bk9--testimonial #}
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('info-slider-section-home prel offset-x-mobile-38 offset-x-desktop-35 ov-hidden info-slider-new-business') %}
+
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% set testimonial = field.testimonial_section %}
+
+  <div class='op-0'>
+    {% set heroBackground = testimonial.background_image %}
+    {% set size = 'full' %}
+    {% if heroBackground %}
+      {% set testimonialImg_url = wp_get_attachment_image_url(heroBackground, size) %}
+    {% endif %}
+
+    <div class='bg-image b-lazy no-mobile-parallax' data-src='{{ testimonialImg_url }}'></div>
+    <div class='max-w-container w-1850 prel'>
+      <svg class='section-heart-red-svg smaller-heart-top' viewbox='0 0 205.7 205.7'>
+        <path class="st0" d="M137.2 68.6C137.2 30.7 106.4 0 68.6 0 30.7 0 0 30.7 0 68.6"/>
+        <path class="st0" d="M137.1 205.7c37.9 0 68.6-30.7 68.6-68.6 0-37.9-30.7-68.6-68.6-68.6"/>
+        <path class="st1" d="M0 68.6h137.2v137.2H0z"/>
+      </svg>
+      <svg class='section-heart-red-svg' viewbox='0 0 205.7 205.7'>
+        <path class="st0" d="M137.2 68.6C137.2 30.7 106.4 0 68.6 0 30.7 0 0 30.7 0 68.6"/>
+        <path class="st0" d="M137.1 205.7c37.9 0 68.6-30.7 68.6-68.6 0-37.9-30.7-68.6-68.6-68.6"/>
+        <path class="st1" d="M0 68.6h137.2v137.2H0z"/>
+      </svg>
+      <canvas
+        data-url='{{ get_template_directory_uri() }}/assets/animations/rive/section_heart_paths_anim.riv'
+        width='445'
+        height='453'
+        data-delay='0'
+        class='background-draw-svg section-heart-paths-canvas paths-icon-1 riv-anim'
+      ></canvas>
+      <canvas
+        data-url='{{ get_template_directory_uri() }}/assets/animations/rive/section_heart_paths_anim.riv'
+        width='445'
+        height='453'
+        data-delay='1'
+        class='background-draw-svg section-heart-paths-canvas paths-icon-2 riv-anim'
+      ></canvas>
+      <canvas
+        data-url='{{ get_template_directory_uri() }}/assets/animations/rive/section_heart_paths_anim.riv'
+        width='445'
+        height='453'
+        data-delay='2'
+        class='background-draw-svg section-heart-paths-canvas paths-icon-3 riv-anim'
+      ></canvas>
+      <div class='content-wrap prel offset-x-desktop-158'>
+        <p class='txt-size-12 lh-1 ff-libre upper fw-400 ltr-spc-pos-4_8'>{{ testimonial.small_heading }}</p>
+
+        <div class='prel'>
+          <div class='swiper-wrapper'>
+            <div class='swiper-slide'>
+              <div class='txt-content'>
+                <div class='quotes-img-wrap'>
+                  <img
+                    width='52'
+                    height='37'
+                    class='quotes-img b-lazy dont-show'
+                    data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/quote-icon.webp'
+                    alt=''
+                    role='presentation'
+                  >
+                </div>
+                <p class='txt-size-44 txt-size-30-m ff-redhat lh-1_09 fw-700 ltr-spc-pos-0_25'>
+                  <span aria-hidden='true' class='linesWordsLines'>
+                    {{ testimonial.testimonial }}
+                  </span>
+                </p>
+                <p class='txt-size-18 ff-libre fw-400 ltr-spc-pos-0_15 lh-1_66 prel inline_block quote-by-txt'>
+                  {{ testimonial.testimonial_author }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

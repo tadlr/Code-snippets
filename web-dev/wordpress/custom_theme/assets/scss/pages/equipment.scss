@@ -1,0 +1,174 @@
+@import 'pages';
+
+.single-equipment {
+  .txt-blocks-layout-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    @media screen and (max-width: 500px) {
+      .sk-block-0 {
+        margin-top: 0px !important;
+      }
+      .content-block-holder {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .txt-btn-info-blue-section .btn-wrap {
+    margin-top: 0;
+  }
+
+  .page-block-holder.sk-content-block.sk-page-section-circle {
+    margin-top: -3vw;
+  }
+
+  .txt-btn-info-blue-section {
+    background-color: $blue-1;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .txt-blocks-content {
+      padding-top: 32px;
+      @media screen and ($max1024) {
+        padding-bottom: 32px;
+      }
+    }
+
+    .txt-block {
+      width: 100%;
+      @media screen and ($mobile_all) {
+        &:not(:last-of-type) {
+          margin: 0 0 25px;
+        }
+      }
+      @media screen and ($min1024) {
+        @include vw(margin, 0 70px);
+        width: calc(50% - 7.292vw);
+
+        &:last-of-type .txt-post-rtf {
+          @include vw(padding-right, 10px);
+        }
+      }
+
+      @media screen and ($min1920) {
+        margin: 0 70px;
+        width: calc(50% - 140px);
+
+        &:last-of-type .txt-post-rtf {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  .banner-txt-section {
+    background-color: $blue-19;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @media screen and ($min1024) {
+      @include vw(padding-top, 84px);
+      @include vw(padding-bottom, 86px);
+    }
+
+    @media screen and ($min1920) {
+      padding-top: 84px;
+      padding-bottom: 86px;
+    }
+
+    .bg-image {
+      background-size: cover;
+      background-position: 65% 0%;
+      background-position: 65% 0%;
+
+      @media screen and ($mobile_all) {
+        &::before {
+          content: '';
+          display: inline-block;
+          @include abs-cover-el;
+          background-color: $blue-19;
+          opacity: 0.8;
+        }
+      }
+
+      @media screen and ($min1024) {
+        background-position: 50% 0%;
+      }
+    }
+
+    .txt-content {
+      width: 100%;
+
+      @media screen and ($min1024) {
+        @include vw(width, 530px);
+      }
+
+      @media screen and ($min1920) {
+        width: 530px;
+      }
+    }
+
+    .txt-size-30 {
+      margin-bottom: 25px;
+
+      @media screen and ($min1024) {
+        @include vw(margin-bottom, 38px);
+      }
+
+      @media screen and ($min1920) {
+        margin-bottom: 38px;
+      }
+    }
+
+    .txt-post-rtf {
+      p:not(:last-of-type) {
+        @media screen and ($min1024) {
+          @include vw(margin-bottom, 30px);
+        }
+
+        @media screen and ($min1920) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .equipment-companies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 130px);
+    }
+
+    @media screen and ($mobile_all) {
+      margin-top: 40px;
+    }
+
+    .single-logo {
+      @media screen and ($min1024) {
+        margin: 0 50px;
+      }
+
+      @media screen and ($mobile_all) {
+        margin: 0 20px;
+      }
+    }
+  }
+
+  .equipment-result {
+    margin-top: 15px;
+  }
+
+  .equipment-suggestion {
+    @media screen and ($min1024) {
+      margin-top: 40px;
+    }
+
+    @media screen and ($mobile_all) {
+      margin-top: 20px;
+    }
+  }
+}

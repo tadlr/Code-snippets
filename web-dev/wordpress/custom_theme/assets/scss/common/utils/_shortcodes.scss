@@ -1,0 +1,51 @@
+.form-shortcode {
+  &.newsletter-form {
+    .hbspt-form {
+      padding: 0;
+      background-color: transparent;
+
+      .hs-input:not(input[type='checkbox']) {
+        color: $blue-1;
+      }
+
+      .hs-form-field label:not(.hs-form-checkbox-display):not(.hs-error-msg) {
+        background-color: $white;
+        color: $blue-1;
+      }
+
+      .hs-error-msg.hs-main-font-element,
+      .hs-error-msgs .hs-main-font-element {
+        color: $coral !important;
+      }
+
+      .hs_submit {
+        width: 100%;
+        .hs-button {
+          width: 100%;
+
+          &:hover,
+          &:focus {
+            background-color: $blue-1;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    form {
+      flex-direction: column;
+      margin-top: 39px;
+      margin-left: 0;
+      // width: 80%;
+    }
+  }
+}
+
+.full-width-bg {
+  .form-shortcode.newsletter-form
+    .hbspt-form
+    .hs-form-field
+    label:not(.hs-form-checkbox-display):not(.hs-error-msg) {
+    background-color: $fw-bg;
+  }
+}

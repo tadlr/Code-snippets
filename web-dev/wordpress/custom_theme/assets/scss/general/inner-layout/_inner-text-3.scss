@@ -1,0 +1,119 @@
+.inner-txt-section-type-3 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow: hidden;
+
+  @media screen and ($min1024) {
+    @include vw(padding-top, 168px);
+    @include vw(padding-bottom, 190px);
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 168px;
+    padding-bottom: 190px;
+  }
+
+  .bg-image {
+    z-index: 1;
+    background-size: cover;
+  }
+
+  .color-overlay {
+    z-index: 2;
+    background-color: $blue-9;
+  }
+
+  .max-w-container {
+    z-index: 3;
+  }
+
+  .txt-content {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+  }
+
+  .single-block {
+    position: relative;
+    flex: 0 1 auto;
+    width: 100%;
+
+    @media screen and ($min1024) {
+      width: 50%;
+      @include vw(padding-top, 27px);
+      @include vw(padding-bottom, 31px);
+    }
+
+    @media screen and ($min1920) {
+      padding-top: $contentPadding;
+      padding-bottom: 31px;
+    }
+
+    &:first-of-type {
+      @media screen and ($mobile_all) {
+        padding-bottom: 40px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(padding-right, 160px);
+
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: calc(100% + 2px);
+          width: 1px;
+          height: 100%;
+          background-color: $gray-11;
+        }
+      }
+
+      @media screen and ($min1920) {
+        padding-right: 210px;
+      }
+    }
+
+    &:last-of-type {
+      @media screen and ($min1024) {
+        @include vw(padding-left, 200px);
+      }
+
+      @media screen and ($min1920) {
+        padding-left: 266px;
+      }
+    }
+  }
+
+  .txt-size-48 {
+    margin-bottom: 15px;
+
+    @media screen and ($min500) {
+      margin-bottom: 25px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 25px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .txt-post-rtf {
+    margin-bottom: 15px;
+
+    @media screen and ($min500) {
+      margin-bottom: 28px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 28px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 28px;
+    }
+  }
+}

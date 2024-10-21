@@ -1,0 +1,236 @@
+.article-content,
+.sk-lander {
+  .hbspt-form {
+    .hs-input {
+      &:not(input[type='checkbox']) {
+        background-color: transparent !important;
+        border: 1px solid $blue-23;
+        font-weight: 400;
+        color: $white;
+        font-size: 18px !important;
+        line-height: 30px !important;
+        letter-spacing: 0.4px;
+        transition:
+          border 0.5s $easeOutSine,
+          color 0.5s $easeOutSine;
+        font-family: $libre;
+
+        display: flex;
+        height: 42px !important;
+        width: 100% !important;
+        padding: 0 15px;
+        line-height: 42px;
+        // letter-spacing: 0.021vw;
+        // appearance: auto;
+        // align-items: center;
+      }
+      &::placeholder {
+        opacity: 1;
+        font-size: 12px;
+        font-style: normal;
+        color: $white;
+      }
+    }
+    textarea.hs-input {
+      &:not(input[type='checkbox']) {
+        height: auto !important;
+        min-height: 125px !important;
+        padding: 10px 15px;
+        line-height: 1.5em !important;
+      }
+    }
+    .hs-input[type='number'] {
+      &::placeholder {
+        opacity: 1;
+        font-size: 14px;
+        color: $white;
+      }
+    }
+    .hs-fieldtype-checkbox {
+      border: 1px solid $blue-23;
+      display: flex;
+      flex-direction: column;
+      .input {
+        margin-right: 0 !important;
+      }
+      label {
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 0;
+      }
+      > label {
+        @media screen and ($max1024) {
+          padding-top: 10px !important;
+        }
+      }
+      .inputs-list {
+        padding-top: 0;
+        padding-left: 20px;
+        list-style-type: none;
+        margin-bottom: 20px;
+
+        @media screen and ($min1024) {
+          padding-top: 10px;
+          padding-left: 20px;
+          padding-bottom: 20px;
+        }
+
+        &.hs-error-msgs {
+          font-family: $libre;
+          padding-top: 0;
+          padding-left: 20px;
+          padding-bottom: 10px;
+        }
+
+        li {
+          margin-bottom: 15px;
+          color: $white;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+          > label > input {
+            margin-top: 3px;
+          }
+        }
+        .check-desc {
+          display: block;
+          font-size: 12px;
+          letter-spacing: 0.25px;
+        }
+      }
+      .hs-form-checkbox-display {
+        display: flex;
+
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        font-family: $libre;
+      }
+    }
+    .hs-fieldtype-file {
+      label {
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 0;
+      }
+    }
+    .inputs-list {
+      padding-left: 0px;
+    }
+    .hs-input[type='checkbox'] {
+      display: inline-block !important;
+      height: 15px !important;
+      width: 15px !important;
+      margin-right: 5px;
+      padding: 0;
+      background: transparent !important;
+      border: solid 1px #6682ca;
+      appearance: auto !important;
+    }
+    select.hs-input {
+      width: 100% !important;
+      height: 42px;
+      padding: 0 15px;
+      color: $white;
+      background: transparent !important;
+      border: 1px solid #6682ca;
+      option {
+        font-size: 18px;
+        color: $blue-1;
+        background: #fff;
+      }
+    }
+
+    .input {
+      .hs-form-booleancheckbox-display {
+        a {
+          color: $green-1;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .hs-recaptcha {
+      margin-top: 20px;
+    }
+    .hs-button:not([type='submit']) {
+      width: auto !important;
+      padding: 1.198vw 3.125vw !important;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      &:hover {
+        background: #fff !important;
+      }
+      // &:focus {
+      //   background: #fff !important;
+      // }
+    }
+
+    .hs-submit {
+      .hs-button {
+        background-color: $green-1;
+        color: $blue-1;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 40px;
+        z-index: 0;
+        transition:
+          transform 0.6s $easeOutSine,
+          background-color 0.6s $easeOutSine;
+        backface-visibility: hidden;
+        font-weight: 700;
+        border: none;
+
+        @media screen and ($mobile_sm) {
+          @include vw(padding, 21px 45px, 500);
+        }
+
+        @media screen and ($mobile_lg) {
+          padding: 21px 45px;
+          font-size: 18px;
+        }
+
+        @media screen and ($min1024) {
+          @include vw(padding, 21px 45px);
+        }
+
+        @media screen and ($min1920) {
+          padding: 21px 45px;
+          font-size: 18px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -5px;
+          left: 0;
+          width: 130%;
+          height: calc(100% + 10px);
+          z-index: 0;
+          transform-origin: 0 0;
+          transform: translateX(100%) skewX(-45deg);
+          transition:
+            transform 0.5s $easeOutSine,
+            background-color 0.5s $easeOutSine;
+          backface-visibility: hidden;
+        }
+        // &:hover,
+        //         &:focus {
+        &:hover {
+          background-color: $white;
+          transform: scale(1.05);
+
+          &::before {
+            transform: translateX(0) skewX(-45deg) scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}

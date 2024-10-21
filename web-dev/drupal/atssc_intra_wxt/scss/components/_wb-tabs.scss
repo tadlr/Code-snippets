@@ -1,0 +1,90 @@
+.wb-tabs {
+  @media screen and (min-width: $screen-md-min) {
+    [role="tablist"].generated {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 0 15px;
+      gap: 10px;
+
+      > li {
+        background: none;
+        border: none;
+        display: block;
+        left: 0;
+
+        padding: 0;
+        flex: 1;
+
+        a {
+          align-items: center;
+          justify-content: center;
+
+          border-bottom: none;
+          border-radius: 8px 8px 0 0;
+
+          display: flex;
+          height: 100%;
+          background-color: $green;
+          padding: 10px;
+          text-align: center;
+          min-height: 85px;
+          color: $cyan;
+
+          text-align: center;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 30px;
+          transition: all 0.3s ease;
+
+          &:hover,
+          &:focus {
+            background: $cyan;
+            color: $white;
+          }
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        &.active {
+          a {
+            border: 1px solid rgba(0, 79, 87, 0.4);
+            border-bottom: 0;
+            background: $white;
+            color: $cyan;
+          }
+        }
+      }
+    }
+
+    .tabpanels {
+      > details {
+        @include padded;
+        background: $white;
+        border: 1px solid rgba(0, 79, 87, 0.4);
+        border-radius: 8px;
+      }
+      .h2,
+      h2,
+      .h3,
+      h3,
+      .h4,
+      h4,
+      .h5,
+      h5,
+      .h6,
+      h6 {
+        margin-top: 0;
+      }
+      margin-top: 0px;
+    }
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    border: none;
+  }
+}

@@ -1,0 +1,217 @@
+.img-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    object-fit: contain;
+    object-position: 50% 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  &.aspect-ratio-111-52 {
+    @include aspectRatioBox(111px, 52px);
+  }
+
+  &.aspect-ratio-180-70 {
+    @include aspectRatioBox(180px, 70px);
+  }
+
+  &.aspect-ratio-172-117 {
+    @include aspectRatioBox(172px, 117px);
+  }
+
+  &.aspect-ratio-170-170 {
+    @include aspectRatioBox(170px, 170px);
+  }
+
+  &.aspect-ratio-21-15 {
+    @include aspectRatioBox(21px, 15px);
+  }
+
+  &.aspect-ratio-1-1 {
+    @include aspectRatioBox(1px, 1px);
+  }
+
+  &.aspect-ratio-518-292 {
+    @include aspectRatioBox(518px, 292px);
+  }
+}
+
+.parallax-img {
+  @media screen and ($mobile_all) {
+    height: calc(100% + 100px);
+  }
+}
+
+.swiper-prev,
+.swiper-next {
+  cursor: pointer;
+
+  &.swiper-button-disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed;
+  }
+}
+
+.b-lazy:not(.dont-show) {
+  opacity: 0;
+  transition: opacity 0.5s $easeOutSine;
+
+  &.b-loaded {
+    opacity: 1;
+  }
+}
+
+.line-outer {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  // height: 1px;
+  // width: 1px;
+  overflow: hidden;
+  clip: rect(
+    1px 1px 1px 1px
+  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(
+    1px,
+    1px,
+    1px,
+    1px
+  ); /*maybe deprecated but we need to support legacy browsers */
+  clip-path: inset(
+    50%
+  ); /*modern browsers, clip-path works inwards from each corner*/
+  // white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  // opacity: 0;
+  color: transparent !important;
+  background-color: transparent !important;
+  text-decoration: none;
+  font-size: inherit;
+  width: fit-content;
+  height: fit-content;
+  br {
+    display: none;
+  }
+}
+
+.op-0 {
+  opacity: 0;
+}
+
+.anim-translate-y {
+  backface-visibility: hidden;
+}
+
+.char {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: opacity;
+}
+
+// global reusables
+html {
+  scrollbar-color: $green-1 rgba(222, 222, 222, 0.75);
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $green-1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(222, 222, 222, 0.75);
+  border-radius: 5px;
+  box-shadow: inset -30px 10px 12px #f0f0f0;
+}
+
+[data-scroll-container-inner] {
+  .scrollbar-track {
+    background: rgba(222, 222, 222, 0.75);
+    border-radius: 5px;
+    box-shadow: inset -30px 10px 12px #f0f0f0;
+  }
+
+  .scrollbar-thumb {
+    background: $green-1;
+  }
+}
+
+#__bs_notify__,
+#__bs_notify__ *,
+.bs-msg {
+  font-size: 16px !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+  z-index: 10000000;
+}
+
+.hbspt-form .hs-input:not(input[type='checkbox'])::placeholder {
+  font-size: 14px !important;
+  opacity: 1;
+
+  @media screen and ($max1024) {
+    font-size: 14px !important;
+  }
+  @media screen and ($max480) {
+    font-size: 12px !important;
+  }
+}
+
+.callback-popup-form {
+  .mobile-contact-form {
+    .hs-form {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.sr-only {
+  @extend .visually-hidden;
+}
+
+.btn-call-us,
+.btn-call-us .btn-bg-el,
+.btn-call-us .btn-txt {
+  min-width: 100px !important;
+  max-width: 100px !important;
+}
+
+.btn-call-us .btn-txt {
+  padding: 5px 18px !important;
+}
+
+.sk-pd-block {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+.sk-pd-block {
+  overflow: clip;
+}
+
+.mb-3 {
+  margin-bottom: 27px !important;
+}

@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a view template to display a list of rows.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows for this list.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - title: The title of this group of rows. May be empty.
+ * - list: @todo.
+ *   - type: Starting tag will be either a ul or ol.
+ *   - attributes: HTML attributes for the list element.
+ *
+ * @see template_preprocess_views_view_list()
+ *
+ * @ingroup themeable
+ */
+#}
+<nav{{ attributes }}>
+
+  <{{ list.type }}{{ list.attributes }}>
+
+    <li class="has-icon previous">
+      <a>
+        <span class="sr-only">{{ "previous"|t }}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M453-241 213-481l240-240 42 42-198 198 198 198-42 42Zm253 0L466-481l240-240 42 42-198 198 198 198-42 42Z"/></svg>
+      </a>
+    </li>
+
+    {% for row in rows %}
+      <li{{ row.attributes.setAttribute('data-index', loop.index) }}>
+        {{- row.content -}}
+      </li>
+    {% endfor %}
+
+    <li class="has-icon next">
+      <a>
+        <span class="sr-only">{{ "next"|t }}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m255-241-42-42 198-198-198-198 42-42 240 240-240 240Zm253 0-42-42 198-198-198-198 42-42 240 240-240 240Z"/></svg>
+      </a>
+    </li>
+
+  </{{ list.type }}>
+
+</nav>

@@ -1,0 +1,52 @@
+{% if is_preview %}
+  [U] Quote Carousel
+{% endif %}
+{% block content %}
+  {% set classes = field.full_width_with_background ? 'full-width-bg' : '' %}
+  {% set heading = field.block_heading %}
+  {% set content = field.content %}
+  {% set section_classes = field.section_classes %}
+  <div
+    id='{{ sectionID }}'
+    class='content-block-holder {{ classes }} {{ section_classes }} sk-block block--u'
+    data-link-scroll-target-section-id='{{sectionID}}'
+    data-scroll-section
+  >
+    <div class='container'>
+      <div class='row'>
+        <div class='txt-content op-0 col-sm-12'>
+          {% if heading or content %}
+            <div class='col-sm-12 '>
+              {{ include('field/field--heading.twig', { heading: heading, content: content }) }}
+              <div class='mt-3'>
+                {% include 'field/field--cta-btn.twig' %}
+              </div>
+            </div>
+          {% endif %}
+          <div class='quote-carousel pt-4' flex-slider>
+            <ul class='slides'>
+              {% for quote in field.slider %}
+                <li class='slide'>
+                  {{ include('field/field--quote.twig', { quote: quote }) }}
+                </li>
+              {% endfor %}
+            </ul>
+            <div class='slider-navigation'>
+              <a href='#' class='flex-prev' aria-label='Previous Arrow'>
+                <span class='visually-hidden'>{{ t('Previous') }} </span>
+              </a>
+              <a href='#' class='flex-next' aria-label='Next Arrow'>
+                <span class='visually-hidden'>{{ 'Next' | t }} </span>
+              </a>
+            </div>
+          </div>
+          {% if field.footer %}
+            <div class='py-5'>
+              {{ include('field/field--footer.twig', { footer: field.footer }) }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

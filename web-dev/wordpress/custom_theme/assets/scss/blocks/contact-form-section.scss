@@ -1,0 +1,80 @@
+@import 'block-base';
+.block--a {
+  .sk-sticky {
+    top: 100px;
+  }
+  @media screen and ($max1024) {
+    .left-content {
+      width: 100% !important;
+    }
+    .hide-m-form {
+      .right-content-form {
+        display: none !important;
+      }
+    }
+  }
+  .h3,
+  .h4 {
+    padding-top: 1.5rem;
+  }
+  .left-content {
+    .person-quote-block {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+
+      .quote-by-info {
+        margin-bottom: 0;
+        font-family: $libre;
+        .person-name {
+          font-weight: 600;
+          font-family: $libre;
+        }
+      }
+
+      .person-img-wrap {
+        width: 88px;
+        height: 89px;
+        margin-right: 30px;
+
+        img {
+          width: 110px;
+          height: auto;
+        }
+      }
+
+      blockquote {
+        display: flex;
+        &::before {
+          content: '';
+          background-image: url($ROOT_PATH + 'media/images/pictograms/quote-icon-red.webp');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: 50%;
+          flex: 0 0 auto;
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          position: relative;
+          margin-right: 12px;
+          top: -5px;
+        }
+      }
+    }
+  }
+  .landing-page-form .gfield {
+    margin-bottom: 30px !important;
+  }
+  .right-form {
+    .landing-page-form {
+      border-radius: 2.7778rem;
+      .form-subheading {
+        font-size: 16px;
+      }
+      form {
+        input:not(.button) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

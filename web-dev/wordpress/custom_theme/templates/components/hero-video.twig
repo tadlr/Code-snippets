@@ -1,0 +1,37 @@
+{% set video_area = field.video_area %}
+<div
+  class='column col-sm-12 col-md-6 col-lg-6 section-video'
+  style='background-image: url({{ video_area.background }});'
+>
+  <div class='column-inner'>
+    {% if video_area %}
+      {% set videoContainerID = video_area.video_container_id %}
+      {% set videoType = video_area.video_type %}
+      {% set url = video_area.video_link %}
+      {% set vimeoID = video_area.vimeo_link %}
+      {% if videoType == 'youtube' %}
+        <button
+          aria-label='Play Youtube video'
+          data-video-embed-id='{{ video_id }}'
+          class='landing-video-btn careers-video-btn'
+        >
+          Play Youtube video
+          <span class='circle-core'>
+            <span class='play-video-icon-landing'></span>
+          </span>
+          <span class='circle-inner'></span>
+          <span class='circle-outer'></span>
+        </button>
+      {% else %}
+        <button aria-label='Play Vimeo video' data-video-embed-id='{{ vimeoID }}' class='landing-video-btn vimeo-btn'>
+          Play Vimeo video
+          <span class='circle-core'>
+            <span class='play-video-icon-landing'></span>
+          </span>
+          <span class='circle-inner'></span>
+          <span class='circle-outer'></span>
+        </button>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

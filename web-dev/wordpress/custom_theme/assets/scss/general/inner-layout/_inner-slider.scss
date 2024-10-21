@@ -1,0 +1,147 @@
+.inner-pages-slider-section {
+  // background-color: $white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media screen and ($min1024) {
+    @include vw(padding-top, 98px);
+    @include vw(padding-bottom, 116px);
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 98px;
+    padding-bottom: 116px;
+  }
+
+  .txt-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+
+    @media screen and ($mobile) {
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 63px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 63px;
+    }
+  }
+
+  .swiper-container {
+    overflow: visible;
+    margin: 0 -15px;
+
+    @media screen and ($max480) {
+      overflow: hidden;
+    }
+
+    @media screen and ($min400) {
+      margin: 0 -25px;
+    }
+
+    @media screen and ($min500) {
+      margin: 0 -42px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin, 0 -42px);
+      @include vw(padding-left, 7px);
+    }
+
+    @media screen and ($min1920) {
+      margin: 0 -42px;
+      padding-left: 7px;
+    }
+  }
+
+  .swiper-slide {
+    box-sizing: content-box;
+    padding: 0 15px;
+
+    @media screen and ($min400) {
+      padding: 0 25px;
+    }
+
+    @media screen and ($min500) {
+      padding: 0 42px;
+    }
+
+    @media screen and ($mobile_all) {
+      max-width: 518px;
+      width: 75%;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 518px);
+      @include vw(padding, 0 42px);
+    }
+
+    @media screen and ($min1920) {
+      width: 518px;
+      padding: 0 42px;
+    }
+  }
+
+  .img-wrapper {
+    margin-bottom: 15px;
+    width: 100%;
+
+    @media screen and ($min500) {
+      margin-bottom: 28px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 28px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 28px;
+    }
+  }
+
+  .slide-title {
+    margin-bottom: 8px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 8px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .txt-post-rtf {
+    margin-bottom: 15px;
+
+    @media screen and ($min500) {
+      margin-bottom: $contentPadding;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 27px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: $contentPadding;
+    }
+  }
+
+  .btn-txt-arrow {
+    @media screen and ($mobile) {
+      margin-top: 25px;
+    }
+
+    @media screen and ($min1024) {
+      margin-bottom: 16px;
+      margin-right: 5px;
+    }
+  }
+}

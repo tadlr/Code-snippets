@@ -1,0 +1,40 @@
+.alert{
+  // Undoing bootstrap
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+
+  // GCWeb Defaults
+  background-clip: content-box;
+  border-left-width: 6px;
+  margin-bottom: 23px;
+  margin-left: 10px;
+  padding: 0 0 0 15px;
+
+  // info
+  &-info{
+    border-image: linear-gradient(to bottom,$alert-info-border 16px,$alert-info-border 16px,transparent 16px,transparent 48px,$alert-info-border 48px,$alert-info-border 48px) 1 100%;
+
+    &:before{
+      color: $alert-info-border;
+    }
+
+    .bg-info &{
+      border-color: $white;
+      border-image: linear-gradient(to bottom,$white 16px,$white 16px,transparent 16px,transparent 48px,$white 48px,$white 48px) 1 100%;
+
+      &:before{
+        color: $white;
+      }
+    }
+  }
+
+  @media print {
+    position: relative;
+    border-color: inherit;
+
+    &-info{
+      border-image: linear-gradient(to bottom,$text-color 16px,$text-color 16px,transparent 16px,transparent 48px,$text-color 48px,$text-color 48px) 1 100%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.sk-lander {
+  .txt-blocks-layout-section .txt-block .txt-content {
+    margin: initial;
+  }
+  .icons-content-block-horizontal {
+    margin: initial;
+  }
+
+  .txt-blocks-layout-section .content-block {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  @media screen and ($max1024) {
+    .landing-page-template-blocks {
+      border-top: none;
+    }
+  }
+}

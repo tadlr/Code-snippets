@@ -1,0 +1,102 @@
+.wdcb-slider {
+  .slide-item {
+    max-height: 68vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    
+    @media screen and (min-width: $screen-sm-min) {
+      min-height: 650px;
+    }
+
+    [class*="wxt-media"] {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+
+      > div {
+        height: 100%;
+      }
+
+      img {
+        @include object-fit;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    .field--name-field-url{
+      margin-top: $padding-small;
+    }
+
+    &.banner{
+      .field--name-field-media-image{
+        position: absolute;
+        top: 0;
+        right: -100px;
+        bottom: 0;
+        
+        img{
+          object-fit: contain;
+          object-position: bottom right;
+          height: 100%;
+          width: 100%;
+        }
+
+        @media screen and (min-width: 1560px) {
+          right: 0;
+        }
+        
+        @media screen and (min-width: $screen-lg) {
+          width: calc(calc(#{$container-lg} * (5 / #{$grid-columns})) + calc(calc(100vw - #{$container-lg}) / 2));
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          width: calc(calc(#{$container-md} * (5 / #{$grid-columns})) + calc(calc(100vw - #{$container-md}) / 2));
+
+          img{
+            object-fit: cover;
+            object-position: 0 50%;
+          }
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+          width: calc(calc(#{$container-sm} * (4 / #{$grid-columns})) + calc(calc(100vw - #{$container-sm}) / 2));
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.jumbotron {
+    @include no-padding-y;
+    margin-bottom: 0;
+
+    [class*="wxt-media"] {
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .content-wrapper {
+      p {
+        font-size: $font-size-base;
+      }
+
+      .slide-title {
+        margin-top: 0;
+      }
+    }
+  }
+}

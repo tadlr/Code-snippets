@@ -1,0 +1,116 @@
+@import 'block-base';
+.block--t {
+  // @import 'components/media-block';
+  background-color: $blue-1;
+  &.sk-block .media-block {
+    .h1,
+    h1,
+    .h2,
+    h2,
+    .h3,
+    h3,
+    .h4,
+    h4,
+    .h5,
+    h5,
+    .h6,
+    h6,
+    p,
+    li,
+    ul,
+    a,
+    span,
+    strong,
+    b {
+      color: $white;
+    }
+
+    .btn-default {
+      &:hover,
+      &:focus,
+      &:active {
+        .btn-bg-el {
+          &::before {
+            background-color: $white;
+          }
+        }
+      }
+      span {
+        color: $blue-1;
+      }
+    }
+  }
+  .media-left {
+    @media screen and ($tablet) {
+      .img-wrap {
+        margin-bottom: 1.5rem !important;
+      }
+    }
+    @media screen and ($mobile) {
+      .img-wrap {
+        margin-bottom: 1.5rem !important;
+      }
+    }
+  }
+
+  .txt-content {
+    margin-top: 0 !important;
+  }
+
+  .media-left {
+    @media screen and (min-width: 1024px) {
+      .txt-content {
+        padding-left: 5vw;
+      }
+    }
+  }
+
+  .media-block {
+    .img-wrap {
+      @media screen and ($max1024) {
+        margin-bottom: 1.3rem !important;
+        // width: 100% !important;
+        height: auto !important;
+      }
+
+      // @media screen and (min-width: 950px) and (max-width: 1154px) {
+      //     width: 400px;
+      //     height: 400px;
+      // }
+
+      text-align: center;
+      img {
+        // max-height: 600px;
+        @include vw(max-height, 500px);
+
+        @media screen and ($max1024) {
+          max-height: 424px;
+          max-width: 424px;
+          width: 100%;
+          height: 100%;
+        }
+
+        @media screen and (min-width: 1600px) {
+          max-height: 450px;
+        }
+
+        @media screen and (max-width: 500px) {
+          max-height: 84.8vw;
+          max-width: 84.8vw;
+        }
+      }
+    }
+  }
+
+  .media-right {
+    @media screen and (min-width: 1024px) {
+      .txt-content {
+        padding-right: 5vw;
+      }
+    }
+  }
+
+  .media-block {
+    align-items: center;
+  }
+}

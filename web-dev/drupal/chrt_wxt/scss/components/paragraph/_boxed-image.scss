@@ -1,0 +1,18 @@
+.boxed-image-content{
+  .inner-wrapper{
+    border-radius: $padding-small;
+    box-shadow: 1px 1px 10px transparentize($gray-dark,.7);
+    overflow: hidden;
+  }
+
+  .image-wrapper{
+    @media screen and (min-width: $screen-sm-min) {
+      img{
+        @include object-fit;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{# template.twig #}
+
+{# Rendering in editor body #}
+{% set content_colour = '' %}
+{% set bg_colour = '' %}
+
+{% if get_field('column_choose_text_colour') == 'true' %}
+  {% set column_text_colour = get_field('column_text_colour') %}
+  {% if column_text_colour == 'white' %}
+    {% set content_colour = 'c-white' %}
+    {% elseif column_text_colour == 'blue' %}
+    {% set content_colour = 'c-blue-1' %}
+    {% elseif column_text_colour == 'red' %}
+    {% set content_colour = 'c-red-2' %}
+    {% elseif column_text_colour == 'green' %}
+    {% set content_colour = 'c-green-5' %}
+  {% endif %}
+{% endif %}
+
+{% if get_field('column_choose_background_colour') == 'true' %}
+  {% set column_background_colour = get_field('column_background_colour') %}
+  {% if column_background_colour == 'white' %}
+    {% set bg_colour = 'bg-white' %}
+    {% elseif column_background_colour == 'blue' %}
+    {% set bg_colour = 'bg-blue' %}
+    {% elseif column_background_colour == 'light-blue' %}
+    {% set bg_colour = 'bg-light-blue' %}
+    {% elseif column_background_colour == 'red' %}
+    {% set bg_colour = 'bg-red' %}
+    {% elseif column_background_colour == 'green' %}
+    {% set bg_colour = 'bg-green' %}
+  {% endif %}
+{% endif %}
+
+{% set image_position = get_field('image_position') %}
+{% set scroll_to = get_field('scroll_to_section_id') %}
+{% set section_classes = get_field('section_classes') %}
+
+<div
+  id='{{ scroll_to }}'
+  class='ov-hidden customTheme-block  sk-block circle-info-section-anim content-col-img prel image-{{ image_position }} {{ bg_colour }} {{ section_classes }}'
+  data-scroll-section
+  data-link-scroll-target-section-id='{{ scroll_to }}'
+>
+  <div class='container prel op-0'>
+    <div class='row'>
+      <div class='img-wrap column col-sm-12 col-lg-6'>
+        <div class='scale-in-circle img-width-wrap'>
+          {{ Image(field.column_image, 'img-644-644', {'class': 'column-image', height: 644, width: 644 }) }}
+        </div>
+        <div data-opacity='.7' class='fade-in-circle circle-blue abs-cover-el'></div>
+        <div class='fade-in-circle circle-border abs-cover-el'></div>
+        <div class='fade-in-circle circle-gray abs-cover-el'></div>
+      </div>
+      <div class='txt-content col-sm-12 col-lg-6'>
+        <div class='column-single'>
+          {# Column Heading #}
+          {% set heading = get_field('column_heading_editor')|raw %}
+          {% if heading|trim is not empty %}
+            <h2 class='block-heading heading-anim {{ content_colour }}'>
+              {{ heading | raw | striptags }}
+            </h2>
+          {% endif %}
+
+          {# Column Subheading #}
+          {% set subheading = get_field('column_subheading_editor')|raw %}
+          {% if subheading|trim is not empty %}
+            <h3 class='block-subheading heading-anim {{ content_colour }}'>
+              {{ subheading | raw | striptags }}
+            </h3>
+          {% endif %}
+
+          {# Column WYSIWYG #}
+          <div class='block-content txt-post-rtf {{ content_colour }}'>
+            <p>{{ the_field('column_content')|raw }}</p>
+          </div>
+
+          {% if get_field('cta_text') %}
+            {% set ctaText = get_field('cta_text') %}
+            {% set ctaLink = get_field('cta_link') %}
+            {% set sectionColour = (get_field('btnColour') == 'blue') ? 'section-color-blue' : 'section-color-white' %}
+            {% set scrollToSection = get_field('cta_scroll_to_section') %}
+            {% set external_link = get_field('external_link') %}
+
+            {% if external_link == 'yes' %}
+              <a
+                href='{{ ctaLink }}'
+                target='_blank'
+                class='btn-default  c-blue-1 btn-green-1 {{ sectionColour }} btn-offset-9'
+              >
+                <span class='btn-bg-el'></span>
+                <span class='btn-txt'>{{ ctaText }}</span>
+              </a>
+              {% elseif external_link == 'same' %}
+              <a
+                href='{{ ctaLink }}'
+                class='btn-default  c-blue-1 btn-green-1 {{ sectionColour }} btn-offset-9'
+              >
+                <span class='btn-bg-el'></span>
+                <span class='btn-txt'>{{ ctaText }}</span>
+              </a>
+              {% elseif external_link == 'modal' %}
+              <button class='btn-default  c-blue-1 btn-green-1 {{ sectionColour }} btn-offset-9 callback-popup-btn'>
+                <span class='btn-bg-el'></span>
+                <span class='btn-txt'>{{ ctaText }}</span>
+              </button>
+              {% elseif external_link == 'section' %}
+              <a
+                href='#'
+                class='btn-default  c-blue-1 btn-green-1 {{ sectionColour }} btn-offset-9 scroll-to-section-btn anchor-link'
+                data-target='{{ scrollToSection }}'
+              >
+                <span class='btn-bg-el'></span>
+                <span class='btn-txt'>{{ ctaText }}</span>
+              </a>
+              {% elseif external_link == 'no' %}
+              <button
+                class='btn-default  c-blue-1 btn-green-1 {{ sectionColour }} btn-offset-9 scroll-to-section-btn btn-scroll-to-footer'
+                data-target='.inner-pages-contact-section'
+              >
+                <span class='btn-bg-el'></span>
+                <span class='btn-txt'>{{ ctaText }}</span>
+              </button>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

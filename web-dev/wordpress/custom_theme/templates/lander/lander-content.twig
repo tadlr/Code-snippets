@@ -1,0 +1,25 @@
+{% set class = field.show_sticky_bar == 'yes' ? 'w-sticky-bar' : '' %}
+<main
+  id='main-content'
+  class='smooth-scroll-wrapper txt-blocks-layout-section landing-page-template-blocks sk-lander-content ov-hidden prel test {{ lang }} {{ class }} block-builded-page'
+>
+  <div data-scroll-section>
+    <div class='op-0 col-sm-12 '>
+      {% include 'svg.twig' %}
+      <div class='prel landing-page-wrap'>
+        {{ the_content() }}
+      </div>
+      {% if lang == 'en' %}
+        {{ get_footer('second') }}
+      {% elseif lang == 'es' %}
+        {{ get_footer('spanish') }}
+      {% elseif lang == 'fr' %}
+        {{ get_footer('french') }}
+      {% elseif field.landing_page_footer_language == 'english' %}
+        {{ get_footer('second') }}
+      {% else %}
+        {{ get_footer('spanish') }}
+      {% endif %}
+    </div>
+  </div>
+</main>

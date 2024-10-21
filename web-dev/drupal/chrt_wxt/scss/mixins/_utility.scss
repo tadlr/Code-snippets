@@ -1,0 +1,110 @@
+@mixin padded {
+  padding: $padding !important;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: $padding-xs !important;
+  }
+
+  @media print {
+    padding: $padding-xs !important;
+  }
+}
+
+@mixin padded-small {
+  padding: $padding-small;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: $padding-small-xs;
+  }
+
+  @media print {
+    padding: $padding-small-xs;
+  }
+}
+
+@mixin padded-large {
+  padding: $padding-large;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: $padding-xs;
+  }
+
+  @media print {
+    padding: $padding-xs;
+  }
+}
+
+@mixin vertical-padding {
+  padding-bottom: $padding;
+  padding-top: $padding;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-bottom: $padding-xs;
+    padding-top: $padding-xs;
+  }
+
+  @media print {
+    padding-bottom: $padding-xs;
+    padding-top: $padding-xs;
+  }
+}
+
+@mixin vertical-padding-small {
+  padding-bottom: $padding-small;
+  padding-top: $padding-small;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-bottom: $padding-xs;
+    padding-top: $padding-xs;
+  }
+
+  @media print {
+    padding-bottom: $padding-xs;
+    padding-top: $padding-xs;
+  }
+}
+
+@mixin vertical-padding-large {
+  padding-bottom: $padding-large;
+  padding-top: $padding-large;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-bottom: $padding-large-xs;
+    padding-top: $padding-large-xs;
+  }
+
+  @media print {
+    padding-bottom: $padding-large-xs;
+    padding-top: $padding-large-xs;
+  }
+}
+
+@mixin no-padding {
+  padding: 0 !important;
+}
+
+@mixin no-padding-top {
+  padding-top: 0 !important;
+}
+
+@mixin no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+@mixin no-padding-left {
+  padding-left: 0 !important;
+}
+
+@mixin no-padding-right {
+  padding-right: 0 !important;
+}
+
+@mixin no-padding-x {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@mixin no-padding-y {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

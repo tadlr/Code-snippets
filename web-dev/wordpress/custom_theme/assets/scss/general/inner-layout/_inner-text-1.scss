@@ -1,0 +1,98 @@
+.inner-txt-section-type-1 {
+  // background-color: $white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  & + .inner-txt-section-type-1 {
+    padding-top:0;
+  }
+
+  .txt-size-80 {
+    @media screen and ($mobile_sm) {
+      @include vw(max-width, 800px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      max-width: 800px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(max-width, 1220px);
+      @include vw(padding-left, 2px);
+    }
+
+    @media screen and ($min1920) {
+      max-width: 1220px;
+      padding-left: 2px;
+    }
+
+    &.wider-inner-txt {
+      @media screen and ($min1024) {
+        @include vw(max-width, 850px);
+        @include vw(padding-left, 2px);
+      }
+
+      @media screen and ($min1920) {
+        max-width: 850px;
+        padding-left: 2px;
+      }
+    }
+  }
+
+  .txt-size-30 {
+    margin-top: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 56px);
+      @include vw(margin-left, 6px);
+      @include vw(max-width, 1220px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 56px;
+      margin-left: 6px;
+      max-width: 1220px;
+    }
+  }
+
+  .txt-blocks-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    padding-top: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(padding-left, 6px);
+      @include vw(padding-top, 80px);
+      @include vw(margin, 0 -75px);
+      @include vw(max-width, 1349px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 6px;
+      padding-top: 80px;
+      margin: 0 -75px;
+      max-width: 1349px;
+    }
+  }
+
+  .txt-block {
+    width: 100%;
+
+    @media screen and ($mobile_all) {
+      &:not(:last-of-type) {
+        margin: 0 0 25px;
+      }
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin, 0 75px);
+      width: calc(50% - 7.812vw);
+    }
+
+    @media screen and ($min1920) {
+      margin: 0 75px;
+      width: calc(50% - 150px);
+    }
+  }
+}

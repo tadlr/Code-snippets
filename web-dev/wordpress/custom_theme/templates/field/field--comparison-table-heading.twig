@@ -1,0 +1,12 @@
+{% if heading or image or render %}
+  <th>
+    {% if heading %}
+      {{ heading }}
+    {% endif %}
+    {% if image %}
+      {% set id = fn('attachment_url_to_postid', image) %}
+      {% set alt = fn('get_post_meta', id, '_wp_attachment_image_alt', true) %}
+      <img alt='{{alt}}' class='b-lazy' data-src='{{ image }}'>
+    {% endif %}
+  </th>
+{% endif %}

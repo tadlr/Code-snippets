@@ -1,0 +1,281 @@
+.single-rates {
+  .page--i-rate-guarantee {
+    @media screen and ($min1024) {
+      &.sk-block {
+        padding-top: 150px;
+        padding-bottom: 150px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.page--i-rate-guarantee {
+  overflow: hidden;
+
+  --circle-size: 405px;
+
+  .circle-info-white-block {
+    @media screen and ($mobile_all) {
+      flex-flow: row wrap;
+    }
+
+    .arc {
+      &-border-pink,
+      &-light-pink {
+        border-radius: 50%;
+
+        height: var(--circle-size);
+        width: var(--circle-size);
+
+        @media screen and ($mobile_all) {
+          display: none;
+        }
+      }
+      &-border-pink {
+        border: 1px solid $blue-1;
+        z-index: -1;
+        transform: translateY(73.5%);
+        opacity: 0.2;
+      }
+      &-light-pink {
+        z-index: -2;
+        background-color: $blue-1;
+        transform: translate(78%, 73.5%);
+        opacity: 0.05;
+      }
+    }
+
+    .img-wrap {
+      position: relative;
+
+      height: var(--circle-size);
+      width: var(--circle-size);
+
+      @media screen and (min-width: 1025px) and (max-width: 1200px) {
+        right: -5vw;
+      }
+      picture {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      @media screen and ($mobile) {
+        height: fit-content;
+        width: fit-content;
+        margin: auto;
+      }
+
+      @media screen and ($min1024) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          max-height: var(--circle-size);
+          max-width: var(--circle-size);
+        }
+      }
+
+      @media screen and ($max1024) {
+        img {
+          max-height: var(--circle-size);
+          max-width: var(--circle-size);
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        max-height: 375px;
+        max-width: 375px;
+
+        img {
+          height: auto !important;
+          width: 375px !important;
+          max-width: 80vw;
+        }
+      }
+
+      @media screen and ($tablet) {
+        height: 390px;
+        width: 390px;
+        display: inline-block;
+        // margin-right: 0;
+        vertical-align: top;
+        margin-left: 10%;
+        img {
+          max-height: 390px;
+          max-width: 390px;
+        }
+      }
+    }
+
+    .txt-content {
+      flex: 0 0 auto;
+
+      @media screen and ($min1920) {
+        padding-bottom: 8px;
+      }
+    }
+
+    .img-txt-col {
+      z-index: 1;
+
+      @media screen and ($desktop) {
+        justify-content: flex-end;
+        padding-right: 0;
+        .inner-content {
+          width: fit-content;
+          display: flex;
+        }
+      }
+
+      @media screen and ($tablet) {
+        position: relative;
+        margin-top: 25px;
+
+        .inner-content {
+          width: fit-content;
+          margin: auto;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      @media screen and ($min1024) {
+        display: flex;
+        flex: 0 0 auto;
+      }
+
+      @media screen and ($mobile) {
+        margin-top: 35px;
+      }
+
+      .quote-details {
+        position: relative;
+        padding-left: 52px;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 25px;
+          background-color: $white;
+          height: 2px;
+          top: 15px;
+          width: 18px;
+        }
+      }
+
+      &-person-position,
+      &-person-name {
+        font-weight: 400;
+        font-size: 16px;
+        font-family: $libre;
+        line-height: 30px;
+        letter-spacing: 0.6px;
+        color: $white;
+        margin-bottom: 0;
+      }
+
+      &-person-name {
+        font-weight: 600;
+      }
+
+      .img-txt-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: transparentize($color: $blue-1, $amount: 0.15);
+        // background-color: $red-8;
+
+        @media screen and ($mobile_all) {
+          padding-top: 25px;
+        }
+
+        @media screen and ($desktop) {
+          height: var(--circle-size);
+          width: var(--circle-size);
+        }
+
+        @media screen and ($mobile) {
+          min-height: var(--circle-size);
+          max-width: var(--circle-size);
+          margin: auto;
+          margin-top: -70px;
+          z-index: 1;
+          position: relative;
+          border-radius: 15px;
+          max-height: unset;
+          padding-top: 0;
+        }
+
+        @media screen and (max-width: 400px) {
+          // max-height: 280px;
+          max-width: 280px;
+          padding: 15px 15px;
+        }
+
+        @media screen and ($tablet) {
+          position: relative;
+          display: inline-flex;
+          margin-left: -15%;
+          height: 390px;
+          width: 390px;
+        }
+        @media screen and ($min1024) {
+          z-index: 1;
+          margin-left: -90px;
+        }
+
+        @media screen and (min-width: 1025px) and (max-width: 1200px) {
+          margin-right: -65px;
+        }
+
+        .inner-text {
+          position: relative;
+
+          @media screen and ($min1024) {
+            max-width: 300px;
+            max-height: 350px;
+            padding-top:25px;
+          }
+
+          @media screen and ($tablet) {
+            max-width: 300px;
+            max-height: 300px;
+          }
+
+          @media screen and ($mobile) {
+            max-width: 300px;
+            max-height: 350px;
+          }
+
+          @media screen and (max-width: 400px) {
+            max-width: 240px;
+            max-height: unset;
+          }
+        }
+        // }
+
+        .img-txt-quote {
+          color: $white;
+          font-family: $redhat;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 30px;
+          position: relative;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

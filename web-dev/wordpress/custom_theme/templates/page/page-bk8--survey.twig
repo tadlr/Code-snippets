@@ -1,0 +1,59 @@
+{# page-bk8--survey #}
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('inner-pages-quiz-section-type-2 fade-in-section-default ov-hidden prel offset-x-mobile-38 offset-x-desktop-453').setAttribute('id', 'survey') %}
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% if field.show_survey == 'yes' %}
+    <div class='max-w-container w-1009 prel op-0'>
+      {% if field.survey_heading %}
+        <div class='title-wrap survey-heading-holder'>
+          <h2 class='txt-size-60 txt-size-48-m lh-1 c-blue-1 ltr-spc-pos-0_6'>
+            {{ field.survey_heading|striptags('<b><strong><a>') }}
+          </h2>
+          {% if field.survey_subheading %}
+            <h3 class='txt-size-24 title-wrap-txt txt-size-24-m lh-1_36 c-blue-1 fw-600 ltr-spc-pos-0_25 anim-translate-y'>
+              {{ field.survey_subheading|striptags('<b><strong><a>') }}
+            </h3>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if field.choose_what_you_need_text %}
+        <div class='txt-content'>
+          <p class='txt-size-12 upper c-blue-1 lh-1 fw-400 ltr-spc-pos-4_8'>
+            {{ field.choose_what_you_need_text }}
+          </p>
+        </div>
+      {% endif %}
+
+      <div class='quiz-content-wrap equipment-form'>
+        {{ field.form }}
+      </div>
+    </div>
+
+    <div class='side-menu-btns fade-in-last'>
+      <a href='tel:{{ surveyPhone }}' class='side-menu-quiz-btn txt-size-24 lh-1_25 ltr-spc-pos-0_3 c-blue-1 fw-600'>
+        <span class='btn-txt'>{{ t('Talk to us<br> now') }}</span>
+        <svg class='side-menu-quiz-btn-svg' viewbox='0 0 59.8 60'>
+          <path d="M29.9 0C13.5 0 .1 13.4 0 29.8c-.1 8 3 15.6 8.6 21.3 5.6 5.7 13.1 8.9 21.1 8.9h.2c16.4 0 29.8-13.4 29.9-29.8C59.9 13.7 46.6.1 29.9 0zm14.5 40-1.3 1.3-.1.1c-2.2 2.2-4.1 2.7-7 1.9-3.1-.9-5.8-2.6-8.2-4.6-3.5-2.9-7.3-6.6-9.8-10.5-2.5-4-3.3-8.2.2-11.7l.1-.1 1.3-1.3c.9-.9 2.5-.9 3.5 0L27 19c.9.9.9 2.5 0 3.5l-2.3 2.3.1.1c2.6 3.9 6 7.3 9.9 9.9l.1.1 2.3-2.3c.9-.9 2.5-.9 3.5 0l3.9 3.9c.9 1 .9 2.6-.1 3.5z"/>
+        </svg>
+      </a>
+      <a href='#' class='side-menu-quiz-btn txt-size-24 lh-1_25 ltr-spc-pos-0_3 c-blue-1 fw-600 callback-popup-btn'>
+        <span class='btn-txt'>{{ t('Schedule<br> a callback') }}</span>
+        <svg class='side-menu-quiz-btn-svg' viewbox='0 0 59.8 60'>
+          <path d="M29.9 0C13.5 0 .1 13.4 0 29.8c-.1 8 3 15.6 8.6 21.3 5.6 5.7 13.1 8.9 21.1 8.9h.2c16.4 0 29.8-13.4 29.9-29.8C59.9 13.7 46.6.1 29.9 0zm8.5 47-1.3 1.3-.1.1c-2.2 2.2-4.1 2.7-7 1.9-3.1-.9-5.8-2.6-8.2-4.6-3.5-2.9-7.3-6.6-9.8-10.5-2.5-4-3.3-8.2.2-11.7l.1-.1 1.3-1.3c.9-.9 2.5-.9 3.5 0L21 26c.9.9.9 2.5 0 3.5l-2.3 2.3.1.1c2.6 3.9 6 7.3 9.9 9.9l.1.1 2.3-2.3c.9-.9 2.5-.9 3.5 0l3.9 3.9c.9 1 .9 2.6-.1 3.5zm8.4-11.4c-.3.9-1.1 1.4-2 1.4-.2 0-.4 0-.6-.1-1.1-.4-1.7-1.5-1.4-2.6 2.7-8.7-3.5-13.6-3.8-13.8-.1 0-.1-.1-.1-.1-4.1-3.7-9.2-3.1-12.1-2.4l2.6 1.6c.9.6 1.2 1.9.6 2.8-.4.6-1.1.9-1.7.9-.4 0-.7-.1-1.1-.3l-6.4-4c-.9-.6-1.2-1.9-.6-2.8l4-6.6c.6-.9 1.9-1.3 2.8-.7.9.6 1.3 1.9.7 2.8l-1.3 2.2c3.8-.9 10.2-1.4 15.5 3.3 2.9 2.6 7.8 9.3 4.9 18.4z"/>
+        </svg>
+      </a>
+      <a href='#' class='side-menu-quiz-btn txt-size-24 lh-1_25 ltr-spc-pos-0_3 c-blue-1 fw-600 download-open-form-btn'>
+        <span class='btn-txt'>{{ t('Download<br> our guide') }}</span>
+        <svg class='side-menu-quiz-btn-svg' viewbox='0 0 59.8 60'>
+          <path d="M29.9 0C13.5 0 .1 13.4 0 29.8c-.1 8 3 15.6 8.6 21.3 5.6 5.7 13.1 8.9 21.1 8.9h.2c16.4 0 29.8-13.4 29.9-29.8C59.9 13.7 46.6.1 29.9 0zM19.3 24.1c.8-.8 2-.8 2.8 0l4.4 4.4c.2.2.5.2.7.1.2-.1.4-.3.4-.6V14.8c0-1.1.9-2 2-2s2 .9 2 2V28c0 .3.2.5.4.6.1 0 .2.1.3.1.2 0 .3-.1.5-.2l4.4-4.4c.4-.4 1-.6 1.5-.6.6 0 1.1.3 1.4.8.6.8.5 2-.3 2.7l-9.4 9.4c-.5.5-1.2.5-1.7 0l-9.5-9.5c-.7-.8-.7-2.1.1-2.8zm19.5 23.1H20.3c-2.4 0-4.3-1.9-4.3-4.3v-2.7c0-1.1.9-2 2-2s2 .9 2 2v2.3c0 .4.3.7.7.7h17.8c.4 0 .7-.3.7-.7v-2.3c0-1.1.9-2 2-2s2 .9 2 2v2.7c-.1 2.4-2 4.3-4.4 4.3z"/>
+        </svg>
+      </a>
+    </div>
+  {% endif %}
+{% endblock %}

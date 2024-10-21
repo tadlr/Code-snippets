@@ -1,0 +1,69 @@
+@keyframes equipment-list-section-hover {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes btn-txt-arrow-hover {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+
+  50% {
+    transform: translateX(5px) translateY(-50%);
+  }
+
+  100% {
+    transform: translateX(0) translateY(-50%);
+  }
+}
+
+@keyframes arrow-move {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform: translate(-50%, -35%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes swiper-nav-hover-prev {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  50% {
+    transform: translate(0%, 25%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes swiper-nav-hover-next {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  50% {
+    transform: translate(0%, 25%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}

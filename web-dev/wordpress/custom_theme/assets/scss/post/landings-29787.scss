@@ -1,0 +1,49 @@
+html:not(.header-toggled-state) {
+  .header .header-logo-link.lottie-anim-init .header-logo-img {
+    opacity: 1;
+    visibility: unset !important;
+  }
+}
+
+html.header-toggled-state {
+  .header-logo-img.header-logo-white.dont-show.non-gif {
+    opacity: 1 !important;
+    visibility: unset !important;
+  }
+  .header .header-open-form-btn {
+    pointer-events: unset;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.hbspt-form.sk-form-hbsp {
+  .hs_submit.hs-submit {
+    // @media screen and (min-width: 1024px) {
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      align-items: center;
+    }
+    // }
+    // @media screen and (max-width: 1024px) {
+    //   .actions {
+    //     .img-srtcode {
+    //       margin-top: 15px;
+    //     }
+    //   }
+    // }
+
+    .actions {
+      .img-srtcode {
+        max-height: 55px;
+        display: block;
+
+        @media screen and (max-width: 1200px) {
+          max-height: 35px;
+        }
+      }
+    }
+  }
+}

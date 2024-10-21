@@ -1,0 +1,30 @@
+name: "CHRT"
+description: "Canadian Human Rights Tribunal"
+type: theme
+core_version_requirement: ^8 || ^9 || ^10
+base theme: wxt_bootstrap
+ckeditor5-stylesheets:
+  - css/ckeditor5.css
+
+regions:
+  branding: "Branding"
+  breadcrumb: "Breadcrumbs"
+  language_toggle: "Language Toggle"
+  banner: "Banner"
+  search: "Search"
+  navigation: "Navigation"
+  header: "Header"
+  highlighted: "Highlighted"
+  content: "Content"
+  content_footer: "Content Footer"
+  footer: "Footer"
+
+libraries:
+  - chrt_wxt/theme-scripts
+  # - chrt_wxt/match-height
+
+libraries-override:
+  wxt_bootstrap/framework:
+    css:
+      theme:
+        css/style.css: false

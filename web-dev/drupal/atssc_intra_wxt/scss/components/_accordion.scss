@@ -1,0 +1,56 @@
+details:not([role="tabpanel"]):not(.brdr-0):not(.toc-item) {
+  border-radius: 0;
+  box-shadow: 1px 1px 10px $gray-lighter;
+  transition: all 400ms;
+
+  &:not([open]) {
+    visibility: visible;
+  }
+
+  > summary {
+    @include accordion_label;
+  }
+
+  .details-wrapper {
+    @include accordion_content;
+  }
+
+  &[open] {
+    > summary {
+      @include open_accordion_label;
+    }
+  }
+
+  &:focus,
+  &:focus-within {
+    box-shadow: 1px 1px 10px transparentize($brand-primary, 0.7);
+    outline: none;
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    background: linear-gradient(90deg, $brand-primary $padding-large, $white $padding-large);
+    border: none;
+    padding: 0 0 0 $padding-large;
+    margin-bottom: $padding-xs;
+
+    .bg-primary & {
+      background: linear-gradient(90deg, $brand-secondary $padding-large, $white $padding-large);
+      box-shadow: none;
+    }
+
+    .bg-secondary & {
+      box-shadow: none;
+    }
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    border: 1px solid transparentize($brand-primary, 0.5);
+    box-shadow: none;
+    padding: 0;
+
+    &:focus,
+    &:focus-within {
+      box-shadow: 1px 1px 3px transparentize($brand-primary, 0.7);
+    }
+  }
+}

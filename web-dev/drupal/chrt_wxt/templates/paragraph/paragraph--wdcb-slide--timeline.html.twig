@@ -1,0 +1,12 @@
+{% extends "paragraph--wdcb-slide.html.twig" %}
+
+{% set attributes = attributes.addClass('timeline-item', 'col-xs-12', 'animate') %}
+
+{% block title %}
+  <{{ title_tag }}{{ title_attributes.addClass('timeline-item-title') }}>
+    {{ content.field_title.0 }}
+  </{{ title_tag }}>
+{% endblock %}
+
+{% block content_wrapper_start %}{% endblock %}
+{% block content_wrapper_end %}{% endblock %}

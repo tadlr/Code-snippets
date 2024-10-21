@@ -1,0 +1,30 @@
+.small-thumbnail {
+  img {
+    object-fit: cover;
+
+    @media screen and ($mobile_sm) {
+      @include vw(width, 490px, 500);
+      @include vw(height, 300px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      width: 490px;
+      height: 300px;
+    }
+
+    @media screen and ($mobile_all) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 510px);
+      @include vw(height, 340px);
+    }
+
+    @media screen and ($min1920) {
+      width: 510px;
+      height: 340px;
+    }
+  }
+}

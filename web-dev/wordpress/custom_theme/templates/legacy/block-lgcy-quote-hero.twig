@@ -1,0 +1,30 @@
+<section id='{{ section_id }}' class='sk-block customTheme-block block-quote-hero prel ov-hidden {{ section_classes }}'>
+  {% if background_image %}
+    <div class='bg-img-wrapper d-flex justify-content-center align-items-center'>
+      {# <img data-src='{{ background_image }}' alt='{{ alt }}' class='b-lazy'> #}
+      {{ Image(field.background_image, 'full', { }) }}
+    </div>
+  {% endif %}
+  <div class='container prel'>
+    <div class='content-wrap'>
+      {% if field.heading %}
+        <h2 class='quote-heading c-white prel mb-5'>{{ field.heading | striptags }}</h2>
+      {% endif %}
+
+      {% if content %}
+        <p class='quote-content c-white prel'>{{ content | striptags }}</p>
+      {% endif %}
+
+      {% if person %}
+        <p class='quote-person mb-0 c-white'>
+          — {{ person -}}
+          {%- if title %}, {% endif %}
+        </p>
+      {% endif %}
+
+      {% if title %}
+        <p class='quote-title c-white'>{{ title }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>

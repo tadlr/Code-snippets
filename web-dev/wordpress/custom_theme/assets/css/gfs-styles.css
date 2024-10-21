@@ -1,0 +1,71 @@
+#gform_19 .gfield_label,
+#gform_19 .gform_description,
+.gf_progressbar_percentage,
+.gfield.gfield--type-captcha .gform-field-label,
+.gfield.gform_hidden,
+.gfield_description.instruction,
+.gfield_label:not(legend),
+.gform_confirmation_message .title-wrap > table,
+.gform_heading .gform_description,
+.gform_required_legend,
+.gform_validation_errors,
+.gform_wrapper .gform_heading,
+.single-industries .gform_title,
+fieldset.gfield--type-checkbox > .gfield_description {
+  display: none !important;
+}
+.gform_wrapper,
+legend.gfield_label,
+#gform_fields_8 label,
+#gform_fields_11 label {
+  display: block !important;
+}
+#gform_14 .gfield_label,
+#gform_9 .gfield_label,
+.block--a .gfield_label,
+.landing-page-form .gfield_label,
+.mobile-contact-form .gfield_label,
+.popup-form .gfield_label,
+.talk-to-us-block-popup-form .gfield_label {
+  display: initial !important;
+}
+.gfield--type-fileupload {
+  margin-top: 10px;
+}
+.gfield--type-fileupload .gfield_label {
+  top: -20px;
+}
+.gfield--type-captcha {
+  float: none !important;
+}
+.checkboxes-wrap
+  :not(p):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(label):not(
+    span
+  ):not(input):not(button):not(.ginput_container *):not(legend):not(strong):not(
+    b
+  ),
+.subscribe-newsletter-form.blog-subscribe-form {
+  font-size: 0;
+}
+.ginput_container input {
+  width: 100% !important;
+}
+.gfield_validation_message {
+  color: #fc4a6b !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 13px !important;
+}
+#gform_14 #field_14_19 .ginput_container.ginput_complex {
+  align-items: unset;
+}
+#gform_14 #field_14_19 .gfield_time_ampm {
+  height: 100%;
+}
+#gform_14 #field_14_19 .gfield_time_ampm select,
+#gform_14 .ginput_container_time input {
+  height: 50px;
+}
+#gform_19 .grecaptcha-badge {
+  right: -101% !important;
+}

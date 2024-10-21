@@ -1,0 +1,53 @@
+{% if is_preview %}
+  [Q] Media List Items
+{% endif %}
+{# Declare all variables #}
+{% set content = field.content %}
+{% set ctaText = field.cta_text %}
+{% set ctaLink = field.cta_link %}
+{% set external_link = field.external_link %}
+{% set classes = (field.full_width_with_background == 'Yes') ? "full-width-bg" : "" %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} sk-block block--q'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='container'>
+    <div class='media-block'>
+      <div class='img-wrap col-sm-12  d-block d-sm-block d-lg-none pb-5'>
+        <div class='img-content'>
+          {{ Image(field.image, 'full', {'width': 578, 'height': 578}) }}
+        </div>
+      </div>
+    </div>
+    <div class='plain-txt-block'>
+      {{ content | raw }}
+    </div>
+    <div class='media-list-items-block media-block media-right content-block row row-eq-height'>
+      <div class='img-wrap col-sm-12 justify-content-center col-lg-6 h-100 d-none d-sm-none d-lg-flex'>
+        <div class='img-content'>
+          {{ Image(field.image, 'full', {'width': 578, 'height': 578}) }}
+        </div>
+      </div>
+      <div class='col-sm-12  col-lg-6'>
+        <div class='list-items-content'>
+          {% if fn('have_rows', 'list') %}
+            {% for row in field.list %}
+              <div data-number='{{ row.number }}' class='list-item'>
+                {% if row.heading %}
+                  <h3 class='list-item-title'>
+                    {{ row.heading }}
+                  </h3>
+                {% endif %}
+                <div class='list-item-txt txt-post-rtf txt-blocks-layout-rtf 8 p'>
+                  {{ row.content | raw }}
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% include 'field/field--cta-btn.twig' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

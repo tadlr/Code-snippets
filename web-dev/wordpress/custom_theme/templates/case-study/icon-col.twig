@@ -1,0 +1,31 @@
+<div class='icon-columns justify-content-center h-lg-100 prel'>
+  <div class='row'>
+    {% for index,icon in field.icons %}
+      {% set image = icon.icon_one %}
+      {% set heading = icon.heading %}
+      {% set content = icon.content %}
+
+      <div class='icons--item col-sm-12 col-md-6 col-lg-3 mb-3'>
+        <div class='list-image'>
+          {% if image %}
+            {% if field.use_img %}
+              <div class='img--container'>
+                {{ Image(image, 'img-300-300', {class: "f-image", 'width':300, 'height': 300}) }}
+              </div>
+            {% else %}
+              <div class='img--wrap'>
+                {{ Image(image, 'img-100-100', {'width':100, 'height': 100}) }}
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+        <div class='list-content'>
+          <p class='list-title mb-0'>
+            {{ heading }}
+          </p>
+          {{ content | raw }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

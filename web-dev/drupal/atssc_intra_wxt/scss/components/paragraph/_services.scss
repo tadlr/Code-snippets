@@ -1,0 +1,133 @@
+.services-menu {
+  justify-content: space-between;
+
+  .service-menu-holder {
+    display: flex;
+    // grid-template-columns: repeat(4, 1fr);
+    gap: 20px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &.items-per-row- {
+    &2 {
+      .wdcb-service {
+        flex: 1 0 48%;
+      }
+    }
+    &3 {
+      .wdcb-service {
+        flex: 1 0 31%;
+      }
+    }
+    &4 {
+      .wdcb-service {
+        flex: 1 0 23%;
+      }
+    }
+    &5 {
+      .wdcb-service {
+        flex: 1 0 18%;
+      }
+    }
+  }
+
+  .wdcb-service {
+    min-height: 315px;
+
+    img,
+    svg {
+      width: 65px;
+      height: 70px;
+    }
+    .field-group-link {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        .field--name-field-label {
+          text-decoration: underline;
+        }
+      }
+    }
+    .field--name-field-svg-icon {
+      height: 70px;
+      margin-bottom: 15px;
+    }
+    .field--name-field-label {
+      color: $black;
+      font-size: 20px;
+      font-family: $font-family-base;
+      line-height: 24px;
+      font-weight: 400;
+      // max-width: 100px;
+
+      margin-bottom: 15px;
+    }
+
+    &:hover,
+    &:focus {
+      p {
+        text-decoration: none;
+      }
+    }
+
+    border-radius: 8px;
+    border: 1px solid $cyan;
+    padding: 30px 20px;
+    flex: 1 0 23%;
+    flex-grow: 0 !important;
+    // margin: 0 5px;
+
+    .field-group-link {
+      align-items: flex-start;
+      color: $cyan;
+      .tool-label,
+      .field--name-field-label {
+        text-align: left;
+        max-width: unset;
+        color: $cyan;
+      }
+      .field--name-field-svg-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 30px;
+      }
+    }
+
+    p {
+      color: $dark;
+    }
+
+    transition: all 0.3s ease;
+
+    svg {
+      transition: all 0.3s ease;
+    }
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    &:hover,
+    &:focus-within {
+      background-image: url("../assets/svg/finance-bg.svg");
+      // background-color: $cyan;
+      color: $white;
+
+      @extend .bg-primary;
+
+      svg {
+        filter: brightness(0) invert(1);
+      }
+
+      p {
+        color: $white;
+      }
+      .field--name-field-label {
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+#wb-info {
+  @include vertical-padding;
+  background: $light;
+  border-top: 1px solid $brand-primary;
+
+  nav{
+    @include no-padding-y;
+  }
+
+  h3{
+    font-size: $font-size-h4;
+    margin-top: 0;
+  }
+
+  .arms-of-canada{
+    color: $headings-color;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: 1;
+
+    img{
+      max-height: 140px;
+    }
+
+    span{
+      display: block;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      align-items: center;
+      display: flex;
+
+      img{
+        max-height: 60px;
+      }
+    }
+  }
+
+  .tofpg{
+    padding-left: 0;
+
+    a{
+      border: 1px solid;
+      display: block;
+      padding: 0 10px;
+
+      span{
+        margin-left: 5px;
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $screen-sm-min) {
+    .region-footer{
+      padding-left: $padding-large;
+    }
+  }
+}

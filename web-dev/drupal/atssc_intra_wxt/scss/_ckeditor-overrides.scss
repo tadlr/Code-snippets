@@ -1,0 +1,14 @@
+.sr-only {
+  @include undo_sr_only;
+}
+
+.hidden {
+  display: block !important;
+
+  &-xs,
+  &-sm,
+  &-md,
+  &-lg {
+    display: block !important;
+  }
+}

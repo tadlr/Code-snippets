@@ -1,0 +1,26 @@
+.blog-subscribe-form {
+  .gfield_validation_message {
+    display: contents;
+  }
+}
+
+.newsletter-inner-holder {
+  .subscribe-newsletter-form .hbspt-form form {
+    @media screen and (max-width: 1025px) {
+      align-items: flex-start;
+
+      .hs_submit.hs-submit {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.popup-blog-form {
+  .mobile-contact-form {
+    @media screen and ($min1024) {
+      padding: 10px 0 0;
+      width: 30%;
+    }
+  }
+}

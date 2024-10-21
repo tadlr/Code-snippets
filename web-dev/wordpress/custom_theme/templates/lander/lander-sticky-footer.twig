@@ -1,0 +1,30 @@
+{% block sticky_footer %}
+<div class='sticky-contact'>
+  <div class='landing-sticky-block'>
+    {% set phone = sm_toll_free_number(field.sticky_bar_phone_number) %}
+    <a href='tel:{{phone}}' rel='noopener'>
+      <img
+        src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/landing-phone-icon.webp'
+        alt='call us'
+      >
+      {% if get_the_id() == 11835 %}
+        <span>
+          {{ field.sticky_bar_phone_number }}
+        </span>
+      {% endif %}
+    </a>
+    <button class='twilio-chat-btn'>
+      <img
+        src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/landing-text-icon.webp'
+        alt='message us'
+      >
+    </button>
+    <div id='form-popup'>
+      <img
+        src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/landing-mail-icon.webp'
+        alt='email us'
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

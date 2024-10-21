@@ -1,0 +1,72 @@
+{% set heading = field.heading %}
+{% set leftHeading = field.heading_on_the_left %}
+{% set columnOneHeading = field.column_one_heading %}
+{% set imageOne = field.image_one %}
+{% set imageTwo = field.image_two %}
+{% set imageThree = field.image_three %}
+<div class='mb-table-container'>
+  <span class='mb-button-holder'>
+    <span class='sticky-m'>
+      <button class='slider-control blaze-prev d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}'>
+        prev
+      </button>
+      <button class='slider-control blaze-next d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}'>
+        next
+      </button>
+    </span>
+  </span>
+  <div class='mb-table mb-table-compare' id='{{uid}}'>
+    <div class='fixed-column'>
+      <div class='fixed-column-inner'>
+        {% set row = field.comparison_table %}
+        <div class='mt-header' data-mh='{{uid}}-header'>Company</div>
+        {% set fileName = fn('basename', fn('wp_get_attachment_image_url',row.logo_one)) %}
+        {% if 'CustomTheme' in fileName or 'customTheme' in fileName %}
+          {% set logoClass = "logo-sk" %}
+        {% endif %}
+        <div class='mt-box mt-logo mt-primary {{logoClass}}' data-mh='{{uid}}-primary'>
+          {% if row.logo_one %}
+            {{ Image(row.logo_one, 'full', {'width': 170, height:52, 'class': 'logo-one' }) }}
+          {% endif %}
+        </div>
+        <div class='mt-box mt-logo mt-second' data-mh='{{uid}}-second'>
+          {% if row.logo_two %}
+            {{ Image(row.logo_two, 'full', {'width': width, height:height, 'class': 'logo-two' }) }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class='scrolling-column'>
+      <div class='scrolling-column-inner blaze-container blaze-slider'>
+        <div class='blaze-track-container'>
+          <div class='blaze-track'>
+            {% for row in row.rows %}
+              <div class='mt-box-inner'>
+                {% set fileName = fn('basename', fn('wp_get_attachment_image_url',field.comparison_table.logo_one)) %}
+                {% if 'CustomTheme' in fileName or 'customTheme' in fileName %}
+                  {% set logoClass = "logo-sk" %}
+                {% endif %}
+                <div class='mt-header' data-mh='{{uid}}-header'>
+                  {{ row.column_one }}
+                </div>
+                <div class='mt-box mt-ctn mt-primary {{logoClass}}' data-mh='{{uid}}-primary'>
+                  <p>
+                    {{ row.column_two }}
+                  </p>
+                </div>
+                <div class='mt-box mt-ctn mt-second' data-mh='{{uid}}-second'>
+                  <p>
+                    {{ row.columns_three }}
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class='pagination-wrapper'>
+          <div class='blaze-pagination'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

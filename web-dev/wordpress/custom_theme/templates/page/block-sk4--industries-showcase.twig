@@ -1,0 +1,217 @@
+{# block-sk4--industries-showcase #}
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('sk-block block--sk4 ') %}
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+  {% set scroll_ID = field.scroll_to_section_id %}
+  {% set extra_classes = field.section_classes %}
+
+  <div class='container'>
+    <div class='txt-content op-1 col-sm-12 '>
+      {% set innerClass = field.content_area.content? 'col-lg-6 mb-3': '' %}
+
+      <div class='mb-3 row'>
+        <div class='col-xs-12 {{innerClass}}'>
+          <h2 class='txt-size-60 txt-size-48-m lh-1 c-blue-1 ltr-spc-pos-0_6'>
+            {{ field.content_area.heading }}
+          </h2>
+        </div>
+
+        {% if field.content_area.content %}
+          <div class='col-xs-12 col-lg-6'>
+            <div class='txt-post-rtf  c-blue-1 txt-size-18 lh-1_66 ltr-spc-pos-0_2 mb-3'>
+              {{ field.content_area.content }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class='row'>
+        <div class='col-xs-12 mt-4'>
+          <div class='content-blocks-wrap'>
+            {% if equipment %}
+              <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 gutter text-center p-lg-5 p-xl-0'>
+                {% for index,post in equipment %}
+                  <div class='single-block prel mb-5'>
+                    <div class='img-hold mb-5'>
+                      <div class='img-wrapper aspect-ratio-1-1'>
+                        {{ Image(post.icon, 'img-300-300', {'class': 'equipment-img', 'width': 300, 'height': 300}) }}
+                      </div>
+                    </div>
+
+                    {% if post.status == 'publish' %}
+                      <a
+                        href='{{post.link}}'
+                        class='equipment-block-btn txt-size-24 txt-size-24-m ltr-spc-pos-0_2 lh-1_2 c-blue-1 fw-600'
+                      >
+                        {{ post.title }}
+                        <span class='green-arrow-img-wrapper'>
+                          <img
+                            class='green-arrow-icon b-lazy'
+                            alt=''
+                            role='presentation'
+                            width='21'
+                            height='16'
+                            data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/plain-txt-green-arrow.webp'
+                          >
+                        </span>
+                      </a>
+                    {% else %}
+                      <span class='equipment-block-btn txt-size-24 txt-size-24-m ltr-spc-pos-0_2 lh-1_2 c-blue-1 fw-600'>
+                        {{ post.title }}
+                      </span>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if spotlight %}
+              <div class='d-none d-desktop-flex row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 gutter text-center'>
+                {% for index,post in spotlight %}
+                  <div class='card-col'>
+                    <div class='card h-100'>
+                      <img
+                        height='88'
+                        width='88'
+                        src='{{ get_template_directory_uri() }}/assets/media/industries/{{post.icon}}.svg'
+                        alt='{{ post.title }}'
+                      >
+
+                      <div class='card-body'>
+                        <p class='card-title'>
+                          {{ post.title }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+          {% if not equipment %}
+            <div class='d-none d-tablet-block d-mobile-block'>
+              <div class='prel slider-arrows'>
+                <div class='row'>
+                  <div class='table-multi-block content-block multi-column-table col-xs-12 mt-1'>
+                    <div class='mb-table-container'>
+                      <button
+                        class='slider-control blaze-prev d-none d-tablet-block d-mobile-block'
+                        data-btn-for='{{uid}}'
+                      >
+                        {{ 'prev' | t }}
+                      </button>
+                      <div
+                        class='mb-table mb-multi-compare'
+                        id='{{uid}}'
+                        {{ equipment ? 'data-slides-940="1" data-slides-820="1" data-slides-940="1" data-slides-992="1" data-slides-1024="2"':'data-slides-767="2" data-slides-992="2" data-slides-1024="3"' }}
+                      >
+                        <div class='blaze-container blaze-slider'>
+                          {% if equipment == 35 %}
+                            <div class='blaze-track-container'>
+                              {{ '<div class="blaze-track">' }}
+                              {% set totalItems = equipment|length %}
+
+                              {% for index,post in equipment %}
+                                {% if index % 2 == 0 %}
+                                  {% if index != 0 %}
+                                    {{ '</div>' | raw }}
+                                  {% endif %}
+                                  {{ '<div class="mt-box-inner">' }}
+                                {% endif %}
+                                <div class='single-block prel mb-5 col h-auto'>
+                                  <a href='{{post.link}}' class='whole-block-link'>{{ post.title }}</a>
+                                  <div class='img-hold mb-5'>
+                                    <div class='img-wrapper aspect-ratio-1-1'>
+                                      {{ Image(post.icon, 'img-300-300', {'class': 'equipment-img', 'width': 243, 'height': 243}) }}
+                                    </div>
+                                  </div>
+                                  <a
+                                    href='{{post.link}}'
+                                    class='equipment-block-btn txt-size-24 txt-size-24-m ltr-spc-pos-0_2 lh-1_2 c-blue-1 fw-600'
+                                  >
+                                    {{ post.title }}
+                                    <span class='green-arrow-img-wrapper'>
+                                      <img
+                                        class='green-arrow-icon b-lazy'
+                                        alt=''
+                                        role='presentation'
+                                        width='21'
+                                        height='16'
+                                        data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/plain-txt-green-arrow.webp'
+                                      >
+                                    </span>
+                                  </a>
+                                </div>
+
+                                {% if loop.last %}
+                                  {{ '</div>' }}
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          {% endif %}
+
+                          {% if spotlight %}
+                            <div class='blaze-track-container'>
+                              {{ '<div class="blaze-track">' }}
+                              {% set totalItems = spotlight|length %}
+                              {% for index,post in spotlight %}
+                                {% if index % 2 == 0 %}
+                                  {% if index != 0 %}
+                                    {{ '</div>' | raw }}
+                                  {% endif %}
+                                  {{ '<div class="mt-box-inner">' }}
+                                {% endif %}
+                                <div class='col'>
+                                  <div class='card h-100 w-auto'>
+                                    <img
+                                      height='88'
+                                      width='88'
+                                      class='b-lazy'
+                                      data-src='{{ get_template_directory_uri() }}/assets/media/industries/{{post.icon}}.svg'
+                                      alt='{{ post.title }}'
+                                    >
+                                    <div class='card-body'>
+                                      <p class='card-title'>
+                                        {{ post.title }}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                {% if loop.last %}
+                                  {{ '</div>' }}
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          {% endif %}
+                        </div>
+                        <div class='pagination-wrapper'>
+                          <div class='blaze-pagination'></div>
+                        </div>
+                      </div>
+                      <button
+                        class='slider-control blaze-next d-none d-tablet-block d-mobile-block'
+                        data-btn-for='{{uid}}'
+                      >
+                        {{ 'next' | t }}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% if field.footer %}
+      <div class='pt-5'>
+        {% include 'field/field--footer.twig' %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

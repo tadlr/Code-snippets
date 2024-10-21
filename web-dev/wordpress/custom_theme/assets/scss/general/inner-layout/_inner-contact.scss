@@ -1,0 +1,441 @@
+.inner-pages-contact-section {
+  background-color: $blue-1;
+  padding-top: 100px;
+  padding-bottom: 0px;
+  overflow: hidden;
+
+  p {
+    color: $white;
+  }
+
+  .c-blue-1,
+  .text-blue p {
+    color: $blue-1;
+  }
+
+  .talk-right-heading,
+  .talk-left-heading {
+    line-height: 32px;
+
+    @media screen and ($desktop) {
+      line-height: $h2-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      line-height: $h2-desktop-line-height;
+    }
+    @media screen and ($mobile) {
+      line-height: $h2-mobile-line-height;
+    }
+  }
+
+  .talk-left-subheading,
+  .talk-right-subheading {
+    margin-bottom: 32px;
+    font-size: 14px;
+    letter-spacing: 7px;
+  }
+
+  .talk-left-content,
+  .talk-right-content {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+
+    strong,
+    b {
+      font-weight: 600;
+    }
+  }
+
+  @media screen and ($min1024) {
+    margin-top: -2px !important;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      background-color: $blue-10;
+    }
+  }
+
+  &.blog-social-media {
+    &::after {
+      background-color: $green-2;
+      opacity: 0.8;
+    }
+
+    .contact-block {
+      // @media screen and ($mobile_all) {
+      //   padding-top: 100px;
+      //   padding-bottom: 100px;
+      //   background-color: rgb(23 252 197 / 80%);
+      //   background-color: $blue-10;
+      // }
+      @media screen and ($mobile_all) {
+        background-color: $green-2;
+        opacity: 0.8;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(padding-left, 212px);
+      }
+
+      @media screen and ($min1920) {
+        padding-left: 212px;
+      }
+    }
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 171px;
+    padding-bottom: 101px;
+  }
+
+  .max-w-container {
+    z-index: 4;
+  }
+
+  .bg-image {
+    z-index: 1;
+    background-size: cover;
+    opacity: 0;
+
+    @media screen and ($max1024) {
+      opacity: 1 !important;
+    }
+  }
+
+  .txt-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+
+  .background-flower-path-patterns {
+    pointer-events: none;
+    @include pabs;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(right, 25px);
+      @include vw(width, 904px);
+      @include vw(height, 904px);
+    }
+
+    @media screen and ($min1920) {
+      right: 25px;
+      width: 904px;
+      height: 904px;
+    }
+  }
+
+  .background-flower-path-svg {
+    flex: 0 0 auto;
+    height: 50%;
+    width: 50%;
+    opacity: 0.2;
+
+    path {
+      fill: transparent;
+      stroke: $white;
+    }
+  }
+
+  .single-block {
+    flex: 0 1 auto;
+    width: 100%;
+
+    @media screen and ($min1024) {
+      width: 50%;
+    }
+  }
+
+  .txt-content-block {
+    @media screen and ($mobile_all) {
+      padding-bottom: 100px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(padding-right, 220px);
+    }
+
+    @media screen and ($min1920) {
+      padding-right: 282px;
+    }
+
+    .txt-post-rtf {
+      margin-top: 25px;
+      width: 100%;
+
+      @media screen and ($min1024) {
+        @include vw(margin-top, 83px);
+        @include vw(margin-left, -3px);
+        @include vw(max-width, 330px);
+      }
+
+      @media screen and ($min1920) {
+        margin-top: 83px;
+        margin-left: -3px;
+        max-width: 330px;
+      }
+    }
+  }
+
+  .contact-block {
+    @media screen and ($mobile_all) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      background-color: rgb(23 252 197 / 80%);
+      background-color: $blue-10;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(padding-left, 220px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 282px;
+    }
+
+    .txt-post-rtf {
+      margin-top: 25px;
+      max-width: 430px;
+      width: 100%;
+
+      @media screen and ($max1024) {
+        max-width: 100%;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(margin-top, 30px);
+        @include vw(margin-left, 2px);
+        @include vw(max-width, 430px);
+        @include vw(margin-right, -60px);
+      }
+
+      @media screen and ($min1920) {
+        margin-top: 30px;
+        margin-left: 2px;
+        max-width: 430px;
+        margin-right: -60px;
+      }
+    }
+
+    .btn-default {
+      width: 100%;
+      margin-top: 20px;
+
+      @media screen and ($min1024) {
+        @include vw(margin-top, 20px);
+      }
+
+      @media screen and ($min1920) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .txt-size-12 {
+    margin-bottom: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-left, 3px);
+      @include vw(margin-bottom, 25px);
+    }
+
+    @media screen and ($min1920) {
+      margin-left: 3px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .txt-post-rtf {
+    ul:last-child,
+    p:last-child,
+    h2:last-child,
+    .h2:last-child,
+    h3:last-child,
+    .h3:last-child,
+    h4:last-child,
+    .h4:last-child,
+    h5:last-child,
+    .h5:last-child,
+    h6:last-child,
+    .h6:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .buttons-wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    margin-top: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 54px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 54px;
+    }
+  }
+
+  .contact-section-btn {
+    &:hover,
+    &:focus {
+      border: 1px solid $white;
+
+      .contact-btn-icon {
+        transform: scale(1.05) translateY(-50%);
+      }
+
+      .btn-txt {
+        transform: translateX(5px);
+      }
+    }
+
+    @media screen and ($min1024) {
+      // @include vw(margin-left, -16px);
+    }
+
+    @media screen and ($min1920) {
+      // margin-left: -16px;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 17px;
+
+      @media screen and ($min1024) {
+        @include vw(margin-bottom, 17px);
+      }
+
+      @media screen and ($min1920) {
+        margin-bottom: 17px;
+      }
+    }
+
+    &.header-open-form-btn,
+    &.header-cta-btn {
+      margin-top: 17px;
+    }
+
+    &.landing-header-open-form-btn,
+    &.landing-header-cta-btn {
+      margin-top: 17px;
+    }
+
+    .btn-txt {
+      color: $white;
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &.callback-popup-btn {
+      margin-top: 17px;
+      text-align: left;
+      .btn-txt {
+        color: $white;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+    &.block-callback-popup-btn {
+      margin-top: 17px;
+      text-align: left;
+      .btn-txt {
+        color: $white;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin-top: 29px;
+    margin-bottom: 29px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 29px);
+      @include vw(margin-bottom, 29px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 29px;
+      margin-bottom: 29px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 39px;
+
+      @media screen and ($min1024) {
+        @include vw(padding-left, 39px);
+      }
+
+      @media screen and ($min1920) {
+        padding-left: 39px;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url($ROOT_PATH + 'media/images/pictograms/checkmark-green.webp');
+        width: 21px;
+        height: 15px;
+
+        @media screen and ($min1024) {
+          @include vw(width, 21px);
+          @include vw(height, 15px);
+        }
+
+        @media screen and ($min1920) {
+          width: 21px;
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  .guide-form {
+    margin-top: 39px;
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 39px);
+      @include vw(margin-left, -27px);
+      width: calc(100% + 4.375vw);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 39px;
+      margin-left: (-$contentPadding);
+      width: calc(100% + 84px);
+    }
+  }
+}

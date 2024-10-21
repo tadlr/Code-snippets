@@ -1,0 +1,80 @@
+.sk-blog,
+.sk-blog-content {
+  .wp-block-pullquote {
+    display: flex;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    padding: 0;
+    text-align: inherit;
+
+    blockquote {
+      margin-top: 15px;
+      position: relative;
+      p {
+        &:first-of-type {
+          display: inline-block;
+          vertical-align: top;
+        }
+        margin-left: 35px;
+        color: $blue-1;
+        font-family: $redhat;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 1.5rem !important;
+
+        @media screen and ($min1024) {
+          margin-bottom: 0.417vw !important;
+        }
+
+        @media screen and ($min1920) {
+          margin-bottom: 8px !important;
+        }
+      }
+      &::before {
+        vertical-align: top;
+        content: '';
+        background-image: url($ROOT_PATH + 'media/svgs/quote.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50%;
+
+        display: inline-block;
+        width: 29px;
+        height: 30px;
+        position: absolute;
+        margin-right: 12px;
+        top: -5px;
+      }
+
+      cite {
+        margin-left: 35px;
+        display: inline-block;
+        color: $blue-1;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        padding-left: 30px !important;
+
+        // strong, b {
+        font-weight: 600 !important;
+        &::before {
+          backface-visibility: hidden;
+          background-color: #002ea6;
+          content: '';
+          display: inline-block;
+          height: 2px;
+          left: 0px;
+          position: absolute;
+          top: 0.775em;
+          width: 14px;
+        }
+        // }
+      }
+    }
+  }
+}

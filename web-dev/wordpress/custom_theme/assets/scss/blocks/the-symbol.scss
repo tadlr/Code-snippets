@@ -1,0 +1,112 @@
+@import 'block-base';
+.symbol-section {
+  // background-color: $white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &.about-page-section {
+    @media screen and ($min1024) {
+      @include vw(padding-top, 161px);
+    }
+    @media screen and ($min1920) {
+      padding-top: 161px;
+    }
+  }
+  &.careers-symbol {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .txt-content {
+    @media screen and ($mobile_all) {
+      // order: 1;
+      width: 100%;
+    }
+  }
+  .symbol-wrapper {
+    text-align: center;
+  }
+  .symbol-section-svg {
+    flex: 0 0 auto;
+    margin-bottom: 30px;
+    max-height: 530px;
+    @media screen and ($min1024) {
+      padding-right: 35px;
+    }
+  }
+
+  .txt-size-12 {
+    margin-bottom: 15px;
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 29px);
+    }
+    @media screen and ($min1920) {
+      margin-bottom: 29px;
+    }
+  }
+
+  .txt-size-80 {
+    margin-bottom: 25px;
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 50px);
+    }
+    @media screen and ($min1920) {
+      margin-bottom: 50px;
+    }
+  }
+
+  .txt-post-rtf {
+    margin-bottom: 25px;
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 48px);
+      @include vw(padding-right, 35px);
+    }
+    @media screen and ($min1920) {
+      margin-bottom: 48px;
+      padding-right: 35px;
+    }
+    p {
+      &:not(:last-of-type) {
+        @media screen and ($mobile_sm) {
+          @include vw(margin-bottom, 20px, 500);
+        }
+        @media screen and ($mobile_lg) {
+          margin-bottom: 20px;
+        }
+        @media screen and ($min1024) {
+          @include vw(margin-bottom, 31px);
+        }
+        @media screen and ($min1920) {
+          margin-bottom: 31px;
+        }
+      }
+    }
+  }
+
+  .max-w-container {
+    display: flex;
+    align-items: flex-start;
+    @media screen and ($mobile_all) {
+      flex-flow: column nowrap;
+    }
+  }
+
+  .st0 {
+    fill: none;
+  }
+
+  .st1 {
+    fill: $blue-7;
+  }
+
+  .st2 {
+    fill: $green-2;
+  }
+
+  .st3 {
+    fill: $blue-2;
+  }
+
+  .st4 {
+    fill: $red-1;
+  }
+}

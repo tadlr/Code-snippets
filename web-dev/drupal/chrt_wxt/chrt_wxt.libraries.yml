@@ -1,0 +1,38 @@
+wxt-overrides:
+  css:
+    theme:
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/js-cookie
+
+theme-scripts:
+  js:
+    js/scripts.js: {}
+  dependencies:
+    - chrt_wxt/wxt-overrides
+    # - chrt_wxt/indentblock
+    - chrt_wxt/default-menu
+
+# match-height:
+#   js:
+#     vendors/match-height/dist/jquery.matchHeight-min.js: { minified: true }
+
+toc:
+  js:
+    js/toc.behaviors.js: {}
+  dependencies:
+    - core/jquery
+    - chrt_wxt/theme-scripts
+
+indentblock:
+  css:
+    theme:
+      css/ckeditor.indentblock.css: {}
+
+default-menu:
+  js:
+    js/menu-apg/MenubarItemLinks.js: {}
+    js/menu-apg/MenubarLinks.js: {}
+    js/menu-apg/PopupMenuItemLinks.js: {}
+    js/menu-apg/PopupMenuLinks.js: {}

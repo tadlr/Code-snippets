@@ -1,0 +1,44 @@
+@mixin range-track{
+  appearance: none;
+  background: $white;
+  height: 2px;
+  transition: height 300ms ease-in-out;
+}
+
+@mixin range-progress{
+  appearance: none;
+  background: $white;
+  border-radius: 2px;
+  height: 2px;
+  transition: height 300ms ease-in-out;
+}
+
+@mixin range-thumb{
+  appearance: none;
+  background: $white;
+  border: 1px solid $gray-base;
+  border-radius: 50%;
+  height: 7px;
+  margin-top: 0;
+  position: relative;
+  width: 7px;
+  transition: all 300ms ease-in-out;
+}
+
+@mixin range-track-hover{
+  height: 5px;
+}
+
+@mixin range-progress-hover{
+  height: 4px;
+}
+
+@mixin range-thumb-hover{
+  height: 7px;
+  width: 7px;
+}
+
+@mixin progress-bar{
+  background: $brand-info;
+  border-radius: 0;
+}

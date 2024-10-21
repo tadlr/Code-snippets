@@ -1,0 +1,23 @@
+.image-content-box{
+  margin-bottom: $padding;
+
+  .image-wrapper{
+    height: 390px;
+    position: relative;
+
+    img{
+      @include object-fit;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  .content-wrapper{
+    margin-top: -205px;
+  }
+
+  + .page-section{
+    padding-top: 0!important;
+  }
+}

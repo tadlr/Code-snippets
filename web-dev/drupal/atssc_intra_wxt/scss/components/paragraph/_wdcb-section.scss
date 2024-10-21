@@ -1,0 +1,25 @@
+.page-section {
+  padding-bottom: $padding-large-xs;
+  z-index: 0;
+
+  .content-title {
+    margin-bottom: $padding-xs;
+    margin-top: 0;
+  }
+
+  &.no-bg + .no-bg {
+    > .container {
+      // @include border-top;
+
+      &:before {
+        top: -#{$padding};
+      }
+    }
+  }
+}
+
+.region-content > * > .page-section {
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+}

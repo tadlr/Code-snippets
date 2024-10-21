@@ -1,0 +1,40 @@
+{# Block--sk2 #}
+{% extends "block-sk-block-base.twig" %}
+{% block block_content %}
+<div class='inner-pages-slider-section customTheme-block block-mc py-0'>
+  <div class='container'>
+    <div class='txt-content'>
+      <h2 class='c-blue-1'>
+        {{ field.related_posts_heading.heading_text }}
+      </h2>
+      <div class='block-content c-blue-1'>
+        {{ field.description }}
+      </div>
+      <a
+        href='{{ home_url() }}/blog/?content-type[]={{field.select_blog_posts_categories.0}}&search=&page=1#blog-filter'
+        class='btn-txt-arrow anim-translate-y c-blue-1'
+      >
+        <span class='btn-txt'>
+          {{ field.blog_link_text }}
+        </span>
+        <img
+          class='green-arrow-icon b-lazy'
+          alt='green arrow pointing right'
+          width='21'
+          height='16'
+          data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/plain-txt-green-arrow.webp'
+        >
+      </a>
+    </div>
+    <div class='swiper-container swiper-trigger fade-in-last'>
+      <div class='swiper-wrapper'>
+        {% for post in spotlight %}
+          <div class='swiper-slide'>
+            {% include 'lander/related-article.twig' %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

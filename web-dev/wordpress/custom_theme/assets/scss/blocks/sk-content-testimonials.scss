@@ -1,0 +1,153 @@
+@import 'block-base';
+
+.block--bsk9 {
+  @media screen and ($max1024) {
+    .left-content {
+      margin-bottom: $contentPadding;
+    }
+  }
+
+  .btn-default {
+    margin-top: 27px;
+  }
+  .media-block {
+    align-items: unset;
+  }
+  .media-left {
+    @media screen and (min-width: 1024px) {
+      flex-direction: row-reverse;
+    }
+    @media screen and (max-width: 1024px) {
+      flex-direction: column !important;
+    }
+  }
+  .read-reviews {
+    color: $blue-1;
+    .text-headline {
+      margin-bottom: 27px;
+      display: block;
+    }
+  }
+  .testimonial-carousel {
+    // position: relative;
+    margin: auto;
+    margin-bottom: 65px !important;
+    max-width: calc(100vw - 15px);
+    max-width: 90%;
+    @media screen and ($min1024) {
+      max-width: 480px;
+    }
+
+    .flex-direction-nav a {
+      opacity: 1 !important;
+    }
+
+    // .slider-navigation {
+    .slider-holder {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      transform: translateX(-6.5%);
+      width: 115%;
+      top: 50%;
+      margin-top: -22.5px;
+      @media screen and ($max1024) {
+        transform: translateX(-4.5%);
+        width: 110%;
+      }
+    }
+
+    // .lSAction {
+    //   > a {
+    //     opacity: 1;
+    //   }
+    // }
+    .slide {
+      border-radius: 18px;
+
+      margin-bottom: 0px;
+      // max-width: calc(100vw - 15px);
+      padding: 5px;
+      @media screen and ($min1024) {
+        max-width: 95%;
+        padding: 24px;
+        max-width: 480px;
+      }
+
+      .shadow {
+        border-radius: 18px;
+        box-shadow: 3px 7px 7.5px 0px #00000026;
+        background-color: $white;
+        padding: 48px;
+        padding-bottom: 10px;
+        height: 100%;
+        @media screen and ($max1024) {
+          padding: 20px;
+        }
+      }
+
+      @media screen and ($mobile) {
+        min-height: 360px;
+      }
+
+      .quote-img-wrap {
+        display: none !important;
+      }
+
+      .txt-content-inner {
+        display: flex;
+        &::before {
+          content: '';
+          background-image: url($ROOT_PATH + 'media/svgs/quote.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: 50%;
+          flex: 0 0 auto;
+          display: inline-block;
+          width: 29px;
+          height: 30px;
+          position: relative;
+          margin-right: 12px;
+          top: -5px;
+        }
+      }
+      .quote-by-info {
+        padding-left: 22px !important;
+        font-family: 600;
+
+        strong,
+        b {
+          font-weight: 600;
+        }
+
+        &::before {
+          background-color: $blue-1;
+        }
+      }
+
+      .company-name {
+        font-family: $libre;
+      }
+
+      .person-img-wrap {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+
+        img {
+          border-radius: 50%;
+          width: 90px;
+          height: 90px;
+          object-fit: cover;
+        }
+      }
+      .txt-content,
+      .txt-content p {
+        color: $blue-1;
+      }
+    }
+  }
+}

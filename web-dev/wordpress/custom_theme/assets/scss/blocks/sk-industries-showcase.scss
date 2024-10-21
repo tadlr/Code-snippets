@@ -1,0 +1,115 @@
+@import 'block-base';
+
+.block--sk4 {
+  &.sk-content-block {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .single-block {
+    .img-hold {
+      margin-bottom: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 243px;
+      width: 100%;
+    }
+    .equipment-img {
+      max-width: 243px;
+      width: 100%;
+      max-height: 243px;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease-in-out;
+    }
+    .img-wrapper {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .green-arrow-img-wrapper {
+      position: relative;
+      left: 2px;
+      transition: 0.3s ease-in-out;
+    }
+    a.equipment-block-btn {
+      text-decoration: none;
+    }
+    &:hover {
+      .equipment-img {
+        transform: scale(1.05);
+      }
+      a.equipment-block-btn {
+        text-decoration: underline;
+      }
+      .green-arrow-img-wrapper {
+        left: 4px;
+      }
+    }
+  }
+
+  .blaze-next {
+    @media screen and (max-width: 576px) {
+      right: -5% !important;
+    }
+
+    @media screen and (max-width: 580px) {
+      right: -5px !important;
+    }
+  }
+
+  .blaze-slider.blaze-container {
+    @media screen and (max-width: 580px) {
+      padding: 0 15px;
+    }
+  }
+
+  @media screen and ($tablet) {
+    .blaze-container.blaze-slider {
+      width: 100%;
+    }
+  }
+
+  .gutter {
+    margin-top: 0;
+    @media screen and ($min1024) {
+      margin-right: calc(-0.5 * 8rem);
+      margin-left: calc(-0.5 * 8rem);
+    }
+  }
+
+  .card {
+    &-col {
+      margin-bottom: 48px;
+    }
+
+    &-title {
+      font-weight: 700;
+    }
+  }
+
+  .mb-table {
+    box-shadow: none;
+    position: unset;
+
+    .mt-box-inner,
+    .fixed-column-inner {
+      background-color: transparent;
+      .col {
+        height: 200px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      > div:not(.mt-header) {
+        &:nth-of-type(odd) {
+          background-color: transparent;
+        }
+
+        &:nth-of-type(even) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

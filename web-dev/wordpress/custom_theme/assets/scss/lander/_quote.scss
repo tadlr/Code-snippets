@@ -1,0 +1,57 @@
+/* This class is being applied on an HTML element that contains a quote */
+.sk-quote {
+  /* This sets the font weight and line height of paragraphs and anchor tags inside a ".sk-quote" element.*/
+  p,
+  a {
+    font-weight: bold;
+    line-height: 1.666rem;
+  }
+
+  /* This styles an immediate child figure element within ".sk-quote". It sets relative position and margin bottom. */
+  > figure {
+    position: relative;
+    margin-bottom: 0;
+
+    /* This applies a background image as a pseudo-element ":before" for the immediate child figure element. */
+    &::before {
+      content: '';
+      @include bg-image($ROOT_PATH + 'media/icons/quote-icon-red.webp');
+      background-image: url($ROOT_PATH + 'media/svgs/quote.svg');
+      width: 29px;
+      height: 30px;
+      display: block;
+
+      /* This sets the absolute positioning of the pseudo-element and its distance from left and top. */
+      position: absolute;
+      left: 1.25rem;
+      top: 0.5rem;
+    }
+  }
+
+  /* This styles a ".blockquote" class element and sets margin bottom. */
+  .blockquote {
+    margin-bottom: 0.5rem;
+  }
+
+  /* This styles a ".blockquote-footer" class element and makes it an inline-flex container. It also removes its margin bottom. */
+  .blockquote-footer {
+    display: inline-flex;
+    margin-bottom: 0rem;
+
+    /* This styles the ".sk-quote-by" class element defined inside ".blockquote-footer" with specific color, font weight and line height. It sets margins for it as well */
+    .sk-quote-by {
+      color: $primary;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 0;
+      margin-top: 0.1667rem;
+      margin-left: 1.3889rem;
+
+      /* This styles "strong" and "b" tag elements and sets their font weight. */
+      strong,
+      b {
+        font-weight: 500 !important;
+      }
+    }
+  }
+}

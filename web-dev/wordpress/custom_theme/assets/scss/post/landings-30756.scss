@@ -1,0 +1,132 @@
+@import '../variables';
+
+.single.sk-lander--30756 {
+  @media screen and ($mobile) {
+    #main-content [data-scroll-section],
+    .mobile-menu-opened #main-content [data-scroll-section] {
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+  }
+  .block--sk1 {
+    &.sk-hero-ab {
+      @media screen and ($mobile) {
+        h1 {
+          margin-top: 48px;
+          padding-top: 0;
+        }
+        .container .row {
+          background-color: transparent !important;
+        }
+      }
+      .bg-banner-media {
+        max-height: 600px;
+        z-index: 1;
+
+        @media screen and ($mobile) {
+          display: inline-block !important;
+        }
+
+        @media screen and (max-width: 1200px) {
+          max-height: 500px;
+          .media-item {
+            object-fit: contain !important;
+          }
+        }
+
+        @media screen and ($max1024) {
+          position: relative;
+          display: inline-block;
+          .media-item {
+            object-fit: contain !important;
+            max-height: unset;
+          }
+        }
+      }
+
+      &:after {
+        // background: linear-gradient(
+        //   90deg,
+        //   rgba(0, 46, 166, 1) 0%,
+        //   rgba(0, 46, 166, 1) 20%,
+        //   rgba(0, 46, 166, 1) 20%,
+        //   rgba(0, 46, 166, 0) 100%
+        // );
+
+        // background: linear-gradient(
+        //   0deg,
+        //   rgb(0, 46, 166) 45%,
+        //   rgba(0, 46, 166, 0) 100%
+        // );
+
+        @media screen and ($tablet) {
+          background: linear-gradient(
+            0deg,
+            rgba(0, 46, 166, 1) 0%,
+            rgba(0, 46, 166, 1) 20%,
+            rgba(0, 46, 166, 1) 20%,
+            rgba(0, 46, 166, 0) 100%
+          );
+        }
+
+        @media screen and ($mobile) {
+          background: linear-gradient(
+            0deg,
+            rgb(0, 46, 166) 45%,
+            rgba(0, 46, 166, 0) 100%
+          );
+          // background: linear-gradient(
+          //   2deg,
+          //   #002ea6 55.04%,
+          //   rgba(0, 46, 166, 0.26) 81.77%,
+          //   rgba(0, 46, 166, 0) 95.1%
+          // );
+          // background: linear-gradient(
+          //   0deg,
+          //   rgba(0, 46, 166, 1) 10%,
+          //   rgba(0, 46, 166, 1) 45%,
+          //   // rgba(0, 46, 166, 1) 35%,
+          //   rgba(0, 46, 166, 0) 100%
+          // );
+        }
+      }
+      .col-sm-12.col-md-10 {
+        @media screen and ($tablet) {
+          width: 100%;
+          padding-top: 64px;
+          .py-0.column-inner {
+            margin-top: -26px;
+          }
+        }
+        @media screen and ($mobile) {
+          width: 100%;
+          .py-0.column-inner {
+            margin-top: -26px;
+          }
+          padding-top: 32px;
+        }
+      }
+    }
+  }
+
+  .block--bsk9 {
+    .content-block.plain-txt-block {
+      p {
+        margin-bottom: 64px;
+      }
+    }
+    .btn-default {
+      margin-top: 64px;
+    }
+    @media screen and (max-width: 1024px) {
+      .left-content {
+        margin-bottom: 0;
+      }
+
+      .slider-container.mt-sm-3 {
+        margin-top: 64px !important;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}

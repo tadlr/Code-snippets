@@ -1,0 +1,50 @@
+{% if is_preview %}
+  [Legacy M] Call to action
+{% endif %}
+
+<section
+  id='{{ sectionID }}'
+  class='footer-landing-page-template footer sk-block block-legacy--t'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='container max-w-container'>
+    <div class='content-type-3'>
+      {% set row = field.cta_button %}
+
+      {% set heading = row.heading %}
+      {% set headingColor = row.heading_color %}
+      {% set text = row.text %}
+      {% set ctaText = row.cta_text %}
+      {% set ctaLink = row.cta_link %}
+      <div class='text-center'>
+        <h2 class='c-white' style='color:{{ headingColor }}'>{{ heading }}</h2>
+        <div class='txt-post-rtf fw-400 c-white lh-1_764 ltr-spc-pos-0_2'>{{ text }}</div>
+
+        {% if ctaText %}
+          {% if row.external_link == 'yes' %}
+            <a
+              href='{{ ctaLink }}'
+              class='btn-default size-18-txt ltr-spc-neg-0_2 c-blue-1 btn-green-1 section-color-blue btn-offset-12 fw-700 mt-0'
+            >
+              <span class='btn-bg-el'></span>
+              <span class='btn-txt'>{{ ctaText }}</span>
+            </a>
+            {% elseif row.external_link == 'modal' %}
+            <button class='btn-default size-18-txt ltr-spc-neg-0_2 c-blue-1 btn-green-1 section-color-blue btn-offset-12 fw-700 mt-0 open-form-modal'>
+              <span class='btn-bg-el'></span>
+              <span class='btn-txt'>{{ ctaText }}</span>
+            </button>
+          {% else %}
+            <button
+              class='btn-default size-18-txt ltr-spc-neg-0_2 c-blue-1 btn-green-1 section-color-blue btn-offset-12 fw-700 mt-0 scroll-to-section-btn'
+              data-target='.inner-pages-contact-section'
+            >
+              <span class='btn-bg-el'></span>
+              <span class='btn-txt'>{{ ctaText }}</span>
+            </button>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

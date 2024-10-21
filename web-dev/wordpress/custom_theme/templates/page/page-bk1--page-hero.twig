@@ -1,0 +1,141 @@
+{# page-bk1--page-hero #}
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% if single_template == 'page-new-business' or single_template == 'page-30213' or single_template == 'page-2895' %}
+    {% set attributes = attributes.addClass('inner-pages-landing-section prel offset-x-mobile-38 offset-x-desktop-201 new-business-page ov-hidden full-width-bg') %}
+  {% else %}
+    {% set attributes = attributes.addClass('inner-pages-landing-section prel offset-x-mobile-38 offset-x-desktop-201 ov-hidden') %}
+  {% endif %}
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% set heroBackground = field.hero_background_image %}
+  {% set size = 'full' %}
+  {% if heroBackground %}
+    {% set heroBackground_url = wp_get_attachment_image_url(heroBackground, size) %}
+  {% endif %}
+
+  {% if single_template == 'page-new-business' or single_template == 'page-30213' or single_template == 'page-2895' %}
+    <div class='op-0'>
+      <div class='bg-image no-negative-translate' style="background-image: url('{{ heroBackground_url }}')"></div>
+
+      <div class='max-w-container w-1513 prel'>
+        <div class='background-circles-wrap'>
+          <div class='background-inner-circle top-left'></div>
+          <div class='background-inner-circle top-right'></div>
+          <div class='background-inner-circle bottom-left'></div>
+          <div class='background-inner-circle bottom-right lighter-circle'></div>
+        </div>
+        <div class='breadcrumb-wrap prel'>
+          <ul class='breadcrumb-list ff-libre fw-400 lh-1 txt-size-12 ltr-spc-pos-0_2'>
+            <li>
+              <a href='{{t('/')}}'>{{ t('Home') }}</a>
+            </li>
+            {#
+              <li>
+              <a href='{{home_url(t('/equipment')) }}'> {{ t('Accept payments') }}</a>
+              </li>
+            #}
+          </ul>
+          <p class='txt-size-12 upper lh-1 fw-400 ltr-spc-pos-4_6 current-page-breadcrumb-title'>
+            {{ t('Starting a new business') }}
+          </p>
+        </div>
+        <div class='sk-content-block text-white'>
+          <p class='c-white pre-heading title-highlight mb-0 pt-3'>
+            {{ pre_heading }}
+          </p>
+
+          <div class='content-wrap offset-x-desktop-126 prel'>
+            <div class='txt-content col-sm-12 col-md-11 col-lg-6'>
+              <h1 class='txt-size-100 txt-size-60-m lh-1 c-white ltr-spc-pos-1 heading-anim'>
+                {{ hero_heading|striptags('<a><b><strong>') }}
+              </h1>
+
+              <div class='single-txt-block-no-title txt-post-rtf fw-400 txt-size-18 lh-1_66 ltr-spc-pos-0_2'>
+                <p>{{ hero_subheading|striptags('<a><b><strong>') }}</p>
+              </div>
+            </div>
+
+            {% include ('field--cta-btn.twig') %}
+
+            <button class='section-scroll-btn scroll-to-next-btn d-block'>
+              <span class='visually-hidden'>{{ t('Scroll to next section') }}</span>
+              <svg class='scroll-btn-border-svg' viewbox='0 0 115 115'>
+                <circle class="scroll-btn-border-circle" fill="none" cx="57.5" cy="57.5" r="56"/>
+              </svg>
+              <img
+                width='36'
+                height='57'
+                alt=''
+                role='presentation'
+                data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/scroll-arrow.webp'
+                class='scroll-btn-img b-lazy dont-show'
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% else %}
+    <div class='op-0'>
+      <div class='bg-image no-negative-translate' style="background-image: url('{{ heroBackground_url }}')"></div>
+      <div class='max-w-container w-1513 prel'>
+        <div class='breadcrumb-wrap prel'>
+          <ul class='breadcrumb-list ff-libre fw-400 lh-1 txt-size-12 ltr-spc-pos-0_2'>
+            <li>
+              <a href='{{t('/')}}'>{{ t('Home') }}</a>
+            </li>
+            {#
+              {% if fn('is_single', '29530') == false %}
+              <li>
+              <a href='{{t('/')}}'>{{ t('Accept payments') }}</a>
+              </li>
+              {% endif %}
+            #}
+          </ul>
+          <p class='txt-size-12 upper lh-1 fw-400 ltr-spc-pos-4_6 current-page-breadcrumb-title'>
+            {% if fn('get_the_ID') == '32564' %}
+              {{ fn('the_title') }}
+            {% elseif fn('is_single', '29530') == false %}
+              {{ t('Find the equipment you need') }}
+            {% else %}
+              {{ t('Rate Sekurity Guarantee®') }}
+            {% endif %}
+          </p>
+        </div>
+        <div class='content-wrap offset-x-desktop-126 prel'>
+          <div class='txt-content'>
+            <h1 class='txt-size-100 txt-size-60-m lh-1 c-white ltr-spc-pos-1 heading-anim'>
+              {{ hero_heading|striptags('<a><b><strong>') }}
+            </h1>
+
+            <div class='single-txt-block-no-title txt-post-rtf fw-400 txt-size-18 lh-1_66 ltr-spc-pos-0_2'>
+              {{ hero_subheading }}
+            </div>
+          </div>
+
+          {% include ('field--cta-btn.twig') %}
+
+          <button class='section-scroll-btn scroll-to-next-btn d-block'>
+            <span class='visually-hidden'>{{ t('Scroll to next section') }}</span>
+            <svg class='scroll-btn-border-svg' viewbox='0 0 115 115'>
+              <circle class="scroll-btn-border-circle" fill="none" cx="57.5" cy="57.5" r="56"/>
+            </svg>
+            <img
+              width='36'
+              height='57'
+              alt=''
+              role='presentation'
+              data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/scroll-arrow.webp'
+              class='scroll-btn-img b-lazy dont-show'
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

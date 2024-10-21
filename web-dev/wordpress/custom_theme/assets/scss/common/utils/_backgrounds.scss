@@ -1,0 +1,37 @@
+.bg-light {
+  background-color: $gray-21;
+}
+
+.bg-blue {
+  background-color: $blue-1;
+  @include WhiteText;
+
+  a:not(button, .btn, .btn-primary, .btn-default, .btn-txt) {
+    color: $green-1 !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.bg-blue-12 {
+  background-color: $blue-12;
+  @include WhiteText;
+}
+
+.bg-green {
+  background-color: $green-1;
+  @include BlueText;
+
+  a[href^='tel:']:not(.btn-default):not(.contact-section-btn):not(.btn):not(
+      [type='submit']
+    ) {
+    color: $blue-1 !important;
+  }
+}
+
+.single-rates section .content-block-holder {
+  margin-bottom: 0 !important;
+}

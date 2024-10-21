@@ -1,0 +1,75 @@
+.full-width-bg {
+  background-color: $fw-bg;
+}
+
+@for $i from 1 through 12 {
+  .flex-#{$i} {
+    flex: #{$i};
+  }
+}
+
+.sk-lander {
+  .f0 {
+    font-size: unset;
+  }
+}
+
+// @media screen and ($max1024) {
+//   $font-size-root: 16px;
+//   $font-size-base: 1rem;
+//   .h1,
+//   h1 {
+//     font-size: $font-size-base * 2.5;
+//   }
+//   .h2,
+//   h2 {
+//     font-size: $font-size-base * 2.1;
+//   }
+//   .h3,
+//   h3 {
+//     font-size: $font-size-base * 1.75;
+//   }
+//   .h4,
+//   h4 {
+//     font-size: $font-size-base * 1.55;
+//   }
+//   .h5,
+//   h5 {
+//     font-size: $font-size-base * 1.2;
+//   }
+//   .h6,
+//   h6 {
+//     font-size: $font-size-base;
+//   }
+// }
+.contact-form-block {
+  ul {
+    li {
+      font-size: 1rem;
+    }
+  }
+}
+
+.arrow-dot {
+  list-style-type: none;
+  position: relative;
+  &::before {
+    content: '';
+    background-color: transparent !important;
+    background-image: url($ROOT_PATH + 'media/icons/right-arrow.svg');
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    display: inline-block;
+    left: -20px;
+    top: 9px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.sk-lander {
+  .wp-block-spacer {
+    display: none !important;
+  }
+}

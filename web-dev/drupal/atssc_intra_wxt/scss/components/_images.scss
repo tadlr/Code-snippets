@@ -1,0 +1,18 @@
+.wxt-media-default,
+.wxt-media-medium,
+.wxt-media-large,
+.wxt-media-small{
+  &.align-center{
+    img{
+      margin: 0 auto;
+    }
+  }
+}
+
+// align imported images (mainly for image of math equations)
+[style='text-align:center'],
+.text-center{
+  > img{
+    margin: 0 auto;
+  }
+}

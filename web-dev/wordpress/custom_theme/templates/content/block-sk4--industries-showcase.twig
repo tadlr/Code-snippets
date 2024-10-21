@@ -1,0 +1,129 @@
+{% if is_preview %}
+  {# Block--sk4 #}
+{% endif %}
+{% block content %}
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+{% set scroll_ID = field.scroll_to_section_id %}
+{% set extra_classes = field.section_classes %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} {{ extra_classes }} sk-block block--sk4'
+  data-link-scroll-target-section-id='{{ scroll_ID }}'
+>
+  <div class='container'>
+    <div class='txt-content op-0 col-sm-12 '>
+      {% set innerClass = field.content_area.content? 'col-lg-6 mb-3': '' %}
+      <div class='row'>
+        <div class='col-xs-12 {{innerClass}}'>
+          <h2>
+            {{ field.content_area.heading }}
+          </h2>
+        </div>
+        {% if field.content_area.content %}
+          <div class='col-xs-12 col-lg-6'>
+            {{ field.content_area.content }}
+          </div>
+        {% endif %}
+        <div class='col-xs-12 mt-4'>
+          <div class='d-none d-desktop-flex row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 gutter text-center'>
+            {% for index,post in spotlight %}
+              <div class='card-col'>
+                <div class='card h-100'>
+                  <img
+                    height='88'
+                    width='88'
+                    class='size-full wp-image-24761'
+                    src='{{ get_template_directory_uri() }}/assets/media/industries/{{post.icon}}.svg'
+                    alt='{{ post.title }}'
+                  >
+                  <div class='card-body'>
+                    <p class='card-title'>
+                      {{ post.title }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class='d-none d-tablet-block d-mobile-block'>
+            <div class='prel slider-arrows'>
+              <div class='row'>
+                <div class='table-multi-block content-block multi-column-table col-xs-12 mt-1'>
+                  <div class='mb-table-container'>
+                    <button
+                      class='slider-control blaze-prev d-none d-tablet-block d-mobile-block'
+                      data-btn-for='{{uid}}'
+                    >
+                      prev
+                    </button>
+                    <div
+                      class='mb-table mb-multi-compare'
+                      id='{{uid}}'
+                      data-slides-767='2'
+                      data-slides-992='2'
+                      data-slides-1024='3'
+                    >
+                      <div class='blaze-container blaze-slider'>
+                        <div class='blaze-track-container'>
+                          <div class='blaze-track'>
+                            {% set totalItems = spotlight|length %}
+                            {% for index, post in spotlight %}
+                              {% if index % 2 == 0 %}
+                                {% if index != 0 %}
+                                  {{ '</div>' }}
+                                  <!-- closing mt-box-inner div -->
+                                {% endif %}
+                                {{ '<div class="mt-box-inner">' }}
+                              {% endif %}
+                              <div class='col'>
+                                <div class='card h-100 w-auto'>
+                                  <img
+                                    height='88'
+                                    width='88'
+                                    class='b-lazy'
+                                    data-src='{{ get_template_directory_uri() }}/assets/media/industries/{{ post.icon }}.svg'
+                                    alt='{{ post.title }}'
+                                  >
+                                  <div class='card-body'>
+                                    <p class='card-title'>
+                                      {{ post.title }}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              {% if loop.last %}
+                                {{ '</div>' }}
+                                <!-- closing mt-box-inner div if loop is last -->
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                          <!-- closing blaze-track div -->
+                        </div>
+                      </div>
+
+                      <div class='pagination-wrapper'>
+                        <div class='blaze-pagination'></div>
+                      </div>
+                    </div>
+                    <button
+                      class='slider-control blaze-next d-none d-tablet-block d-mobile-block'
+                      data-btn-for='{{uid}}'
+                    >
+                      next
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if field.footer %}
+      <div class='pt-5'>
+        {% include 'field/field--footer.twig' %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

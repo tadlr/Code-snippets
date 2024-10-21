@@ -1,0 +1,9 @@
+.spotlight{
+  @include vertical-padding;
+  min-height: 550px;
+  padding-top: 10vw;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-top: 190px;
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "Goodeals",
+    "runtimeVersion": "0.3.621",
+    "slug": "goodeals-rn",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "developmentClient": {
+      "silentLaunch": true
+    },
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0c5a96"
+    },
+    "backgroundColor": "#0c5a96",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "config": {
+        "googleMapsApiKey": ""
+      },
+      "icon": "./src/assets/icon/ios/appIcon-ios.png",
+      "supportsTablet": false,
+      "bundleIdentifier": "com.goodeals.app"
+    },
+    "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }
+      },
+      "icon": "./src/assets/icon/android/ic_launcher.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/icon/android/ic_launcher_foreground.png",
+        "backgroundImage": "./src/assets/icon/android/ic_launcher_background.png",
+        "monochromeImage": "./src/assets/icon/android/ic_launcher_monochrome.png"
+      },
+      "package": "com.goodeals.app"
+    },
+    "plugins": [
+      [
+        "expo-font"
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location. We'll use this to get the best deals near you."
+        }
+      ],
+      [
+        "expo-router"
+      ]
+    ],
+    "scheme": "exp",
+    "owner": "goodeals",
+    "extra": {
+      "eas": {
+        "projectId": "c631348b-ce2e-45a6-adda-f1a1ba8b34e4"
+      },
+      "apiUrl": "https://goodeals-api.onrender.com",
+      "mapsApiKey": "",
+      "blurHash": "MDGID}4UIi_M5JyJ|P%zD}OaY6:8?c?E5Q"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c631348b-ce2e-45a6-adda-f1a1ba8b34e4"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "variables";
+
+.region-content {
+  .ck-editor {
+    .ck-content {
+      // Child theme variables and overrides
+      @import "../vendors/bootstrap/assets/stylesheets/bootstrap";
+
+      // sub-theme additional styles
+      @import "mixins/*";
+      @import "components/utility";
+      @import "components/typography";
+      @import "components/buttons";
+      @import "components/accordion";
+
+      @import "components/tables";
+      @import "components/indent-block";
+      @import "ckeditor-overrides.scss";
+    }
+  }
+}

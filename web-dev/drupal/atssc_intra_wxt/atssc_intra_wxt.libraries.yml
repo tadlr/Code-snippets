@@ -1,0 +1,39 @@
+wxt-overrides:
+  css:
+    theme:
+      'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap': { type: external, minified: true }
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+
+theme-scripts:
+  js:
+    js/scripts.js: {}
+  dependencies:
+    - atssc_intra_wxt/wxt-overrides
+    - atssc_intra_wxt/indentblock
+    - atssc_intra_wxt/match-height
+    - atssc_intra_wxt/default-menu
+
+match-height:
+  js:
+    vendors/match-height/dist/jquery.matchHeight-min.js: { minified: true }
+
+toc:
+  js:
+    js/toc.behaviors.js: {}
+  dependencies:
+    - core/jquery
+    - atssc_intra_wxt/theme-scripts
+
+indentblock:
+  css:
+    theme:
+      css/ckeditor.indentblock.css: {}
+
+default-menu:
+  js:
+    js/menu-apg/MenubarItemLinks.js: {}
+    js/menu-apg/MenubarLinks.js: {}
+    js/menu-apg/PopupMenuItemLinks.js: {}
+    js/menu-apg/PopupMenuLinks.js: {}

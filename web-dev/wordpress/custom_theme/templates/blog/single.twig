@@ -1,0 +1,46 @@
+{% extends "html-base.twig" %}
+{% block header %}
+{% include 'html-top.twig' %}
+{% endblock %}
+{% block content %}
+<article id='post-{{ post.ID }}' data-scroll-section class='prel container single-article-section sk-blog-content'>
+  <div class='prel'>
+    {% include 'blog/breadcrumbs.twig' %}
+    <div class='article-body row'>
+      <div class='article-content op-0 col-lg-10 ps-lg-0'>
+        {% include 'blog/article-content.twig' %}
+      </div>
+      <div class='article-aside op-0 col-lg-2'>
+        {% include 'blog/article-aside.twig' %}
+      </div>
+    </div>
+    {% include 'blog/blog-content.twig' %}
+  </div>
+</article>
+{% include 'blog/blog-prefooter.twig' %}
+{% endblock %}
+{% block footer %}
+{% include 'html-bottom.twig' %}
+{% if field.form %}
+  <!-- Form pop-up -->
+  <div class='popup-form'>
+    <div class='mobile-contact-form landing-page-form'>
+      <button aria-label='Close form popup' class='form-popup-close-btn'>
+        <span class='x-icon'></span>
+      </button>
+      <h3 class='c-white'>{{ field.form_heading }}</h3>
+      <p class='form-subheading c-green-1'>{{ field.form_subheading }}</p>
+      <div class='pt-3 form--area'>
+        {{ field.form }}
+      </div>
+    </div>
+  </div>
+  <script>
+    (function ($) {
+      if ($('body').hasClass('single-post') && $('.calendly-inline-widget, .meetings-iframe-container').length) {
+        $('.popup-form').addClass('calendly-wrap');
+      }
+    })(jQuery);
+  </script>
+{% endif %}
+{% endblock %}

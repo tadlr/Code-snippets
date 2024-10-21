@@ -1,0 +1,24 @@
+{# page-bk13--cta-phone.twig #}
+
+{% extends "block-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('bg-blue') %}
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  <div class='container'>
+    <div class='txt-content row'>
+      <div class='col-sm-12 col w-auto d-lg-flex align-items-lg-center'>
+        <div class='content-wrapper'>
+          {{ content }}
+        </div>
+      </div>
+      <div class='button-wrapper col w-auto p-lg-0 pt-sm-3 d-flex'>
+        {% set btnColour = 'blue' %}
+        {% include 'field/field--cta-btn.twig' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

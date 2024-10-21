@@ -1,0 +1,9 @@
+{% if footer or field.footer %}
+  <div class='content-block plain-txt-block op-0'>
+    {% if footer %}
+      {{ footer | raw }}
+      {% elseif field.footer %}
+      {{ field.footer | raw }}
+    {% endif %}
+  </div>
+{% endif %}

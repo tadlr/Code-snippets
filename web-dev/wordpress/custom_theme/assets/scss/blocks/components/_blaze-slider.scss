@@ -1,0 +1,109 @@
+.sk-slider {
+  .slider-holder {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .blaze-slider {
+    --slides-to-show: 1;
+    // --slide-gap: 0;
+
+    @media screen and (max-width: 1024px) {
+      --slides-to-show: 1;
+    }
+
+    @media screen and (max-width: 720px) {
+      --slides-to-show: 1;
+    }
+
+    &.dragging .blaze-track {
+      cursor: grabbing;
+    }
+
+    /* for loop: false */
+    &.start .blaze-prev,
+    &.end .blaze-next {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .blaze-pagination {
+      display: flex;
+      gap: 12px;
+      button {
+        cursor: pointer;
+        font-size: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        background: #939598;
+        transition:
+          transform 200ms ease,
+          background-color 300ms ease;
+        &.active {
+          background: #002ea6;
+          // transform: scale(1.3);
+        }
+      }
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+    .pagination-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      gap: 20px;
+      width: 100%;
+      // position: absolute;
+      // display: inline-block;
+      // left: 0;
+      // bottom: -35px;
+    }
+  }
+
+  .slide {
+    list-style-type: none;
+  }
+
+  .blaze-prev,
+  .blaze-next {
+    &[disabled] {
+      display: none !important;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    // position: absolute;
+    // top: 50%;
+    z-index: 10;
+    border: none;
+    width: 25px;
+    height: 25px;
+    padding: auto;
+    cursor: pointer;
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    background-image: url($ROOT_PATH + 'media/icons/slider.svg');
+
+    &:hover,
+    &:focus {
+      background-image: url($ROOT_PATH + 'media/icons/slider-blue.svg');
+    }
+  }
+
+  .blaze-next {
+    transform: rotate(180deg);
+  }
+}

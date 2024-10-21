@@ -1,0 +1,125 @@
+{% if is_preview %}
+  [R] Reviews Block
+{% endif %}
+{# Declaring all variables #}
+{% set content = field.content %}
+{% set contentTwo = field.content_bellow_review_images %}
+{% set classes = field.full_width_with_background == 'Yes' ? "full-width-bg" : "" %}
+{% set size = 'img-130-130' %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} sk-block block--r media-content-block'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='container'>
+    <div class='media-block media-left video-media content-block row row-eq-height'>
+      <div class='txt-content op-0 col-sm-12 col-lg-6'>
+        {% if field.content %}
+          <div class='txt-blocks-layout-rtf op-1'>
+            {{ field.content | raw }}
+          </div>
+        {% endif %}
+        {% include 'field/field--cta-btn.twig' %}
+        <div class='reviews-table my-3'>
+          <table>
+            {% set row = field.table %}
+            <thead>
+              <tr class='four-columns-heading-row reviews-heading-row'>
+                <th>
+                  {% if row.bbb %}
+                    <th>
+                      {{ Image(row['bbb'], 'img-130-130', {'width':170, 'height':52}) }}
+                    </th>
+                  {% endif %}
+                  {% if row.google %}
+                    <th>
+                      {{ Image(row['google'], 'img-130-130', {'width':170, 'height':52}) }}
+                    </th>
+                  {% endif %}
+                  {% if row.facebook %}
+                    <th>
+                      {{ Image(row['facebook'], 'img-130-130', {'width':170, 'height':52}) }}
+                    </th>
+                  {% endif %}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for index, review in row['reviews'] %}
+                {% set trClass = row['reviews']|length > 1 ? 'table-row': 'single-table' %}
+                {% set doStars = row['use_stars_instead_of_images'] %}
+                {% if lang == 'es' %}
+                  {% set starLabel = "estrellas" %}
+                  {% elseif lang == 'fr' %}
+                  {% set starLabel = "stars" %}
+                {% else %}
+                  {% set starLabel = "stars" %}
+                {% endif %}
+                <tr class='{{ trClass }}'>
+                  <th scope='row'>
+                    {{ Image(review['company_logo'], 'img-130-130', {'width':170, 'height':52, 'class':' company-reviews-logo logo-'~index}) }}
+                  </th>
+                  {% if row.bbb %}
+                    {% set bbb = fn('wp_get_attachment_image_url', row['bbb'] ,'medium' ) %}
+                    <td data-label='{{ bbbAlt }}'>
+                      {{ Image(row['bbb'], 'img-130-130', {'width':170, 'height':85, 'class':'d-none d-mobile-block d-tablet-block company-reviews-logo logo-'~index}) }}
+                      {% if doStars %}
+                        {% if review.stars_bbb == 0 %}
+                          {{ stars(review['stars_bbb'], starLabel ) }}
+                        {% else %}
+                          {{ stars(review['stars_bbb'], starLabel ) }}
+                        {% endif %}
+                      {% else %}
+                        {{ Image(review['rating_bbb'], 'img-130-130', {'width':170, 'height':52, 'class':'rating-stars stars-1-'~index~' stars-'~index}) }}
+                      {% endif %}
+                    </td>
+                  {% endif %}
+                  {% if row.google %}
+                    {% set google = fn('wp_get_attachment_image_url', row['google'] ,'medium' ) %}
+                    <td data-label='{{ googleAlt }}'>
+                      {{ Image(row['google'], 'img-130-130', {'width':170, 'height':85, 'class':'d-none d-mobile-block d-tablet-block company-reviews-logo logo-'~index}) }}
+                      {% if doStars %}
+                        {% if review.stars_google == 0 %}
+                          {{ stars(review['stars_google'], starLabel ) }}
+                        {% else %}
+                          {{ stars(review['stars_google'], starLabel ) }}
+                        {% endif %}
+                      {% else %}
+                        {{ Image(review['rating_google'], 'img-130-130', {'width':170, 'height':52, 'class':'rating-stars stars-2-'~index~' stars-'~index}) }}
+                      {% endif %}
+                    </td>
+                  {% endif %}
+                  {% if row.facebook %}
+                    {% set facebook = fn('wp_get_attachment_image_url', row['facebook'] ,'medium' ) %}
+                    <td data-label='{{ facebookAlt }}'>
+                      {{ Image(row['facebook'], 'img-130-130', {'width':170, 'height':85, 'class':'d-none d-mobile-block d-tablet-block company-reviews-logo logo-'~index}) }}
+                      {% if doStars %}
+                        {% if review.stars_facebook == 0 %}
+                          {{ stars(review['stars_facebook'], starLabel ) }}
+                        {% else %}
+                          {{ stars(review['stars_facebook'], starLabel ) }}
+                        {% endif %}
+                      {% else %}
+                        {{ Image(review['rating_facebook'], 'img-130-130', {'width':170, 'height':52, 'class':'rating-stars stars-3-'~index~' stars-'~index}) }}
+                      {% endif %}
+                    </td>
+                  {% endif %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class='txt-blocks-layout-rtf op-0'>
+          {{ contentTwo | raw }}
+        </div>
+      </div>
+      <div class='img-wrap col-sm-12 d-flex justify-content-center col-lg-6 h-100'>
+        <div class='img-content'>
+          {% if field.image_on_the_left %}
+            {{ Image(field.image_on_the_left, "img-450-450", {'width':450, 'height': 450}) }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

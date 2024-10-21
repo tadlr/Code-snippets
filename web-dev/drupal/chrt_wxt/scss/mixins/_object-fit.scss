@@ -1,0 +1,10 @@
+@mixin object-fit{
+  object-fit: cover;
+  -o-object-fit: cover;
+  // IE 10+
+  @include ie{
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}

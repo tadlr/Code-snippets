@@ -1,0 +1,25 @@
+.page-section {
+  @include vertical-padding-large;
+  z-index: 0;
+
+  .content-title {
+    margin-bottom: $padding;
+    margin-top: 0;
+  }
+
+  &:nth-child(even){
+    background: $light;
+  }
+}
+
+
+.body-wrapper + .content,
+.home{
+  .page-section{
+    background: $light;
+
+    &:nth-child(even){
+      background: $white;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.link-boxes{
+  .boxes{
+    display: grid;
+    grid-template: "featured second" "featured third" / percentage((6 / $grid-columns)) percentage((6 /$grid-columns));
+    gap: $grid-gutter-width;
+    place-items: stretch start;
+
+    .column{
+      grid-area: featured;
+      width: 100%;
+    }
+
+    .teaser{
+      &:nth-of-type(2){
+        grid-area: second;
+      }
+
+      &:nth-of-type(3){
+        grid-area: third;
+      }
+    }
+  }
+}

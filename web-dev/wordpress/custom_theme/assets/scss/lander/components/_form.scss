@@ -1,0 +1,355 @@
+.callback-popup-form {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 5;
+  background-color: $blue-1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition:
+    opacity 0.5s $easeOutSine,
+    visibility 0.5s $easeOutSine,
+    transform 0.5s $easeOutSine;
+  transform: translateY(-100%);
+
+  @media screen and ($min1024) {
+    input {
+      width: 100%;
+    }
+  }
+
+  // @media screen and (max-width:580px){
+  //     padding-top:140px;
+  //     align-items: flex-start;
+  //     h3, .h3 {
+  //         font-size: 20px;
+  //     }
+  // }
+  @media screen and ($mobile_all) {
+    padding-top: 160px;
+    align-items: flex-start;
+
+    h3,
+    .h3 {
+      font-size: 20px;
+    }
+  }
+
+  h3,
+  .h3 {
+    // text-transform: capitalize;
+
+    @media screen and ($mobile) {
+      width: 90%;
+    }
+  }
+
+  p {
+    padding-top: 20px;
+  }
+
+  .mobile-contact-form {
+    // max-height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0 0;
+
+    .gform_wrapper {
+      padding-bottom: 40px;
+    }
+
+    @media screen and ($min1024) {
+      padding: 200px 0 0;
+      width: 30%;
+    }
+  }
+}
+
+.talk-to-us-block-popup-form {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 5;
+  background-color: $blue-1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition:
+    opacity 0.5s $easeOutSine,
+    visibility 0.5s $easeOutSine,
+    transform 0.5s $easeOutSine;
+  transform: translateY(-100%);
+
+  @media screen and ($min1024) {
+    input {
+      width: 100%;
+    }
+  }
+
+  // @media screen and (max-width:580px){
+  //     padding-top:140px;
+  //     align-items: flex-start;
+  //     h3, .h3 {
+  //         font-size: 20px;
+  //     }
+  // }
+  @media screen and ($mobile_all) {
+    padding-top: 160px;
+    align-items: flex-start;
+
+    h3,
+    .h3 {
+      font-size: 20px;
+    }
+  }
+
+  h3,
+  .h3 {
+    // text-transform: capitalize;
+
+    @media screen and ($mobile) {
+      width: 90%;
+    }
+  }
+
+  p {
+    padding-top: 20px;
+  }
+
+  .mobile-contact-form {
+    max-height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0 0;
+
+    .gform_wrapper {
+      padding-bottom: 40px;
+    }
+
+    @media screen and ($min1024) {
+      padding: 50px 0 0;
+      width: 30%;
+    }
+  }
+}
+.popup-form,
+.talk-to-us-block-popup-form {
+  color: $white;
+  font-size: $ft-18;
+  // padding-top: 100px;
+  z-index: 9999;
+
+  @media screen and ($mobile) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  p.c-green-1 {
+    font-family: $libre;
+    line-height: 30px;
+  }
+
+  h3 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    @media screen and ($mobile) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  .hbspt-form {
+    padding: 0 !important;
+    padding-bottom: 35px !important;
+    .hs-input {
+      background: transparent !important;
+    }
+    .hs-form-field label {
+      z-index: 1;
+    }
+  }
+  .landing-page-form {
+    .gfield_description.instruction.validation_message {
+      display: none !important;
+    }
+    .gfield_validation_message {
+      color: $coral;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      display: inline-block !important;
+      position: relative;
+      font-size: 12px !important;
+      font-weight: 400 !important;
+    }
+    .gform_wrapper {
+      margin-top: 10px;
+    }
+  }
+  .gform_submission_error.hide_summary {
+    color: $white;
+    background-color: $coral;
+    font-size: 1rem;
+    padding: 0 !important;
+  }
+
+  p:empty {
+    display: none;
+  }
+}
+
+.sk-form-hbsp {
+  .hs-form-field {
+    display: flex;
+    flex-direction: column;
+    label {
+      order: 1;
+    }
+
+    .inputs-list.multi-container {
+      @media screen and ($min1024) {
+        margin-top: 15px;
+      }
+    }
+
+    .hs-field-desc {
+      order: 3;
+      font-family: $libre;
+      font-size: 12px;
+      line-height: 25px;
+      letter-spacing: 0.6px;
+      opacity: 0.8;
+      margin-bottom: -15px;
+    }
+
+    .input {
+      order: 2;
+    }
+    .hs-error-msgs {
+      font-family: $libre;
+      order: 4;
+      position: relative;
+      padding: 0;
+      margin-bottom: 0;
+
+      > li {
+        padding: 0 !important;
+        .hs-error-msg {
+          top: unset;
+          left: unset;
+
+          color: $green-1;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          display: inline-block !important;
+          position: relative;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.6px;
+          line-height: 20px;
+        }
+        > * {
+          padding: 0 !important;
+        }
+      }
+    }
+  }
+  // @media screen and ($max1024) {
+  .hs-richtext {
+    margin-bottom: 20px;
+  }
+  // }
+}
+
+.sk-lander {
+  .form-cta {
+    .hbspt-form {
+      background-color: $white;
+
+      .field {
+        @include BlueText;
+      }
+
+      @media screen and ($max1024) {
+        padding: 25px;
+      }
+
+      p,
+      * {
+        color: $blue-1;
+      }
+
+      .hs-submit .hs-button {
+        &:hover,
+        &:focus {
+          background-color: $blue-1;
+          color: $green-1;
+        }
+      }
+
+      .hs-form-field label:not(.hs-form-checkbox-display):not(.hs-error-msg) {
+        background-color: $white;
+        color: $blue-1;
+      }
+
+      .hs-input:not(input[type='checkbox']) {
+        color: $blue-1;
+      }
+
+      .hs-error-msg.hs-main-font-element,
+      .hs-error-msgs .hs-main-font-element {
+        color: $coral !important;
+      }
+
+      input {
+        &::placeholder {
+          color: $blue-1 !important;
+        }
+      }
+    }
+  }
+
+  .hbspt-form {
+    input[name='while_your_business_doesn_t_meet_our_requirements_right_now__you_can_submit_your_email_to_access_va'] {
+      display: none !important;
+    }
+  }
+}
+.hbspt-form .hs-recaptcha.hs-form-field,
+.sk-form-hbsp .hs-recaptcha.hs-form-field {
+  border: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  background-color: transparent !important;
+  clip-path: inset(50%);
+  color: transparent !important;
+  font-size: inherit;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
+}

@@ -1,0 +1,142 @@
+@import 'block-base';
+.block--h {
+  .header-img {
+    min-height: 50px;
+  }
+  .logo {
+    min-width: 155px;
+    min-height: 60px;
+  }
+  .image--item {
+    @media screen and ($max1024) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &.w {
+    &-content {
+      .images-block {
+        padding-top: 40px !important;
+      }
+    }
+
+    &-footer {
+      .images-block {
+        padding-bottom: 40px !important;
+      }
+    }
+  }
+
+  .company-logo {
+    min-height: 60px;
+    color: $blue-1;
+    // display: flex;
+    // align-items: flex-end;
+  }
+  .images-block {
+    .section-title {
+      @media screen and ($tablet) {
+        text-align: left;
+      }
+      @media screen and (max-height: 400px) {
+        padding-left: 1.5rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .company-name {
+    text-align: center;
+  }
+
+  .images-wrap {
+    @media screen and ($tablet) {
+      display: block !important;
+      .image-item {
+        display: inline-block !important;
+        width: auto;
+        margin-bottom: 20px;
+      }
+    }
+    @media screen and (max-width: 750px) {
+      flex-flow: column !important;
+      align-items: center !important;
+      text-align: center;
+      .logo {
+        object-fit: contain;
+        object-position: center;
+      }
+      .company-logo {
+        margin-bottom: 3rem !important;
+        margin-top: 18px;
+      }
+    }
+    @media screen and (max-height: 400px) {
+      align-items: flex-start;
+      justify-content: space-between;
+      justify-content: flex-start;
+      text-align: center;
+    }
+  }
+
+  &.imgs-nowrap {
+    .images-block {
+      .images-wrap {
+        display: flex !important;
+        flex-wrap: nowrap;
+      }
+
+      .image-item {
+        padding: 0;
+
+        img {
+          @media screen and ($max1024) {
+            max-width: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  .company-name {
+    color: $blue-1;
+    font-family: $libre;
+    font-size: $ft-18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    @media screen and ($min1024) {
+      margin-bottom: 0;
+    }
+
+    // @media screen and (max-height: 400px) {
+    //   margin-top: -50px;
+    //   margin-bottom: 10px;
+    // }
+
+    @media screen and ($mobile) {
+      margin-top: -60px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &.imgs-associations {
+    .images-wrap {
+      @media screen and ($max1024) {
+        margin: 0;
+      }
+      @media screen and ($tablet) {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .image-item:last-child {
+        .header-img {
+          height: 65px;
+          width: auto;
+        }
+      }
+    }
+  }
+}

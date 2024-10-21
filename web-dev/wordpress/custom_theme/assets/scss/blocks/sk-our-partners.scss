@@ -1,0 +1,23 @@
+.partners-section-home {
+  .img-partner-hold .img-wrapper,
+  .img-partner-hold img {
+    max-width: 250px;
+    max-height: 75px;
+  }
+  @media screen and (max-width: 576px) {
+    .slider-arrows .blaze-next {
+      right: -15px;
+    }
+  }
+
+  .mb-table {
+    box-shadow: none;
+    .mt-box-inner,
+    .fixed-column-inner > div:not(.mt-header):nth-of-type(2n + 1),
+    .mt-box-inner > div:not(.mt-header):nth-of-type(2n + 1),
+    .fixed-column-inner > div:not(.mt-header):nth-of-type(2n + 1),
+    .mt-box-inner > div:not(.mt-header):nth-of-type(2n + 1) {
+      background-color: transparent;
+    }
+  }
+}

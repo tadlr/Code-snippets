@@ -1,0 +1,108 @@
+@include bg-variant(".bg-dark", $gray-dark);
+@include bg-variant(".bg-default", $light);
+@include bg-variant(".bg-light", $light);
+@include bg-variant(".bg-gray", $gray-light);
+
+.bg {
+  &-primary {
+    color: $white;
+
+    * {
+      color: $white;
+    }
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      color: $green;
+    }
+    .fn-lnk {
+      color: $green;
+    }
+    a {
+      &:visited {
+        color: $green !important;
+      }
+    }
+  }
+
+  &-secondary,
+  &-info {
+    color: $black;
+    background-color: $brand-secondary;
+
+    * {
+      color: $black;
+    }
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      color: $cyan;
+    }
+    .fn-lnk {
+      color: $light-cyan;
+    }
+    a:visited {
+      color: $dark;
+    }
+
+    h2 {
+      color: $cyan;
+      font-family: $font-family-base;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 60px;
+
+      span {
+        color: $cyan;
+      }
+    }
+  }
+
+  &-primary-accent {
+    @extend .bg-primary;
+
+    // background-color: $primary-accent;
+    // background-image: url("../assets/svg/bg-primary-accent.svg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100vw 100%;
+  }
+
+  &-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &.parallax {
+      background-position: 50% 100%;
+      background-size: auto 130%;
+    }
+
+    &.cover {
+      background-size: cover;
+    }
+  }
+}
+
+// legacy class from exisiting site
+// is add so we don't have to manually update old content
+.background-highlight,
+.background-light {
+  @include padded-small;
+  @extend .bg-secondary;
+}

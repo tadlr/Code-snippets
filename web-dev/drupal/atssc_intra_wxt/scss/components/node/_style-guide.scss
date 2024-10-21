@@ -1,0 +1,34 @@
+.node-1 {
+  .swatches {
+    display: flex;
+
+    .swatch {
+      flex-grow: 1;
+
+      &-primary {
+        background: $brand-primary;
+        color: $white;
+      }
+      &-secondary {
+        background: $secondary;
+        color: $black;
+      }
+      &-info {
+        background: $brand-secondary;
+        color: $cyan;
+      }
+      &-light {
+        background: $light;
+      }
+      &-dark {
+        background: $gray-base;
+      }
+      &-gray {
+        background: $gray-light;
+      }
+      &-white {
+        border: 1px solid $gray;
+      }
+    }
+  }
+}

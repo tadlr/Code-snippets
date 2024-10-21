@@ -1,0 +1,66 @@
+// Wxt Search
+#wb-srch,
+.wb-srch{
+  @media screen and (min-width: $screen-sm-min) {
+    border-right: 1px solid $gray-light;
+    margin-right: 10px;
+    padding: 0 10px 0 0;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    form{
+      display: flex;
+    }
+    .form-item{
+      flex-grow: 1;
+
+      label{
+        width: 100%;
+      }
+    }
+  }
+
+  &-q{
+    font-size: 15px;
+    font-weight: 400;
+
+    @media screen and (min-width: $screen-sm-min) {
+      min-width: 200px;
+    }
+    @media screen and (max-width: $screen-xs-max) {
+      border-radius: $input-border-radius 0 0 $input-border-radius;
+    }
+  }
+
+  &-sub{
+    background: url('../assets/svg/icon-search.svg') no-repeat center / 20px !important;
+    border: none!important;
+    display: inline-block;
+    margin: 0;
+    transition: all 300ms;
+    vertical-align: middle;
+    
+    &:before{
+      content: "";
+      display: block;
+    }
+    
+    @media screen and (min-width: $screen-sm-min) {
+      height: 36px;
+      padding: 0 $padding-xs;
+
+      &:hover,
+      &:focus{
+        background-color: $brand-primary!important;
+        background-image: url('../assets/svg/icon-search-white.svg')!important;
+        color: $white;
+      }
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      background-color: $white!important;
+      border-radius: 0 $input-border-radius $input-border-radius 0;
+      padding: 0 $padding-small;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure Speech App</title>
+  <script
+    src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+</head>
+
+<body>
+  <h1>Azure Speech Reader</h1>
+  <textarea id="text-to-read" rows="10" cols="50" placeholder="Type some text here..."></textarea><br />
+  <button id="read-btn">Read Text</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const readButton = document.getElementById('read-btn');
+      const textArea = document.getElementById('text-to-read');
+
+      readButton.addEventListener('click', async () => {
+        const text = textArea.value;
+
+        if (typeof SpeechSDK === 'undefined') {
+          console.error('Azure Speech SDK is not loaded');
+          return;
+        }
+
+        if (!text) {
+          console.error('No text provided.');
+          return;
+        }
+
+        const speechConfig = SpeechSDK.SpeechConfig.fromSubscription('ec562b4848c44988ab3915d467f6785c', 'eastus');
+        speechConfig.speechSynthesisVoiceName = 'en-US-AndrewMultilingualNeural'; // Choose your voice
+
+        const synthesizer = new SpeechSDK.SpeechSynthesizer(speechConfig);
+
+        synthesizer.speakTextAsync(
+          text,
+          result => {
+            if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
+              console.log('Synthesis completed.');
+            } else {
+              console.error(`Speech synthesis failed: ${result.errorDetails}`);
+            }
+            synthesizer.close();
+          },
+          error => {
+            console.error(`Error synthesizing speech: ${error}`);
+            synthesizer.close();
+          }
+        );
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+@import 'block-base';
+
+.timber-block .sk-blog-block.blog-cta {
+  margin-bottom: $contentPadding;
+}
+.timber-block .sk-blog-block.blog-cta,
+.sk-blog-block.blog-cta {
+  position: relative;
+  background-color: $blue-1;
+  @media screen and ($min768) {
+    min-height: 229px;
+  }
+  @media screen and ($mobile) {
+    min-height: 328px;
+  }
+  .inner-wrapper {
+    z-index: 1;
+    height: 100%;
+    position: relative;
+    gap: 10px;
+    @media screen and ($min1024) and ($max1200) {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 46, 166, 1) 30%,
+        rgba(0, 46, 166, 0.8) 45%,
+        rgba(0, 46, 166, 0.2) 100%
+      );
+    }
+
+    .cta-content {
+      @media screen and ($min768) {
+        padding: 24px 34px 16px;
+        min-height: 229px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+
+      @media screen and ($max768) {
+        padding: 24px 16px;
+      }
+
+      h2 {
+        font-family: $redhat;
+        margin-bottom: 0.85rem;
+        font-weight: 700;
+        @media screen and ($min768) {
+          font-size: 32px;
+          line-height: 40px;
+        }
+
+        @media screen and ($max768) {
+          font-size: 24px;
+          line-height: 36px;
+        }
+      }
+
+      *,
+      p {
+        margin-bottom: 0.85rem;
+        font-family: $libre;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 400;
+
+        :empty {
+          display: none !important;
+        }
+      }
+      .btn {
+        margin-bottom: 0;
+        width: fit-content;
+        font-family: $redhat;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        text-decoration: none !important;
+      }
+    }
+
+    .cta-form {
+      @media screen and ($min1024) {
+        padding: 10px 0 34px 34px;
+      }
+      @media screen and ($max1024) {
+        padding: 0 0 24px 24px;
+      }
+    }
+  }
+
+  &.w-svg {
+    @media screen and ($mobile) {
+      height: fit-content;
+      min-height: fit-content;
+    }
+    &::before {
+      content: '';
+      display: block;
+      background-image: url($ROOT_PATH + 'media/svgs/blog-cta.svg');
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 85%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+
+      @media screen and ($mobile) {
+        max-height: 200px;
+        height: 100%;
+      }
+    }
+    .cta-content {
+      @media screen and ($mobile) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &.w-form {
+    .cta-content {
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.w-image {
+    .cta-content,
+    .cta-form {
+      @media screen and ($min1024) and ($max1200) {
+        max-width: 80%;
+        width: 100%;
+      }
+      @media screen and ($min768) {
+        max-width: 65%;
+      }
+    }
+    .image-block {
+      picture {
+        display: block;
+      }
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      @media screen and ($min768) {
+        position: absolute;
+        width: 35%;
+        height: 100%;
+        right: -1px;
+        mask: url($ROOT_PATH + 'media/svgs/blog-cta-bg.svg') no-repeat;
+        position: absolute;
+        mask-position: left;
+        mask-size: cover !important;
+        right: -1px;
+        width: 40%;
+        height: 100%;
+        left: unset;
+
+        img {
+          position: absolute;
+          right: 0;
+          object-position: 0 !important;
+        }
+      }
+      @media screen and ($min1024) and ($max1200) {
+        mask: unset;
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+        left: unset;
+
+        img {
+          position: absolute;
+          right: 0;
+          object-position: left bottom;
+        }
+      }
+
+      @media screen and ($max768) {
+        mask: url($ROOT_PATH + 'media/svgs/blog-cta-bg-mobile.svg') no-repeat;
+        mask-position: top;
+        max-height: 180px;
+        height: 195px;
+
+        picture {
+          max-height: 180px;
+          height: 195px;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @media screen and (min-width: 500px) and (max-width: 767px) {
+        height: 255px;
+        max-height: 235px;
+
+        picture {
+          height: 255px;
+          max-height: 235px;
+        }
+      }
+
+      mask-size: 100% 100% !important;
+    }
+  }
+
+  .newsletter-form {
+    .hbspt-form {
+      padding: 0 0 0 0;
+      background-color: transparent;
+
+      form {
+        margin-top: 0;
+
+        @media screen and (min-width: 1024px) and (max-width: 1400px) {
+          width: 100%;
+        }
+        @media screen and ($min1024) {
+          justify-content: flex-start;
+          gap: 10px;
+        }
+      }
+
+      label:not(.hs-form-checkbox-display):not(.hs-error-msg) {
+        @media screen and ($max1024) {
+          position: absolute;
+          top: -12px;
+          left: 22px;
+          background-color: #002ea6;
+        }
+      }
+
+      .hs-error-msg.hs-main-font-element,
+      .hs-error-msgs .hs-main-font-element {
+        color: $coral !important;
+      }
+
+      .hs_error_rollup {
+        display: none;
+      }
+
+      .hs_submit {
+        width: 100%;
+        .hs-button {
+          width: 100%;
+
+          &:hover,
+          &:focus {
+            background-color: $blue-1;
+            color: $white;
+          }
+        }
+
+        .actions {
+          width: fit-content;
+          @include bs-btn;
+          @include btn-download;
+          margin-bottom: 0;
+          width: fit-content;
+          font-family: $redhat;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 700;
+
+          &:before {
+            background-image: url($ROOT_PATH + 'media/icons/blue-arrow.svg');
+          }
+
+          &:hover,
+          &:active,
+          &:focus-within,
+          &:focus-visible {
+            border: 1px solid $white;
+            input {
+              color: $white !important;
+            }
+            &:before {
+              background-image: url($ROOT_PATH + 'media/icons/green-arrow.svg');
+            }
+          }
+
+          .hs-button.primary.large {
+            transform: unset !important;
+            background-color: unset !important;
+            padding: unset !important;
+            font-size: unset !important;
+          }
+        }
+        width: fit-content;
+
+        @media screen and ($min1024) {
+          .actions {
+            width: fit-content;
+          }
+          width: fit-content;
+        }
+      }
+      .hs-email {
+        margin-bottom: 18px !important;
+        flex: 1;
+        @media screen and ($min1024) {
+          .hs-error-msgs {
+            position: absolute;
+          }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1250px) {
+          max-width: 275px;
+        }
+
+        @media screen and (max-width: 992px) {
+          max-width: 425px;
+        }
+      }
+    }
+
+    form {
+      flex-direction: column;
+      margin-top: 39px;
+      margin-left: 0;
+      width: 90%;
+    }
+  }
+
+  &.square {
+    .image-block {
+      position: relative;
+      right: auto;
+      height: 100%;
+      mask: unset;
+
+      img {
+        position: relative;
+      }
+    }
+
+    .cta-content,
+    .cta-content {
+      max-width: none;
+    }
+
+    .newsletter-form {
+      .hbspt-form form {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .hs-error-msgs {
+          position: relative !important;
+        }
+      }
+    }
+  }
+}
+
+.article-main-content {
+  @media screen and ($min1024) and ($max1200) {
+    .b1lock--bsk8 {
+      width: 142% !important;
+      margin-left: -42%;
+      position: relative;
+      z-index: 10000;
+    }
+  }
+}

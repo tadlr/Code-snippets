@@ -1,0 +1,96 @@
+.inner-txt-section-type-2 {
+  background-color: $green-1;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media screen and ($min1024) {
+    @include vw(padding-top, 223px);
+    @include vw(padding-bottom, 261px);
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 223px;
+    padding-bottom: 261px;
+  }
+
+  .background-flower-path-patterns {
+    pointer-events: none;
+    @include pabs;
+    // @include fit;
+    top: 0;
+    display: flex;
+    flex-flow: row wrap;
+    z-index: 1;
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(left, -80px);
+      @include vw(height, 1448px);
+      @include vw(width, 2172px);
+    }
+  }
+
+  .background-flower-path-svg {
+    flex: 0 0 auto;
+    height: 50%;
+    width: 33.33%;
+    opacity: 0.5;
+
+    path {
+      fill: transparent;
+      stroke: $white;
+    }
+  }
+
+  .max-w-container {
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+
+    @media screen and ($mobile_all) {
+      flex-flow: column nowrap;
+    }
+  }
+
+  .txt-size-80 {
+    flex: 0 0 auto;
+
+    @media screen and ($mobile_sm) {
+      @include vw(max-width, 460px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      max-width: 460px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(max-width, 500px);
+      @include vw(padding-left, 2px);
+    }
+
+    @media screen and ($min1920) {
+      max-width: 500px;
+      padding-left: 2px;
+    }
+  }
+
+  .txt-post-rtf {
+    margin-top: 25px;
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(margin-left, 144px);
+      @include vw(margin-top, 17px);
+      @include vw(max-width, 500px);
+    }
+
+    @media screen and ($min1920) {
+      margin-left: 144px;
+      margin-top: 17px;
+      max-width: 500px;
+    }
+  }
+}

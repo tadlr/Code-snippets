@@ -1,0 +1,54 @@
+.sk-lander {
+  .header {
+    @media screen and (max-width: 1024px) {
+      .container-lg {
+        --sk-gutter-x: 0;
+        //   padding: 0rem 1.5rem;
+        .content-wrap {
+          padding: 10px 1.5rem;
+
+          @media screen and ($max480) {
+            padding: 10px 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+html {
+  &.header-toggled-state {
+    .sk-lander {
+      .header {
+        @media screen and (max-width: 1024px) {
+          .landing-template-btn.btn-in-menu .btn-txt {
+            background-color: $green-1 !important;
+            padding: 13px 18px;
+            font-size: 16px;
+            font-weight: bold;
+
+            &:hover {
+              background-color: $white !important;
+              color: $blue-1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.header-toggled-state) {
+    .sk-lander {
+      .header {
+        @media screen and (max-width: 1024px) {
+          .landing-template-btn.btn-in-menu .btn-txt {
+            &:hover {
+              background-color: $blue-1 !important;
+              color: $green-1 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

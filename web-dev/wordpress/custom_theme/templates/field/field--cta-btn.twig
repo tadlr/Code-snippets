@@ -1,0 +1,110 @@
+{% if cta_text %}
+  {% set ctaText = cta_text %}
+  {% set ctaLink = cta_link %}
+  {% set segtrack = fn('get_segtrack_atts') %}
+  {% if cta_scroll_to_section  starts with '#' %}
+    {% set scrollToSection = cta_scroll_to_section %}
+  {% else %}
+    {% set scrollToSection = '#'~cta_scroll_to_section %}
+  {% endif %}
+  {% set sectionColour = (btnColour) ? btnColour: 'white' %}
+  {% set sectionColour = 'section-color-'~sectionColour~' sk-cta-btn' %}
+  {% if external_link == 'yes' %}
+    <a
+      href='{{ ctaLink }}'
+      target='_blank'
+      class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9'
+      {{ segtrack }}
+    >
+      <span class='btn-bg-el'></span>
+      <span class='btn-txt'>
+        {{ ctaText }}
+      </span>
+    </a>
+  {% elseif external_link == 'same' %}
+    <a
+      href='{{ ctaLink }}'
+      class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9'
+      {{ segtrack }}
+    >
+      <span class='btn-bg-el'></span>
+      <span class='btn-txt'>
+        {{ ctaText }}
+      </span>
+    </a>
+  {% elseif external_link == 'modal' %}
+    <button
+      class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9 open-form-modal'
+      {{ segtrack }}
+    >
+      <span class='btn-bg-el'></span>
+      <span class='btn-txt'>
+        {{ ctaText }}
+      </span>
+    </button>
+  {% elseif external_link == 'section' %}
+    <a
+      href='#'
+      class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9 scroll-to-section-btn anchor-link'
+      data-target='{{ scrollToSection }}'
+      {{ segtrack }}
+    >
+      <span class='btn-bg-el'></span>
+      <span class='btn-txt'>
+        {{ ctaText }}
+      </span>
+    </a>
+  {% elseif external_link == 'video' %}
+    {% if video_type == 'youtube' %}
+      <a
+        href='#'
+        class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9 popup-trigger'
+        data-video-embed-id='{{ youtube_video_id }}'
+        {{ segtrack }}
+      >
+        <span class='btn-bg-el'></span>
+        <span class='btn-txt'>
+          {{ ctaText }}
+        </span>
+      </a>
+    {% else %}
+      <a
+        href='#'
+        class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9 popup-trigger'
+        data-vimeo-embed-id='{{ vimeo_video_id }}'
+        {{ segtrack }}
+      >
+        <span class='btn-bg-el'></span>
+        <span class='btn-txt'>
+          {{ ctaText }}
+        </span>
+      </a>
+    {% endif %}
+  {% elseif external_link == 'call' %}
+    {% set phone = fn('sm_toll_free_number', phone) %}
+    <a href='tel:{{ phone }}' class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9'>
+      <span class='btn-bg-el'></span>
+      <span class='btn-txt'>
+        {{ ctaText }}
+      </span>
+    </a>
+  {% elseif external_link == 'callback' %}
+    <a href='#' class='btn-default callback-popup-btn prev-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9'>
+      <span class='btn-bg-el'></span>
+      <span class='btn-txt'>
+        {{ ctaText }}
+      </span>
+    </a>
+  {% else %}
+    <button
+      class='btn-default c-blue-1 btn-green-1 {{sectionColour}} btn-offset-9 scroll-to-section-btn btn-scroll-to-footer'
+      data-target='.inner-pages-contact-section'
+      {{ segtrack }}
+    >
+      <span class='btn-bg-el'></span>
+      <span class='btn-txt'>
+        {{ ctaText }}
+      </span>
+    </button>
+  {% endif %}
+{% endif %}

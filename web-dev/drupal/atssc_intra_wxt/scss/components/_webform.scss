@@ -1,0 +1,373 @@
+.webform {
+  &.full {
+    .field--name-body {
+      @include container-fixed;
+      @include vertical-padding;
+
+      @media (min-width: $screen-sm-min) {
+        width: $container-sm;
+      }
+      @media (min-width: $screen-md-min) {
+        width: $container-md;
+      }
+      @media (min-width: $screen-lg-min) {
+        width: $container-lg;
+      }
+    }
+
+    .field--name-webform {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &-confirmation {
+    @extend .container;
+  }
+  &-submission-form {
+    padding-top: 0;
+    > .form-wrapper {
+      @include vertical-padding;
+
+      &:nth-child(even) {
+        background: $light;
+      }
+
+      .description {
+        margin-bottom: $padding-xs;
+        margin-top: 10px;
+      }
+
+      fieldset {
+        legend {
+          @extend .h4;
+          // margin: $padding-xs 0;
+        }
+
+        fieldset.form-wrapper:not(.form-composite),
+        fieldset.webform-contact--wrapper {
+          legend {
+            color: $text-color;
+            font-size: $font-size-h4;
+            margin-top: $padding-small;
+          }
+        }
+
+        .webform-options-display-three-columns {
+          max-width: unset;
+          .form-item {
+            margin-bottom: 10px;
+          }
+        }
+
+        &.form-composite:not(.webform-contact--wrapper) {
+          margin-bottom: $padding;
+
+          legend {
+            color: $text-color;
+            font-family: $font-family-base;
+            margin: 0;
+
+            .fieldset-legend {
+              font-size: 16px;
+              font-weight: 500;
+              font-style: normal;
+            }
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        & + fieldset {
+          &.form-wrapper:not(.form-composite),
+          &.webform-contact--wrapper {
+            margin-top: $padding-xs;
+          }
+        }
+      }
+    }
+
+    fieldset:not(.form-composite) legend > span.container--label {
+      @extend .h3;
+      // text-transform: uppercase;
+    }
+
+    .flex--parent {
+      padding-top: 5px;
+    }
+
+    .checkboxes--wrapper {
+      width: 100%;
+    }
+
+    .text-format-wrapper {
+      .form-textarea-wrapper {
+        margin: 5px 0;
+      }
+    }
+
+    .form-item--inline:not(.form-type-date) {
+      display: block !important;
+
+      .label--inline {
+        display: inline-block;
+        width: 100% !important;
+      }
+
+      &.form-inline:not(.form-type-date) {
+        input {
+          width: 100%;
+          margin-left: 0 !important;
+        }
+      }
+    }
+
+    .form-type-webform-signature {
+      width: 100%;
+
+      label ~ .webform-signature-pad {
+        margin-top: 10px;
+      }
+
+      button {
+        min-width: auto;
+        padding: 10px !important;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    .webform-multiple-table {
+      table {
+        @extend .table-bordered;
+
+        td:not([class]) {
+          align-items: flex-end;
+          display: flex;
+          flex-wrap: wrap;
+          white-space: normal;
+
+          fieldset {
+            margin: 0;
+          }
+
+          .form-item {
+            margin-bottom: $padding-xs !important;
+
+            .control-label {
+              width: 100% !important;
+            }
+
+            .form-control {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .icon {
+        min-height: auto !important;
+        min-width: auto !important;
+        padding: 0 !important;
+      }
+
+      &--operations {
+        width: auto;
+
+        button {
+          border: none;
+          display: block;
+          margin: 0 auto;
+          min-width: auto;
+          width: auto;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+    .form-type-processed-text.container {
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+    .webform-multiple-add {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+      margin-top: 15px;
+
+      button {
+        margin-left: 5px;
+        min-width: 100px;
+
+        &:after {
+          background-size: 8px;
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+
+    .webform--fieldset {
+      &--checkbox,
+      &--radios {
+        display: inline-block;
+        width: 100%;
+
+        .form-checkboxes,
+        .form-radio {
+          display: inline-block;
+        }
+      }
+    }
+
+    .input-group-addon {
+      width: unset;
+      white-space: unset;
+      vertical-align: unset;
+      padding: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      color: inherit;
+      text-align: inherit;
+      border: inherit;
+      background-color: inherit;
+    }
+
+    .webform-element-help {
+      background: $brand-primary;
+      border: none;
+      box-sizing: border-box;
+      height: 16px;
+      line-height: 16px;
+      position: relative;
+      top: -1px;
+      vertical-align: middle;
+      width: 16px;
+    }
+
+    // CKEditor
+    .ck-content,
+    .ck-toolbar {
+      border-color: $input-border !important;
+    }
+
+    .form-required {
+      &::before,
+      &::after {
+        color: #d3080c;
+        font-weight: 700;
+        font-size: 15px;
+      }
+      &::before {
+        content: "* ";
+        margin-left: -0.87em;
+        vertical-align: top;
+      }
+      &::after {
+        color: #d3080c;
+        line-height: 23px;
+        display: inline-block;
+        margin-right: 0.15em;
+        margin-left: 10px;
+      }
+    }
+
+    > .form-actions {
+      @extend .container;
+    }
+
+    @media print {
+      // general elements to remove
+      .webform-multiple-add,
+      .form-actions,
+      .ck-editor__top {
+        display: none;
+      }
+
+      > .form-wrapper {
+        legend,
+        h2 {
+          page-break-after: avoid;
+        }
+      }
+
+      // top level form groups
+      .form-item.form-group {
+        page-break-inside: avoid;
+      }
+
+      .radios--wrapper {
+        page-break-inside: avoid;
+      }
+
+      .form-type-textarea {
+        page-break-inside: avoid;
+      }
+
+      .d-flex {
+        display: block;
+      }
+
+      .webform-multiple-table {
+        table {
+          tbody,
+          tr {
+            border: none;
+            padding: 0;
+          }
+
+          td:not([class]) {
+            .form-item {
+              &:last-child {
+                margin-bottom: 0 !important;
+              }
+            }
+          }
+        }
+
+        &--handle,
+        &--operations {
+          border: none;
+          display: none;
+          padding: 0;
+        }
+      }
+
+      .webform-signature-pad {
+        height: 100px;
+        position: relative;
+
+        button {
+          display: none;
+        }
+
+        canvas {
+          border-bottom: 1px solid;
+          height: 100px;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.lang- {
+  &fr {
+    .form-required::after {
+      content: "(obligatoire)";
+    }
+  }
+  &en {
+    .form-required::after {
+      content: "(Required)";
+    }
+  }
+}

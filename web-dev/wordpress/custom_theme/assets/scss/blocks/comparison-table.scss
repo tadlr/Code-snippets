@@ -1,0 +1,17 @@
+@import 'block-base';
+
+.block--g {
+  .table-block {
+    padding: 0 !important;
+  }
+
+  .table-comparison {
+    margin-top: 15px;
+  }
+
+  @media screen and ($max1024) {
+    .col-lg-6 {
+      width: 100%;
+    }
+  }
+}

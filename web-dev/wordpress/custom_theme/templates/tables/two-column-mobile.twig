@@ -1,0 +1,70 @@
+<div class='mb-table-container'>
+  <span class='mb-button-holder'>
+    <span class='sticky-m'>
+      <button class='slider-control blaze-prev d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}'>
+        prev
+      </button>
+      <button class='slider-control blaze-next d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}'>
+        next
+      </button>
+    </span>
+  </span>
+  <div class='mb-table mb-two-column' id='{{uid}}'>
+    <div class='fixed-column'>
+      <div class='fixed-column-inner'>
+        <div class='mt-header' data-mh='{{uid}}-header'>
+          {% if field.column_one_heading or field.image_one %}
+            {{ field.column_one_heading }}
+            {% if field.image_one %}
+              {{ Image(field.image_one, 'full', {'width': 170, height:52, 'class': 'logo-one' }) }}
+            {% endif %}
+          {% else %}
+            Company
+          {% endif %}
+        </div>
+        <div class='mt-box mt-logo mt-primary' data-mh='{{uid}}-primary'>
+          {{ field.heading_on_the_left }}
+          {% if field.image_two %}
+            {{ Image(field.image_two, 'full', {'width': 170, height:52, 'class': 'logo-two' }) }}
+          {% endif %}
+        </div>
+        <div class='mt-box mt-logo mt-second' data-mh='{{uid}}-second'>
+          {{ field.heading }}
+          {% if field.image_three %}
+            {{ Image(field.image_three, 'full', {'width': 170, height:52, 'class': 'logo-three' }) }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class='scrolling-column'>
+      <div class='scrolling-column-inner blaze-container blaze-slider'>
+        <div class='blaze-track-container'>
+          <div class='blaze-track'>
+            {% for row in field.table_content %}
+              <div class='mt-box-inner'>
+                <div class='mt-header' data-mh='{{uid}}-header'>
+                  {{ row.column_one }}
+                </div>
+                <div class='mt-box mt-ctn mt-primary' data-mh='{{uid}}-primary'>
+                  {% set radio = row.column_two_radio %}
+                  {% if radio == 'Yes' or radio == 'No' %}
+                    {{ checkmark(radio) }}
+                  {% endif %}
+                </div>
+                <div class='mt-box mt-ctn mt-second' data-mh='{{uid}}-second'>
+                  {% set radio = row.column_three_radio %}
+                  {% if radio == 'Yes' or radio == 'No' %}
+                    {{ checkmark(radio) }}
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class='pagination-wrapper'>
+          <div class='blaze-pagination'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<h1 class='txt-size-60 txt-size-60-m c-blue-1 heading-anim'>
+  {{ post.title }}
+</h1>
+<div class='article-meta'>
+  <p class='txt-size-16 c-blue-1 upper fw-700'>
+    {% for category in fn('get_the_category') %}
+      {% set catname = category.name %}
+      <a href='{{ fn('get_category_link',category.term_id) }}' class='post-single-category'>
+        {{ catname }}
+      </a>
+    {% endfor %}
+  </p>
+  <p class='txt-size-16 c-blue-1 meta-separator'>|</p>
+  {% set word = post.content|striptags|split(' ')|length %}
+  {% set est = (word / 200)|round ~ ' min' %}
+  <p class='txt-size-16 c-blue-1 reading-time'>
+    {{ est }}
+    read
+  </p>
+  <p class='txt-size-16 c-blue-1 meta-separator'>|</p>
+  <p class='txt-size-16 c-blue-1'>
+    {{ post.date }}
+  </p>
+</div>
+<div class='article-share'>
+  <p class='txt-size-18 fw-700 c-blue-1'>Share:</p>
+  <a
+    {#
+    href='https://www.facebook.com/sharer/sharer.php?u={{ permalink }}'
+    #}
+    href='#'
+    {#
+    target='_blank'
+    #}
+    rel='noopener noreferrer'
+    class='social-item fb-share'
+    arial-label='Share on facebook'
+    title='Share on facebook'
+  >
+    {% include 'svg/facebook.twig' %}
+  </a>
+  <a
+    {#
+    href='https://twitter.com/intent/tweet?text={{ permalink }}'
+    #}
+    href='#'
+    {#
+    target='_blank'
+    #}
+    rel='noopener noreferrer'
+    class='social-item x-share'
+    arial-label='Share on X/twitter'
+    title='Share on X/twitter'
+  >
+    {% include 'svg/x.twig' %}
+  </a>
+  <a
+    {#
+    href='https://www.linkedin.com/sharing/share-offsite/?url={{ permalink }}'
+    #}
+    href='#'
+    {#
+    target='_blank'
+    #}
+    rel='noopener noreferrer'
+    class='social-item ln-share'
+    arial-label='Share on linkedin'
+    title='Share on linkedin'
+  >
+    {% include 'svg/linkedin.twig' %}
+  </a>
+</div>
+<div class='featured-img-holder'>
+  {% set featured_image_id = fn('get_post_thumbnail_id',post.ID) %}
+  {{ Image(featured_image_id, 'sm-desktop', {width: 1085, height: 550, class:"article-featured-img"}, false) }}
+</div>
+{% if field.image_credits %}
+  <p class='txt-size-14 c-blue-1 photo-credit'>
+    {{ field.image_credits }}
+  </p>
+{% endif %}
+<div class='article-main-content'>
+  {% if toc_list %}
+    <div class='table-of-contents col-sm-12 col-lg-3'>
+      <div class='sk-sticky'>
+        <p class='toc-title pl-0 ml-0'>{{ 'Jump to:' | t }}</p>
+        <div class='content-bullets'>
+          {{ toc_list }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% set tocClass = (toc)? 'article-text col-sm-12 col-lg-9 px-lg-4': 'article-text col-sm-12' %}
+  <div class='{{tocClass}}'>
+    <div class='blog-content'>
+      {{ content }}
+    </div>
+  </div>
+</div>

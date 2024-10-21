@@ -1,0 +1,12 @@
+.inner-pages-contact-section.contact-block {
+  .hbspt-form {
+    .hs-form-field {
+      label:not(.hs-form-checkbox-display):not(.hs-error-msg) {
+        background-color: transparent !important;
+        @media screen and (min-width: 920px) {
+          background-color: #0f7095 !important;
+        }
+      }
+    }
+  }
+}

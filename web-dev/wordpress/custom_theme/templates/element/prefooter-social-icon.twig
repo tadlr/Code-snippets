@@ -1,0 +1,15 @@
+<a
+  href='{{ linkuri }}'
+  class='contact-section-btn txt-size-24 lh-1_25 c-white fw-700'
+  target='_blank'
+  rel='noopener noreferrer'
+>
+  <img
+    class='contact-btn-icon b-lazy'
+    alt='{{ linktext }} Logo'
+    width='60'
+    height='60'
+    data-src='{{ fn('get_template_directory_uri') }}/assets/media/socials/{{ linkicon }}-green.svg'
+  >
+  <span class='btn-txt'>{{ linktext }}</span>
+</a>

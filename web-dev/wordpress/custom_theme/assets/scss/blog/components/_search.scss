@@ -1,0 +1,50 @@
+#searchform {
+  margin-top: 30px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and ($mobile) {
+      &:not(.input-group-append) {
+        flex-direction: column;
+      }
+    }
+
+    input[type='text'] {
+      border-radius: 50px;
+      padding: 18px 15px;
+
+      @media screen and ($min1024) {
+        @include vw(font-size, 18px);
+        @include vw(padding, 18px 15px);
+        margin-right: 20px;
+      }
+
+      @media screen and ($min1920) {
+        font-size: $ft-18;
+        padding: 18px 15px;
+      }
+
+      @media screen and ($mobile) {
+        padding: 14px 15px;
+        margin-bottom: 10px;
+      }
+    }
+
+    input[type='submit'] {
+      font-weight: 700;
+      width: 230px;
+
+      @media screen and ($mobile) {
+        width: 100%;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+    }
+  }
+}

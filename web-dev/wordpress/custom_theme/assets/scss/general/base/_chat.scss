@@ -1,0 +1,15 @@
+// Twilio chat
+html.hide-twilio-chat-btn {
+  .chat-info-welcome {
+    display: none !important;
+  }
+
+  .Twilio-EntryPoint {
+    display: none !important;
+  }
+}
+
+.chat-info-welcome {
+  font-size: 16px;
+  color: $blue-1;
+}

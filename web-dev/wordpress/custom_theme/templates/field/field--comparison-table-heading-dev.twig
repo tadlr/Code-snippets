@@ -1,0 +1,13 @@
+{% if heading or image or render %}
+  <th class='{{'thr-'~index}}'>
+    {% if heading %}
+      {{ heading }}
+    {% endif %}
+    {% if image %}
+      {% set class = 'logo-'~index %}
+      {% set width = (index == 1)? 210: 120 %}
+      {% set height = (index == 1)? 70: 35 %}
+      {{ Image(image, 'full', {width: width, height:height, class: 'logo-'~index }) }}
+    {% endif %}
+  </th>
+{% endif %}

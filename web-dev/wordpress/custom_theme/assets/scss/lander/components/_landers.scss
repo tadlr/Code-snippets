@@ -1,0 +1,185 @@
+.sk-lander {
+  #gfield_description_51_10 {
+    display: none !important;
+  }
+
+  .header-landing {
+    .btn-default {
+      &:hover,
+      &:focus {
+        .btn-txt {
+          color: $blue-1 !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 990px) and (max-width: 1025px) {
+    .block--g {
+      .col-sm-12 .col-lg-6 {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1025px) {
+    header {
+      .container-lg {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .header-landing .landing-template-btn {
+      margin-right: 0;
+    }
+  }
+
+  .gform_submission_error.hide_summary {
+    display: none;
+    font-size: 1rem;
+    padding: 0 !important;
+  }
+
+  .popup-form .mobile-contact-form {
+    padding-top: 50px;
+
+    @media screen and ($min1024) {
+      margin-top: 200px;
+    }
+
+    @media screen and ($max1024) {
+      margin-top: 50px;
+    }
+  }
+  .inner-pages-contact-section .txt-content-block .txt-post-rtf {
+    margin-top: 45px;
+  }
+
+  .landing-page-form .gfield {
+    margin-bottom: 25px;
+  }
+
+  .gfield_validation_message {
+    color: $coral;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    display: inline-block !important;
+    position: relative;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    // color: $white;
+    // background-color: $coral;
+    // padding: 10px 15px;
+  }
+
+  .gform_description,
+  .gform_title,
+  .gform_required_legend {
+    display: none !important;
+  }
+  a[href^='tel:']:not(.btn-default):not(.contact-section-btn) {
+    color: $coral !important;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  a.btn-default[href^='tel:'] {
+    color: $blue-1 !important;
+    font-weight: bold;
+  }
+  a.btn-default[href^='tel:']:hover,
+  a.btn-default[href^='tel:']:focus {
+    color: $green-1 !important;
+    font-weight: bold;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .header-landing .landing-template-btn.btn-in-menu .btn-txt {
+      background-color: transparent !important;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  .gfield_description.instruction.validation_message {
+    display: none !important;
+  }
+  .gfield_description.instruction.validation_message {
+    display: none !important;
+  }
+
+  .content-block-holder {
+    * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .sticky-contact + .footer-landing-page-template.offset-x-mobile-40 {
+    padding-bottom: 20px !important;
+  }
+}
+
+// Landing page sticky buttons
+.sticky-contact {
+  background-color: $green-1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+
+  // &.fixed-sticky{
+  // @media $mobile{
+  //     display: none; // add display: block; to show it
+  // }
+  // }
+  // @media screen and ($min1024) {
+  //     display: none;
+  // }
+
+  display: none;
+  @media screen and ($mobile_sm) {
+    display: block;
+  }
+
+  .landing-sticky-block {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 35px;
+      margin: 0 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .txt-blocks-layout-section .media-right .txt-content {
+    order: 0;
+    margin-bottom: 45px;
+  }
+}
+
+.footer-landing-page-template.footer {
+  @media screen and (max-width: 1024px) {
+    padding: 35px !important;
+  }
+}
+
+.grecaptcha-logo {
+  * {
+    font-size: 18px !important;
+  }
+}

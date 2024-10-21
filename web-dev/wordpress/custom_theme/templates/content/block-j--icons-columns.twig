@@ -1,0 +1,65 @@
+{% if is_preview %}
+  [J] Three columns with icons
+{% endif %}
+{% block content %}
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+{% set sectionClasses = field.section_classes %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} sk-block block--j {{ sectionClasses }}'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  {% set heading = field.block_heading %}
+  {% set content = field.content %}
+  {% set footer = field.footer %}
+  <div class='container'>
+    <div class='icons-content-block-vertical content-block row justify-content-between'>
+      {% if heading or content %}
+        <div class='col-sm-12 px-2 py-5'>
+          {{ include('field/field--heading.twig') }}
+        </div>
+      {% endif %}
+      {% if field.use_img %}
+        {% set boxClass = field.add_a_fouth_column ? 'col-sm-12 col-md-6 col-lg-3' : 'col-sm-12 col-lg-3-3qtr' %}
+      {% else %}
+        {% set boxClass = field.add_a_fouth_column ? 'col-sm-12 col-md-6 col-lg-3' : 'col-sm-12 col-md-3-3qtr' %}
+      {% endif %}
+      {% set class = boxClass~ ' ps-md-2' %}
+      {% if field.columns %}
+        {% set image = field.columns.icon_one %}
+        {% set heading = field.columns.heading %}
+        {% set content = field.columns.content %}
+        {% include 'field/field--column-w-icon-content.twig' %}
+      {% endif %}
+      {% if field.column_two %}
+        {% set image = field.column_two.icon_two %}
+        {% set heading = field.column_two.heading_two %}
+        {% set content = field.column_two.content_two %}
+        {% include 'field/field--column-w-icon-content.twig' %}
+      {% endif %}
+      {% if field.column_three %}
+        {% set image = field.column_three.icon_three %}
+        {% set heading = field.column_three.heading_three %}
+        {% set content = field.column_three.content_three %}
+        {% include 'field/field--column-w-icon-content.twig' %}
+      {% endif %}
+      {% if field.add_a_fouth_column %}
+        {% set image = field.column_four.icon_four %}
+        {% set heading = field.column_four.heading_four %}
+        {% set content = field.column_four.content_four %}
+        {% include 'field/field--column-w-icon-content.twig' %}
+      {% endif %}
+      {% if footer %}
+        <div class=' col-sm-12 mt-5'>
+          {{ footer }}
+        </div>
+      {% endif %}
+      {% if field.cta_text %}
+        <div class='col-sm-12 mt-5'>
+          {% include 'field/field--cta-btn.twig' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

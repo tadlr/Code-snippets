@@ -1,0 +1,41 @@
+{% extends "block-sk-block-base.twig" %}
+{% block sk_block %}
+  <section
+    id='{{ sectionID }}'
+    class='content-block-holder {{ classes }} sk-block block--{{block_id}} bg-primary'
+    data-link-scroll-target-section-id='{{sectionID}}'
+  >
+    {% block block_content %}
+      {% set quote = field.quote %}
+      {% set quoteText = not (quote.quote_text starts with '"')? '"'~quote.quote_text %}
+      {% set quoteText = not (quote.quote_text ends with '"')? quoteText~'"' %}
+      {% set imagePosition = field.image_position %}
+      <div class='container'>
+        <div class='media-block media-{{ imagePosition }} video-media content-block row row-eq-height'>
+          <div class='txt-content op-0 col-sm-12 col-lg-6'>
+            <div class='mt-3'>
+              <blockquote class='quote-content text-white'>
+                {{ quoteText }}
+                <footer>
+                  —
+                  {{ quote.quote_author }}
+                  <cite>
+                    {{ quote.author_position }}
+                  </cite>
+                </footer>
+              </blockquote>
+            </div>
+            {% include 'field/field--cta-btn.twig' %}
+          </div>
+          <div class='img-wrap col-sm-12 col-lg-6 h-100'>
+            <div class='img-content'>
+              {% if field.image %}
+                {{ Image(field.image, 'full', {'width':450, 'height': 450}) }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </section>
+{% endblock %}

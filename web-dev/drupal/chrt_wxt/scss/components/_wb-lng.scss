@@ -1,0 +1,14 @@
+.wb-lng {
+  position: relative;
+  padding: 0;
+
+  @media screen and (max-width: $screen-xs-max) {
+    li{
+      a{
+        abbr{
+          color: $white!important;
+        }
+      }
+    }
+  }
+}

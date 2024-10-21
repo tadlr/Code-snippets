@@ -1,0 +1,41 @@
+#wb-info {
+   nav {
+      @media screen and (min-width: $screen-sm-min) {
+         @include no-padding;
+      }
+      section {
+         @media screen and (max-width: $screen-sm-min) {
+            align-items: center;
+         }
+         h3 {
+            color: $cyan;
+            font-size: 16px;
+            font-family: $font-family-base;
+            font-weight: 700;
+            line-height: 20px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            @media screen and (min-width: $screen-sm-min) {
+               @include no-margin;
+               @include no-padding;
+            }
+         }
+
+         ul {
+            > li {
+               @media screen and (min-width: $screen-sm-min) {
+                  margin: 17px 0 0;
+               }
+               > a {
+                  padding: 0;
+                  color: $cyan;
+                  font-size: 16px;
+                  font-family: $font-family-base;
+                  font-weight: 400;
+                  line-height: 20px;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,37 @@
+{% block body_scripts %}
+<!-- Google tag (gtag.js) -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-0DPD85RWV6'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-0DPD85RWV6');
+</script>
+<!-- ClickCease.com tracking -->
+<script type='text/javascript' async>
+  var script = document.createElement('script');
+  script.async = true;
+  script.type = 'text/javascript';
+  var target = 'https://www.clickcease.com/monitor/stat.js';
+  script.src = target;
+  var elem = document.head;
+  elem.appendChild(script);
+</script>
+<noscript>
+  <a href='https://www.clickcease.com' rel='nofollow'>
+    <img src='https://monitor.clickcease.com' alt='ClickCease'>
+  </a>
+</noscript>
+<!-- ClickCease.com tracking -->
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe
+    src='https://www.googletagmanager.com/ns.html?id=GTM-WVQLG62'
+    height='0'
+    width='0'
+    style='display:none;visibility:hidden'
+  ></iframe>
+</noscript>
+{% endblock %}

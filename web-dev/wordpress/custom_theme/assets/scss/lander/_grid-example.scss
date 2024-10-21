@@ -1,0 +1,30 @@
+.sk-lander--16415 {
+  .d-desktop-flex.grid-example {
+    display: none !important;
+  }
+}
+.sk-lander--16415 {
+  .grid-example {
+    z-index: 0;
+    &.p-fixed {
+      bottom: 0;
+      position: fixed;
+      width: 100%;
+    }
+
+    .item {
+      height: 100%;
+      div {
+        height: 100vh;
+        color: white;
+        background-color: transparentize($color: $blue-1, $amount: 0.76);
+        border: 3px solid $coral;
+        opacity: 0.25;
+      }
+    }
+  }
+
+  .full-width-bg {
+    background-color: transparentize(#f6f8fc, 0.3) !important;
+  }
+}

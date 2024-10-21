@@ -1,0 +1,12 @@
+.editor-styles-wrapper .wp-block,
+html :where(.wp-block) {
+  max-width: 94%;
+}
+
+.editor-styles-wrapper .wp-block {
+  max-width: 94%;
+}
+
+.taxonomy-campaigns .form-field.term-description-wrap {
+  display: none;
+}

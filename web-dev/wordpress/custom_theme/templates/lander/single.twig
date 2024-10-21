@@ -1,0 +1,14 @@
+{% extends "html-base.twig" %}
+{% block header %}
+{% include 'lander-top.twig' %}
+{% endblock %}
+{% block content %}
+{% include 'lander-content.twig' %}
+{% include 'lander-popup-form.twig' %}
+{% if field.show_sticky_bar == 'yes' %}
+  {% include 'lander-sticky-footer.twig' %}
+{% endif %}
+{% endblock %}
+{% block footer %}
+{# {% include 'html-bottom.twig' %} #}
+{% endblock %}

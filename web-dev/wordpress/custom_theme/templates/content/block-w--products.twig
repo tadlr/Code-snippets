@@ -1,0 +1,112 @@
+{# Block--w #}
+{% extends 'block-sk-block-base.twig' %}
+{% block block_content %}
+	<section class="products-grid prel">
+		<div class="prel op-0 ">
+
+			<div class="container">
+				{% if field.content %}
+					<div class="txt-content products-content">
+						{{ field.content|raw }}
+					</div>
+				{% endif %}
+				{% if field.company_logo %}
+					<div class="company-logo img-wrap col-sm-12">
+						{{ image(field.company_logo, 'full', {'width':auto, 'height': auto})  }}
+					</div>
+				{% endif %}
+
+				{% if field.products %}
+					<!-- Desktop/Tablet view -->
+					{% if field.products|length == 1 %}
+						{% set productsWrapClass = 'single' %}
+					{% endif %}
+					<div class="products-wrap large {{ productsWrapClass }}">
+						{% for products in field.products %}
+							<div class="product">
+								{% if products.product_image %}
+									<div class="img-wrap col-sm-12">
+										{{ image(products.product_image, 'full', {'width':auto, 'height': 350})  }}
+									</div>
+								{% endif %}
+								<div class="txt-content">
+									{{ products.product_content|raw }}
+								</div>
+								{% if products.product_cta_text %}
+									{% if products.product_cta_type == 'internal' %}
+										<a href="{{ products.product_cta_internal_link }}" class="btn-default size-18-txt c-blue-1 btn-green-1 section-color-white btn-offset-9 fw-700 mt-3">
+											<span class="btn-bg-el"></span>
+											<span class="btn-txt">{{ products.product_cta_text }}</span>
+										</a>
+									{% elseif products.product_cta_type == 'external' %}
+										<a href="{{ products.product_cta_external_link }}" target="_blank" class="btn-default size-18-txt c-blue-1 btn-green-1 section-color-white btn-offset-9 fw-700 mt-3">
+											<span class="btn-bg-el"></span>
+											<span class="btn-txt">{{ products.product_cta_text }}</span>
+										</a>
+									{% endif %}
+								{% endif %}
+							</div>
+						{% endfor %}
+					</div>
+
+					<!-- Mobile view -->
+					<div class="products-wrap mobile {{ productsWrapClass }}">
+						{% if field.products|length == 1 %}
+							<div class="products-carousel">
+						{% else %}
+							<div class="quote-carousel products-carousel" flex-slider>
+						{% endif %}
+
+							{% if field.products|length == 1 %}
+								<ul class="ul-reset">
+							{% else %}
+								<ul class="slides">
+							{% endif %}
+								{% for products in field.products %}
+									<li class="slide product" data-mh="slider-content">
+										<div class="img-wrap col-sm-12">
+											{% if products.product_image %}
+												{{ image(products.product_image, 'full', {'width':auto, 'height': 350})  }}
+											{% endif %}
+										</div>
+										<div class="txt-content op-1">
+											{{ products.product_content|raw }}
+										</div>
+										{% if products.product_cta_text %}
+											{% if products.product_cta_type == 'internal' %}
+												<a href="{{ products.product_cta_internal_link }}" class="btn-default size-18-txt c-blue-1 btn-green-1 section-color-white btn-offset-9 fw-700 mt-3">
+													<span class="btn-bg-el"></span>
+													<span class="btn-txt">{{ products.product_cta_text }}</span>
+												</a>
+											{% elseif products.product_cta_type == 'external' %}
+												<a href="{{ products.product_cta_external_link }}" target="_blank" class="btn-default size-18-txt c-blue-1 btn-green-1 section-color-white btn-offset-9 fw-700 mt-3">
+													<span class="btn-bg-el"></span>
+													<span class="btn-txt">{{ products.product_cta_text }}</span>
+												</a>
+											{% endif %}
+										{% endif %}
+									</li>
+								{% endfor %}
+							</ul>
+							{% if field.products|length > 1 %}
+								<div class="slider-navigation">
+									<a href="#" class="flex-prev" aria-label="Previous Arrow">
+										<span class="sr-only">
+											{{'Previous Arrow'|t}}
+										</span>
+									</a>
+									<a href="#" class="flex-next" aria-label="Next Arrow">
+										<span class="sr-only">
+											{{'Next Arrow'|t}}
+										</span>
+									</a>
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				{% endif %}
+			</div>
+
+		</div>
+	</section>
+{% endblock %}

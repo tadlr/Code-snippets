@@ -1,0 +1,76 @@
+{# page-bk10--featured-images-hero #}
+
+{% extends "block-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('bg-blue', 'sk-case-studies') %}
+
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  <div class='container text-white'>
+    {% if field.breadcrumbs %}
+      <div class='breadcrumb-wrap prel'>
+        <ul class='breadcrumb-list ff-libre fw-400 lh-1 txt-size-12 ltr-spc-pos-0_2'>
+          <li>
+            <a href='{{ fn('home_url') }}'>{{ t('Home') }}</a>
+          </li>
+        </ul>
+        <p class='txt-size-12 upper lh-1 fw-400 ltr-spc-pos-4_6 current-page-breadcrumb-title'>
+          {{ fn('the_title') }}
+        </p>
+      </div>
+    {% endif %}
+
+    <div class='media-block media-{{ imagePosition }} content-block row row-eq-height'>
+      <div class='txt-content col-sm-12 col-lg-6 col-xl-6 d-desktop-flex'>
+        {% if heading %}
+          {% if headingH1 == 'yes' %}
+            <h1 style='color:{{ headingColor }}'>
+              {{ heading|striptags('<br><span>') }}
+            </h1>
+          {% else %}
+            <h2 style='color:{{ headingColor }}'>
+              {{ heading|striptags('<br><span>') }}
+            </h2>
+          {% endif %}
+        {% endif %}
+        <div class='mt-3'>
+          {{ content | raw }}
+        </div>
+        {% include 'field/field--cta-btn.twig' %}
+
+        {% if cta_text_2 %}
+          {% set cta_text = cta_text_2 %}
+          {% set external_link = external_link_2 %}
+          {% set cta_link = cta_link_2 %}
+          {% set phone = phone_2 %}
+          {% set cta_scroll_to_section = cta_scroll_to_section_2 %}
+          {{ include('field/field--cta-btn.twig') }}
+        {% endif %}
+
+        <button class='btn-scroll-next scroll-to-next-btn'>
+          <span class='visually-hidden'>{{ t('Scroll to next section') }}</span>
+          <img
+            src='{{ get_template_directory_uri() }}/assets/media/svgs/scroll-down.svg'
+            alt=''
+            role='presentation'
+            class='arrow-down'
+          >
+        </button>
+      </div>
+      <div class='img-wrap col-sm-12 col-lg-6 col-xl-6 d-desktop-flex justify-content-center'>
+        <div class='img-content row'>
+          {% if field.images %}
+            {% for index, image in field.images %}
+              <div class='col-4 col-md-4 img-row-{{index}} featured-img'>
+                {{ Image(image.image, 'img-200-280', {'width':450, 'height': 450}) }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

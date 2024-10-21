@@ -1,0 +1,61 @@
+.column {
+  margin-bottom: $padding-xs;
+
+  .container-fluid &{
+    @include padded;
+    margin-bottom: 0;
+
+    &.media{
+      figure:not(.wb-mltmd){
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &.no-bg {
+    display: block;
+  }
+
+  .field--type-text-long{
+    > *:first-child{
+      margin-top: 0;
+    }
+  }
+
+  &.media {
+    margin-top: 0;
+
+    .container & {
+      &:nth-child(odd) {
+        padding-left: 15px !important;
+      }
+      &:nth-child(even) {
+        padding-right: 15px !important;
+      }
+    }
+
+    figure {
+      height: 100%;
+
+      &:not(.wb-mltmd){
+        position: absolute;
+        width: calc(100% - 15px);
+      }
+
+      img {
+        @include object-fit;
+        height: 100%;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      figcaption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,499 @@
+.solutions-section-home {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .txt-size-22 {
+    backface-visibility: hidden;
+  }
+
+  .txt-content {
+    @media screen and ($min1024) {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+  }
+
+  .retail-svg {
+    path {
+      opacity: 0;
+    }
+  }
+
+  .title-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+
+    margin-bottom: 27px;
+
+    @media screen and ($min1024) {
+      @include vw(padding-right, 170px);
+      @include vw(width, 780px);
+    }
+
+    @media screen and ($min1920) {
+      padding-right: 170px;
+      width: 780px;
+    }
+
+    .txt-size-12 {
+      @include background-contrast-fix;
+      @media screen and ($mobile_sm) {
+        @include vw(margin-bottom, 33px, 500);
+        @include vw(margin-left, 4px, 500);
+      }
+      @media screen and ($mobile_lg) {
+        margin-bottom: 33px;
+        margin-left: 4px;
+      }
+      @media screen and ($min1024) {
+        @include vw(margin-bottom, 60px);
+        @include vw(margin-left, 4px);
+      }
+
+      @media screen and ($min1920) {
+        margin-bottom: 60px;
+        margin-left: 4px;
+      }
+    }
+
+    .txt-size-60 {
+      @media screen and ($mobile_sm) {
+        @include vw(margin-left, 3px, 500);
+      }
+      @media screen and ($mobile_lg) {
+        margin-left: 3px;
+      }
+      @media screen and ($min1024) {
+        @include vw(margin-left, 6px);
+      }
+
+      @media screen and ($min1920) {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .txt-post-rtf {
+    flex: 0 1 auto;
+
+    // @media screen and ($mobile_sm) {
+    //   @include vw(margin-top, 36px, 500);
+    //   @include vw(margin-left, 5px, 500);
+    //   @include vw(letter-spacing, 0.2px, 500);
+    //   @include vw(max-width, 295px, 500);
+    // }
+
+    // @media screen and ($mobile_lg) {
+    //   margin-top: 36px;
+    //   margin-left: 5px;
+    //   letter-spacing: 0.2px;
+    //   max-width: 295px;
+    // }
+
+    // @media screen and ($mobile_all) {
+    //   line-height: 1.7;
+    // }
+
+    @media screen and ($max1024) {
+      margin-bottom: 27px;
+    }
+    @media screen and ($min1024) {
+      @include vw(margin-top, 77px);
+      @include vw(padding-right, 200px);
+      width: calc(100% - 40.625vw);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 77px;
+      padding-right: 200px;
+      width: calc(100% - 780px);
+    }
+  }
+
+  .btn-wrap {
+    text-align: center;
+  }
+
+  .blocks-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+    margin-top: 35px;
+
+    @media screen and ($mobile_all) {
+      justify-content: center;
+    }
+
+    @media screen and ($mobile_sm) {
+      @include vw(margin-left, -35px, 500);
+      @include vw(margin-right, -35px, 500);
+      @include vw(padding-left, 25px, 500);
+      @include vw(padding-right, 25px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      margin-left: -35px;
+      margin-right: -35px;
+
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-left, -120px);
+      @include vw(margin-right, -120px);
+      // @include vw(padding-bottom, 86px);
+    }
+
+    @media screen and ($min1920) {
+      margin-left: -120px;
+      margin-right: -120px;
+    }
+  }
+
+  .single-block {
+    box-sizing: content-box;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow: hidden;
+
+    @media screen and ($mobile_sm) {
+      width: calc(50% - 14vw);
+      @include vw(padding, 30px 35px, 500);
+    }
+
+    @media screen and ($min480) {
+      width: calc(33.33% - 14vw);
+    }
+
+    @media screen and ($mobile_lg) {
+      width: calc(33.33% - 70px);
+      padding: 30px 35px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(padding, 35px 120px);
+      width: calc(20% - 12.5vw);
+    }
+
+    @media screen and ($min1920) {
+      padding: 35px 120px;
+      width: calc(20% - 240px);
+    }
+  }
+
+  .img-overlay-anim {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    background-color: $white;
+    transform-origin: 100% 50%;
+    z-index: 4;
+  }
+
+  .icon-wrap {
+    box-sizing: content-box;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media screen and ($mobile_sm) {
+      @include vw(padding-bottom, 18px, 500);
+      @include vw(height, 80px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      padding-bottom: 18px;
+      height: 80px;
+    }
+    @media screen and ($min1024) {
+      @include vw(padding-bottom, 25px);
+      @include vw(height, 80px);
+    }
+
+    @media screen and ($min1920) {
+      padding-bottom: 25px;
+      height: 80px;
+    }
+  }
+
+  .retail-svg {
+    @media screen and ($mobile_sm) {
+      @include vw(width, 73px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 73px;
+    }
+    @media screen and ($min1024) {
+      @include vw(width, 73px);
+    }
+
+    @media screen and ($min1920) {
+      width: 73px;
+    }
+  }
+
+  .health-wellness-svg {
+    width: 75px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 75px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 75px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 75px);
+    }
+
+    @media screen and ($min1920) {
+      width: 75px;
+    }
+  }
+
+  .beauty-salons-svg {
+    width: 85px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 85px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 85px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 85px);
+    }
+
+    @media screen and ($min1920) {
+      width: 85px;
+    }
+  }
+
+  .non-profit-svg {
+    width: 120px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 120px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 120px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 120px);
+    }
+
+    @media screen and ($min1920) {
+      width: 120px;
+    }
+  }
+
+  .hardware-svg {
+    width: 75px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 75px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 75px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 75px);
+    }
+
+    @media screen and ($min1920) {
+      width: 75px;
+    }
+  }
+
+  .grocery-svg {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 35%;
+    width: 75px;
+    &.svg-top {
+      z-index: 2;
+    }
+    @media screen and ($mobile_sm) {
+      @include vw(width, 75px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 75px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 75px);
+    }
+
+    @media screen and ($min1920) {
+      width: 75px;
+    }
+  }
+
+  .ecommerce-svg {
+    width: 90px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 90px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 90px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 90px);
+    }
+
+    @media screen and ($min1920) {
+      width: 90px;
+    }
+  }
+
+  .restaurant-svg {
+    @media screen and ($mobile_sm) {
+      @include vw(width, 125px, 500);
+      @include vw(margin-top, -20px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 125px;
+      margin-top: -20px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 125px);
+      @include vw(margin-top, -20px);
+    }
+
+    @media screen and ($min1920) {
+      width: 125px;
+      margin-top: -20px;
+    }
+  }
+
+  .hospitality-svg {
+    width: 82px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 82px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 82px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 82px);
+    }
+
+    @media screen and ($min1920) {
+      width: 82px;
+    }
+  }
+
+  .fashion-boutiques-svg {
+    width: 75px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 75px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 75px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 75px);
+    }
+
+    @media screen and ($min1920) {
+      width: 75px;
+    }
+  }
+
+  .homeware-store-svg {
+    width: 73px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 73px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 73px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 73px);
+    }
+
+    @media screen and ($min1920) {
+      width: 73px;
+    }
+  }
+
+  .professional-services-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+
+    &.svg-circle {
+      transform-origin: 50% 20%;
+    }
+
+    &.svg-bottom {
+      transform-origin: 50% 68%;
+    }
+    @media screen and ($mobile_sm) {
+      @include vw(width, 75px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 75px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 75px);
+    }
+
+    @media screen and ($min1920) {
+      width: 75px;
+    }
+  }
+
+  .wholesale-icon-svg {
+    width: 75px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 75px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 75px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 75px);
+    }
+
+    @media screen and ($min1920) {
+      width: 75px;
+    }
+  }
+
+  .wellness-icon-svg {
+    width: 75px;
+    @media screen and ($mobile_sm) {
+      @include vw(width, 75px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      width: 75px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 75px);
+    }
+
+    @media screen and ($min1920) {
+      width: 75px;
+    }
+  }
+}

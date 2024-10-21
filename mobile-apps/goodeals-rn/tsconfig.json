@@ -1,0 +1,26 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "jsx": "react",
+    "strict": true
+  },
+  "include": [
+    "tailwind.config.js",
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "./index.d.ts",
+    "transformer.ts",
+    "nativewind-env.d.ts"
+  ]
+}

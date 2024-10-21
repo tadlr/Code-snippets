@@ -1,0 +1,103 @@
+@each $breakpoint, $container-ext-width in $container-ext-widths {
+  .container-ext {
+    @include media-breakpoint-up($breakpoint, $grid-ext-breakpoints) {
+      max-width: $container-ext-width;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-down($breakpoint) {
+    .table-responsive#{$infix} {
+      overflow-x: clip;
+      // -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+.abs-cover-el {
+  @include abs-cover-el;
+}
+
+.pabs {
+  @include pabs;
+}
+
+.fit {
+  @include fit;
+}
+
+.prel {
+  @include prel;
+}
+
+.inline_block {
+  @include inline_block;
+}
+
+.background-contrast-fix {
+  @include background-contrast-fix;
+}
+
+.resp-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.sk-chat {
+  z-index: 9991;
+  position: relative;
+
+  .btn-chat-close {
+    display: none;
+    position: fixed;
+    right: 58px;
+    bottom: 130px;
+    z-index: 99;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+
+    @media screen and ($min720) {
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
+
+#customTheme-connect-chat.hide-chat .chat-info-welcome {
+  display: none !important;
+}
+
+.np {
+  @include no-padding;
+}
+
+@media screen and (max-width: 880px) {
+  .row {
+    --skre-gutter-x: 32px !important;
+  }
+}
+
+.btn-skip {
+  @include bs-btn;
+  @include button-variant($green-1, $blue-1, $blue-1);
+  font-size: $ft-18;
+  font-weight: 700;
+  font-family: $libre;
+  position: absolute;
+  z-index: 10000;
+  top: 5%;
+  left: 75px;
+}
+
+.btn {
+  &-download {
+    @include bs-btn;
+    @include btn-download;
+  }
+}

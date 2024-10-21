@@ -1,0 +1,60 @@
+{% set cellTemplate = 'field/field--mobile-table-cell.twig' %}
+{% set headerTemplate = 'field/field--mobile-table-header-cell.twig' %}
+{% for index, row in field.rows | slice(1) %}
+  <p class='text-highlight'>
+    {{ row.table_inner_heading }}
+  </p>
+  <div class='mb-table-container'>
+    <span class='mb-button-holder'>
+      <span class='sticky-m'>
+        <button class='slider-control blaze-prev d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}-{{index}}'>
+          prev
+        </button>
+        <button class='slider-control blaze-next d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}-{{index}}'>
+          next
+        </button>
+      </span>
+    </span>
+    <div class='mb-table mb-multi-compare' id='{{uid}}-{{index}}'>
+      <div class='fixed-column'>
+        <div class='fixed-column-inner'>
+          {% if field.rows.0.acf_fc_layout == 'heading_row' %}
+            {% for idx, cell in field.rows.0.cell %}
+              {% if idx == 0 %}
+                {{ include(headerTemplate, {id: "#{uid}-header", class: "mt-header", rowId: idx}) }}
+                {% elseif idx == 1 %}
+                {{ include(headerTemplate, {id: "#{uid}-#{index}-#{idx}", class: "mt-box mt-logo mt-primary", rowId: idx}) }}
+              {% else %}
+                {{ include(headerTemplate, {id: "#{uid}-#{index}-#{idx}", class: "mt-box mt-logo mt-second", rowId: idx}) }}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      <div class='scrolling-column'>
+        <div class='scrolling-column-inner blaze-container blaze-slider'>
+          <div class='blaze-track-container'>
+            <div class='blaze-track'>
+              {% for number,column in row.table_row %}
+                <div class='mt-box-inner'>
+                  {% for rowId,row in column.column %}
+                    {% if rowId == 0 %}
+                      {{ include(cellTemplate, {id: "#{uid}-header", class: "mt-header", rowId: rowId}) }}
+                      {% elseif rowId == 1 %}
+                      {{ include(cellTemplate, {id: "#{uid}-#{index}-#{rowId}", class: "mt-box mt-ctn mt-primary", rowId: rowId, use_stars: row.use_stars}) }}
+                    {% else %}
+                      {{ include(cellTemplate, {id: "#{uid}-#{index}-#{rowId}", class: "mt-box mt-ctn mt-secondary", rowId: rowId, use_stars: row.use_stars}) }}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class='pagination-wrapper'>
+            <div class='blaze-pagination'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,26 @@
+.announcement{
+  @include no-padding;
+  align-items: stretch;
+  border-radius: 0!important;
+  color: $brand-primary;
+  display: flex;
+  line-height: 1;
+
+  span{
+    @include padded-small;
+    display: flex;
+    align-items: center;
+
+    &:last-of-type{
+      width: calc(100% - 160px);
+    }
+  }
+  
+  .badge{
+    background: $brand-primary;
+    border-radius: 0;
+    justify-content: center;
+    width: 160px;
+    white-space: normal;
+  }
+}

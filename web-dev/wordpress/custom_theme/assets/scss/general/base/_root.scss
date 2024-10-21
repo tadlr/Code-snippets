@@ -1,0 +1,456 @@
+/////////////// Global ///////////////
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $libre;
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include background-contrast-fix;
+}
+
+// body {
+//   opacity: 0.2;
+// }
+
+html,
+body {
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+@media screen and ($min400) and (max-width: 500px) {
+  body:not(.sk-lander) {
+    &::before {
+      background-color: $blue-1;
+      content: '';
+      display: inline-block;
+      height: 100px;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}
+
+body {
+  background-color: $white;
+  // background-color: $blue-1;
+  // overflow: hidden;
+  transition:
+    opacity 0.5s $easeOutSine,
+    padding-top 0.15 ease-in-out;
+  // padding-top: 161px;
+  // &.admin-bar {
+  //   padding-top: 219px;
+  // }
+}
+
+html.skp-sc {
+  // scroll-behavior: auto;
+
+  body {
+    overflow: clip;
+  }
+}
+
+html.w-sc {
+  body {
+    overflow: hidden;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+
+a img {
+  border: 0 none;
+}
+
+img {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+}
+
+.f0 {
+  //   body {
+  //   opacity: 0;
+  font-size: 0;
+  //   }
+}
+
+.animated-in {
+  //   opacity: 1;
+  font-size: 1rem;
+}
+
+.object {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.clr {
+  clear: both;
+}
+
+.ul-reset {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.h-reset {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  p {
+    margin: 0;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  strong,
+  b {
+    font-weight: inherit;
+  }
+}
+
+.hidden-label {
+  font-size: 16px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  @include background-contrast-fix;
+}
+
+.background-contrast-fix {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 101%,
+    rgba(0, 0, 0, 0.01) 102%
+  );
+}
+
+.w-reset {
+  max-width: 100%;
+  width: 100%;
+}
+
+.h-reset {
+  height: auto;
+}
+
+/////////////// Block ///////////////
+
+.block {
+  display: block;
+}
+
+.inline_block {
+  display: inline-block;
+}
+
+/////////////// Hidden ///////////////
+
+@media screen and ($mobile_all) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media screen and ($min1024) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.ov-hidden {
+  overflow: clip;
+}
+
+.skp-sc {
+  .ov-hidden {
+    overflow: clip;
+  }
+}
+
+.ov-visible {
+  overflow: visible;
+}
+
+.ov-o-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ov-o-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+///////////////  Forms ///////////////
+
+// input,
+// select,
+// textarea {
+//     outline: none;
+// }
+
+input,
+textarea {
+  // outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+select {
+  // outline: none;
+  border-radius: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+//
+//  * Show the overflow in IE.
+//  * 1. Show the overflow in Edge.
+
+button,
+input {
+  overflow: visible;
+}
+
+// *
+//  * Remove the inheritance of text transform in Edge, Firefox, and IE.
+//  * 1. Remove the inheritance of text transform in Firefox.
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+// *
+//  * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//  *    controls in Android 4.
+//  * 2. Correct the inability to style clickable types in iOS and Safari.
+
+button,
+html [type="button"],
+/* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+  /* 2 */
+}
+
+// *
+//  * Remove the inner border and padding in Firefox.
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+// *
+//  * Restore the focus styles unset by the previous rule.
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+/////////////// Text ///////////////
+
+.pe-none {
+  pointer-events: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+.case {
+  text-transform: normal;
+}
+
+.nocase {
+  text-transform: none;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+/////////////// Floats ///////////////
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-none {
+  float: none;
+}
+
+/////////////// Positions ///////////////
+
+.prel {
+  position: relative;
+}
+
+.pabs {
+  position: absolute;
+}
+
+.pfix {
+  position: fixed;
+}
+
+.valign {
+  position: relative;
+  display: table;
+
+  &.fit {
+    width: 100%;
+    height: 100%;
+  }
+
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+/////////////// Style ///////////////
+
+.bx {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/////////////// Backgrouds ///////////////
+
+.bg-image {
+  @include pabs;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-position: 50% 50%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.sf-dump {
+  position: relative !important;
+  z-index: 999999 !important;
+}

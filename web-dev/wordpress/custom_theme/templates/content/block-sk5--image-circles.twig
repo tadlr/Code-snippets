@@ -1,0 +1,38 @@
+{# Block--sk4 #}
+{% extends "block-sk-block-base.twig" %}
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+{% set heading = field.heading %}
+{% set content = field.text_content %}
+{% set imagePosition = field.image_position %}
+{% set quote = field.quote %}
+{% block block_content %}
+  <div class='container'>
+    <div class='circle-info-white-block media-{{ imagePosition }} {{ imagePosition }} content-block row row-eq-height'>
+      <div class='txt-content op-0 col-sm-12 col-lg-5 d-flex flex-column justify-content-center'>
+        {% if heading %}
+          <h2>
+            {{ heading|striptags('<br><span>') }}
+          </h2>
+        {% endif %}
+        <div class=''>
+          {{ content | raw }}
+        </div>
+        {% if field.cta_text %}
+          <div class='mt-3'>
+            {% include 'field/field--cta-btn.twig' %}
+          </div>
+        {% endif %}
+      </div>
+      <div class='img--col op-0 col-sm-12 col-lg-7'>
+        <div class='inner-content'>
+          <div class='img-wrap'>
+            {{ Image(field.image, 'img-450-450', {width: 450, height: 450, class:"info-white-section-img"}) }}
+            <div class='arc-border-pink abs-cover-el'></div>
+            <div class='arc-light-pink abs-cover-el'></div>
+          </div>
+          <div class='img-circle'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

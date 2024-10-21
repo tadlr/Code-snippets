@@ -1,0 +1,12 @@
+{% if heading or content %}
+  <div class='content-block plain-txt-block'>
+    {% if heading %}
+      <h2>
+        {{ heading }}
+      </h2>
+    {% endif %}
+    {% if content %}
+      {{ content | raw }}
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,37 @@
+{# Block--blog-quote #}
+{% extends "block-sk-block-base.twig" %}
+{% block block_base %}
+{% set attributes = attributes.addClass('icon-type-' ~ icons_type) %}
+
+{{ parent() }}
+{% endblock %}
+{% block block_content %}
+
+{% set heading = field.block_heading %}
+{% set content = field.content %}
+{% set footer = field.footer %}
+
+<div class='icons-content-block-vertical content-block row justify-content-between'>
+  {% if heading or content %}
+    <div class='col-sm-12'>
+      {{ include('field/field--heading.twig') }}
+    </div>
+  {% endif %}
+
+  {% if field.icons %}
+    {% if icons_type == 'slider' %}
+      {% include 'icon-slider.twig' %}
+      {% elseif icons_type == 'row' %}
+      {% include 'icon-row.twig' %}
+    {% else %}
+      {% include 'icon-col.twig' %}
+    {% endif %}
+  {% endif %}
+
+  {% if field.cta_text %}
+    <div class='col-sm-12'>
+      {% include 'field/field--cta-btn.twig' %}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+.wrapperRollingTextBox {
+  z-index: 3;
+}
+
+.wrapperRollingText {
+  white-space: nowrap;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  opacity: 0;
+
+  &.to-right {
+    .rollingText.cloned {
+      left: inherit;
+      right: 0;
+    }
+  }
+}
+
+.rollingText {
+  backface-visibility: hidden;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  flex: 0 0 auto;
+
+  &.cloned {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

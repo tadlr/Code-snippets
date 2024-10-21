@@ -1,0 +1,26 @@
+<div class='right-content-form insert-form landing-page-form'>
+  <div class='inline-form px-5 bg-primary py-5'>
+    <div class='form-block-area'>
+      <div class='form--container-scr'>
+        <script>
+          hbspt.forms.create({
+            region: 'na1',
+            portalId: '4438792',
+            formId: '{{ args.id }}',
+            onFormReady: function (form) {
+              if (window._cq && typeof window._cq.cheqFormReady === 'function') {
+                window._cq.cheqFormReady(form);
+              } else {
+                window._cq = window._cq || {};
+                window._cq.form = form;
+              }
+            },
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+  {% if field.bellow_form %}
+    {{ field.bellow_form }}
+  {% endif %}
+</div>

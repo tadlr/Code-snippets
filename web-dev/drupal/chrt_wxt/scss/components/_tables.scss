@@ -1,0 +1,132 @@
+.table-responsive + .table-responsive{
+  margin-top: $padding-xs;
+}
+
+table,
+.table {
+  caption {
+    color: $brand-primary;
+    font-size: $font-size-h4;
+    // Reset alignment to center (default for caption in table) to ensure WYSIWYG buttons for alignment work.
+    text-align: center;
+  }
+
+  th {
+    background: $brand-primary;
+    border-bottom-width: 1px !important;
+    color: $white;
+    font-weight: 400;
+
+    a:not(.fn-lnk) {
+      color: $white;
+    }
+  }
+
+  thead {
+    tr > {
+      td {
+        background: $brand-primary;
+        border-bottom-width: 1px !important;
+        color: $white;
+      }
+    }
+  }
+
+  tfoot {
+    th {
+      background: $brand-info;
+      color: $text-color;
+    }
+  }
+
+  .active{
+    color: $text-color;
+
+    th{
+      color: $text-color;
+    }
+  }
+
+  &-striped{
+    tr:nth-of-type(even){
+      background-color: $white;
+    }
+  }
+
+  &.dataTable {
+    thead {
+      button {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .sorting-cnt {
+        float: right;
+      }
+
+      .sorting-icons {
+        display: flex !important;
+        flex-direction: column;
+        height: 30px;
+        justify-content: space-between;
+        width: 18px;
+        // float: right;
+
+        &:before,
+        &:after {
+          background: none !important;
+          border: none !important;
+          color: transparentize($white, 0.6);
+          height: 50%;
+          padding: 0;
+          top: auto;
+        }
+
+        &:before {
+          // @include fontawesome("\f0de");
+          content: "\e253";
+        }
+        &:after {
+          // @include fontawesome("\f0dd");
+          content: "\e252";
+        }
+      }
+
+      .sorting .sorting-icons::after,
+      .sorting .sorting-icons::before {
+        color: transparentize($white, 0.6);
+      }
+
+      .sorting_asc,
+      .sorting_desc {
+        background: $brand-info;
+        color: $text-color;
+
+        .sorting-icons {
+          &:before,
+          &:after {
+            color: transparentize($text-color, 0.6);
+          }
+        }
+      }
+
+      .sorting_asc {
+        .sorting-icons {
+          &:before {
+            color: $text-color;
+          }
+        }
+      }
+
+      .sorting_desc {
+        .sorting-icons {
+          &:after {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}

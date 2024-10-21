@@ -1,0 +1,167 @@
+.spotlight {
+  margin-bottom: $padding-xs;
+
+  &-inner {
+    overflow: hidden;
+    position: relative;
+    transition: all 400ms;
+  }
+
+  &-content {
+    margin-bottom: $padding-xs;
+  }
+
+  &-image {
+    clip-path: polygon(30% 0, 0 30%, 0 100%, 100% 100%, 100% 0);
+
+    .field {
+      height: 100%;
+    }
+  }
+
+  &-filler {
+    height: 350px;
+  }
+
+  &:nth-child(2n):not(.l2) {
+    .spotlight-image {
+      clip-path: polygon(0 0, 0 100%, 70% 100%, 100% 70%, 100% 0);
+    }
+  }
+
+  &:nth-child(3n):not(.l2) {
+    .spotlight-image {
+      clip-path: polygon(70% 0, 100% 30%, 100% 100%, 0 100%, 0 0);
+    }
+  }
+
+  &.l2 {
+    margin-bottom: $grid-gutter-width;
+
+    .spotlight-inner {
+      @include padded;
+      display: flex;
+      filter: drop-shadow(0 0 1px $gray-lighter);
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-top: 80px !important;
+      position: relative;
+
+      @media screen and (min-width: $screen-md-min) {
+        &:before {
+          background: $light;
+          border: 1px solid transparentize($brand-secondary, 0.9);
+          box-shadow: inset 1px 1px $padding transparentize($brand-secondary, 0.95);
+          content: "";
+          clip-path: polygon(30% 0, 0 30%, 0 100%, 100% 100%, 100% 0);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: 0;
+          transition: all 400ms;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: $padding;
+          bottom: $padding;
+          background: $brand-primary;
+          height: 2px;
+          width: 35%;
+          transition: all 400ms;
+        }
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        background: $light;
+      }
+    }
+
+    .spotlight-title {
+      font-size: $font-size-h3;
+      justify-content: flex-end;
+      margin: 0;
+      padding-bottom: 10px;
+      z-index: 1;
+      transition: all 400ms;
+
+      @media screen and (max-width: $screen-sm-max) {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: $brand-primary;
+          height: 2px;
+          width: 35%;
+          transition: all 400ms;
+        }
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(5n) {
+      .spotlight-inner {
+        &:before {
+          clip-path: none;
+        }
+      }
+    }
+
+    &:nth-child(3n),
+    &:last-child {
+      .spotlight-inner {
+        &:before {
+          clip-path: polygon(70% 0, 100% 30%, 100% 100%, 0 100%, 0 0);
+        }
+      }
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+      &:hover,
+      &:focus-within {
+        .spotlight-inner {
+          filter: drop-shadow(1px 5px 10px transparentize($gray-dark, 0.33));
+          transform: translateY(-10px) scale(1.01);
+
+          &:before {
+            background: $brand-primary;
+            box-shadow: inset 1px 1px $padding transparentize($light, 0.9);
+          }
+
+          &:after {
+            background-color: $white;
+          }
+        }
+
+        .spotlight-title {
+          color: $white;
+
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &.infopension {
+    flex-grow: 1;
+    margin: 0;
+
+    .spotlight-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      a {
+        flex-grow: 1;
+      }
+    }
+  }
+}

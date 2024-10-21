@@ -1,0 +1,67 @@
+{% set btnType = field.cta_link_type %}
+{% if btnType == 'popup' %}
+  <button
+    role='button'
+    class='landing-template-btn btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 btn-in-menu header-open-form-btn header-cta-btn'
+    data-target='.landing-page-form'
+  >
+    <span class='btn-bg-el'></span>
+    <span class='btn-txt'>
+      {{ field.cta_button_in_header }}
+    </span>
+  </button>
+  {% elseif btnType == "external" %}
+  <a
+    href='{{ field.cta_external_link}}'
+    target='_blank'
+    rel='nofollow'
+    class='btn-external btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 header-cta-btn'
+  >
+    <span class='btn-bg-el'></span>
+    <span class='btn-txt'>
+      {{ field.cta_button_in_header }}
+    </span>
+  </a>
+  {% elseif btnType == "same" %}
+  <a
+    href='{{ field.cta_external_link}}'
+    class='btn-external btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 header-cta-btn'
+  >
+    <span class='btn-bg-el'></span>
+    <span class='btn-txt'>
+      {{ field.cta_button_in_header }}
+    </span>
+  </a>
+  {% elseif btnType == "section" %}
+  <button
+    role='button'
+    class='landing-template-btn btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 btn-in-menu anchor-link header-cta-btn'
+    data-scroll-section-target-id='{{ field.cta_scroll_to_section }}'
+  >
+    <span class='btn-bg-el'></span>
+    <span class='btn-txt'>
+      {{ field.cta_button_in_header }}
+    </span>
+  </button>
+  {% elseif btnType == 'no' %}
+  <button
+    role='button'
+    class='landing-template-btn btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 btn-in-menu scroll-to-section-btn btn-scroll-to-footer header-cta-btn'
+  >
+    <span class='btn-bg-el'></span>
+    <span class='btn-txt'>
+      {{ field.cta_button_in_header }}
+    </span>
+  </button>
+{% else %}
+  <button
+    role='button'
+    class='landing-template-btn btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 btn-in-menu header-open-form-btn header-cta-btn'
+    data-target='.landing-page-form'
+  >
+    <span class='btn-bg-el'></span>
+    <span class='btn-txt'>
+      {{ field.cta_button_in_header }}
+    </span>
+  </button>
+{% endif %}

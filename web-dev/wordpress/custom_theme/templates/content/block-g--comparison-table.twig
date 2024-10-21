@@ -1,0 +1,66 @@
+{% extends 'block-sk-block-base.twig' %}
+{% block block_content %}
+  {% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+  {% set extra_classes = field.section_classes %}
+
+  {% set leftContent   = get_field('left_side_content') %}
+  {% set comparison_table = get_field('comparison_table') %}
+
+  <div class='txt-block content-block comparison-table'>
+    <div class='container prel slider-arrows'>
+      <div class='row justify-content-between'>
+        {% set contentClass = (leftContent is not empty) ? 'col-sm-12 col-lg-6 pe-lg-8' : '' %}
+
+        <div class='txt-content {{ contentClass }} pt-lg-3 mt-lg-3'>
+          {{ leftContent | raw }}
+        </div>
+        <div class='{{ contentClass }} col-sm-12 col-lg-6'>
+          {% if comparison_table is defined and comparison_table is iterable %}
+            {% set item = comparison_table %}
+            <div class='table-responsives'>
+              <table class='table-comparison table d-none d-desktop-table'>
+                <thead>
+                  <tr>
+                    <td></td>
+                    <th class='table-logo'>
+                      {{ Image(item.logo_one, 'full', {'width': 170, 'height': 52, 'class': 'logo_one'}) }}
+                    </th>
+                    <th class='accent-column table-logo'>
+                      {{ Image(item.logo_two, 'full', {'width': 170, 'height': 52, 'class': 'logo_two'}) }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% if item.rows is defined and item.rows is iterable %}
+                    {% for row in item.rows %}
+                      {% set colOne = row.column_one %}
+                      {% set colTwo = row.column_two %}
+                      {% set colThree = row.columns_three %}
+                      <tr>
+                        <td class='first-row'>
+                          {{ colOne }}
+                        </td>
+                        <td>
+                          {{ colTwo | raw }}
+                        </td>
+                        <td class='accent-column'>
+                          {{ colThree | raw }}
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+            <div class='d-none d-tablet-block d-mobile-block'>
+              {% include 'tables/table-compare.twig' %}
+            </div>
+            <div class='c-blue-1  mt-5'>
+              {{ item.fine_print }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

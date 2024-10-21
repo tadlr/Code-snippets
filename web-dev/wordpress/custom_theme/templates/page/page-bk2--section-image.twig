@@ -1,0 +1,72 @@
+{# page-bk2--section-image #}
+{% extends "page-sk-block-base.twig" %}
+{% block block_base %}
+  {% if post.ID != 582 and single_template == 'page-equipment' %}
+    {% set attributes = attributes.addClass('prel sk-block') %}
+    {% elseif post.ID == 582 and single_template == 'page-equipment' %}
+    {% set attributes = attributes.addClass('prel full-width-bg1 sk-block') %}
+    {% elseif image_position == 'left' %}
+    {% set attributes = attributes.addClass('circle-info-section-anim prel offset-x-mobile-38 offset-x-desktop-287') %}
+  {% else %}
+    {% set attributes = attributes.addClass('circle-info-section-anim prel') %}
+  {% endif %}
+
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% if image_position == 'left' %}
+    <div class='max-w-container w-1341 prel op-0 sk-content-block'>
+      <div class='img-wrap'>
+        <div class='scale-in-circle img-width-wrap'>
+          {{ Image(section_image, 'full', { width: 657, height: 657, class: 'info-white-section-img' }) }}
+        </div>
+        <div data-opacity='.7' class='fade-in-circle circle-purple abs-cover-el'></div>
+        <div class='fade-in-circle circle-border abs-cover-el'></div>
+        <div class='fade-in-circle circle-gray abs-cover-el'></div>
+      </div>
+      <div class='txt-content'>
+        <h2
+          class='txt-size-60 txt-size-48-m c-blue-1 lh-1 fw-700 ltr-spc-pos-0_5 heading-anim'
+          style='color: {{section_title_color}}'
+        >
+          {{ section_title|striptags('<a><strong>') }}
+        </h2>
+        <div class='txt-post-rtf fw-400 c-blue-1 txt-size-18 lh-1_66 ltr-spc-pos-0_2 content-block'>
+          <p class='text-highlight h2'>{{ section_subtitle }}</p>
+          {{ section_content }}
+        </div>
+
+        {% include ('field--cta-btn.twig') %}
+      </div>
+    </div>
+
+  {% else %}
+    <div class='container alt sk-content-block'>
+      <div class='circle-info-white-block media-{{ image_position }} {{ image_position }} content-block row row-eq-height'>
+        <div class='txt-content op-0 col-sm-12 col-lg-5 d-flex flex-column justify-content-center'>
+          {% if section_title %}
+            <h2>
+              {{ section_title|striptags('<br><span>') }}
+            </h2>
+          {% endif %}
+
+          {% if section_subtitle %}
+            <p class='text-highlight h2'>{{ section_subtitle }}</p>
+          {% endif %}
+          {{ section_content | raw }}
+        </div>
+        <div class='img--col op-0 col-sm-12 col-lg-7'>
+          <div class='inner-content'>
+            <div class='img-wrap'>
+              {{ Image(section_image, 'img-450-450', {width: 450, height: 450, class:"info-white-section-img"}) }}
+              <div class='arc-border-pink abs-cover-el'></div>
+              <div class='arc-light-pink abs-cover-el'></div>
+            </div>
+            <div class='img-circle'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

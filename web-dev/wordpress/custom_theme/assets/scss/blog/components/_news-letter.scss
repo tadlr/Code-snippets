@@ -1,0 +1,41 @@
+// Newsletter
+.newsletter-signup-wrap {
+  background-color: $blue-1;
+  padding: 30px;
+
+  @media screen and ($min1024) {
+    // @include vw(margin-bottom, 50px);
+    // @include vw(padding-top, 55px);
+    // @include vw(padding-left, 84px);
+    // @include vw(padding-right, 84px);
+    // @include vw(padding-bottom, 46px);
+
+    padding: 65px 80px 55px;
+  }
+
+  .newsletter-inner-holder {
+    position: relative;
+    z-index: 4;
+
+    @media screen and ($min1024) {
+      max-width: 750px;
+    }
+  }
+
+  .newsletter-description {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  .newsletter-background-img {
+    background-size: cover;
+
+    @media screen and ($tablet) {
+      background-position: 70% 50%;
+    }
+
+    @media screen and ($mobile) {
+      background-position: 75% 50%;
+    }
+  }
+}

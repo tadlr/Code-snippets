@@ -1,0 +1,21 @@
+{
+  "status": false,
+  "redirect": "https://google.com",
+  "errors": {
+    "full_name": "Required field",
+    "email": "Required field",
+    "search": "Value required",
+    "phone": "Required field",
+    "file_career": "Required field",
+    "ask_about": "Required field",
+    "free_trial_email": "Required field",
+    "policy_number": "Required field",
+    "about_product": "Required field",
+    "subscribe_email": "Required field",
+    "login_credential": "Required field",
+    "new_password": "Required field",
+    "new_password_repeat": "Required field",
+    "free_trial_subscribe": "Required field",
+    "gdpr_checkbox": "Required field"
+  }
+}

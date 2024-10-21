@@ -1,0 +1,179 @@
+{% set included_pages = field('lp_with_hyperlink', 'option') %}
+{% set header_logo_link = field('lp_header_logo_link', 'option') %}
+{% set spanish_pages = field('spanish_pages', 'option') %}
+{% set header_style = (field.header_style)? 'data-header-toggled="'~field.header_style~'"': '' %}
+<style>
+  .header .logo-on-scroll {
+    opacity: 0 !important;
+  }
+  html.header-toggled-state .header .logo-anim-white.logo-on-scroll {
+    opacity: 1 !important;
+  }
+  html.header-toggled-state .header .logo-no-scroll {
+    opacity: 0 !important;
+  }
+</style>
+<header id='header' class='header header-landing' {{ header_style }}>
+  <div class='container-lg'>
+    <div class='content-wrap prel'>
+      {% set href = '#' %}
+      {% set class = "header-logo-link inline_block prel non-linked-logo-header" %}
+      {% if fn('get_field', 'link_the_logo', 'option') == 'yes' and fn('is_single', included_pages) %}
+        {% set href = header_logo_link %}
+        {% set class = "header-logo-link inline_block prel" %}
+      {% endif %}
+      {% set alt = (post.ID in spanish_pages or lang == 'es')? "CustomTheme Expertos en Pagos":"CustomTheme Payment Experts" %}
+      <a href='{{ href }}' aria-label='{{alt}}' class='{{ class }}'>
+        {#
+          <img
+          width='217'
+          height='73'
+          alt='{{alt}}'
+          data-src='{{ current_domain }}/assets/media/images/pictograms/header-logo-blue.webp'
+          class='header-logo-img header-logo-blue dont-show non-gif'
+          >
+          <img
+          width='216'
+          height='72'
+          alt='{{alt}}'
+          data-src='{{ current_domain }}/assets/media/images/pictograms/header-logo-white.webp'
+          class='header-logo-img header-logo-white dont-show non-gif'
+          >
+        #}
+        {% if post.ID == 29787 or post.ID == 29916 or post.ID == 29928 %}
+          <img
+            width='217'
+            height='73'
+            alt='CustomTheme Partner Program'
+            src='{{ current_domain }}/assets/media/logo/customTheme-partner-blue.svg'
+            class='header-logo-img header-logo-blue dont-show non-gif'
+          >
+
+          <img
+            width='216'
+            height='72'
+            alt='{{alt}}'
+            src='{{ current_domain }}/assets/media/logo/customTheme-partner-white.svg'
+            class='header-logo-img header-logo-white dont-show non-gif'
+          >
+          {#
+            <span
+            aria-hidden='true'
+            class='lottie-anim-logo logo-anim-white logo-no-scroll'
+            data-lottie-anim-name='logo-anim-white'
+            data-url='{{ current_domain }}/assets/animations/lottie/logo_white_descriptor_reg.json'
+            ></span>
+          #}
+          {#
+            <span
+            aria-hidden='true'
+            class='lottie-anim-logo logo-anim-blue logo-no-scroll'
+            data-lottie-anim-name='logo-anim-blue'
+            data-url='{{ current_domain }}/assets/animations/lottie/logo_blue_descriptor_reg.json'
+            ></span>
+          #}
+          {#
+            <span
+            aria-hidden='true'
+            class='lottie-anim-logo logo-anim-white logo-on-scroll'
+            data-lottie-anim-name='logo-anim-white'
+            data-url='{{ current_domain }}/assets/animations/lottie/partner/logo-partner-white.json'
+            ></span>
+          #}
+          {#
+            <span
+            aria-hidden='true'
+            class='lottie-anim-logo logo-anim-blue logo-on-scroll'
+            data-lottie-anim-name='logo-anim-blue'
+            data-url='{{ current_domain }}/assets/animations/lottie/CustomTheme-Blue_Descriptor_795.json'
+            ></span>
+          #}
+        {% else %}
+          {% if post.ID in spanish_pages or lang == 'es' %}
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-white logo-no-scroll'
+              data-lottie-anim-name='logo-anim-white'
+              data-url='{{ current_domain }}/assets/animations/lottie/SP-Logo-Descriptor-tagline-white.json'
+            ></span>
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-blue logo-no-scroll'
+              data-lottie-anim-name='logo-anim-blue'
+              data-url='{{ current_domain }}/assets/animations/lottie/SP-Logo-Descriptor-tagline-blue.json'
+            ></span>
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-white logo-on-scroll'
+              data-lottie-anim-name='logo-anim-white'
+              data-url='{{ current_domain }}/assets/animations/lottie/SP-Logo-Descriptor-white.json'
+            ></span>
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-blue logo-on-scroll'
+              data-lottie-anim-name='logo-anim-blue'
+              data-url='{{ current_domain }}/assets/animations/lottie/SP-Logo-Descriptor-blue.json'
+            ></span>
+          {% else %}
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-white logo-no-scroll'
+              data-lottie-anim-name='logo-anim-white'
+              data-url='{{ current_domain }}/assets/animations/lottie/logo_white_descriptor_reg.json'
+            ></span>
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-blue logo-no-scroll'
+              data-lottie-anim-name='logo-anim-blue'
+              data-url='{{ current_domain }}/assets/animations/lottie/logo_blue_descriptor_reg.json'
+            ></span>
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-white logo-on-scroll'
+              data-lottie-anim-name='logo-anim-white'
+              data-url='{{ current_domain }}/assets/animations/lottie/CustomTheme-White_Descriptor_795.json'
+            ></span>
+            <span
+              aria-hidden='true'
+              class='lottie-anim-logo logo-anim-blue logo-on-scroll'
+              data-lottie-anim-name='logo-anim-blue'
+              data-url='{{ current_domain }}/assets/animations/lottie/CustomTheme-Blue_Descriptor_795.json'
+            ></span>
+          {% endif %}
+        {% endif %}
+      </a>
+
+      {% if field.cta_type == 'text' %}
+        {% if field.cta_textfield %}
+          <div class='cta-text d-none d-desktop-block'>
+            {{ field.cta_textfield }}
+          </div>
+
+          <div class='cta-text d-none d-mobile-block d-tablet-block'>
+            <a
+              href='tel:{{ field.sticky_bar_phone_number }}'
+              class='landing-template-btn btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 btn-in-menu btn-call-us'
+            >
+              <span class='btn-bg-el'></span>
+              <span class='btn-txt'>
+                {{ 'Call us' | t }}
+              </span>
+            </a>
+          </div>
+        {% endif %}
+      {% else %}
+        {% if field.cta_button_in_header %}
+          {% include 'field/field--header-cta.twig' %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</header>
+<div class='embed-popup-wrap'>
+  <div class='embed-content-wrap'>
+    <button aria-label='Close popup' class='popup-close-btn'>
+      <span class='x-icon'></span>
+    </button>
+    <div class='iframe-container'></div>
+  </div>
+</div>

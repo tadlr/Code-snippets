@@ -1,0 +1,72 @@
+@import 'pages';
+
+@import 'home/**/*.scss';
+// @import 'smooth-scroll/smooth-scroll';
+// Vendors
+@import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
+
+html {
+  transition: none !important;
+}
+
+.lang-fr {
+  .home {
+    .hero-section {
+      @media screen and ($min1024) and ($max1250) {
+        .offset-x-desktop-172 {
+          --sk-gutter-x: 3rem;
+          --sk-gutter-y: 0;
+          padding-right: calc(var(--sk-gutter-x) * 0.5) !important;
+          padding-left: calc(var(--sk-gutter-x) * 0.5) !important;
+        }
+
+        .txt-content {
+          width: 50%;
+        }
+        .txt-size-18 {
+          font-size: 16px;
+        }
+      }
+    }
+    .txt-size-120 {
+      @media screen and (max-width: 720px) {
+        @include vw(font-size, 40px, 370px);
+      }
+      @media screen and ($min1024) {
+        font-size: 88px;
+      }
+      @media screen and (min-width: 1921px) {
+        font-size: 95px;
+      }
+    }
+  }
+}
+
+.lang-es {
+  .home {
+    .txt-size-120 {
+      @media screen and (max-width: 720px) {
+        @include vw(font-size, 40px, 370px);
+      }
+      @media screen and ($min1024) {
+        font-size: 75px;
+      }
+      @media screen and (min-width: 1921px) {
+        font-size: 95px;
+      }
+    }
+  }
+}
+
+html {
+  body.home {
+    transition: padding-top 300ms ease-in-out;
+  }
+}
+html:not(.header-toggled-state) {
+  body.home {
+    @media screen and ($min1024) {
+      padding-top: 50px;
+    }
+  }
+}

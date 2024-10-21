@@ -1,0 +1,38 @@
+# usual crap
+node_modules/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+
+# editor fluff
+.vscode/
+.idea/
+
+# Assets not authorized for redistribution
+src/assets/licensed/
+
+# secrets.. shhhhh
+.env
+.env.local
+
+# Build files (i dont think we need this, but just in case)
+build-*.tar.gz
+
+# macOS shit
+.DS_Store
+
+# Yarn Crap
+.yarn/
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+
+# docs
+docs/

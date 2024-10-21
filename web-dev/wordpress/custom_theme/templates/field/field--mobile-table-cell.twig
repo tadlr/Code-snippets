@@ -1,0 +1,39 @@
+{# {% block %} #}
+
+{% set radio = row.checkmark %}
+
+{% set fileName = fn('basename', field.rows.0.cell[rowId].image) %}
+
+{% if 'CustomTheme' in fileName or 'customTheme' in fileName %}
+  {% set class = "logo-sk "~ class %}
+{% endif %}
+{% if row.image %}
+  {% set class = "has-image "~ class %}
+{% endif %}
+{% if radio == 'Yes' or radio == 'No' %}
+  {% set class = "has-checkmark "~ class %}
+{% endif %}
+
+<div class='{{class}}' data-mh='{{id}}'>
+  {% if row.content %}
+    <p>{{ row.content }}</p>
+  {% endif %}
+  {% if row.image %}
+    {{ Image(row.image, 'img-300-300', {'width': 'auto', height: 'auto', 'class': 'img-'~rowId }) }}
+  {% endif %}
+  {% if radio == 'Yes' or radio == 'No' %}
+    {{ checkmark(radio) }}
+  {% endif %}
+
+  {% if use_stars %}
+    {% if lang == 'es' %}
+      {% set starLabel = "estrellas" %}
+      {% elseif lang == 'fr' %}
+      {% set starLabel = "stars" %}
+    {% else %}
+      {% set starLabel = "stars" %}
+    {% endif %}
+
+    {{ stars(row.star_rating, starLabel ) }}
+  {% endif %}
+</div>

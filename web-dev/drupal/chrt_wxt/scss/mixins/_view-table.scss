@@ -1,0 +1,89 @@
+@mixin view-table{
+  .view-filters{
+    @include padded-small;
+    background: $light;
+    margin-bottom: 0;
+
+    .form{
+      &-item{
+        align-items: center;
+        display: flex;
+        margin-right: $padding-xs;
+
+        label{
+          margin-right: 8px;
+        }
+      }
+
+      &-actions{
+        button,
+        input[type=submit]{
+          height: 44px;
+        }
+      }
+    }
+  }
+
+  table.table{
+    thead{
+      th{
+        a{
+          display: block;
+          height: 100%;
+          text-decoration: none;
+
+          .icon{
+            // float: right;
+            height: 20px;
+            min-height: auto;
+            min-width: auto;
+            padding-left: 0;
+            text-align: center;
+            width: 20px;
+
+            &:before{
+              font-size: 14px;
+              line-height: 20px;
+
+            }
+          }
+
+          &[href*="sort=asc"]{
+            .icon{
+              &:before{
+                content:"\e155";
+              }
+            }
+          }
+
+          &[href*="sort=desc"]{
+            .icon{
+              &:before{
+                content:"\e156";
+              }
+            }
+          }
+        }
+
+        &:not(.is-active){
+          a{
+            &:after{
+              content:"\e150";
+              display: inline-block;
+              font-family: Glyphicons Halflings;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    td{
+      line-height: 1.5;
+      vertical-align: middle;
+    }
+  }
+}

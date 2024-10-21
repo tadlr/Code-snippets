@@ -1,0 +1,36 @@
+{# page-bk4--rates #}
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('blocks-grid-section prel offset-x-desktop-325') %}
+
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  <div class='max-w-container w-1265 op-0'>
+    <div class='blocks-wrap'>
+      {% for rate in rates %}
+        <div class='single-block offset-x-mobile-38'>
+          <div class='bg-image b-lazy dont-show' data-src='{{rate.image}}'></div>
+          <h2 class='txt-size-48 txt-size-48-m lh-1_1 c-white ltr-spc-pos-0_5 fw-400 heading-anim rates-title'>
+            {% if rate.status == 'publish' %}
+              <a aria-label='{{rate.title}}' href='{{rate.link}}' class='fw-400'>
+                <span aria-hidden='true' class='c-white'>
+                  {{ rate.title|striptags('<a><strong>') }}
+                </span>
+              </a>
+            {% else %}
+              <span aria-hidden='true' class='c-white'>
+                {{ rate.title|striptags('<a><strong>') }}
+              </span>
+            {% endif %}
+          </h2>
+          <div class='txt-post-rtf fw-400 c-white txt-size-18 lh-1_66 ltr-spc-pos-0_2'>
+            {{ rate.excerpt }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

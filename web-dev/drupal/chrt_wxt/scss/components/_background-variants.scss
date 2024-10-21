@@ -1,0 +1,47 @@
+@include bg-variant(".bg-dark", $gray-dark);
+@include bg-variant(".bg-default", $light);
+@include bg-variant(".bg-gray", $gray-light);
+
+.bg {
+  &-primary{
+    color: $white;
+
+    * {
+      color: $white;
+    }
+
+    h1,h2,h3,h4,h5,h6,
+    .h1,.h2,.h3,.h4,.h5,.h5{
+      color: $white!important;
+    }
+
+    ul#{$ul-exclusions},
+    ol#{$ol-exclusions} {
+      li {
+        &::marker{
+          color: $white;
+        }
+      }
+    }
+
+    .fn-lnk {
+      color: $brand-primary;
+    }
+  }
+
+  // images
+  &-img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    &.parallax{
+        background-position: 50% 100%;
+        background-size: auto 130%;
+    }
+  
+    &.cover{
+        background-size: cover;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{% if radio or text or image %}
+  {% set check = 21656 %}
+  {% set cross = 22144 %}
+  {% set indicator = (radio == 'Yes')? check: cross %}
+  <td>
+    {% if text %}
+      {# {{ (bold)?"<strong>":"" }} #}
+      {{ text }}
+      {# {{ (bold)?"</strong>":"" }} #}
+    {% endif %}
+    {% if radio == 'Yes' or radio == 'No' %}
+      {{ checkmark(radio) }}
+    {% endif %}
+    {% if image %}
+      {{ Image(image, 'full', { 'class':'table-row-img' }) }}
+    {% endif %}
+
+    {# {{ checkmark() }} #}
+  </td>
+{% endif %}

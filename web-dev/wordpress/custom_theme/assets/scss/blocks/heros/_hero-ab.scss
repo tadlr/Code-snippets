@@ -1,0 +1,163 @@
+.block--sk1.sk-hero-ab {
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+
+  @media screen and ($min1024) {
+    .section-image {
+      .column-inner {
+        padding-bottom: 35px;
+      }
+    }
+  }
+
+  .bg-banner-media {
+    .media-item {
+      object-fit: contain;
+      object-position: right top;
+
+      @media screen and ($max1200) {
+        object-fit: fill;
+      }
+    }
+    @media screen and ($mobile) {
+      display: none;
+    }
+  }
+
+  &.full-width-bg {
+    .bg-banner-media {
+      .media-item {
+        object-fit: cover;
+        object-position:top center;
+      }
+    }
+  }
+
+  @media screen and ($mobile) {
+    background-image: unset;
+    background-size: 0px;
+  }
+  .container {
+    position: relative;
+
+    @media screen and ($mobile) {
+      .row {
+        background-color: $blue-1;
+      }
+    }
+  }
+
+  .form-cta {
+    @media screen and ($tablet) {
+      max-width: 560px;
+    }
+
+    &.form-float {
+      display: none;
+      @media screen and ($desktop) {
+        display: block;
+      }
+      max-width: 500px;
+      background-color: $white;
+      border-radius: 50px;
+      padding: 30px 45px;
+      .hbspt-form {
+        background-color: $white;
+        padding: 0;
+      }
+      .form-footer {
+        p {
+          margin-bottom: 0;
+        }
+      }
+      @media screen and ($min1024) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+  }
+
+  @media screen and ($mobile) {
+    h1 {
+      padding-top: 50px;
+    }
+    .column-content {
+      padding-top: 10px !important;
+    }
+    .section-image {
+      display: none !important;
+    }
+  }
+  &:after {
+    content: '';
+    z-index: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 46, 166, 1) 0%,
+      rgba(0, 46, 166, 1) 20%,
+      rgba(0, 46, 166, 1) 20%,
+      rgba(0, 46, 166, 0) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @media screen and ($mobile) {
+      z-index: -1;
+      background: linear-gradient(
+        0deg,
+        rgb(0, 46, 166) 65%,
+        rgba(0, 46, 166, 0) 100%
+      );
+    }
+
+    // @media screen and (max-width: 500px) {
+    //     background: linear-gradient(0deg, rgb(0, 46, 166) 73%, rgba(0, 46, 166, 0) 100%);
+    // }
+
+    @media screen and (max-width: 500px) {
+      background: linear-gradient(
+        0deg,
+        rgb(0, 46, 166) 73%,
+        rgba(0, 46, 166, 0) 100%
+      );
+    }
+  }
+  .column-content {
+    position: relative;
+    z-index: 1;
+
+    a[href^='tel:']:not(.btn-default) {
+      color: $green-1 !important;
+    }
+
+    @include WhiteText;
+  }
+
+  .mobile-pic {
+    @media screen and ($mobile) {
+      position: relative;
+      z-index: -1;
+
+      display: none !important;
+
+      picture {
+        display: block;
+        margin-bottom: -10px;
+      }
+
+      img {
+        height: 350px;
+        max-height: 450px;
+        object-fit: cover;
+
+        object-position: top center;
+      }
+    }
+    // @media screen and (max-width: 500px) {
+    //   // margin-top: 80px;
+    // }
+  }
+}

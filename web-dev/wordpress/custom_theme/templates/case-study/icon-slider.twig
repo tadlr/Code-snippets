@@ -1,0 +1,22 @@
+<div class='slider-wrap justify-content-center h-100 prel'>
+  <div class='icon-carousel' flex-slider>
+    <ul class='slides'>
+      {% for index,icon in field.icons %}
+        {% set image = icon.icon_one %}
+        {% set heading = icon.heading %}
+        {% set content = icon.content %}
+        <li class='slide' data-mh='slider-content-{{sectionID}}'>
+          {% include 'icon-content.twig' %}
+        </li>
+      {% endfor %}
+    </ul>
+    <div class='slider-navigation'>
+      <a href='#' class='flex-prev' aria-label='Previous Arrow'>
+        <span class='visually-hidden'>Previous</span>
+      </a>
+      <a href='#' class='flex-next' aria-label='Next Arrow'>
+        <span class='visually-hidden'>Next</span>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,476 @@
+@import 'pages';
+
+.inner-pages-landing-section.rates-page-section.careers-page-section {
+  @media screen and ($min1024) {
+    .content-wrap.careers {
+      padding-bottom: 130px;
+    }
+  }
+}
+
+// Careers
+.careers {
+  h1 {
+    strong,
+    b {
+      color: $green-1;
+    }
+  }
+
+  &-swiper {
+    .swiper-wrapper {
+      @media screen and ($min1024) {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        @include vw(width, 1623px);
+        margin: 0 auto;
+      }
+
+      @media screen and ($min1440) {
+        width: 100%;
+      }
+
+      .single-testimonial {
+        position: relative;
+        box-sizing: border-box;
+
+        @media screen and ($mobile_sm) {
+          width: 100%;
+          // @include vw(margin, 30px 35px, 500);
+        }
+
+        @media screen and ($min480) {
+          width: 33%;
+        }
+
+        @media screen and ($mobile_lg) {
+          width: 33%;
+          // margin: 30px 35px;
+        }
+
+        @media screen and ($min1024) {
+          margin: 0 25px;
+          width: calc(20% - 50px);
+        }
+
+        @media screen and ($min1920) {
+          margin: 0 25px;
+          width: calc(20% - 50px);
+        }
+      }
+    }
+
+    .swiper-nav-next {
+      display: none;
+
+      @media screen and ($mobile_all) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        img {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .testimonial-heading {
+      margin: 15px 0 25px 0;
+
+      @media screen and ($min1024) {
+        margin: 20px 0 50px 0;
+      }
+
+      @media screen and ($min1920) {
+        margin: 20px 0 50px 0;
+      }
+    }
+
+    .testimonial-person {
+      margin: 15px 0;
+
+      @media screen and ($min1024) {
+        margin: 20px 0 10px 0;
+      }
+
+      @media screen and ($min1920) {
+        margin: 30px 0;
+      }
+
+      @media screen and ($mobile) {
+        max-width: 100px;
+      }
+    }
+
+    .quote-txt p {
+      @media screen and ($mobile) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.txt-size-100.wider-txt-hero {
+  &.wider-txt-hero {
+    @media screen and ($min1024) {
+      @include vw(max-width, 750px);
+    }
+
+    @media screen and ($min1920) {
+      max-width: 750px;
+    }
+  }
+}
+
+// Benefits careers page
+.benefits {
+  overflow: clip;
+
+  .icons-content-block-horizontal {
+    @media screen and (min-width: 768px){
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media screen and ($min1024) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media screen and ($min1440) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .icons-block-item {
+      .box-inner {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      background-color: transparent;
+      transition: background-color 0.4s ease;
+
+      h3 {
+        color: $white !important;
+        margin-bottom: 0 !important;
+        position: relative;
+
+        @media screen and ($min1024) {
+          top: 25px;
+        }
+
+        transition: top 0.4s ease;
+      }
+
+      h3 {
+        // top: -15px;
+        @media screen and ($min1024) {
+          top: -5px;
+        }
+
+        @media screen and ($min1440) {
+          top: -10px;
+        }
+
+        transition: top 0.4s ease;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $green-7;
+        transition: background-color 0.3s ease;
+
+        h3 {
+          // top: -15px;
+          @media screen and ($min1024) {
+            top: -5px;
+          }
+
+          @media screen and ($min1440) {
+            top: -10px;
+          }
+
+          transition: top 0.4s ease;
+        }
+      }
+    }
+
+    .img-wrap {
+      width: 150px;
+      height: auto;
+      padding-right: 20px;
+      max-width: 70px;
+      min-width: 80px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: top left;
+      }
+    }
+  }
+
+  .bg-image {
+    z-index:0;
+  }
+}
+
+.careers-page-search-jobs-section {
+  .bg-image {
+    background-position: top center !important;
+  }
+}
+
+// Awards slider
+.awards-container {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+  @media screen and ($mobile_all) {
+    flex-direction: column;
+  }
+
+  .awards-left {
+    background-color: $blue-1;
+    z-index: 10;
+    width: 50%;
+
+    @media screen and ($mobile_all) {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    @media screen and ($min1024) {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: 100%;
+        background: $blue-1;
+        z-index: -1;
+      }
+      //   // @include vw(padding-left, 325px);
+    }
+
+    // @media screen and ($min1920) {
+    //   padding-left: 325px;
+    // }
+
+    .txt-block {
+      @media screen and ($min1024) {
+        width: 80%;
+      }
+    }
+  }
+
+  .swiper-slide {
+    width: 80px;
+    margin-right: 60px;
+
+    p {
+      margin-top: 20px;
+
+      @media screen and ($min1024) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .awards-right {
+    @media screen and ($mobile_all) {
+      width: 100%;
+      padding-bottom: 70px;
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 325px;
+    }
+
+    @media screen and ($min1024) {
+      width: 50%;
+    }
+
+    @media screen and ($min1440) {
+      width: 50%;
+    }
+
+    .swiper-container {
+      overflow: visible;
+    }
+
+    @media screen and ($mobile_all) {
+      .swiper-container {
+        overflow: clip;
+      }
+    }
+
+    .swiper-scrollbar {
+      width: 70%;
+      height: 5px;
+      border-radius: 5px;
+      margin-top: 40px;
+
+      @media screen and ($mobile_sm) {
+        width: 90%;
+      }
+
+      @media screen and ($min1024) {
+        margin-top: 50px;
+      }
+
+      @media screen and ($min1440) {
+        margin-top: 70px;
+      }
+
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .swiper-scrollbar-drag {
+      background-color: $green-1;
+      height: 8px;
+      top: calc(50% - 4px);
+    }
+  }
+}
+
+.dflex {
+  display: flex;
+
+  .quote-image-wrap {
+    flex-shrink: 0;
+    margin: 0 7.5px;
+
+    @media screen and ($min1024) {
+      margin-right: 25px;
+    }
+
+    @media screen and ($min1920) {
+      margin-right: 25px;
+    }
+  }
+}
+
+.red-accent {
+  strong,
+  b {
+    color: $red-1 !important;
+  }
+}
+
+.blue-txt-section {
+  background-color: $blue-1;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &.awards-slider {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .txt-size-80 {
+    @media screen and ($mobile_sm) {
+      @include vw(max-width, 460px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      max-width: 460px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(max-width, 760px);
+      @include vw(padding-left, 2px);
+    }
+
+    @media screen and ($min1920) {
+      max-width: 760px;
+      padding-left: 2px;
+    }
+  }
+
+  .txt-blocks-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    padding-top: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(padding-left, 3px);
+      @include vw(padding-top, 82px);
+      @include vw(margin, 0 -70px);
+      @include vw(max-width, 1365px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 3px;
+      padding-top: 82px;
+      margin: 0 -70px;
+      max-width: 1365px;
+    }
+  }
+}
+
+.swiper-pagination {
+  text-align: left;
+
+  .swiper-pagination-bullet {
+    background: $white;
+
+    &-active {
+      background: $green-1;
+    }
+  }
+}
+.txt-size-18 {
+  font-size: 18px!important;
+}
+.products.panels-green {
+  .products-wrap{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    
+    @media (max-width:840px){
+      grid-template-columns:1fr;
+    }
+  }
+  .product{
+    display:block;
+    padding:40px;
+    background:#17fcc4;
+    border-radius:5px;
+    box-shadow:5px 10px 30px -4px #00000017;
+
+    .img-wrap{justify-content:flex-start;background:0 0;margin-bottom:30px}
+
+    .txt-content h2,.txt-content h3{word-break:break-word;hyphens:auto}
+  }
+}
+.contact-section {
+  .content-wrap{
+    display:flex;
+    gap:48px;
+    margin-bottom:42px;
+  
+    @media screen and (max-width:768px){
+      flex-direction:column;
+    }
+  }
+  .user-testimonial{
+    padding:19px 12px;
+    background:#f2f4fa;
+    
+    .quotes-img{margin-bottom:16px}
+  }
+
+  .hbspt-form{
+    padding:0;
+    background:0 0;
+    border-radius:0;
+
+    .hs-input:not(input[type=checkbox]){color:#002ea6;border-color:#002ea6}
+    .hs-form-field label{color:#002ea6;background:#fff}
+    .hs-form-field .hs-error-msgs>li .hs-error-msg{color:#002ea6!important;font-weight:600!important}
+  }
+}

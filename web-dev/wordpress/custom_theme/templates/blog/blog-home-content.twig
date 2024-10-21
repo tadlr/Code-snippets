@@ -1,0 +1,74 @@
+<section data-scroll-section class='prel container blog-holder'>
+  <div class='newsletter-signup-wrap prel'>
+    {% include 'blog/blog-newsletter.twig' %}
+  </div>
+  <div class='blog-filter filter-w-search'>
+    <div class='col-sm-12  col-lg-12'>
+      <p class='visually-hidden txt-size-18 c-blue-1' id='show-filters'>Filter by</p>
+      <form
+        class='blog-filter-form'
+        id='blog-filter'
+        action='{{ get_site_url(null, 'wp-admin/admin-ajax.php?action=customTheme_search') }}'
+      >
+        <div class='filter-checkboxes row'>
+          <div class='select-wrap col-xs-12 col-md-6 col-lg-3 np-x'>
+            <select name='category[]' class='category-filter js-choice' multiple placeholder='Topic'>
+              {% for item in filters.category %}
+                {{ item }}
+              {% endfor %}
+            </select>
+          </div>
+          <div class='select-wrap col-xs-12 col-md-6 col-lg-3 np-x'>
+            <select name='business-type[]' class='category-filter js-choice' multiple placeholder='Business type'>
+              {% for item in filters.business_type %}
+                {{ item }}
+              {% endfor %}
+            </select>
+          </div>
+          <div class='select-wrap col-xs-12 col-md-6 col-lg-3 np-x'>
+            <select
+              name='content-type[]'
+              id='content-type'
+              class='category-filter js-choice'
+              multiple
+              placeholder='Content type'
+            >
+              {% for item in filters.content_type %}
+                {{ item }}
+              {% endfor %}
+            </select>
+          </div>
+          <div class='select-wrap col-xs-12 col-md-6 col-lg-3 np-x'>
+            <div class='input-group searchform' id='searchform'>
+              <input
+                type='text'
+                class='form-control border-0'
+                placeholder='Search'
+                aria-label='Search'
+                name='search'
+                id='search-input'
+                value='{{search_value}}'
+              >
+              <div class='input-group-append'>
+                <button
+                  type='submit'
+                  class='btn btn-icon btn-sm btn-ghost-secondary rounded-circle ml-2'
+                  data-toggle='tooltip'
+                  data-placement='top'
+                  title='Search'
+                >
+                  <i class='fas fa-search'></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {{ get_template_part('template-parts/blog-loading') }}
+  <div id='articles-wrapper' class='articles-wrapper'>
+    {{ get_template_part('template-parts/blog-grid') }}
+  </div>
+</section>
+{% include 'blog/blog-prefooter.twig' %}

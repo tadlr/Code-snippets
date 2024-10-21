@@ -1,0 +1,89 @@
+@import 'block-base';
+.block-quote-hero {
+  .bg-img-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .bg-img-wrapper picture {
+    height: 100%;
+    width: 100%;
+  }
+  .bg-img-wrapper img {
+    height: 100%;
+    width: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+
+  .quote {
+    &-content {
+      font-family: $redhat;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+      &::before {
+        content: '';
+        position: absolute;
+        left: -35px;
+        top: -10px;
+        height: 30px;
+        width: 30px;
+        background: url('/wp-content/themes/custom_theme/assets/media/icons/quote-left-mark-red.png')
+          no-repeat center center;
+      }
+    }
+
+    &-person {
+      font-family: $libre;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 30px;
+    }
+    &-title {
+      font-family: $libre;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      margin-left: 5px;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .content-wrap {
+      width: 55%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .content-wrap {
+      padding-left: 30px;
+    }
+  }
+
+  @media screen and (min-width: 641px) and (max-width: 1024px) {
+    .content-wrap {
+      width: 80%;
+    }
+  }
+
+  @media screen and (min-width: 501px) {
+    &::after {
+      content: '';
+      position: absolute;
+      right: 5vw;
+      bottom: -2.5vw;
+      height: 27vw;
+      width: 27vw;
+      background: url('/wp-content/themes/custom_theme/assets/media/icons/caring-icon.svg')
+        no-repeat;
+      background-size: contain;
+    }
+    &.no-hearts::after {
+      content:none;
+    }
+  }
+}

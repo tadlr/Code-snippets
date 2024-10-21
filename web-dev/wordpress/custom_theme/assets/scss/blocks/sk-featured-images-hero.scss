@@ -1,0 +1,122 @@
+@import 'block-base';
+.sk-featured-images-hero {
+  padding-top: 45px !important;
+
+  .bg-blue {
+    background-color: $blue-1;
+  }
+  padding-bottom: 0 !important;
+  .media-block {
+    align-items: unset;
+
+    .img-content {
+      flex: unset;
+      max-height: none;
+      max-width: none;
+      width: auto;
+      overflow: visible !important;
+    }
+  }
+
+  @media screen and ($max1024) {
+    margin-top: 0px !important;
+
+    .media-block {
+      flex-direction: column-reverse;
+    }
+    &.sk-block-0 {
+      padding-top: 50px !important;
+    }
+    .img-wrap {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media ($max1024) {
+    .col-sm-12.col-lg-6 {
+      width: 100%;
+    }
+  }
+
+  .featured-img,
+  .featured-img img {
+    border-radius: 26.78px;
+    padding: 7px;
+    @media screen and ($min1024) and ($max1200) {
+      padding: 3px;
+    }
+    @media screen and ($max1024) {
+      padding: 3px;
+    }
+  }
+
+  .featured-img {
+    margin-bottom: 0;
+  }
+
+  .featured-img img {
+    width: 100%;
+  }
+
+  .image-content {
+    padding-bottom: 2px;
+  }
+
+  &.bg-blue.sk-case-studies .container .media-block {
+    .img-wrap.d-desktop-flex {
+      margin-bottom: 0 !important;
+    }
+  }
+  .txt-content {
+    margin-top: 0 !important;
+    @media screen and ($min1024) {
+      padding-bottom: 0;
+    }
+    @media screen and ($max1024) {
+      h1 {
+        // @include vw(font-size, 48px, 800);
+        @include vw(font-size, 32px, 350);
+        // @include vw(line-height, 64px, 800);
+        @include vw(line-height, 41px, 350);
+      }
+    }
+    @media screen and ($min1024) and ($max1200) {
+      line-height: 75px;
+      h1 {
+        font-size: 50px;
+        line-height: 65px;
+      }
+    }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .btn-scroll-next {
+      position: relative;
+      width: auto;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  .img-row- {
+    // @media screen and ($min1024) {
+    &0,
+    &2,
+    &3,
+    &5 {
+      align-content: flex-end;
+      padding-bottom: 0;
+    }
+
+    &1,
+    &4 {
+      align-content: flex-start;
+      top: -45px;
+      position: relative;
+    }
+    // }
+  }
+}

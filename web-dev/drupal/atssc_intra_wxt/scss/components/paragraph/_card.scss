@@ -1,0 +1,67 @@
+.cards-wrapper {
+  margin-bottom: $padding-xs;
+
+  + .page-section:not(.no-bg),
+  + .wdcb-slider {
+    margin-top: $padding-small;
+  }
+}
+
+.page-section:not(.no-bg) + .cards-wrapper,
+.wdcb-slider + .cards-wrapper {
+  margin-top: $padding-small;
+}
+
+.card {
+  margin: $padding-xs 0;
+  padding-right: $padding-large !important;
+  position: relative;
+  transition: all 400ms;
+
+  &-title {
+    font-size: $font-size-h3;
+    margin-bottom: $padding;
+    margin-top: 0;
+    transition: all 400ms;
+
+    a {
+      transition: all 400ms;
+    }
+  }
+
+  &-content {
+    font-size: $font-size-h5;
+    font-weight: 300;
+    transition: all 400ms;
+  }
+
+  &-icon {
+    position: absolute;
+    right: $padding-small;
+    top: $padding-small;
+    height: $padding;
+    width: $padding;
+    transition: all 400ms;
+
+    path {
+      stroke: $brand-primary;
+      transition: all 400ms;
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: $brand-secondary;
+    transform: translateY(-10px) scale(1.01);
+
+    * {
+      color: $white !important;
+    }
+
+    .card-icon {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+}

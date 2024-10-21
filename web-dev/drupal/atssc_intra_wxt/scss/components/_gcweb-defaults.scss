@@ -1,0 +1,56 @@
+.block--report-a-problem .panel-heading,
+#block-asc-wxt-sharewidgetblock .shr-opn {
+  background-color: #eaebed;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 10px 14px !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: $brand-primary;
+  letter-spacing: normal;
+  text-decoration: none;
+  text-transform: none;
+
+  @media screen and (max-width: $screen-xs-max) {
+    margin-bottom: 10px;
+  }
+}
+#block-asc-wxt-sharewidgetblock .shr-opn {
+  border-color: $brand-primary;
+  border-radius: 10px;
+}
+
+#block-asc-wxt-sharewidgetblock .wb-share a {
+  height: 45px;
+  line-height: 23px;
+  width: 100%;
+}
+
+// .block-views-exposed-filter-blocksearch-page-1 {
+//   .form-type-textfield {
+//     margin-right: 0;
+//     width: calc(100% - 43px);
+
+//     input.form-control {
+//       border-color: #e0e0e0;
+//       border-style: solid;
+//       width: 100%;
+//       box-shadow: none;
+//       border-radius: unset;
+//       color: #5c5c5c !important;
+//       height: auto;
+//       padding: 6px 12px !important;
+//     }
+//   }
+
+//   .form-actions button {
+//     background-color: #26374a;
+//     color: #fff;
+//     border: 0;
+//     border-bottom: 1px solid #26374a;
+//     font-size: 17px;
+//     font-family: "Glyphicons Halflings";
+//     border-radius: unset;
+//     margin-left: 0 !important;
+//   }
+// }

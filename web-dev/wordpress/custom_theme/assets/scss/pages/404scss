@@ -1,0 +1,196 @@
+@import "pages";
+
+// 404 page
+.page-404 {
+    // background-color: $white;
+    padding-top: 60px;
+
+    // padding-bottom: 250px;
+    .content-404 {
+        @media ($min1024) {
+            @include vw(padding-top, 168px);
+            @include vw(padding-bottom, 136px);
+        }
+
+        @media ($min1920) {
+            padding-top: 168px;
+            padding-bottom: 136px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    }
+
+    .accent-oops {
+        @media ($mobile) {
+            margin-bottom: 20px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    }
+
+    .helpful-links {
+        margin-top: 40px;
+        margin-bottom: 50px;
+
+        @media ($min1024) {
+            @include vw(margin-top, 100px);
+            @include vw(margin-bottom, 250px);
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media ($mobile) {
+                margin-bottom: 30px;
+                flex-direction: column;
+            }
+
+            img {
+                left: 20px;
+                transition: left 0.3s ease;
+                @media ($mobile) {
+                    left: 0;
+                    top: 7px;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                img {
+                    left: 40px;
+                    transition: left 0.3s ease;
+                }
+            }
+        }
+    }
+    .main-four-o-four {
+        @media ($mobile_sm) {
+            font-size: 24px;
+        }
+    }
+
+    .pictograms {
+        .pictogram-404-1 {
+            @media ($min1024) {
+                @include vw(top, 100px);
+                @include vw(left, 80px);
+            }
+
+            @media ($mobile_all) {
+                top: 20px;
+                left: 20px;
+                width: 40px;
+            }
+        }
+
+        .pictogram-404-2 {
+            @media ($min1024) {
+                @include vw(top, 100px);
+                @include vw(left, 467px);
+            }
+
+            @media ($mobile_all) {
+                top: 30px;
+                right: 20px;
+                width: 50px;
+            }
+        }
+
+        .pictogram-404-3 {
+            @media ($min1024) {
+                @include vw(top, 458px);
+                @include vw(left, 175px);
+            }
+
+            @media ($mobile_sm) {
+                display: none;
+            }
+
+            @media ($mobile_lg) {
+                display: none;
+            }
+
+            @media ($mobile_all) {
+                bottom: 40px;
+                left: 10px;
+                width: 60px;
+            }
+        }
+
+        .pictogram-404-4 {
+            @media ($min1024) {
+                @include vw(top, 146px);
+                @include vw(right, 430px);
+            }
+
+            @media ($mobile_all) {
+                display: none;
+            }
+        }
+
+        .pictogram-404-5 {
+            @media ($min1024) {
+                @include vw(top, 93px);
+                @include vw(right, 80px);
+            }
+
+            @media ($mobile_all) {
+                display: none;
+            }
+        }
+
+        .pictogram-404-6 {
+            @media ($min1024) {
+                @include vw(top, 441px);
+                @include vw(right, 127px);
+            }
+
+            @media ($mobile_all) {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+            }
+        }
+    }
+    .homepage-link {
+        background-color: $green-1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+        position: absolute;
+
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        @media ($min1024) {
+            @include vw(width, 230px);
+            @include vw(height, 230px);
+            @include vw(right, 358px);
+            @include vw(bottom, 260px);
+        }
+
+        @media ($mobile_sm) {
+            position: static;
+        }
+
+        @media ($mobile_lg) {
+            position: static;
+        }
+
+        @media ($mobile_all) {
+            width: 120px;
+            height: 120px;
+            bottom: 160px;
+            right: 30px;
+        }
+    }
+}

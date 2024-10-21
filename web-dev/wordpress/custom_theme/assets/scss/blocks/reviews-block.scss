@@ -1,0 +1,294 @@
+@import 'block-base';
+.block--r {
+  // @import 'components/media-block';
+
+  .txt-content {
+    margin-top: 0 !important;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .row {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .row {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .media-left {
+    @media screen and (min-width: 1024px) {
+      flex-direction: row-reverse;
+    }
+    @media screen and (max-width: 1024px) {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .media-block {
+    .img-wrap {
+      text-align: center;
+      @media screen and ($max1024) {
+        margin-bottom: 1.3rem !important;
+      }
+    }
+  }
+
+  .media-block {
+    align-items: center;
+  }
+
+  .reviews-table {
+    @media screen and (min-width: 1025px) {
+      border: 1px solid $black;
+      border-radius: 25px;
+    }
+    width: 100%;
+    margin-bottom: 15px;
+
+    table {
+      table-layout: fixed;
+
+      border-collapse: collapse;
+      width: 100%;
+
+      tbody,
+      td,
+      tfoot,
+      th,
+      thead,
+      tr {
+        border: 0 solid;
+        border-color: inherit;
+      }
+
+      @media screen and (min-width: 1025px) {
+        .reviews-heading-row th {
+          vertical-align: middle;
+        }
+        width: 100%;
+        thead {
+          border-bottom: 1px solid $black;
+          th {
+            border-right: 1px solid $black;
+            text-align: center;
+
+            &:last-of-type {
+              border: none;
+            }
+
+            // padding: 15px 25px;
+
+            @include vw(padding, 10px 25px);
+
+            img {
+              object-fit: contain;
+              object-position: center center;
+              width: 100%;
+              height: 2.7rem;
+              margin-bottom: 0 !important;
+
+              max-width: 120px;
+
+              display: block;
+              margin: 10px auto !important;
+
+              &[alt='BBB'] {
+                height: 55px;
+                width: 55px;
+              }
+
+              &[alt='Google'],
+              &[alt='Facebook'] {
+                height: 52px;
+                width: 52px;
+              }
+            }
+          }
+        }
+        tbody {
+          tr {
+            &:not(:is(:first-of-type)) {
+              border-top: 1px solid $black;
+            }
+            td,
+            th {
+              border-right: 1px solid $black;
+              text-align: center;
+              // padding: 15px 25px;
+              // @include vw(padding, 10px 25px);
+            }
+
+            th {
+              padding: 15px 10px;
+            }
+
+            td {
+              width: auto;
+              &:last-of-type {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 1024px) {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 20px 0;
+        margin: 20px 0;
+        width: 100%;
+        table-layout: fixed;
+
+        img {
+          max-width: 150px;
+          // min-height: 75px;
+
+          @media screen and (max-width: 400px) {
+            max-width: 115px;
+          }
+        }
+
+        caption {
+          font-size: 1.5em;
+          margin: 0.5em 0 0.75em;
+        }
+
+        tr {
+          background-color: #f8f8f8;
+          border: 1px solid #ddd;
+          padding: 0.35em;
+          margin-bottom: 5px;
+        }
+
+        th,
+        td {
+          padding: 0.625em;
+          text-align: center;
+        }
+
+        th {
+          font-size: 0.85em;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 1024px) {
+          border: 0;
+
+          caption {
+            font-size: 1.3em;
+          }
+
+          thead {
+            border: none;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+          }
+
+          tr {
+            border-bottom: 3px solid #ddd;
+            display: block;
+            width: 50%;
+            display: inline-block;
+            margin-right: -4px;
+
+            border-radius: 35px;
+            margin-top: 7px;
+
+            &.single-table {
+              width: 100%;
+            }
+
+            &:first-of-type {
+              border: 5px solid $green-1 !important;
+              margin-bottom: 15px;
+              margin-top: 0;
+              z-index: 1;
+              position: relative;
+            }
+          }
+
+          td,
+          th {
+            border-bottom: 1px solid #ddd;
+            display: block;
+            font-size: 0.875rem;
+            text-align: center;
+            color: $blue-1;
+
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &[data-label] {
+              height: 150px;
+            }
+
+            &.first-row {
+              font-size: 1rem;
+              text-align: center;
+
+              &::before {
+                content: unset;
+                display: none !important;
+              }
+            }
+          }
+
+          td:is([data-label]),
+          th:is([data-label]) {
+            [alt='BBB'] {
+              height: 70px;
+              width: 85px;
+            }
+
+            img {
+              margin-top: 20px;
+            }
+          }
+
+          td:last-child,
+          th:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .rating-stars {
+    width: 114px;
+    height: 60px;
+  }
+
+  .rating-stars {
+    @media screen and ($min1024) {
+      min-height: 50px;
+      @include vw(height, 60px);
+    }
+  }
+
+  .company-reviews-logo {
+    @media screen and ($min1024) {
+      &.logo-0 {
+        height: 30px !important;
+        width: 130px !important;
+        object-fit: contain !important;
+      }
+      height: 30px !important;
+      width: 120px !important;
+      object-fit: contain !important;
+    }
+  }
+}

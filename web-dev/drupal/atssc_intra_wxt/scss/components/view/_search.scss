@@ -1,0 +1,26 @@
+.view-search{
+  .view-filters{
+    @include padded;
+    background: $light;
+
+    .form{
+      &-inline{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+      }
+
+      &-item{
+        margin-right: $padding-xs;
+
+        &:last-of-type{
+          margin-right: 0;
+        }
+      }
+
+      &-text{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,623 @@
+@import 'pages';
+
+.meet-team-info-section {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+  .members-hold.swiper-container {
+    overflow: visible;
+    @media screen and ($min1024) {
+      .txt-size-22 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+@media screen and ($max1024) {
+  .meet-payment-expert-section.inner-pages-landing-section {
+    .txt-blocks-content-2 {
+      .txt-block {
+        padding-bottom: 0;
+        margin-bottom: 0 !important;
+      }
+      padding-top: 0;
+    }
+  }
+}
+@media screen and ($min1024) {
+  .meet-payment-expert-section.inner-pages-landing-section {
+    .txt-size-100 {
+      font-size: 80px;
+    }
+    .landing-video-btn {
+      // @include vw(right, 325px);
+      right: 31%;
+      bottom: 65%;
+      top: unset;
+    }
+  }
+}
+
+.meet-team-info-section {
+  overflow: hidden;
+  background-color: $blue-12;
+  padding-top: 50px;
+
+  @media screen and ($mobile_all) {
+    padding-bottom: 50px;
+  }
+
+  @media screen and ($min1024) {
+    @include vw(padding-top, 153px);
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 153px;
+  }
+
+  .member-circle-position-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64%;
+    height: 64%;
+    // width: 75%;
+    // height: 75%;
+    transform: translate(-50%, -50%) rotate(-40deg);
+    backface-visibility: hidden;
+  }
+
+  .txt-size-100 {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 25px;
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 70px);
+      @include vw(max-width, 950px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 70px;
+      max-width: 950px;
+    }
+  }
+
+  .txt-post-rtf {
+    position: relative;
+    z-index: 3;
+    max-width: 1030px;
+
+    @media screen and ($min1024) {
+      @include vw(max-width, 1030px);
+    }
+
+    @media screen and ($min1920) {
+      max-width: 1030px;
+    }
+
+    h2,
+    .h2 {
+      line-height: 1.25;
+      margin-bottom: 6px;
+
+      @media screen and ($mobile_sm) {
+        @include vw(font-size, 30px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        font-size: 30px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(font-size, 30px);
+        @include vw(margin-bottom, 6px);
+      }
+
+      @media screen and ($min1920) {
+        font-size: 30px;
+        margin-bottom: 6px;
+      }
+    }
+
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
+
+        @media screen and ($min1024) {
+          @include vw(margin-bottom, 30px);
+        }
+
+        @media screen and ($min1920) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .background-flower-path-patterns {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-flow: row wrap;
+    z-index: 1;
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(left, 40px);
+      @include vw(height, 873px);
+      @include vw(width, 1746px);
+    }
+  }
+
+  .background-flower-path-svg {
+    flex: 0 0 auto;
+    height: 100%;
+    width: 50%;
+
+    path {
+      fill: $blue-13;
+    }
+  }
+
+  .background-flower-path-svg-smaller {
+    position: absolute;
+    right: 100%;
+    top: 100%;
+    flex: 0 0 auto;
+
+    @media screen and ($min1024) {
+      @include vw(height, 360px);
+      @include vw(width, 360px);
+    }
+
+    path {
+      fill: $blue-13;
+    }
+  }
+
+  .members-info-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(width, 1304px);
+      @include vw(height, 1304px);
+      @include vw(margin-top, -234px);
+      @include vw(margin-left, -16px);
+      @include vw(margin-bottom, -84px);
+    }
+
+    @media screen and ($min1920) {
+      width: 1304px;
+      height: 1304px;
+      margin-top: -234px;
+      margin-left: -16px;
+      margin-bottom: -84px;
+    }
+  }
+
+  .circle-outer {
+    position: absolute;
+    backface-visibility: hidden;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $gray-4;
+    border-radius: 50%;
+    z-index: 1;
+    width: 258.7%;
+    height: 260.25%;
+  }
+
+  .circle-inner {
+    position: absolute;
+    backface-visibility: hidden;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $gray-4;
+    border-radius: 50%;
+    z-index: 1;
+    width: 165.7%;
+    height: 166.7%;
+  }
+
+  .member-block {
+    cursor: pointer;
+    flex: 0 0 auto;
+    z-index: 2;
+    position: relative;
+    // backface-visibility: hidden;
+    will-change: transform;
+
+    @media screen and ($min1024) {
+      position: absolute;
+    }
+
+    .img-wrapper {
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .img-wrap {
+      position: relative;
+      border-radius: 50%;
+
+      .border-element {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $green-1;
+        z-index: 1;
+        border-radius: 50%;
+        width: 90%;
+        height: 90%;
+        top: 5%;
+        left: 5%;
+        backface-visibility: hidden;
+      }
+    }
+  }
+
+  .member-info-img {
+    width: 100%;
+  }
+
+  .member-txt-wrap {
+    @media screen and ($min1024) {
+      position: absolute;
+      display: flex;
+      align-items: flex-start;
+      opacity: 0;
+      // visibility: hidden;
+      // transition: opacity .5s $easeOutSine, visibility .5s $easeOutSine;
+      left: 110%;
+      @include vw(top, -20px);
+      @include vw(width, 400px);
+    }
+
+    @media screen and ($min1920) {
+      top: -20px;
+      width: 365px;
+    }
+
+    .quote-icon {
+      flex: 0 0 auto;
+      width: 47px;
+      max-width: 47px;
+
+      @media screen and ($min1024) {
+        @include vw(width, 47px);
+        @include vw(max-width, 47px);
+      }
+
+      @media screen and ($min1920) {
+        width: 47px;
+        max-width: 47px;
+      }
+    }
+
+    .txt-size-22 {
+      padding-top: 9px;
+
+      @media screen and ($min1024) {
+        @include vw(padding-left, 11px);
+        @include vw(padding-top, 9px);
+      }
+
+      @media screen and ($min1920) {
+        padding-left: 11px;
+        padding-top: 9px;
+      }
+    }
+  }
+
+  .member-name-title-wrap {
+    @media screen and ($mobile_all) {
+      margin-top: 10px;
+    }
+
+    @media screen and ($min1024) {
+      position: absolute;
+      top:90%;
+      left:90%;
+    }
+
+    .member-name {
+      margin-bottom: 5px;
+
+      @media screen and ($min1024) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .member-position {
+      @media screen and ($min1024) {
+        margin-left: 2px;
+      }
+      font-size: 16px !important;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 180px);
+
+      .member-name {
+        @include vw(margin-bottom, 10px);
+      }
+
+      .member-position {
+        @include vw(margin-left, 2px);
+      }
+    }
+
+    @media screen and ($min1920) {
+      width: 180px;
+
+      .member-name {
+        margin-bottom: 10px;
+      }
+
+      .member-position {
+        margin-left: 2px;
+      }
+    }
+  }
+  
+  .member-block {
+    .member-name-title-wrap {
+      top:90%;
+      left:90%;
+    }
+
+    &.current-active-block {
+      .member-name-title-wrap {
+        @media screen and (max-width:1280px) {
+          top:190%;
+        }
+      }
+    }
+  }
+
+  .member-block:nth-of-type(1) {
+    @media screen and ($min1024) {
+      @include vw(width, 184px);
+      @include vw(height, 184px);
+      @include vw(top, 439px);
+      @include vw(left, -53px);
+    }
+
+    @media screen and ($min1920) {
+      width: 184px;
+      height: 184px;
+      top: 439px;
+      left: -53px;
+    }
+
+    .member-name-title-wrap {
+      @media screen and ($min1024) {
+        top: 90%;
+        left: 90%;
+      }
+    }
+  }
+
+  .member-block:nth-of-type(2) {
+    @media screen and ($min1024) {
+      @include vw(width, 184px);
+      @include vw(height, 184px);
+      @include vw(top, 849px);
+      @include vw(left, 260px);
+    }
+
+    @media screen and ($min1920) {
+      width: 184px;
+      height: 184px;
+      top: 849px;
+      left: 260px;
+    }
+
+    .member-name-title-wrap {
+      @media screen and ($min1024) {
+        top: 90%;
+        left: 90%;
+        // top: 93%;
+        // left: 79%;
+      }
+    }
+
+    &.current-active-block {
+      .member-name-title-wrap {
+        @media screen and (max-width:1280px) {
+          top:110%;
+        }
+        @media screen and (max-width:1120px) {
+          top:170%;
+        }
+      }
+    }
+  }
+
+  .member-block:nth-of-type(3) {
+    @media screen and ($min1024) {
+      @include vw(width, 184px);
+      @include vw(height, 184px);
+      @include vw(top, 848px);
+      @include vw(left, 859px);
+    }
+
+    @media screen and ($min1920) {
+      width: 184px;
+      height: 184px;
+      top: 848px;
+      left: 859px;
+    }
+
+    .member-name-title-wrap {
+      @media screen and ($min1024) {
+        top: 90%;
+        left: 90%;
+      }
+    }
+
+    &.current-active-block {
+      .member-name-title-wrap {
+        @media screen and (max-width:1240px) {
+          top:160%;
+        }
+      }
+    }
+  }
+
+  .member-block:nth-of-type(4) {
+    @media screen and ($min1024) {
+      @include vw(width, 184px);
+      @include vw(height, 184px);
+      // @include vw(width, 229px);
+      // @include vw(height, 229px);
+      @include vw(top, 265px);
+      @include vw(left, 916px);
+    }
+
+    @media screen and ($min1920) {
+      width: 184px;
+      height: 184px;
+      // width: 229px;
+      // height: 229px;
+      top: 265px;
+      left: 916px;
+    }
+
+    .member-name-title-wrap {
+      @media screen and ($min1024) {
+        top: 90%;
+        left: 90%;
+        // top: 87%;
+        // left: 115%;
+      }
+    }
+  }
+
+  .member-block.centered-main {
+    .img-wrap {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + 25px);
+      height: calc(100% + 25px);
+      backface-visibility: hidden;
+    }
+
+    @media screen and ($mobile_all) {
+      max-width: 424px;
+      margin: 0 auto;
+    }
+
+    @media screen and ($mobile_sm) {
+      @include vw(width, 424px, 500);
+      @include vw(height, 421px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      @include vw(width, 424px);
+      @include vw(height, 421px);
+    }
+
+    @media screen and ($min1024) {
+      top: 50%;
+      left: 50.4%;
+      transform: translate(-50%, -50%);
+      @include vw(width, 504px);
+      @include vw(height, 501px);
+    }
+
+    @media screen and ($min1920) {
+      width: 504px;
+      height: 501px;
+    }
+  }
+
+  .swiper-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and ($min1024) {
+      display: none;
+    }
+  }
+
+  .swiper-nav-svg-arrow {
+    width: 75px;
+
+    path {
+      fill: $green-1;
+    }
+  }
+
+  .swiper-prev {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .swiper-next {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .members-hold {
+    @media screen and ($mobile_all) {
+      overflow: visible;
+      position: relative;
+      z-index: 3;
+      display: flex;
+      padding-top: 40px;
+      padding-bottom: 100px;
+      margin: 0 -25px;
+
+      .member-block {
+        width: 90%;
+        max-width: 400px;
+        padding: 0 25px;
+      }
+
+      .img-wrap {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+
+    @media screen and ($min1024) {
+      position: absolute;
+      @include fit;
+      z-index: 3;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{% extends "block-sk-block-base.twig" %} {# {% block block_base %}
+{% set attributes = attributes.addClass('bg-blue', 'sk-case-studies') %}
+
+{{ parent() }}
+{% endblock %} #}
+
+{% block block_content %}
+
+{% include 'field/field--cta-btn.twig' %}
+
+{% endblock %}

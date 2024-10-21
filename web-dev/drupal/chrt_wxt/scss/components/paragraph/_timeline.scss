@@ -1,0 +1,81 @@
+.timeline {
+  &-item {
+    @include no-padding-x;
+    align-items: flex-start;
+    clear: both;
+    display: flex;
+    position: relative;
+
+    @media screen and (max-width: $screen-xs-max){
+      padding-left: 15px!important;
+      padding-right: 15px!important;
+    }
+
+    &-title {
+      @include padded-small;
+      text-align: right;
+      margin: 0;
+      opacity: 0;
+      transition: all 600ms;
+
+      @media screen and (min-width: $screen-lg) {
+        padding-right: $padding-large;
+      }
+
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+        padding-right: 25px;
+      }
+
+      @media screen and (max-width: $screen-xs-max){
+        padding-left: 0;
+        padding-right: $padding-small;
+      }
+    }
+
+    .field {
+      @include padded-small;
+      flex-grow: 1;
+      opacity: 0;
+      transition: all 600ms;
+      color: $brand-primary;
+      position: relative;
+
+      @media screen and (max-width: $screen-xs-max){
+        padding-left: $padding-small;
+        padding-right: 0;
+      }
+
+      &:before{
+        background: $light-blue;
+        content: "";
+        height: 0;
+        left: -5px;
+        position: absolute;
+        top: 0;
+        width: 5px;
+        transition: all 600ms;
+        
+        @media screen and (max-width: $screen-xs-max){
+          left: -2px;
+        }
+      }
+    }
+
+    &.in-view {
+      .timeline-item-title {
+        opacity: 1;
+
+      }
+
+      .field {
+        opacity: 1;
+
+
+        &:before{
+          height: 100%;
+
+        }
+      }
+    }
+  }
+}

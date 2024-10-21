@@ -1,0 +1,32 @@
+<div class='row'>
+  <div class='article-author row w-100'>
+    <div class='author-image op-0 col-sm-12 col-md-2'>
+      {% set author_id = fn('get_the_author_meta','ID') %}
+      {% set image = fn('get_field','author_image', 'user_' ~ author_id) %}
+      {{ Image(image.id, 'img-130-130', {width: 130, height: 130, class:"author-image"}) }}
+    </div>
+    <div class='author-info op-0 col-sm-12 col-md-10'>
+      <h3 class='txt-size-24 c-blue-1 fw-700 author-name heading-anim'>
+        {{ fn('get_the_author') }}
+      </h3>
+      <p class='txt-size-18 c-blue-1 txt-post-rtf lh-1_66'>
+        {{ fn('get_the_author_meta', 'description') }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class='newsletter-signup-wrap row prel single-article-newsletter'>
+  {% include 'blog/blog-newsletter.twig' %}
+</div>
+
+<div class='related-articles'>
+  <div class='op-0'>
+    <h2 class='txt-size-60 txt-size-60-m c-blue-1 fw-700 heading-anim'>Related posts</h2>
+    <div class='related-articles-wrap'>
+      {% for post in related_posts %}
+        {% include 'blog/related-article.twig' %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

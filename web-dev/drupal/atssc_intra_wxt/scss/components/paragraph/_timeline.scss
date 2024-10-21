@@ -1,0 +1,106 @@
+.timeline{
+  &:not(.timeline-item){
+    background-image: url('../assets/png/swirl.png');
+    position: relative;
+  }
+
+  &-bar{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 400ms;
+    border-left: 1px dashed $brand-primary;
+    top: 0;
+    bottom: 0;
+  }
+
+  &-item{
+    @include no-padding-x;
+    align-items: center;
+    clear: both;
+    display: flex;
+    position: relative;
+
+    &:before{
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $brand-primary;
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 600ms;
+    }
+
+    &-title{
+      @include padded-small;
+      color: $brand-primary;
+      margin: 0;
+      opacity: 0;
+      transition: all 600ms 300ms;
+
+    }
+
+    .field{
+      @include padded-small;
+      background: transparentize($white, .3);
+      flex-grow: 1;
+      opacity: 0;
+      transition: all 600ms 700ms;
+    }
+
+    &:nth-of-type(odd){
+      &:before{
+        right: -5px;
+      }
+
+      .timeline-item-title{
+        order: 1;
+        transform: translateX(-15px);
+      }
+
+      .field{
+        transform: scale(.95) translateX(25px);
+      }
+    }
+
+    &:nth-of-type(even){
+      float: right;
+
+      &:before{
+        left: -5px;
+      }
+
+      .timeline-item-title{
+        transform: translateX(15px);
+      }
+
+      .field{
+        transform: scale(.95) translateX(-25px);
+      }
+    }
+
+    &.in-view{
+
+      &:before{
+        opacity: 1;
+        animation: pop 600ms linear;
+      }
+
+      .timeline-item-title{
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .field{
+        opacity: 1;
+        transform: scale(1) translateX(0);
+      }
+    }
+  }
+}
+@keyframes pop{
+  50%  {transform: scale(1.35);}
+}

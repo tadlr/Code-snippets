@@ -1,0 +1,46 @@
+.landing-page{
+  &.entity-reference{
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    transition: all 400ms;
+
+    .spotlight-image{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+
+      img{
+        @include object-fit;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    h2{
+      @include padded;
+      background: transparentize($brand-primary, .33);
+      color: $white;
+      margin-top: 0;
+
+      a{
+        &:hover,
+        &:focus{
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus-within{
+      box-shadow: 1px 5px 10px transparentize($brand-primary, .33);
+      transform: translateY(-10px) scale(1.01);
+    }
+  }
+}

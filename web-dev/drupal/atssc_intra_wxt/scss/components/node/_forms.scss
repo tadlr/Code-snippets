@@ -1,0 +1,19 @@
+.webform {
+  @include report-top;
+
+  #wb-cont {
+    &.text-center {
+      @extend .container;
+    }
+  }
+  &.full {
+    .box {
+      @extend .container;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+    .toc {
+      margin-top: $padding-xs;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<div class='related-post-item'>
+  <div class='related-post-thumb'>
+    {% block featured_img %}
+      {% set featured_image_id = fn('get_post_thumbnail_id',post.ID) %}
+      {{ Image(featured_image_id, 'related-article', {width: 500, height: 263, class:"article-featured-img"}) }}
+    {% endblock %}
+  </div>
+  {% block featured_meta %}
+    <div class='related-meta' data-mh='blog-related-meta'>
+      <p class='txt-size-16 c-blue-1 reading-time' data-mh='blog-rp-cat'>
+        {% for category in fn('get_the_category', post.ID) %}
+          <a href='{{ fn('get_category_link',category.term_id) }}' class='post-single-category'>
+            {{ category.name }}
+          </a>
+        {% endfor %}
+      </p>
+      <p class='txt-size-16 c-blue-1 post-date'>
+        {{ fn('get_the_date','F d, Y', post.ID) }}
+      </p>
+    </div>
+  {% endblock %}
+  <div class='related-content' data-mh='blog-related-content'>
+    {% block featured_title %}
+      <a href='{{ fn('get_the_permalink', post.ID) }}' class='c-blue-1 text-decoration-none'>
+        <h3 class='txt-size-30 fw-700 c-blue-1' data-mh='blog-rp-title'>
+          {{ fn('get_the_title', post.ID) }}
+        </h3>
+      </a>
+    {% endblock %}
+    {% block featured_text %}
+      <p class='anim-translate-x txt-size-18 c-blue-1' data-mh='blog-rp-exp'>
+        {{ fn('get_the_excerpt', post.ID) }}
+      </p>
+    {% endblock %}
+    <div class='row w-100 align-items-center mt-4'>
+      <div class='col-sm-12 mb-3'>
+        {% block featured_read_time %}
+          {% set mycontent = post.post_content %}
+          {% set word = mycontent|striptags|split(' ')|length %}
+          {% set m = word / 200 %}
+          {% set est = m|round ~ ' min' %}
+          <p class='anim-translate-x txt-size-16 related-reading-time'>
+            {{ est }}
+            read
+          </p>
+        {% endblock %}
+      </div>
+      <div class='col-sm-12 col-lg-6'>
+        <a
+          href='{{ fn('get_the_permalink', post.ID) }}'
+          title='{{ fn('get_the_title', post.ID) }}'
+          class='anim-translate-x btn-default size-18-txt c-blue-1 btn-green-1 section-color-white btn-offset-9 read-more-button'
+        >
+          <span class='visually-hidden'>
+            {{ fn('get_the_title', post.ID) }}
+          </span>
+          <span class='btn-bg-el'></span>
+          <span class='btn-txt'> Read more </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

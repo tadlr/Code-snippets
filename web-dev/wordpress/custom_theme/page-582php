@@ -1,0 +1,26 @@
+<?php
+get_header();
+
+the_content();
+
+get_template_part('banner-talk-to-us');
+
+get_footer(); ?>
+
+
+
+<!-- Form pop-up -->
+<div class="download-popup-form">
+    <div class="mobile-contact-form landing-page-form">
+        <button aria-label="<?= t('Close form popup'); ?>" class="form-popup-close-btn">
+            <?= t('Close form popup'); ?>
+            <span class="x-icon"></span>
+        </button>
+        <h3 class="txt-size-36 c-white lh-1"><?= t('Download our guide'); ?></h3>
+        <!-- <p class="txt-size-14 c-green-1">Fill out this form and start <br>selling online in no time.</p> -->
+        <div class="form-wrap"></div>
+        <?php
+        //the_field('survey_cta_download_our_guide_form');
+        ?>
+    </div>
+</div>

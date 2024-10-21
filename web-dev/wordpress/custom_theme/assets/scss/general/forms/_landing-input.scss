@@ -1,0 +1,135 @@
+// form label
+.landing-page-form {
+  legend {
+    width: fit-content;
+  }
+
+  // form input
+  input,
+  select {
+    background-color: transparent;
+    border: 1px solid $blue-23;
+    font-weight: 400;
+    color: $white;
+    font-size: 18px !important;
+    line-height: 30px !important;
+    transition:
+      border 0.5s $easeOutSine,
+      color 0.5s $easeOutSine;
+    width: 310px;
+    font-family: $libre;
+
+    option {
+      font-family: $libre;
+      font-size: 18px !important;
+      line-height: 30px !important;
+    }
+
+    @media screen and ($mobile_all) {
+      padding: 5px;
+      // font-size: 18px;
+      width: 100%;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(padding, 10px);
+    }
+
+    @media screen and ($min1920) {
+      padding: 13px;
+      letter-spacing: 0.4px;
+    }
+
+    // &:focus,
+    // &:active {
+    //   border: 1px solid $green-1;
+    // }
+
+    // form submit button
+    &[type='submit'] {
+      background-color: $green-1;
+      color: $blue-1;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 40px;
+      z-index: 0;
+      transition:
+        transform 0.6s $easeOutSine,
+        background-color 0.6s $easeOutSine;
+      backface-visibility: hidden;
+      font-weight: 700;
+
+      font-size: 16px !important;
+      line-height: 20px !important;
+      font-family: $redhat !important;
+
+      @media screen and ($mobile_sm) {
+        @include vw(padding, 21px 45px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        padding: 21px 45px;
+        font-size: 18px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(padding, 21px 45px);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 130%;
+        height: calc(100% + 10px);
+        z-index: 0;
+        transform-origin: 0 0;
+        transform: translateX(100%) skewX(-45deg);
+        transition:
+          transform 0.5s $easeOutSine,
+          background-color 0.5s $easeOutSine;
+        backface-visibility: hidden;
+      }
+
+      // &:hover,
+      // &:focus {
+      &:hover {
+        background-color: $white;
+        transform: scale(1.05);
+
+        &::before {
+          transform: translateX(0) skewX(-45deg) scale(1.05);
+        }
+      }
+    }
+
+    option {
+      color: $blue-1;
+    }
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .datepicker {
+    &::placeholder {
+      color: $white;
+      opacity: 1;
+    }
+  }
+
+  input[type='number'] {
+    &::placeholder {
+      color: $white;
+      opacity: 1;
+    }
+  }
+
+  .hour_minute_colon {
+    font-size: 16px;
+  }
+}

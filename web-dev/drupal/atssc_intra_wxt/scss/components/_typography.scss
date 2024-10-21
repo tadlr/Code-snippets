@@ -1,0 +1,248 @@
+h1,
+.h1 {
+  border: none;
+  padding: 0;
+
+  &#wb-cont:not(.sr-only) {
+    @include container-fixed;
+    margin-bottom: $padding-xs;
+
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+      width: $container-lg;
+    }
+  }
+
+  @media screen and (max-width: $screen-md-min) {
+    font-size: 40px !important;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: 38px;
+  }
+
+  @media print {
+    font-size: 40px;
+  }
+}
+
+h2,
+.h2 {
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: 28px;
+  }
+
+  @media print {
+    font-size: 28px;
+  }
+}
+
+h3,
+.h3 {
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: 23px;
+  }
+
+  @media print {
+    font-size: 23px;
+  }
+}
+
+h4,
+.h4 {
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: 20px;
+  }
+
+  @media print {
+    font-size: 20px;
+  }
+}
+
+.text-black {
+  color: $gray-base;
+}
+
+a:not(.btn):not(.toolbar-icon) {
+  text-decoration: underline;
+
+  h1 &,
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 & {
+    text-decoration: none;
+
+    &:visited {
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .bg-primary &,
+    .bg-secondary & {
+      color: $white !important;
+    }
+  }
+
+  &:focus {
+    outline-offset: 3px;
+  }
+}
+
+small {
+  color: inherit !important;
+}
+
+ul#{$ul-exclusions},
+ol#{$ol-exclusions} {
+  li {
+    margin-bottom: 10px;
+
+    &::marker {
+      color: $blue;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .bg-primary &,
+    .bg-secondary & {
+      &::marker {
+        color: $white;
+      }
+    }
+
+    ul#{$ul-exclusions},
+    ol#{$ol-exclusions} {
+      margin-top: 10px;
+
+      + p {
+        margin-top: 10px;
+      }
+    }
+
+    dl {
+      margin-bottom: 10px;
+    }
+
+    @media print {
+      &::marker {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+ol#{$ol-exclusions} {
+  li {
+    &::marker {
+      font-size: 17px;
+      font-weight: 700;
+    }
+  }
+}
+
+// dl {
+//   &.dl-horizontal {
+//     dt {
+//       white-space: normal;
+
+//       .wb-fnote & {
+//         @include sr_only;
+//       }
+//     }
+
+//     dd {
+//       padding-bottom: 10px !important;
+
+//       .wb-fnote & {
+//         margin-left: 0;
+//       }
+//     }
+//   }
+// }
+
+blockquote {
+  @include padded;
+  background: url("../assets/svg/quote.svg") no-repeat 30px 30px / 40px auto;
+  box-shadow: 1px 1px 5px $gray-lighter;
+  letter-spacing: 0.04em;
+  padding-left: 80px !important;
+  padding-top: $padding-large !important;
+
+  footer {
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $dark;
+  }
+}
+
+.text-bold {
+  font-weight: 900;
+  font-style: normal;
+}
+
+// Legacy list styles
+.list-lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+.list-upper-alpha {
+  list-style-type: upper-alpha;
+}
+
+.list-lower-roman {
+  list-style-type: lower-roman;
+}
+
+.list-upper-roman {
+  list-style-type: upper-roman;
+}
+
+.list-number {
+  list-style-type: decimal;
+}
+
+.list-bullet-none {
+  list-style-type: none;
+}
+
+.text- {
+  &pink {
+    color: $pink !important;
+  }
+}
+
+.txt-highlight {
+  color: $brand-primary;
+  font-family: $headings-font-family;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+.lead {
+  color: $brand-primary;
+  font-family: $headings-font-family;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}

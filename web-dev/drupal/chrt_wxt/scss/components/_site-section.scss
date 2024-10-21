@@ -1,0 +1,70 @@
+.site-section {
+  $img-normal-width: 350px;
+  $img-normal-offset: -270px;
+  $img-large-width: 500px;
+  $img-large-offset: -430px;
+
+  &.img-normal{
+    .img-holder{
+      background-size: $img-normal-width;
+      min-width: $img-normal-width;
+      margin-left: $img-normal-offset;
+    }
+  }
+
+  &.img-large{
+    .img-holder{
+      background-size: $img-large-width;
+      min-width: $img-large-width;
+      margin-left: $img-large-offset;
+    }
+  }
+
+  &.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    max-height: none;
+    min-height: auto;
+
+    p.h1 {
+      align-items: center;
+      color: $brand-primary;
+      display: flex;
+      justify-content: center;
+      line-height: 1;
+      margin: 0;
+      text-transform: uppercase;
+      position: relative;
+      
+      @media screen and (min-width: $screen-sm-min) {
+        text-align: center;
+      }
+
+      .img-holder {
+        position: relative;
+        
+        @media screen and (min-width: $screen-sm-min) {
+          height: 300px;
+          margin-right: $padding;
+
+        }
+        
+        @media screen and (max-width: $screen-xs-max) {
+          height: 150px;
+          min-width: 130px;
+          margin-left: -25px;
+          margin-right: 10px;
+          background-size: 130px!important;
+        }
+      }
+    }
+  }
+}
+
+.region-banner {
+  .form-group {
+    margin-bottom: 0;
+  }
+}

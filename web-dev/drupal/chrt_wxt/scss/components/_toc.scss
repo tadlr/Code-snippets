@@ -1,0 +1,23 @@
+.toc{
+  li{
+    font-size: $font-size-base;
+    display: list-item;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    padding-left: 0;
+
+    details.toc-item{
+      border-radius: 0;
+
+      summary{
+        border-radius: 0;
+        margin-bottom: 0;
+      }
+
+      .details-wrapper{
+        @include no-padding;
+      }
+    }
+  }
+}

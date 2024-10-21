@@ -1,0 +1,5 @@
+@mixin fontawesome($charcode) {
+  content: $charcode;
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands";
+  font-weight: 900;
+}

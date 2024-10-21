@@ -1,0 +1,31 @@
+.header-open-form-btn,
+.header-cta-btn {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  &.revealed {
+    opacity: 1;
+    transition: opacity 0.7s ease;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &.side-menu-quiz-btn {
+    opacity: 1;
+  }
+}
+
+.landing-header-open-form-btn,
+.landing-header-cta-btn {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  &.revealed {
+    opacity: 1;
+    transition: opacity 0.7s ease;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &.side-menu-quiz-btn {
+    opacity: 1;
+  }
+}

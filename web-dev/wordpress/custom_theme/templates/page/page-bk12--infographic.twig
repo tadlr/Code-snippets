@@ -1,0 +1,91 @@
+{# page-bk12--infographic #}
+
+{% extends "block-sk-block-base.twig" %}
+
+{% block block_base %}
+  {# {% set attributes = attributes.addClass('bg-blue', 'sk-case-studies') %} #}
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% set bgImage = wp_get_attachment_image_url(field.background, 'hero-article') %}
+  {# {{ dump(field) }} #}
+  <div class='container'>
+    <div class='txt-content'>
+      <div class='content-wrapper'>
+        {% if content %}
+          {{ content }}
+        {% endif %}
+        {% if infographic %}
+          <div class='infographic row'>
+            {% for index, media in infographic %}
+              <div class='col-sm-12 col-lg-{{media.col_size}} info-wrapper info--{{index}}'>
+                {% set mediaClass = media.use_mobile_slider ? 'd-none d-desktop-block' : '' %}
+                {% if media.description %}
+                  <div class='infographic__desc'>
+                    <div class='infographic__description pb-sm-3'>{{ media.description }}</div>
+                  </div>
+                {% endif %}
+
+                {% if media.svg %}
+                  <div class='infographic__svg {{ mediaClass }} px-lg-5 '>
+                    {{ print_svg(media.svg.url, media.svg.alt) }}
+                  </div>
+                {% endif %}
+                {% if media.use_mobile_slider and media.slider %}
+                  <div class='infographic__slider d-desktop-none'>
+                    <div class='slider-container sk-slider mb-3' data-single-slide='true' id='{{uid}}'>
+                      <div class='slider-element'>
+                        <div class='blaze-container blaze-slider'>
+                          <div class='blaze-track-container'>
+                            <div class='blaze-track'>
+                              {% for slide in media.slider %}
+                                <div class='slide' data-mh='slider-content-{{sectionID}}'>
+                                  <div class='icons--item'>
+                                    {% if slide.image %}
+                                      <div class='img--wrap text-center'>
+                                        {{ Image(slide.image, 'img-300-300', {'width':300, 'height': 300}) }}
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              {% endfor %}
+                            </div>
+                          </div>
+                          <div class='slider-holder'>
+                            <button
+                              class='slider-control blaze-prev'
+                              data-btn-for='{{uid}}'
+                            >
+                              <span class='visually-hidden'>{{ 'previous' | t }}</span>
+                            </button>
+                            <button
+                              class='slider-control blaze-next'
+                              data-btn-for='{{uid}}'
+                            >
+                              <span class='visually-hidden'>{{ 'next' | t }}</span>
+                            </button>
+                          </div>
+                          <div class='pagination-wrapper'>
+                            <div class='blaze-pagination'></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if footer %}
+          {{ footer }}
+        {% endif %}
+
+        {% set btnColour = 'blue' %}
+        {% include 'field/field--cta-btn.twig' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% if content.heading or content.image %}
+  <div class='card text-center mb-4'>
+    <div class='card-header sk-sticky'>
+      {% if content.heading %}
+        {{ content.heading }}
+      {% endif %}
+      {% if content.image %}
+        {{ Image(content.image, 'full', {class:'header-img'}) }}
+      {% endif %}
+    </div>
+    <div class='card-body'>
+      {% for row in content.table_row %}
+        <div class='card-row'>
+          <p class='section-title'>{{ row.heading }}</p>
+          <p class='section-text'>
+            {% if row.text %}
+              {{ row.text }}
+            {% endif %}
+
+            {% if row.radio == 'Yes' or row.radio == 'No' %}
+              {{ checkmark(row.radio) }}
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

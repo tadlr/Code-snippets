@@ -1,0 +1,26 @@
+@import 'block-base';
+.block--psk12 {
+  .col-lg-12 {
+    .infographic {
+      .info-wrapper {
+        padding: 15px 0;
+        &.info--0 {
+          padding: 0;
+        }
+      }
+      &__svg {
+        max-width: 90%;
+        margin: auto;
+      }
+    }
+  }
+
+  @media screen and ($max1024) {
+    .info-wrapper {
+      padding-top: 20px;
+      &.info--0 {
+        padding-top: 0;
+      }
+    }
+  }
+}

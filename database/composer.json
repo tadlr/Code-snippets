@@ -1,0 +1,19 @@
+{
+    "name": "tayfox/database-demo",
+    "description": "Just a simple code demo",
+    "autoload": {
+        "psr-4": {
+            "Tayfox\\DatabaseDemo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TayFox",
+            "email": "tay@vedla.io"
+        }
+    ],
+    "require": {
+        "predis/predis": "^2.2",
+        "cboden/ratchet": "^0.4.4"
+    }
+}

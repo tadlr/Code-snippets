@@ -1,0 +1,53 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@auth/*": [
+        "src/auth/*"
+      ],
+      "@hooks/*": [
+        "./hooks/*"
+      ],
+      "@navigation/*": [
+        "navigation/*"
+      ],
+      "@translation/*": [
+        "./src/translation/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@config/*": [
+        "./config/*"
+      ],
+      "@context/*": [
+        "src/context/*"
+      ]
+    }
+  },
+  "include": [
+    "tailwind.config.js",
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "./index.d.ts",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+  ]
+}

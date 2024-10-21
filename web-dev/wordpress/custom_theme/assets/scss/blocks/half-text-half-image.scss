@@ -1,0 +1,44 @@
+@import 'block-base';
+.block--p {
+  .media-block {
+    align-items: center;
+  }
+  // @import 'components/media-block';
+  .txt-content {
+    margin-top: 0 !important;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .row {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .row {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .media-left {
+    @media screen and (min-width: 1024px) {
+      flex-direction: row-reverse;
+    }
+    @media screen and (max-width: 1024px) {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .media-block {
+    .img-wrap {
+      text-align: center;
+      @media screen and ($max1024) {
+        margin-bottom: 1.3rem !important;
+      }
+    }
+  }
+
+  .media-block {
+    align-items: center;
+  }
+}

@@ -1,0 +1,286 @@
+.max-w-container {
+  width: 100%;
+  margin: 0 auto;
+  // z-index: 22;
+
+  &.w-1850 {
+    max-width: 1850px;
+  }
+
+  &.w-1509 {
+    max-width: 1509px;
+  }
+
+  &.w-1513 {
+    max-width: 1513px;
+  }
+
+  &.w-1662 {
+    max-width: 1662px;
+  }
+
+  &.w-1523 {
+    max-width: 1523px;
+  }
+
+  &.w-1265 {
+    max-width: 1265px;
+  }
+
+  &.w-909 {
+    max-width: 909px;
+  }
+
+  &.w-1009 {
+    max-width: 1009px;
+  }
+
+  &.w-1255 {
+    max-width: 1255px;
+  }
+
+  &.w-1275 {
+    max-width: 1275px;
+  }
+
+  &.w-1307 {
+    max-width: 1307px;
+  }
+
+  &.w-1600 {
+    max-width: 1600px;
+  }
+
+  &.w-1341 {
+    max-width: 1341px;
+  }
+
+  &.w-1363 {
+    max-width: 1363px;
+  }
+
+  &.w-1395 {
+    max-width: 1395px;
+  }
+}
+
+.container-fw {
+  .row {
+    .column {
+      @extend .np-x;
+
+      $screen--xs: 0 !default;
+      $screen--sm: 576px !default;
+      $screen--md: 768px !default;
+      $screen--lg: 992px !default;
+      $screen--xl: 1200px !default;
+      $screen--xxl: 1400px !default;
+
+      $container-sm: 540px !default;
+      $container-md: 720px !default;
+      $container-lg: 960px !default;
+      $container-xl: 1140px !default;
+      $container-xxl: 1320px !default;
+
+      @media screen and ($max1024) {
+        --sk-gutter-x: 3rem;
+        --sk-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--sk-gutter-x) * 0.5) !important;
+        padding-left: calc(var(--sk-gutter-x) * 0.5) !important;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .column-single {
+        padding-left: $container-padding-x;
+        padding-right: $container-padding-x;
+
+        @media screen and (min-width: $screen--md) {
+          padding-right: calc(
+            (100vw - #{$container-md}) / 2.3 - #{$desiredSpaceVW}
+          );
+
+          padding-left: calc(
+            (100vw - #{$container-md}) / 2.3 - #{$desiredSpaceVW}
+          );
+        }
+
+        @media screen and (min-width: $screen--lg) {
+          // $desiredSpaceVW: -3vw;
+          padding-right: calc(
+            (100vw - #{$container-lg}) / 2.3 - #{$desiredSpaceVW}
+          );
+
+          padding-left: calc(
+            (100vw - #{$container-lg}) / 2.3 - #{$desiredSpaceVW}
+          );
+        }
+
+        @media screen and (min-width: $screen--xl) {
+          padding-right: calc(
+            (100vw - #{$container-xl}) / 2.3 - #{$desiredSpaceVW}
+          );
+
+          padding-left: calc(
+            (100vw - #{$container-xl}) / 2.3 - #{$desiredSpaceVW}
+          );
+        }
+
+        @media screen and (min-width: $screen--xxl) {
+          padding-right: calc(
+            (100vw - #{$container-xxl}) / 2.3 - #{$desiredSpaceVW}
+          );
+          padding-left: calc(
+            (100vw - #{$container-xxl}) / 2.3 - #{$desiredSpaceVW}
+          );
+        }
+      }
+
+      &:first-of-type {
+        .column-inner {
+          padding: 0 $container-padding-x;
+
+          @media screen and (min-width: $screen--lg) {
+            // $desiredSpaceVW: -3vw;
+            padding: $container-padding-x $container-padding-x
+              $container-padding-x
+              calc((100vw - #{$container-lg}) / 2.3 - #{$desiredSpaceVW});
+          }
+
+          @media screen and (max-width: 1150px) {
+            padding-left: calc(var(--sk-gutter-x) * 0.5) !important;
+          }
+
+          @media screen and (min-width: $screen--xl) {
+            padding: $container-padding-x $container-padding-x
+              $container-padding-x
+              calc((100vw - #{$container-xl}) / 2.3 - #{$desiredSpaceVW});
+          }
+
+          @media screen and (min-width: $screen--xxl) {
+            padding: $container-padding-x $container-padding-x
+              $container-padding-x
+              calc((100vw - #{$container-xxl}) / 2.3 - #{$desiredSpaceVW});
+          }
+        }
+      }
+      &:last-of-type {
+        .column-inner {
+          padding: 0 $container-padding-x;
+
+          @media screen and (min-width: $screen--lg) {
+            $desiredSpaceVW: -3vw;
+            padding: $container-padding-x
+              calc((100vw - #{$container-lg}) / 2.3 - #{$desiredSpaceVW})
+              $container-padding-x $container-padding-x;
+          }
+
+          @media screen and (max-width: 1150px) {
+            padding-right: calc(var(--sk-gutter-x) * 0.5) !important;
+          }
+
+          @media screen and (min-width: $screen--xl) {
+            padding: $container-padding-x
+              calc((100vw - #{$container-xl}) / 2.3 - #{$desiredSpaceVW})
+              $container-padding-x $container-padding-x;
+          }
+
+          @media screen and (min-width: $screen--xxl) {
+            padding: $container-padding-x
+              calc((100vw - #{$container-xxl}) / 2.3 - #{$desiredSpaceVW})
+              $container-padding-x $container-padding-x;
+          }
+        }
+      }
+    }
+  }
+}
+
+:root {
+  --lg-offset: calc(64px * 2);
+  --xl-offset: calc(64px * 2);
+  --xxl-offset: calc(148px * 2);
+  --xxml-offset: calc(148px * 2);
+  --xxxl-offset: calc(148px * 2);
+}
+@mixin ContainerSizes($breakpoint) {
+  @if $breakpoint == lg {
+    max-width: calc(100% - var(--lg-offset));
+  } @else if $breakpoint == xl {
+    max-width: calc(100% - var(--xl-offset));
+  } @else if $breakpoint == xxl {
+    max-width: calc(100% - var(--xxl-offset));
+  } @else if $breakpoint == xxml {
+    max-width: calc(1500px - var(--xxml-offset));
+  } @else if $breakpoint == xxxl {
+    max-width: calc(1800px - var(--xxxl-offset));
+  } @else {
+    max-width: 100%;
+  }
+}
+
+.container {
+  @each $breakpoint, $value in $grid-breakpoints {
+    &-#{$breakpoint} {
+      @include ContainerSizes($breakpoint);
+    }
+
+    @media screen and (min-width: $value) {
+      @include ContainerSizes($breakpoint);
+    }
+  }
+}
+
+html.header-opened-dropdown .sk-sticky {
+  z-index: 0;
+}
+
+.sk-sticky {
+  @media screen and ($min1024) {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    top: 130px !important;
+    &.sk-sticky-padded {
+      padding-top: 130px !important;
+    }
+  }
+  @media screen and ($min1600) {
+    top: 225px !important;
+
+    &.sk-sticky-padded {
+      padding-top: 150px !important;
+      // padding-right: 20px;
+    }
+  }
+}
+
+@include responsive-display {
+  display: block !important;
+  &-table {
+    display: table !important;
+  }
+  &-table-cell {
+    display: table-cell !important;
+  }
+  &-block {
+    display: block !important;
+  }
+  &-inline-block {
+    display: inline-block !important;
+  }
+  &-inline {
+    display: inline !important;
+  }
+  &-flex {
+    display: flex !important;
+  }
+
+  &-inline-flex {
+    display: inline-flex !important;
+  }
+  &-none {
+    display: none !important;
+  }
+}

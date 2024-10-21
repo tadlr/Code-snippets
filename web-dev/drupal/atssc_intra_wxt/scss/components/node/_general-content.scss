@@ -1,0 +1,9 @@
+.general-content{
+  &.full{
+    .page-section:not(.no-bg){
+      + .field--name-field-related-links{
+        margin-top: $padding;
+      }
+    }
+  }
+}

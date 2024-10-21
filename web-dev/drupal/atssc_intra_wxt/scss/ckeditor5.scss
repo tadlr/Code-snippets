@@ -1,0 +1,25 @@
+@import "variables";
+
+.ck-editor {
+  .ck-content {
+    // min-height: 350px;
+
+    // Child theme variables and overrides
+    @import "../vendors/bootstrap/assets/stylesheets/bootstrap";
+
+    // sub-theme additional styles
+    @import "mixins/*";
+    @import "components/utility";
+    @import "components/typography";
+    @import "components/buttons";
+    @import "components/accordion";
+    // @import "components/form";
+    // @import "components/node/policies-and-guidelines";
+
+    @import "components/tables";
+    @import "components/tabs";
+    @import "components/indent-block";
+    @import "ckeditor-overrides.scss";
+    @import "components/**/*";
+  }
+}

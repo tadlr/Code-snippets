@@ -1,0 +1,133 @@
+@import 'variables';
+
+$enviroments: (
+  'qa': $blue-19,
+  'dev': $blue-18,
+  'production': $red-11,
+  'public': $coral,
+  'local': #952fb1,
+  'local-qa': #71fd68,
+);
+
+$enviromentsColour: (
+  'qa': $black,
+  'dev': $black,
+  'production': $black,
+  'public': $black,
+  'local': $white,
+  'local-qa': $white,
+);
+
+#wpadminbar {
+  @media screen and ($mobile) {
+    position: fixed !important;
+  }
+
+  #wp-admin-bar-env-switcher {
+    .ab-item .env-switcher-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 0;
+      display: inline-block;
+      position: relative;
+      margin-right: 5px;
+      background-color: $gray-12;
+    }
+
+    > .ab-item.ab-empty-item {
+      min-width: 50px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within {
+      .ab-item {
+        text-decoration: none;
+      }
+    }
+
+    &.env-switcher {
+      @each $env, $background in $enviroments {
+        &-#{$env} {
+          > .ab-item.ab-empty-item {
+            color: map-get($enviromentsColour, $env);
+          }
+          background-color: map-get($enviroments, $env);
+
+          .env-switcher-indicator {
+            background-color: map-get($enviroments, $env);
+            border: 1px solid map-get($enviromentsColour, $env);
+          }
+        }
+      }
+    }
+
+    @each $env, $background in $enviroments {
+      &-#{$env} {
+        border-bottom: 3px solid $background;
+        &:hover {
+          background-color: $background;
+          a {
+            color: map-get($enviromentsColour, $env) !important;
+          }
+        }
+        .env-switcher-indicator {
+          background-color: $background !important;
+          border: 1px solid map-get($enviromentsColour, $env) !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and ($max1024) {
+  #wp-admin-bar-my-account,
+  #wp-admin-bar-wp-logo,
+  #wp-admin-bar-wpfc-toolbar-parent,
+  #wp-admin-bar-duplicate-post,
+  #wp-admin-bar-clear-timber-cache,
+  #wp-admin-bar-customize {
+    display: none !important;
+  }
+
+  #wp-admin-bar-env-switcher {
+    display: list-item !important;
+    padding: auto 15px;
+    > .ab-item {
+      padding: 0 10px !important;
+    }
+  }
+
+  #wp-admin-bar-lang-switcher {
+    display: list-item !important;
+    > .ab-item {
+      padding: 0 10px !important;
+    }
+    .lang-code {
+      text-transform: uppercase;
+    }
+    .lang-name {
+      display: none;
+    }
+  }
+}
+@media screen and ($min1024) {
+  #wp-admin-bar-lang-switcher {
+    .lang-code {
+      display: none;
+    }
+  }
+  #wp-admin-bar-env-switcher {
+    .env-switcher-indicator {
+      display: none;
+    }
+  }
+}
+
+#wp-admin-bar-comments {
+  display: none !important;
+}

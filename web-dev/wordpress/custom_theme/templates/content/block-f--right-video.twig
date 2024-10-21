@@ -1,0 +1,64 @@
+{% if is_preview %}
+  [F] Video with text
+{% endif %}
+{% set videoContainerID = field.video_container_id %}
+{% set textContent = field.text_content %}
+{% set ctaText = field.cta_text %}
+{% set ctaLink = field.cta_link %}
+{% set image = field.image %}
+{# {% set imageID = fn('attachment_url_to_postid', image) %}
+{% set imageAlt = fn('get_post_meta', imageID, '_wp_attachment_image_alt', 'true') %} #}
+{% set videoType = field.choose_the_type_of_video %}
+{% set url = field.video_embed_link %}
+{% set vimeoID = field.vimeo_link %}
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} sk-block block--f media-content-block'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='container'>
+    <div class='media-block media-right video-media content-block row row-eq-height'>
+      <div class='txt-content op-0 col-sm-12  col-lg-6'>
+        <div class='txt-content'>
+          <div class='mt-3'>
+            {{ textContent | raw }}
+          </div>
+          {% include 'field/field--cta-btn.twig' %}
+        </div>
+      </div>
+      <div class='img-wrap col-sm-12 d-flex justify-content-center col-lg-6 h-100'>
+        <div id='{{ videoContainerID }}' class='img-content prel'>
+          {{ Image(image, 'img-450-450', {width: 450, height: 450, class: "video-img"}) }}
+          {% if videoType == 'youtube' %}
+            <button
+              aria-label='Play Youtube video'
+              data-video-embed-id='{{ video_id }}'
+              class='landing-video-btn careers-video-btn'
+            >
+              Play Youtube video
+              <span class='circle-core'>
+                <span class='play-video-icon-landing'></span>
+              </span>
+              <span class='circle-inner'></span>
+              <span class='circle-outer'></span>
+            </button>
+          {% else %}
+            <button
+              aria-label='Play Vimeo video'
+              data-video-embed-id='{{ vimeoID }}'
+              class='landing-video-btn vimeo-btn'
+            >
+              Play Vimeo video
+              <span class='circle-core'>
+                <span class='play-video-icon-landing'></span>
+              </span>
+              <span class='circle-inner'></span>
+              <span class='circle-outer'></span>
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

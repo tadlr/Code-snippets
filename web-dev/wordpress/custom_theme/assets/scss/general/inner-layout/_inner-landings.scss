@@ -1,0 +1,803 @@
+.inner-pages-landing-section {
+  z-index: 2;
+  margin-bottom: -1px;
+
+  @media screen and ($min500) and ($max1024) {
+    margin-top: 0;
+  }
+
+  &.savings-calculator-page-section {
+    // background-color: $white;
+
+    .breadcrumb-wrap {
+      padding-bottom: 31px;
+    }
+  }
+
+  &.text-page-section {
+    background-color: $blue-1;
+
+    .breadcrumb-wrap {
+      padding-bottom: 31px;
+    }
+  }
+
+  &.restaurants-landing-section {
+    .content-wrap {
+      @media screen and ($min1024) {
+        @include vw(padding-bottom, 148px);
+      }
+
+      @media screen and ($min1920) {
+        padding-bottom: 148px;
+      }
+    }
+
+    .txt-size-100 {
+      @media screen and ($mobile_all) {
+        margin-bottom: 25px;
+      }
+
+      @media screen and ($min1024) {
+        margin-bottom: $paddingBottomText;
+        font-size: 64px !important;
+        line-height: 75px !important;
+      }
+
+      @media screen and ($mobile_sm) {
+        @include vw(max-width, 450px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        max-width: 450px;
+      }
+    }
+
+    // h1.txt-size-100 {
+    //   @media screen and ($min1024) {
+    //     font-family: $redhat;
+    //     font-style: normal;
+    //     font-weight: bold;
+    //     margin-bottom: $h1PaddingBottomText;
+    //     b,
+    //     strong, b {
+    //       font-weight: bold;
+    //     }
+    //     @media screen and ($desktop) {
+    //       font-size: $h1-desktop-size;
+    //       line-height: $h1-desktop-line-height;
+    //     }
+    //     @media screen and ($tablet) {
+    //       font-size: $h1-tablet-size;
+    //       line-height: $h1-tablet-line-height;
+    //     }
+    //     @media screen and ($mobile) {
+    //       font-size: $h1-mobile-size;
+    //       line-height: $h1-mobile-line-height;
+    //     }
+    //   }
+    // }
+  }
+
+  &.equipment-landing-section {
+    .content-wrap {
+      @media screen and ($min1024) {
+        @include vw(padding-bottom, 279px);
+        @include vw(padding-top, 104px);
+      }
+
+      @media screen and ($min1920) {
+        padding-bottom: 279px;
+        padding-top: 104px;
+      }
+    }
+  }
+
+  &.meet-payment-expert-section {
+    // @media screen and ($max1024) {
+    //     .breadcrumb-wrap,
+
+    // }
+    .content-wrap {
+      @media screen and ($min1024) {
+        @include vw(padding-top, 152px);
+        @include vw(padding-bottom, 260px);
+      }
+
+      @media screen and ($min1920) {
+        padding-top: 152px;
+        padding-bottom: 260px;
+      }
+    }
+
+    .txt-size-100 {
+      @media screen and ($mobile_sm) {
+        @include vw(max-width, 425px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        max-width: 425px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(max-width, 700px);
+        // max-width: none;
+        margin-bottom: $paddingBottomText;
+        font-size: 64px !important;
+        line-height: 75px !important;
+      }
+
+      @media screen and ($min1920) {
+        max-width: 700px;
+      }
+    }
+
+    // h1.txt-size-100 {
+    //   @media screen and ($min1024) {
+    //     font-family: $redhat;
+    //     font-style: normal;
+    //     font-weight: bold;
+    //     margin-bottom: $h1PaddingBottomText;
+    //     b,
+    //     strong, b {
+    //       font-weight: bold;
+    //     }
+    //     @media screen and ($desktop) {
+    //       font-size: $h1-desktop-size;
+    //       line-height: $h1-desktop-line-height;
+    //     }
+    //     @media screen and ($tablet) {
+    //       font-size: $h1-tablet-size;
+    //       line-height: $h1-tablet-line-height;
+    //     }
+    //     @media screen and ($mobile) {
+    //       font-size: $h1-mobile-size;
+    //       line-height: $h1-mobile-line-height;
+    //     }
+    //   }
+    // }
+  }
+
+  &.rates-detail-page-section {
+    .content-wrap {
+      // @media screen and ($min1024) {
+      //   @include vw(padding-top, 76px);
+      //   @include vw(padding-bottom, 180px);
+      // }
+
+      // @media screen and ($min1920) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      // }
+    }
+  }
+
+  &.rates-page-section {
+    .content-wrap {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    @media screen and ($min1024) {
+      .section-scroll-btn {
+        margin-top: 85px !important;
+        margin-bottom: -25px;
+      }
+    }
+
+    .txt-post-rtf {
+      margin-top: 50px;
+
+      @media screen and ($mobile_all) {
+        max-width: 500px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(width, 700px);
+        @include vw(margin-top, 49px);
+        @include vw(margin-left, 3px);
+      }
+
+      @media screen and ($min1920) {
+        width: 700px;
+        margin-top: 49px;
+        margin-left: 3px;
+      }
+
+      &.careers-txt {
+        margin-top: 0;
+
+        @media screen and ($mobile) {
+          min-width: 240px;
+        }
+      }
+    }
+  }
+
+  .landing-video-btn {
+    z-index: 1;
+    position: absolute;
+    flex: 0 0 auto;
+    display: flex;
+
+    &:hover,
+    &:focus {
+      .circle-core {
+        background-color: $blue-1;
+      }
+
+      .play-video-icon-landing {
+        border-color: transparent transparent transparent $green-1;
+      }
+    }
+
+    @media screen and ($mobile_all) {
+      right: 0;
+    }
+
+    @media screen and ($mobile_sm) {
+      @include vw(width, 141px, 500);
+      @include vw(height, 141px, 500);
+      @include vw(bottom, 50px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      bottom: 50px;
+      width: 141px;
+      height: 141px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(top, 210px);
+      @include vw(right, 75px);
+      @include vw(width, 141px);
+      @include vw(height, 141px);
+    }
+
+    @media screen and ($min1920) {
+      top: 183px;
+      right: 35px;
+      width: 141px;
+      height: 141px;
+    }
+
+    &.careers-video-btn {
+      @media screen and ($min1024) {
+        // @include vw(right, 325px);
+        right: 31%;
+        bottom: 55%;
+        top: unset;
+      }
+    }
+
+    .circle-core {
+      @include pabs;
+      @include inline_block;
+      @include fit;
+      top: 0;
+      left: 0;
+      background-color: $gray-14;
+      border-radius: 50%;
+      transition: background-color 0.5s $easeOutSine;
+    }
+
+    .circle-outer {
+      @include pabs;
+      @include inline_block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      backface-visibility: hidden;
+      border: 1px solid $gray-11;
+      width: 215%;
+      height: 215%;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .circle-inner {
+      @include pabs;
+      @include inline_block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      backface-visibility: hidden;
+      border: 1px solid $gray-11;
+      width: 130%;
+      height: 130%;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .play-video-icon-landing {
+      @include pabs;
+      @include inline_block;
+      backface-visibility: hidden;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent transparent transparent $gray-15;
+      transition: border-color 0.5s $easeOutSine;
+
+      @media screen and ($mobile_sm) {
+        top: calc(50% - 2vw);
+        left: calc(50% - 1.2vw);
+        @include vw(border-width, 9px 0 9px 16px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        top: calc(50% - 10px);
+        left: calc(50% - 6px);
+        border-width: 9px 0 9px 16px;
+      }
+
+      @media screen and ($min1024) {
+        top: calc(50% - 0.521vw);
+        left: calc(50% - 0.313vw);
+        @include vw(border-width, 9px 0 9px 16px);
+      }
+
+      @media screen and ($min1920) {
+        top: calc(50% - 10px);
+        left: calc(50% - 6px);
+        border-width: 9px 0 9px 16px;
+      }
+    }
+  }
+
+  .background-target-circle-transparent {
+    position: absolute;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.1;
+    border-style: solid;
+    border-color: $green-1;
+
+    @media screen and ($mobile_all) {
+      bottom: -10%;
+      right: -10%;
+      @include vw(border-width, 102px, 1024);
+      @include vw(width, 580px, 1024);
+      @include vw(height, 580px, 1024);
+    }
+
+    @media screen and ($min1024) {
+      @include vw(border-width, 145px);
+      @include vw(top, 39px);
+      @include vw(right, -422px);
+      @include vw(width, 829px);
+      @include vw(height, 829px);
+    }
+
+    @media screen and ($min1920) {
+      border-width: 145px;
+      top: 39px;
+      right: -422px;
+      width: 829px;
+      height: 829px;
+    }
+  }
+
+  .background-target-circle-inner {
+    position: absolute;
+    border-radius: 50%;
+    background-color: $green-1;
+
+    @media screen and ($mobile_all) {
+      @include vw(width, 147px, 1024);
+      @include vw(height, 147px, 1024);
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 210px);
+      @include vw(height, 210px);
+    }
+
+    @media screen and ($min1920) {
+      width: 210px;
+      height: 210px;
+    }
+  }
+
+  .bg-image {
+    background-size: cover;
+    @media screen and ($min1024) {
+      background-position: 67% 65%;
+    }
+
+    @media screen and ($mobile) {
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $black;
+        opacity: 0.4;
+        z-index: 1;
+      }
+    }
+
+    &.careers-banner {
+      background-color: rgba(0, 0, 0, 0.39);
+      background-blend-mode: multiply;
+    }
+  }
+
+  .img-wrapper-small-img {
+    .img-wrapper {
+      width: 100%;
+    }
+
+    @media screen and ($mobile_sm) {
+      @include vw(width, 120px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      width: 120px;
+    }
+
+    @media screen and ($min1024) {
+      left: 0;
+      z-index: 1;
+      position: absolute;
+      @include vw(width, 172px);
+      @include vw(top, 85px);
+    }
+
+    @media screen and ($min1920) {
+      width: 172px;
+      top: 85px;
+    }
+  }
+
+  .industry-template-background-img {
+    z-index: 1;
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    @media screen and ($min1024) {
+      position: absolute;
+      @include vw(width, 669px);
+      @include vw(top, 191px);
+      @include vw(right, -197px);
+    }
+
+    @media screen and ($min1920) {
+      width: 669px;
+      top: 191px;
+      right: -197px;
+    }
+  }
+
+  .background-circles-wrap {
+    position: absolute;
+    @include vw(width, 561px, 1024);
+    @include vw(height, 580px, 1024);
+
+    @media screen and ($mobile_all) {
+      bottom: 0;
+    }
+
+    @media screen and ($mobile_sm) {
+      @include vw(right, -38px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      right: -38px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(top, 36px);
+      @include vw(left, -438px);
+      @include vw(width, 802px);
+      @include vw(height, 828px);
+    }
+
+    @media screen and ($min1920) {
+      top: 36px;
+      left: -438px;
+      width: 802px;
+      height: 828px;
+    }
+  }
+
+  .background-inner-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: $red-4;
+
+    &.green-inner-circle {
+      background-color: $green-10;
+
+      &.lighter-green-circle {
+        opacity: 0.3;
+      }
+    }
+
+    @media screen and ($mobile_all) {
+      @include vw(width, 334px, 1024);
+      @include vw(height, 334px, 1024);
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 477px);
+      @include vw(height, 477px);
+    }
+
+    @media screen and ($min1920) {
+      width: 477px;
+      height: 477px;
+    }
+
+    &.lighter-circle {
+      background-color: $red-5;
+    }
+
+    &.top-left {
+      top: 0;
+      left: 0;
+    }
+
+    &.top-right {
+      top: 0;
+      right: 0;
+    }
+
+    &.bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+
+    &.bottom-right {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .txt-size-100 {
+    margin-bottom: 0;
+
+    strong,
+    b {
+      color: $green-1;
+    }
+  }
+
+  // h1.txt-size-100 {
+  //   @media screen and ($min1024) {
+  //     font-family: $redhat;
+  //     font-style: normal;
+  //     font-weight: bold;
+  //     margin-bottom: $h1PaddingBottomText;
+  //     b,
+  //     strong, b {
+  //       font-weight: bold;
+  //     }
+  //     @media screen and ($desktop) {
+  //       font-size: $h1-desktop-size;
+  //       line-height: $h1-desktop-line-height;
+  //     }
+  //     @media screen and ($tablet) {
+  //       font-size: $h1-tablet-size;
+  //       line-height: $h1-tablet-line-height;
+  //     }
+  //     @media screen and ($mobile) {
+  //       font-size: $h1-mobile-size;
+  //       line-height: $h1-mobile-line-height;
+  //     }
+  //   }
+  // }
+
+  .txt-content {
+    .txt-post-rtf {
+      margin-top: 24px;
+    }
+  }
+
+  .content-wrap {
+    z-index: 2;
+
+    padding-top: 100px;
+    padding-bottom: 130px;
+
+    @media screen and ($max1024) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    &.careers {
+      @media screen and ($max1024) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+    }
+  }
+
+  .icon-text-content {
+    .single-txt-block {
+      z-index: 2;
+      max-width: 500px;
+
+      @media screen and ($mobile_all) {
+        margin-top: 25px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(padding-top, 61px);
+        @include vw(margin-left, 290px);
+        @include vw(max-width, 650px);
+      }
+
+      @media screen and ($min1920) {
+        padding-top: 61px;
+        margin-left: 290px;
+        max-width: 650px;
+      }
+    }
+
+    .txt-block-title {
+      margin-bottom: 10px;
+
+      @media screen and ($min1024) {
+        @include vw(margin-bottom, 38px);
+      }
+
+      @media screen and ($min1920) {
+        margin-bottom: 38px;
+      }
+    }
+  }
+
+  .btn-default {
+    margin-top: 50px;
+
+    @media screen and ($max1024) {
+      margin-top: 0px;
+    }
+
+    @media screen and ($min1024) {
+      // @include vw(margin-top, 98px);
+      @include vw(margin-left, -4px);
+    }
+
+    @media screen and ($min1920) {
+      // margin-top: 98px;
+      margin-left: -4px;
+    }
+
+    &.hero-button {
+      @include vw(margin-top, 50px);
+      @media screen and ($min1024) {
+        @include vw(margin-left, -4px);
+      }
+
+      @media screen and ($min1920) {
+        margin-left: -4px;
+      }
+    }
+  }
+
+  &.sk-page-hero {
+    .btn-default {
+      @media screen and ($max1024) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  .txt-content {
+    position: relative;
+
+    // @media screen and ($mobile_all) {
+    //   margin-bottom: 50px;
+    // }
+  }
+
+  .txt-blocks-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    padding-top: 50px;
+    max-width: 500px;
+
+    @media screen and ($min1024) {
+      @include vw(padding-left, 3px);
+      @include vw(padding-top, 72px);
+      @include vw(margin, 0 -80px);
+      @include vw(max-width, 771px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 3px;
+      padding-top: 72px;
+      margin: 0 -80px;
+      max-width: 771px;
+    }
+
+    .txt-block {
+      width: 100%;
+
+      &:not(:last-of-type) {
+        margin-bottom: 32px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(margin, 0 80px);
+      }
+
+      @media screen and ($min1920) {
+        margin: 0 80px;
+      }
+    }
+
+    .txt-block-title {
+      margin-bottom: 10px;
+
+      @media screen and ($min1024) {
+        @include vw(margin-bottom, 20px);
+      }
+
+      @media screen and ($min1920) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .txt-blocks-content-2 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    padding-top: 50px;
+    max-width: 500px;
+
+    @media screen and ($min1024) {
+      @include vw(padding-top, 50px);
+      @include vw(margin, 0 -30px);
+      @include vw(max-width, 1053px);
+    }
+
+    @media screen and ($min1920) {
+      padding-top: 50px;
+      margin: 0 -30px;
+      max-width: 1053px;
+    }
+
+    .txt-block {
+      width: 100%;
+
+      @media screen and ($mobile_all) {
+        &:not(:last-of-type) {
+          margin: 0 0 25px;
+        }
+      }
+
+      @media screen and ($min1024) {
+        @include vw(margin, 0 30px);
+        width: calc(50% - 3.125vw);
+      }
+
+      @media screen and ($min1920) {
+        margin: 0 30px;
+        width: calc(50% - 60px);
+      }
+    }
+  }
+
+  .section-scroll-btn {
+    @media screen and ($mobile_all) {
+      @include prel;
+      margin-top: 62px;
+    }
+
+    @media screen and ($min1024) {
+      margin-top: 85px !important;
+      margin-bottom: -25px;
+    }
+  }
+}

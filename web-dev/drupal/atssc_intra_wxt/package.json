@@ -1,0 +1,29 @@
+{
+  "name": "theme_wxt",
+  "version": "1.0.0",
+  "description": "Gulp 4 workflow",
+  "main": "gulpfile.js",
+  "author": "webdrive",
+  "license": "ISC",
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "gulp": "^4.0.2",
+    "gulp-concat-files": "^1.0.3",
+    "gulp-postcss": "^10.0.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.4.1",
+    "gulp-remember": "^1.0.1",
+    "sass": "^1.71.1"
+  }
+}

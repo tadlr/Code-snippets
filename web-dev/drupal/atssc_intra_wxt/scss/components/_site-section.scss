@@ -1,0 +1,31 @@
+.site-section {
+  background-color: $cyan;
+  &.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    max-height: 68vh;
+    min-height: 300px;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    background-blend-mode: overlay;
+    background-position: center center;
+
+    p.h1 {
+      color: $white;
+      text-align: center;
+      text-shadow: 1px 1px 5px $gray-darker;
+      line-height: 1;
+      margin: 0;
+      padding: $padding-small $padding;
+      font-size: 96px;
+      font-weight: 300;
+    }
+  }
+}
+
+.region-banner {
+  .form-group {
+    margin-bottom: 0;
+  }
+}

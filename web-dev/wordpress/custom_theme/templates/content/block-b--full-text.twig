@@ -1,0 +1,30 @@
+{% if is_preview %}
+  [B] Full width text content
+{% endif %}
+
+{% block content %}
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+{% set scroll_ID = field.scroll_to_section_id %}
+{% set extra_classes = field.section_classes %}
+
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} {{ extra_classes }} sk-block block--b'
+  data-link-scroll-target-section-id='{{ scroll_ID }}'
+>
+  <div
+    class='container'
+  >
+    <div
+      class='txt-content op-0 col-sm-12 '
+    >
+      {% if field.fullwidth %}
+        {{ field.fullwidth.content | raw }}
+      {% endif %}
+      {% if field.add_html_content %}
+        {{ field.custom_html | raw }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

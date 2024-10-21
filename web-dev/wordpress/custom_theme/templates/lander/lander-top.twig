@@ -1,0 +1,6 @@
+{% if field.header == 'yes' %}
+  {% include 'lander-header.twig' %}
+{% else %}
+  {{ get_header() }}
+  {# $class .= ' w-main-header'; #}
+{% endif %}

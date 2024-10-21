@@ -1,0 +1,933 @@
+.sk-lander--20943 {
+  .landing-page,
+  .landing-page * {
+    box-sizing: border-box;
+  }
+  .landing-page {
+    background: var(
+      --background-underlays-underlay-blue-5,
+      rgba(0, 143, 197, 0.05)
+    );
+    border-radius: 50px;
+    width: 1681px;
+    height: 2428px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+  }
+  .component-section-header {
+    background: var(--background-solid-background-strong, #002ea6);
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 1681px;
+    position: absolute;
+    left: calc(50% - 840.5px);
+    top: 0px;
+    overflow: hidden;
+  }
+  .frame-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 1280px;
+    position: relative;
+    overflow: hidden;
+  }
+  .version {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .v-2 {
+    color: var(--text-default-white, #ffffff);
+    text-align: left;
+    font:
+      700 16px 'Red Hat Display',
+      sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .typography-styles-landing-page {
+    color: var(--text-default-white, #ffffff);
+    text-align: left;
+    font:
+      700 72px 'Red Hat Display',
+      sans-serif;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .lorem-ipsum-dolor-sit-amet-consectetur-lectus-risus-blandit-purus-sodales-rhoncus-sodales-amet-vulputate-aliquet-egestas-lobortis-duis-vitae-bibendum-mauris-tellus-et-euismod-et-etiam-urna-nunc-adipiscing-imperdiet-amet-laoreet {
+    color: var(--text-default-white, #ffffff);
+    text-align: left;
+    font:
+      400 16px/160% 'Libre Franklin',
+      sans-serif;
+    position: relative;
+    width: 880px;
+  }
+  .progress-chits {
+    background: var(--primary-brand-colors-carribean-green, #17fcc4);
+    border-radius: 100px;
+    padding: 4px 26px 4px 26px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    height: 36px;
+    position: relative;
+  }
+  .label {
+    color: var(--text-default-blue, #002ea6);
+    text-align: center;
+    font:
+      700 16px 'Red Hat Display',
+      sans-serif;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .desktop {
+    color: var(--text-default, #202222);
+    text-align: right;
+    font: var(
+      --large-screen-headline-3,
+      700 34px/32px 'Red Hat Display',
+      sans-serif
+    );
+    position: absolute;
+    left: 80px;
+    top: 493px;
+  }
+  .mobile {
+    color: var(--text-default, #202222);
+    text-align: right;
+    font: var(
+      --large-screen-headline-3,
+      700 34px/32px 'Red Hat Display',
+      sans-serif
+    );
+    position: absolute;
+    left: 80px;
+    top: 1425px;
+  }
+  .size {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1256px;
+    top: 573px;
+  }
+  .size2 {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1256px;
+    top: 1505px;
+  }
+  .weight {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1127px;
+    top: 573px;
+  }
+  .weight2 {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1127px;
+    top: 1505px;
+  }
+  .typeface {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 953px;
+    top: 573px;
+  }
+  .typeface2 {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 953px;
+    top: 1505px;
+  }
+  .typestyle {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 80px;
+    top: 573px;
+  }
+  .typestyle2 {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 80px;
+    top: 1505px;
+  }
+  .line {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1351px;
+    top: 573px;
+  }
+  .line2 {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1351px;
+    top: 1505px;
+  }
+  .character {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1441px;
+    top: 573px;
+  }
+  .character2 {
+    color: #202223;
+    text-align: left;
+    font: var(
+      --large-screen-overlinetext,
+      200 12px/16px 'Libre Franklin',
+      sans-serif
+    );
+    text-transform: uppercase;
+    position: absolute;
+    left: 1441px;
+    top: 1505px;
+  }
+  .line-1 {
+    border-style: solid;
+    border-color: #8c9196;
+    border-width: 1px 0 0 0;
+    width: 1434px;
+    height: 0px;
+    position: absolute;
+    left: 82px;
+    top: 549px;
+  }
+  .line-3 {
+    border-style: solid;
+    border-color: #8c9196;
+    border-width: 1px 0 0 0;
+    width: 1434px;
+    height: 0px;
+    position: absolute;
+    left: 82px;
+    top: 1481px;
+  }
+  .line-2 {
+    border-style: solid;
+    border-color: #8c9196;
+    border-width: 1px 0 0 0;
+    width: 1434px;
+    height: 0px;
+    position: absolute;
+    left: 82px;
+    top: 613px;
+  }
+  .line-4 {
+    border-style: solid;
+    border-color: #8c9196;
+    border-width: 1px 0 0 0;
+    width: 1434px;
+    height: 0px;
+    position: absolute;
+    left: 82px;
+    top: 1545px;
+  }
+  .frame-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    left: 80px;
+    top: 693px;
+  }
+  .frame-5 {
+    flex-shrink: 0;
+    width: 1400px;
+    height: 44px;
+    position: relative;
+  }
+  ._0-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1361px;
+    top: 19px;
+  }
+  ._44-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1271px;
+    top: 19px;
+  }
+  ._42-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1176px;
+    top: 19px;
+  }
+  .semibold {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1048px;
+    top: 19px;
+  }
+  .sf-pro-display {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 873px;
+    top: 19px;
+  }
+  .headline-9 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      700 64px/75px 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -16px;
+  }
+  .divider-2 {
+    background: #c9cccf;
+    flex-shrink: 0;
+    width: 1437px;
+    height: 1px;
+    position: relative;
+  }
+  .frame-6 {
+    flex-shrink: 0;
+    width: 1400px;
+    height: 39px;
+    position: relative;
+  }
+  ._0-px2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1361px;
+    top: 12px;
+  }
+  ._32-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1271px;
+    top: 12px;
+  }
+  ._28-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1176px;
+    top: 12px;
+  }
+  .semibold2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1048px;
+    top: 12px;
+  }
+  .sf-pro-display2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 873px;
+    top: 12px;
+  }
+  .headline-8 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      700 48px/61px 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -11px;
+  }
+  .divider {
+    background: #c9cccf;
+    flex-shrink: 0;
+    width: 1437px;
+    height: 1px;
+    position: relative;
+  }
+  .frame-8 {
+    flex-shrink: 0;
+    width: 1399px;
+    height: 28px;
+    position: relative;
+  }
+  ._0-px3 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1361px;
+    top: 8px;
+  }
+  ._28-px2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1271px;
+    top: 8px;
+  }
+  ._20-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1176px;
+    top: 8px;
+  }
+  .regular {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1048px;
+    top: 8px;
+  }
+  .sf-pro-display3 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 873px;
+    top: 8px;
+  }
+  .headline-6 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      700 32px/40px 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -6px;
+  }
+  .frame-20 {
+    flex-shrink: 0;
+    width: 1399px;
+    height: 19px;
+    position: relative;
+  }
+  .semibold3 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1048px;
+    top: 0px;
+  }
+  .sf-pro-text {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 873px;
+    top: 0px;
+  }
+  ._0-px4 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1361px;
+    top: 0px;
+  }
+  ._24-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1271px;
+    top: 0px;
+  }
+  ._16-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1176px;
+    top: 0px;
+  }
+  .highlighted-text-6 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      600 18px/120% 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -2px;
+  }
+  .divider-copy {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .frame-12 {
+    flex-shrink: 0;
+    width: 1400px;
+    height: 21px;
+    position: relative;
+  }
+  .regular2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1048px;
+    top: 1px;
+  }
+  .sf-pro-text2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 873px;
+    top: 1px;
+  }
+  ._0-px5 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1361px;
+    top: 1px;
+  }
+  ._20-px2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1271px;
+    top: 1px;
+  }
+  ._14-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1176px;
+    top: 1px;
+  }
+  .paragraph-text {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      600 24px/30px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -5px;
+  }
+  .divider-copy2 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .frame-19 {
+    flex-shrink: 0;
+    width: 1400px;
+    height: 21px;
+    position: relative;
+  }
+  .paragraph-text2 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      300 18px/150% 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  .divider-copy3 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .frame-21 {
+    flex-shrink: 0;
+    width: 1400px;
+    height: 21px;
+    position: relative;
+  }
+  .paragraph-text3 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      600 18px/150% 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  .divider-copy4 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .frame-13 {
+    flex-shrink: 0;
+    width: 1399px;
+    height: 20px;
+    position: relative;
+  }
+  .regular3 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1048px;
+    top: 0px;
+  }
+  ._16-px2 {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1271px;
+    top: 0px;
+  }
+  ._12-px {
+    color: #202223;
+    text-align: left;
+    font:
+      400 14px/20px 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 1176px;
+    top: 0px;
+  }
+  .button {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      700 16px/24px 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+  }
+  .divider-copy5 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .frame-15 {
+    flex-shrink: 0;
+    width: 1451px;
+    height: 20px;
+    position: relative;
+  }
+  .ove-rline {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      200 10px/16px 'Libre Franklin',
+      sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+  }
+  .divider-copy6 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .frame-18 {
+    flex-shrink: 0;
+    width: 1451px;
+    height: 20px;
+    position: relative;
+  }
+  .ove-rline2 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      400 10px/150% 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+  }
+  .divider-copy7 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .frame-17 {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    left: 80px;
+    top: 1625px;
+  }
+  .headline-92 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      700 48px/64px 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -15px;
+  }
+  .headline-82 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      700 32px/61px 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -9px;
+  }
+  .headline-62 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      700 24px/30px 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+  }
+  .highlighted-text-62 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      600 16px/120% 'Red Hat Display',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  .divider-copy8 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .divider-copy9 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .paragraph-text4 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      400 18px/150% 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -3px;
+  }
+  .divider-copy10 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .paragraph-text5 {
+    color: var(--primary-palette-international-klein-blue, #002ea6);
+    text-align: left;
+    font:
+      600 18px/150% 'Libre Franklin',
+      sans-serif;
+    position: absolute;
+    left: 0px;
+    top: -3px;
+  }
+  .divider-copy11 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .divider-copy12 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .divider-copy13 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .divider-copy14 {
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+  }
+}

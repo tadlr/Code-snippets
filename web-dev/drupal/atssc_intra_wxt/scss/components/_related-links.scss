@@ -1,0 +1,107 @@
+.region-content-footer {
+  position: relative;
+}
+
+.related {
+  background-size: 90px auto;
+  background-position: bottom right;
+
+  &.block {
+    height: 0px;
+    margin: 15px;
+    padding: 0px;
+    transition: all 400ms;
+    overflow: hidden;
+
+    &.active {
+      height: auto;
+      padding: 40px 0px 90px 0px;
+      background-image: url("../assets/svg/icon-chainlink.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.node {
+    background-position: calc(100% - #{$padding}) $padding;
+  }
+
+  &-btn {
+    border-radius: $btn-border-radius-base;
+    display: inline-block;
+    margin: 0 auto;
+    z-index: 10;
+
+    &-icon {
+      margin-left: $padding-xs;
+
+      svg {
+        //transform: rotate(180deg);
+        transition: all 400ms;
+
+        path {
+          transition: all 400ms;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .related-btn-icon {
+        svg {
+          path {
+            fill: $brand-secondary !important;
+          }
+        }
+      }
+    }
+
+    &.active {
+      .related-btn-icon {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &-title {
+    margin-bottom: $padding-large-xs;
+    margin-top: 0;
+    padding-bottom: $padding-large-xs;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-bottom: 2px solid #fff;
+    }
+
+    .block & {
+      text-align: center;
+      width: 100%;
+
+      &:after {
+        width: 65%;
+      }
+    }
+
+    .node & {
+      width: 65%;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  &-close {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
+}

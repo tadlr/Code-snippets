@@ -1,0 +1,595 @@
+.plain-link-btn {
+  font-weight: 700;
+  color: $blue-5;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  font-size: 12px;
+  z-index: 4;
+
+  @media screen and ($min400) {
+    font-size: 14px;
+  }
+
+  @media screen and ($min480) {
+    font-size: 16px;
+  }
+
+  @media screen and ($min640) {
+    font-size: 18px;
+  }
+
+  @media screen and ($min1024) {
+    @include vw(font-size, 18px);
+    @include vw(margin-right, 20px);
+
+    &:hover::before,
+    &:focus::before {
+      transform: scaleX(1.25) translateY(-50%);
+    }
+  }
+
+  @media screen and ($min1920) {
+    font-size: 18px;
+    margin-right: 20px;
+  }
+
+  &::after {
+    content: '';
+    @include inline_block;
+    @include pabs;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    backface-visibility: hidden;
+    background-color: $blue-5;
+    transition: transform 0.5s $easeOutSine;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    will-change: transform;
+  }
+
+  &::before {
+    content: '';
+    @include inline_block;
+    @include pabs;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    backface-visibility: hidden;
+    background-color: $blue-5;
+    transition: transform 0.5s $easeOutSine;
+    transform-origin: 0% 50%;
+    will-change: transform;
+    width: 11px;
+    height: 2px;
+    right: -20px;
+
+    @media screen and ($min1024) {
+      @include vw(width, 11px);
+      @include vw(height, 2px);
+      @include vw(right, -20px);
+    }
+
+    @media screen and ($min1920) {
+      width: 11px;
+      height: 2px;
+      right: -20px;
+    }
+  }
+}
+
+.round-btn-submit {
+  flex: 0 0 auto;
+  position: relative;
+  @include inline_block;
+  @include prel;
+  color: $blue-1;
+  line-height: 1;
+  font-weight: 700;
+
+  .background-el {
+    @include abs-cover-el;
+    display: inline-block;
+    z-index: 1;
+    background-color: $green-1;
+    border-radius: 50%;
+    backface-visibility: hidden;
+  }
+
+  .btn-txt {
+    pointer-events: none;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  @media screen and ($mobile_sm) {
+    @include vw(font-size, 24px, 500);
+    @include vw(width, 228px, 500);
+    @include vw(height, 228px, 500);
+  }
+
+  @media screen and ($mobile_lg) {
+    font-size: 24px;
+    width: 228px;
+    height: 228px;
+  }
+
+  @media screen and ($min1024) {
+    @include vw(font-size, 24px);
+    @include vw(width, 228px);
+    @include vw(height, 228px);
+  }
+
+  @media screen and ($min1920) {
+    font-size: 24px;
+    width: 228px;
+    height: 228px;
+  }
+}
+
+.scroll-btn-border-svg {
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -2px;
+  left: -2px;
+
+  .scroll-btn-border-circle {
+    stroke: $gray-2;
+  }
+}
+
+.btn-scroll-next {
+  @include pabs;
+  border-radius: 50%;
+  // border: 1px solid $gray-2;
+
+  @media screen and ($mobile_lg) {
+    width: 141px;
+    height: 141px;
+  }
+
+  @media screen and ($min1024) {
+    &:hover .scroll-btn-img,
+    &:focus .scroll-btn-img {
+      animation: arrow-move 1.5s ease-in-out infinite;
+    }
+  }
+
+  @media screen and ($min1920) {
+    width: 141px;
+    height: 141px;
+  }
+}
+
+.section-scroll-btn {
+  //@include pabs;
+  border-radius: 50%;
+  position:relative;
+  // border: 1px solid $gray-2;
+
+  @media screen and ($mobile_sm) {
+    @include vw(width, 141px, 500);
+    @include vw(height, 141px, 500);
+  }
+
+  @media screen and ($mobile_lg) {
+    width: 141px;
+    height: 141px;
+  }
+
+  @media screen and ($min1024) {
+    @include vw(width, 141px);
+    @include vw(height, 141px);
+
+    &:hover .scroll-btn-img,
+    &:focus .scroll-btn-img {
+      animation: arrow-move 1.5s ease-in-out infinite;
+    }
+  }
+
+  @media screen and ($min1920) {
+    width: 141px;
+    height: 141px;
+  }
+
+  .scroll-btn-img {
+    will-change: transform;
+    backface-visibility: hidden;
+    @include pabs;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and ($mobile_sm) {
+      @include vw(width, 36px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      width: 36px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 36px);
+    }
+
+    @media screen and ($min1920) {
+      width: 36px;
+    }
+  }
+}
+
+.query-button-next {
+  border-radius: 50%;
+  border: 1px solid $green-1;
+  position: relative;
+
+  @media screen and ($mobile_sm) {
+    @include vw(width, 141px, 500);
+    @include vw(height, 141px, 500);
+  }
+
+  @media screen and ($mobile_lg) {
+    width: 141px;
+    height: 141px;
+  }
+
+  @media screen and ($min1024) {
+    @include vw(width, 141px);
+    @include vw(height, 141px);
+  }
+
+  @media screen and ($min1920) {
+    width: 141px;
+    height: 141px;
+  }
+
+  .btn-txt {
+    display: inline-block;
+    position: absolute;
+    backface-visibility: hidden;
+    top: 48%;
+    transform: translateY(-50%);
+    right: 84%;
+    // left: -46px;
+    // @media screen and ($min1024) {
+    //     @include vw(left, -46px);
+    // }
+    // @media screen and ($min1920) {
+    //     left: -46px;
+    // }
+  }
+
+  .scroll-btn-img {
+    will-change: transform;
+    backface-visibility: hidden;
+    @include pabs;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+
+    @media screen and ($mobile_sm) {
+      @include vw(width, 36px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      width: 36px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 36px);
+    }
+
+    @media screen and ($min1920) {
+      width: 36px;
+    }
+
+    &.arrow-right {
+      transform: translate(-50%, -50%);
+
+      @media screen and ($mobile_sm) {
+        @include vw(width, 57px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        width: 57px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(width, 57px);
+      }
+
+      @media screen and ($min1920) {
+        width: 57px;
+      }
+    }
+  }
+}
+
+.contact-section-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid $gray-12;
+  border-radius: 40px;
+  padding: 9px 45px 9px 89px;
+  width: 300px;
+
+  @media screen and ($max1024) {
+    width: 100%;
+  }
+
+  min-height: 80px;
+  transition: border 0.5s $easeOutSine;
+
+  @media screen and ($min1024) {
+    @include vw(border-radius, 40px);
+    @include vw(padding, 9px 45px 9px 89px);
+    @include vw(width, 300px);
+    @include vw(min-height, 80px);
+  }
+
+  @media screen and ($min1920) {
+    border-radius: 40px;
+    padding: 9px 45px 9px 89px;
+    width: 350;
+    min-height: 80px;
+  }
+
+  .contact-btn-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 13px;
+    width: 60px;
+    transition: transform 0.5s $easeOutSine;
+    transform-origin: 50% 0%;
+    backface-visibility: hidden;
+
+    @media screen and ($min1024) {
+      @include vw(left, 13px);
+      @include vw(width, 60px);
+    }
+
+    @media screen and ($min1920) {
+      left: 13px;
+      width: 60px;
+    }
+  }
+
+  .btn-txt {
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform 0.5s $easeOutSine;
+    font-family: $redhat !important;
+  }
+}
+
+.blog-social-media {
+  .contact-section-btn {
+    border: none;
+
+    &:hover,
+    &:focus {
+      border: none;
+    }
+  }
+}
+
+.side-menu-quiz-btn {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid $white;
+  transition:
+    border 0.2s $easeOutSine 0.1s,
+    width 0.2s ease-out 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 40px;
+  min-height: 80px;
+  padding: 6px 16px;
+
+  @media screen and ($min1024) {
+    border: 1px solid transparent;
+    @include vw(border-radius, 40px);
+    @include vw(min-height, 80px);
+    @include vw(padding, 6px 16px);
+    @include vw(width, 90px);
+
+    &:hover,
+    &:focus {
+      border: 1px solid $gray-12;
+      transition:
+        border 0.2s $easeOutSine,
+        width 0.2s ease-out;
+      width: 268px;
+
+      @media screen and ($min1024) {
+        @include vw(width, 268px);
+      }
+
+      @media screen and ($min1920) {
+        width: 268px;
+      }
+
+      .btn-txt {
+        transition: opacity 0.2s $easeOutSine 0.1s;
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and ($min1920) {
+    border-radius: 40px;
+    min-height: 80px;
+    padding: 6px 16px;
+    width: 90px;
+  }
+
+  .btn-txt {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    backface-visibility: hidden;
+    margin-right: auto;
+    transition: opacity 0.2s $easeOutSine;
+    padding: 0 22px;
+
+    @media screen and ($min1024) {
+      opacity: 0;
+      @include vw(padding, 0 22px);
+    }
+
+    @media screen and ($min1920) {
+      padding: 0 22px;
+    }
+  }
+
+  .side-menu-quiz-btn-svg {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 2;
+    width: 60px;
+
+    @media screen and ($min1024) {
+      @include vw(width, 60px);
+    }
+
+    @media screen and ($min1920) {
+      width: 60px;
+    }
+
+    path {
+      fill: $green-1;
+    }
+  }
+}
+
+.popup-close-btn {
+  position: absolute;
+  background-color: $blue-1;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  transition: transform 0.5s $easeOutSine;
+  backface-visibility: hidden;
+  bottom: calc(100% + 7px);
+
+  @media screen and ($mobile_all) {
+    right: 0;
+  }
+
+  @media screen and ($min1024) {
+    left: calc(100% + 3px);
+  }
+
+  &:hover,
+  &:focus {
+    transform: rotate(180deg);
+  }
+
+  .x-icon {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    backface-visibility: hidden;
+    width: 19px;
+    height: 19px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      backface-visibility: hidden;
+      background-color: $white;
+      width: 100%;
+      height: 1px;
+      transform-origin: 50% 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+.industry-video {
+  text-align: left;
+}
+
+.form-popup-close-btn {
+  position: absolute;
+  background-color: $blue-1;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  transition: transform 0.5s $easeOutSine;
+  backface-visibility: hidden;
+  right: -30px;
+  top: 9.5vh;
+
+  &:hover,
+  &:focus {
+    transform: rotate(180deg);
+  }
+
+  @media ($max1024){
+    top:0;
+  }
+
+  .x-icon {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    backface-visibility: hidden;
+    width: 19px;
+    height: 19px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      backface-visibility: hidden;
+      background-color: $white;
+      width: 100%;
+      height: 1px;
+      transform-origin: 50% 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+.single-landings .form-popup-close-btn {
+  top:0;
+}
+
+

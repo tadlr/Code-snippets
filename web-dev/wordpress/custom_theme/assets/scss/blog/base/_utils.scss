@@ -1,0 +1,83 @@
+.reading-time {
+  a {
+    color: $blue-1;
+  }
+}
+
+// Blog holder
+.blog-holder {
+  // background-color: $white;
+  padding-top: 45px;
+}
+
+.posts-filter {
+  select {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+// Blog pagination
+.blog-pagination {
+  text-align: center;
+
+  @media screen and ($min1024) {
+    @include vw(padding-top, 50px);
+    @include vw(padding-bottom, 50px);
+  }
+
+  @media screen and ($mobile_all) {
+    padding-bottom: 40px;
+  }
+
+  a {
+    font-size: 21px;
+    color: $blue-1;
+    display: inline-block;
+    padding: 0 10px;
+
+    &.active {
+      color: $green-1;
+      font-size: $contentPadding;
+      font-weight: 700;
+    }
+  }
+
+  span {
+    color: $blue-1;
+    font-size: 20px;
+  }
+}
+
+.blog-external-links {
+  @media screen and ($min1024) {
+    @include vw(margin-top, 50px);
+  }
+}
+
+.sk-chat {
+  z-index: 999;
+  position: relative;
+
+  .btn-chat-close {
+    display: none;
+    position: fixed;
+    right: 58px;
+    bottom: 130px;
+    z-index: 99;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+
+    @media screen and ($min720) {
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
+
+#customTheme-connect-chat.hide-chat .chat-info-welcome {
+  display: none !important;
+}

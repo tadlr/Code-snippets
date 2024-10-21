@@ -1,0 +1,10 @@
+.sk-blog-content {
+  .article-body > .article-content {
+    .blog-content {
+      a:not(.btn) {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+}

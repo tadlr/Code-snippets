@@ -1,0 +1,71 @@
+main {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+body {
+  .btn-default:not(.shr-opn):not(.panel-heading) {
+    @include button-variant($cyan, $white, $cyan);
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+  .btn-primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  }
+  // Success appears as green
+  .btn-success {
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+  }
+  // Info appears as blue-green
+  .btn-info {
+    // @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+  }
+  // Warning appears as orange
+  .btn-warning {
+    @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+  }
+  // Danger and error appear as red
+  .btn-danger {
+    @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+  }
+}
+
+.mrgn {
+  &-tp-0 {
+    margin-top: 0;
+  }
+  &-bttm {
+    &-0 {
+      margin-bottom: 0;
+    }
+
+    &-sm {
+      margin-bottom: 5px !important;
+    }
+  }
+  &-lft-0 {
+    margin-left: 0;
+  }
+  &-rght-0 {
+    margin-right: 0;
+  }
+}
+
+.toc {
+  li {
+    display: block;
+  }
+}
+
+.layout-builder {
+  &-block {
+    background: none;
+  }
+
+  &__link {
+    color: $text-color !important;
+  }
+}

@@ -1,0 +1,62 @@
+{# Block--sk9 #}
+{% extends "block-sk-block-base.twig" %}
+{% block block_content %}
+  {% set classes = field.full_width_with_background ? 'full-width-bg' : '' %}
+  {% set heading = field.block_heading %}
+  {% set content = field.content %}
+  {% set sliderPosition = field.slider_position ?? 'left' %}
+  {% set Sticky = 'sk-sticky sk-sticky-padded' %}
+
+  <div class='container'>
+    <div class='media-block media-{{ sliderPosition }} content-block row row-eq-height'>
+      <div class='left-content col-sm-12 col-lg-6 align-content-center'>
+        {% if heading or content %}
+          <div class='col-sm-12'>
+            {{ include('field/field--heading.twig', { heading: heading, content: content }) }}
+            {% include 'field/field--cta-btn.twig' %}
+          </div>
+        {% endif %}
+        {# {{ dump(context) }} #}
+      </div>
+      <div class='slider-wrap col-sm-12 d-flex justify-content-center col-lg-6 h-100'>
+        <div class='testimonial-carousel slider-container sk-slider mb-3 mt-sm-3' data-single-slide='true' id='{{uid}}'>
+          <div class='slider-element'>
+            <div class='blaze-container blaze-slider'>
+              <div class='blaze-track-container'>
+                <div class='blaze-track'>
+                  {% for index,quote in field.slider %}
+                    <div class='slide' data-mh='slider-content-{{sectionID}}'>
+                      <div class='shadow'>
+                        {{ include('field/field--testimonial-box.twig') }}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              {% if field.slider|length > 1 %}
+                <div class='slider-holder'>
+                  <button
+                    class='slider-control blaze-prev'
+                    data-btn-for='{{uid}}'
+                  >
+                    <span class='visually-hidden'>{{ 'previous' | t }}</span>
+                  </button>
+                  <button
+                    class='slider-control blaze-next'
+                    data-btn-for='{{uid}}'
+                  >
+                    <span class='visually-hidden'>{{ 'next' | t }}</span>
+                  </button>
+                </div>
+                <div class='pagination-wrapper'>
+                  <div class='blaze-pagination'></div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

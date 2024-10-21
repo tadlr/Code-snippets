@@ -1,0 +1,26 @@
+<!doctype html>
+<html {{ site.language_attributes }} {{ 'xml:' ~ site.language_attributes }}>
+  {{ gravity_form_enqueue_scripts(1, true) }}
+  {% block html_head_container %}
+  {% include 'html-top.twig' %}
+  <head>
+    {% block head %}
+    {% endblock %}
+  </head>
+  {% endblock %}
+  <body id='body' {{ body_class() }} data-template='html.twig'>
+    {% include 'html-scripts.twig' %}
+    {% block body_scripts %}
+    {% endblock %}
+    {% block header %}
+    <header class='header'></header>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    {% block footer %}
+    {% endblock %}
+    {% include 'html-bottom.twig' %}
+    {% block bottom %}
+    {% endblock %}
+  </body>
+</html>

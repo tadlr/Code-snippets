@@ -1,0 +1,202 @@
+.inner-equipment-list-section {
+  // background-color: $white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media screen and ($min1024) {
+    @include vw(padding-top, 177px);
+    @include vw(padding-bottom, 148px);
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 177px;
+    padding-bottom: 148px;
+  }
+
+  .txt-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 150px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 150px;
+    }
+  }
+
+  .txt-size-80 {
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(width, 700px);
+    }
+
+    @media screen and ($min1920) {
+      width: 700px;
+    }
+  }
+
+  .txt-post-rtf {
+    width: 100%;
+    padding-top: 25px;
+
+    @media screen and ($min1024) {
+      width: calc(100% - 36.458vw);
+      @include vw(padding-left, 74px);
+      @include vw(padding-top, 7px);
+    }
+
+    @media screen and ($min1920) {
+      width: calc(100% - 700px);
+      padding-left: 74px;
+      padding-top: 7px;
+    }
+  }
+
+  .content-blocks-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+    @media screen and ($mobile_sm) {
+      margin: -15px;
+    }
+
+    @media screen and ($mobile_lg) {
+      margin: -30px;
+    }
+
+    @media screen and ($mobile_all) {
+      justify-content: center;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin, -30px -50px -30px -70px);
+    }
+
+    @media screen and ($min1920) {
+      margin: -30px -50px -30px -70px;
+    }
+  }
+
+  .img-hold {
+    max-width: 243px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 39px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 39px;
+    }
+  }
+
+  .img-wrapper {
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .equipment-img {
+    backface-visibility: hidden;
+    transition: transform 0.5s $easeOutSine;
+  }
+
+  .equipment-block-btn-txt {
+    display: unset;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition:
+      background-size 0.5s $easeOutSine,
+      color 0.5s $easeOutSine;
+  }
+
+  .single-block {
+    @include prel;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      .equipment-img {
+        transform: scale(1.05);
+      }
+
+      .green-arrow-icon {
+        animation: equipment-list-section-hover 1.5s ease-in-out infinite;
+      }
+
+      .equipment-block-btn-txt {
+        background-size: 100% 1px;
+      }
+    }
+
+    @media screen and ($mobile_sm) {
+      width: calc(50% - 30px);
+      margin: 15px;
+    }
+
+    @media screen and ($mobile_lg) {
+      width: calc(50% - 60px);
+      margin: 30px;
+    }
+
+    @media screen and ($min1024) {
+      width: calc(25% - 5.208vw);
+      @include vw(margin, 30px 50px);
+    }
+
+    @media screen and ($min1920) {
+      width: calc(25% - 100px);
+      margin: 30px 50px;
+    }
+  }
+
+  .equipment-block-btn {
+    display: inline-block;
+    text-decoration: none;
+    @media screen and ($min1024) {
+      @include vw(margin, 0 -10px);
+    }
+
+    @media screen and ($min1920) {
+      margin: 0 -10px;
+    }
+  }
+
+  .btn-txt {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+
+  .green-arrow-img-wrapper {
+    display: inline-block;
+    width: 21px;
+    height: 16px;
+  }
+
+  .green-arrow-icon {
+    font-size: 0;
+    position: relative;
+    left: 5px;
+
+    @media screen and ($min1024) {
+      @include vw(left, 10px);
+    }
+
+    @media screen and ($min1920) {
+      left: 10px;
+    }
+  }
+}

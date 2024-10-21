@@ -1,0 +1,108 @@
+.header-landing {
+  z-index: 1025;
+  background-color: $white;
+
+  @media screen and ($max1024) {
+    position: fixed;
+  }
+
+  .content-wrap {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .landing-template-btn {
+    &.btn-offset-10 {
+      @media screen and ($mobile_sm) {
+        padding: 0;
+      }
+
+      @media screen and ($mobile_lg) {
+        padding: 0;
+      }
+    }
+
+    &.btn-in-menu {
+      .btn-txt {
+        background-color: $green-1;
+        @media screen and ($mobile_sm) {
+          @include vw(padding, 21px 20px, 500);
+          border-radius: 40px;
+        }
+
+        @media screen and ($mobile_lg) {
+          padding: 21px 20px;
+          border-radius: 40px;
+        }
+      }
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-right, -107px);
+    }
+    @media screen and ($min1920) {
+      margin-right: -107px;
+    }
+  }
+
+  .header-links-wrap {
+    padding-top: 0;
+  }
+
+  .mobile-menu-btn {
+    border: 1px solid $blue-1;
+    // display: none; // because we have the sticky btn on mobile
+  }
+
+  @media screen and ($mobile_all) {
+    .header-links-wrap {
+      margin-top: 25px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      .btn-default {
+        width: 100%;
+        max-width: 491px;
+        padding: 21px 51px;
+      }
+    }
+  }
+
+  .line-el {
+    background-color: $blue-1;
+  }
+
+  .logo-anim-white {
+    opacity: 0 !important;
+  }
+
+  .logo-anim-blue {
+    opacity: 1 !important;
+  }
+
+  .header-logo-white {
+    opacity: 0 !important;
+  }
+
+  .header-logo-blue {
+    opacity: 1 !important;
+  }
+
+  .non-linked-logo-header {
+    pointer-events: none;
+  }
+
+  .cta-text {
+    position: relative;
+    align-self: center;
+    a,
+    p {
+      font-family: $redhat;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 40px;
+      color: $blue-1;
+    }
+  }
+}

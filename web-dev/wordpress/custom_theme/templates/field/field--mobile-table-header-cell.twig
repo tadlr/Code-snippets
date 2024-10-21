@@ -1,0 +1,31 @@
+{# {% block %} #}
+
+{% set radio = row.checkmark %}
+{% set fileName = fn('basename', cell.image) %}
+{% if 'CustomTheme' in fileName or 'customTheme' in fileName %}
+  {% set class = "logo-sk "~ class %}
+{% endif %}
+
+<div class='{{class}}' data-mh='{{id}}'>
+  {% if cell.heading %}
+    {{ cell.heading }}
+  {% endif %}
+  {% if cell.image %}
+    {% set width = (rowId == 1)? 210: 120 %}
+    {% set height = (rowId == 1)? 100: 35 %}
+
+    {% if rowId == 1 %}
+      {{ Image(cell.image, 'img-300-300', {'width': 'auto', height: 'auto', 'class': 'logo-'~rowId }) }}
+    {% else %}
+      {{ Image(cell.image, 'img-300-300', {'width': 'auto', height: 'auto', 'class': 'logo-'~rowId }) }}
+    {% endif %}
+  {% endif %}
+
+  {% if radio == 'Yes' or radio == 'No' %}
+    {{ checkmark(radio) }}
+  {% endif %}
+
+  {% if idx == 0 and not (cell.heading or cell.image) %}
+    Company
+  {% endif %}
+</div>

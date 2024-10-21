@@ -1,0 +1,55 @@
+.wb-tabs{
+  @media screen and (min-width: $screen-md-min) {
+    [role="tablist"].generated {
+      display: flex;
+      width: 100%;
+  
+      > li{
+        background: none;
+        border: none;
+        display: block;
+        left: 0;
+        margin-right: 12px;
+        padding: 0;
+  
+        a{
+          align-items: center;
+          background: $light;
+          border: 1px solid $brand-primary;
+          border-bottom: none;
+          border-radius: 10px 10px 0 0;
+          color: $brand-primary;
+          display: flex;
+          height: 100%;
+          line-height: normal;
+          padding: 10px $padding-large;
+        }
+  
+        &:last-of-type{
+          margin-right: 0;
+        }
+  
+        &.active{
+          a{
+            background: $brand-primary;
+            color: $white;
+          }
+        }
+      }
+    }
+  
+    .tabpanels{
+      > details{
+        @include padded;
+        background: $light;
+        border-bottom: 4px solid;
+        border-color: $brand-primary;
+        border-radius: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    border: none;
+  }
+}

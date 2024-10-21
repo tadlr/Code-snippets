@@ -1,0 +1,26 @@
+{% if radio or text or image or use_stars %}
+  <td class='{{'tdr-'~index}}'>
+    {% if text %}
+      {# {{ (bold)?"</strong>":"" }} #}
+      {{ text }}
+      {# {{ (bold)?"</strong>":"" }} #}
+    {% endif %}
+    {% if radio == 'Yes' or radio == 'No' %}
+      {{ checkmark(radio) }}
+    {% endif %}
+    {% if image %}
+      {{ Image(image, 'full', { 'class':'table-row-img' }) }}
+    {% endif %}
+    {% if use_stars %}
+      {% if lang == 'es' %}
+        {% set starLabel = "estrellas" %}
+        {% elseif lang == 'fr' %}
+        {% set starLabel = "stars" %}
+      {% else %}
+        {% set starLabel = "stars" %}
+      {% endif %}
+
+      {{ stars(column.star_rating, starLabel ) }}
+    {% endif %}
+  </td>
+{% endif %}

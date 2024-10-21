@@ -1,0 +1,8 @@
+// load fonts
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;600&family=Roboto:wght@900&display=swap');
+// Child theme variables and overrides
+@import "variables";
+@import "../vendors/bootstrap/assets/stylesheets/bootstrap";
+// sub-theme additional styles
+@import "mixins/*";
+@import "components/**/*";

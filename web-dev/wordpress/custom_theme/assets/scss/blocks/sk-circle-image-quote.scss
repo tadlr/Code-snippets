@@ -1,0 +1,98 @@
+@import 'block-base';
+.block--bsk7 {
+  // @import 'components/media-block';
+
+  .txt-content {
+    margin-top: 0 !important;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .row {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .row {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .media-left {
+    @media screen and (min-width: 1024px) {
+      flex-direction: row-reverse;
+    }
+    @media screen and (max-width: 1024px) {
+      flex-direction: column-reverse !important;
+    }
+    @media screen and (min-width: 1025px) {
+      .txt-content {
+        padding-left: 45px;
+      }
+    }
+  }
+
+  .media-block {
+    .img-wrap {
+      .img-content {
+        max-height: 450px;
+        max-width: 450px;
+        picture {
+          @media screen and ($mobile) {
+            margin-left: -0.5px;
+          }
+
+          display: block;
+        }
+
+        img {
+          max-height: 450px;
+          max-width: 450px;
+
+          @media screen and (max-width: 450px) {
+            max-height: 350px;
+            max-width: 350px;
+          }
+
+          @media screen and (max-width: 375px) {
+            max-height: 275px;
+            max-width: 275px;
+          }
+        }
+      }
+      text-align: center;
+      @media screen and ($max1024) {
+        margin-bottom: 1.3rem !important;
+      }
+    }
+  }
+
+  .media-right {
+    @media screen and (min-width: 1025px) {
+      .txt-content {
+        padding-right: 15px;
+      }
+    }
+  }
+
+  .media-block {
+    align-items: center;
+  }
+
+  .quote-content {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    font-family: $libre;
+    cite {
+      font-family: $libre;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
+      display: block;
+      padding-left: 20px;
+    }
+  }
+}

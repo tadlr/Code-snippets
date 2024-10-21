@@ -1,0 +1,31 @@
+{% if quote %}
+  {% set testimonial = quote.testimonial %}
+  {% set text = testimonial.quote_text %}
+  {% set company = testimonial.person_company %}
+  {% set name = testimonial.person_name %}
+  {% set image = testimonial.person_image %}
+  {% set rating = testimonial.start_rating %}
+
+  {% if image %}
+    <div class='person-img-wrap'>
+      {{ Image(image, 'img-130-130', {'width':130, 'height':'auto'}) }}
+    </div>
+  {% endif %}
+  <div class='txt-content'>
+    <div class='txt-content-inner'>
+      <div class='quote'>
+        <p class='quote-by-txt'>{{ text | striptags }}</p>
+        {% if name or company %}
+          <p class='quote-by-info'>
+            {% if name %}
+              <strong>{{ name }}</strong><br>
+            {% endif %}
+            {% if company %}
+              <span class='company-name'>{{ company }}</span>
+            {% endif %}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

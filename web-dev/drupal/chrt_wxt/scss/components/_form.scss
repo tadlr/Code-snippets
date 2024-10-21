@@ -1,0 +1,104 @@
+form {
+  fieldset{
+    @include clearfix;
+
+    legend{
+      @extend h2;
+      border: none;
+      margin-top: 0;
+    }
+
+    .fieldset-wrapper{
+      float: left;
+      width: 100%;
+    }
+  }
+
+  .form-control,
+  output {
+    color: $text-color !important;
+
+    &::placeholder{
+      color: $input-color-placeholder!important;
+    }
+
+    &:focus-within{
+      color: $brand-primary;
+    }
+  }
+
+  textarea{
+    border-color: $input-border;
+  }
+
+  .form-item {
+    .control-label {
+      font-size: 16px;
+      font-weight: 400;
+      font-style: normal;
+      margin-bottom: 0;
+      margin-right: 18px;
+    }
+
+    &.form-type-textfield {
+      .control-label {
+        width: fit-content;
+        margin-right: 18px;
+        align-self: center;
+      }
+
+      .form-text {
+        flex: 3;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  .form-actions{
+    .form-submit{
+      padding: 10px 45px 10px 10px !important;
+    }
+  }
+
+  .radio {
+    input[type="radio"] {
+      appearance: none;
+      background-color: transparent;
+      border: 2px solid rgba(34, 38, 41, 0.2);
+      border-radius: 50%;
+      color: currentColor;
+      display: inline-flex;
+      font: inherit;
+      height: 25px;
+      margin: 0px 10px 0 -20px;
+      place-content: center;
+      position: relative;
+      width: 25px;
+    }
+  
+    input[type="radio"]::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em $brand-primary;
+      background-color: CanvasText;
+      align-self: center;
+      justify-self: center;
+    }
+  
+    input[type="radio"]:checked::before {
+      transform: scale(1);
+    }
+  
+    input[type="radio"]:checked {
+      border: 2px solid $brand-primary;
+    }
+  }
+}

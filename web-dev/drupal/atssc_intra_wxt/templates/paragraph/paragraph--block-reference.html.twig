@@ -1,0 +1,7 @@
+{% extends "paragraph--node.html.twig" %}
+
+{% set attributes = attributes.addClass(content.field_custom_classes.0|render|trim) %}
+
+{% block content %}
+  {{ content.field_block.0 }}
+{% endblock %}

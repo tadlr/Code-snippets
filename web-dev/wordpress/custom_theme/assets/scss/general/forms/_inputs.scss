@@ -1,0 +1,791 @@
+// LANDING PAGE FORM //
+
+.ui-datepicker-calendar {
+  font-size: 16px;
+  background-color: $white;
+
+  thead {
+    th {
+      color: $blue-1;
+    }
+  }
+
+  td {
+    color: $blue-1;
+  }
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+  font-size: 16px;
+  color: $blue-1;
+}
+
+// CONTACTS PAGE FORM //
+.contacts-tab-form {
+  // Confirmation wrapper
+
+  input,
+  select {
+    background-color: transparent;
+    border: 1px solid $blue-23;
+    font-weight: 400;
+    color: $white;
+    transition:
+      border 0.5s $easeOutSine,
+      color 0.5s $easeOutSine;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    color: $blue-1;
+    padding: 13px;
+    width: 100%;
+
+    @media screen and ($mobile_sm) {
+      // @include vw(font-size, 21px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 21px;
+    }
+
+    @media screen and ($min1024) {
+      // @include vw(font-size, 21px);
+      @include vw(padding, 10px);
+      // //@include vw(letter-spacing, 0.4px);
+    }
+
+    @media screen and ($min1920) {
+      font-size: 21px;
+      padding: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    &:focus,
+    &:active {
+      border: 1px solid $green-1;
+    }
+
+    // form submit button
+    &[type='submit'] {
+      background-color: $green-1;
+      color: $blue-1;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 40px;
+      z-index: 0;
+      transition:
+        transform 0.6s $easeOutSine,
+        background-color 0.6s $easeOutSine;
+      backface-visibility: hidden;
+
+      @media screen and ($mobile_sm) {
+        @include vw(padding, 21px 45px, 500);
+        // @include vw(font-size, 18px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        padding: 21px 45px;
+        font-size: 18px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(padding, 21px 45px);
+        // @include vw(font-size, 18px);
+      }
+
+      @media screen and ($min1920) {
+        padding: 21px 45px;
+        font-size: 18px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 130%;
+        height: calc(100% + 10px);
+        z-index: 0;
+        transform-origin: 0 0;
+        transform: translateX(100%) skewX(-45deg);
+        transition:
+          transform 0.5s $easeOutSine,
+          background-color 0.5s $easeOutSine;
+        backface-visibility: hidden;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $white;
+        transform: scale(1.05);
+
+        &::before {
+          transform: translateX(0) skewX(-45deg) scale(1.05);
+        }
+      }
+    }
+  }
+
+  select {
+    padding: 13px 30px 13px 13px;
+
+    @media screen and ($min1024) {
+      @include vw(padding, 10px 30px 10px 10px);
+    }
+
+    @media screen and ($min1920) {
+      padding: 10px 30px 10px 10px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    border: 1px solid $blue-23;
+    color: $blue-1;
+
+    &:focus,
+    &:active {
+      border: 1px solid $green-1;
+    }
+
+    @media screen and ($mobile_sm) {
+      // @include vw(font-size, 21px, 500);
+      height: 120px;
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 21px;
+      height: 120px;
+    }
+
+    @media screen and ($min1024) {
+      // @include vw(font-size, 21px);
+      @include vw(padding, 10px);
+      //@include vw(letter-spacing, 0.4px);
+      height: 100px;
+    }
+
+    @media screen and ($min1920) {
+      font-size: 21px;
+      padding: 10px;
+      letter-spacing: 0.4px;
+    }
+  }
+}
+
+::-webkit-file-upload-button {
+  display: none;
+}
+
+///// NEWSLETTER IN CONTACT BANNER FORM /////
+.newsletter-form {
+  // Gravity forms ajax spinner
+
+  // Form itself
+  form {
+    display: flex;
+
+    margin-top: 39px;
+    width: 100%;
+
+    // @media screen and ($min1024) {
+    //     @include vw(margin-top, 39px);
+    //     @include vw(margin-left, -27px);
+    //     width: calc(100% + 4.375vw);
+    // }
+
+    // @media screen and ($min1920) {
+    //     margin-top: 39px;
+    //     margin-left: -($contentPadding;
+    //     width: calc(100% + 84px);
+    // }
+  }
+
+  // All inputs
+  input {
+    border: 1px solid $gray-3;
+    position: relative;
+    transition: border 0.5s $easeOutSine;
+    color: $white;
+    line-height: 30px;
+    background-color: transparent;
+    width: 100%;
+    font-size: 18px;
+    padding: 18px 15px;
+
+    &::placeholder {
+      color: $gray-3;
+      font-style: normal;
+      line-height: 30px;
+      font-size: 18px;
+
+      @media screen and ($min1024) {
+        @include vw(left, 15px);
+        // // @include vw(font-size, 18px);
+        letter-spacing: 0.6px;
+      }
+
+      // @media screen and ($min1920) {
+      left: 15px;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0.6px;
+      // }
+    }
+
+    @media screen and ($min1024) {
+      // // @include vw(font-size, 18px);
+      @include vw(padding, 18px 15px);
+    }
+
+    @media screen and ($min1920) {
+      // font-size: 18px;
+      padding: 18px 15px;
+    }
+
+    // Submit btn
+    &[type='submit'] {
+      background-color: $green-1;
+      color: $blue-1;
+      font-weight: 700;
+      border-radius: 40px;
+      margin-top: 20px;
+
+      @media screen and ($mobile_sm) {
+        @include vw(padding, 24px 54px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        padding: 24px 54px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(padding, 24px 54px);
+      }
+
+      @media screen and ($min1920) {
+        padding: 24px 54px;
+      }
+
+      transition:
+        transform 0.5s $easeOutSine,
+        background-color 0.5s $easeOutSine;
+
+      &:hover,
+      &:focus {
+        background-color: $white;
+        transform: scale(1.05);
+        cursor: pointer;
+        transition:
+          transform 0.5s $easeOutSine,
+          background-color 0.5s $easeOutSine;
+      }
+    }
+  }
+}
+
+.hsForm_97f7b5a5-d133-4b59-8d6e-8bac13ebce66,
+.hsForm_b326454f-bfac-493a-a150-e350a093ec64,
+.hsForm_901cd0db-667a-4cae-a3a3-d3f2fc3a166f,
+.hsForm_c40aa767-76d5-44b2-a35d-9df6b69bd63b,
+.hs-form {
+  input,
+  textarea {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.callback-popup-form .mobile-contact-form {
+  .hs-form {
+    input,
+    textarea {
+      &::placeholder {
+        opacity: 0 !important;
+      }
+    }
+  }
+}
+
+//////// HOME PAGE FORM //////////
+.home-page-form {
+  input,
+  textarea {
+    &::placeholder {
+      opacity: 0 !important;
+    }
+  }
+
+  form {
+    display: flex;
+  }
+
+  // Form input wrapper
+
+  .message-input {
+    width: 104%;
+    display: block;
+  }
+
+  textarea {
+    &::placeholder {
+      line-height: 30px;
+      font-weight: 400;
+      color: $white;
+      backface-visibility: hidden;
+      transform-origin: 0% 50%;
+      transition:
+        top 0.25s $easeOutSine,
+        color 0.25s $easeOutSine,
+        transform 0.25s $easeOutSine,
+        opacity 0.25s $easeOutSine;
+      z-index: 0;
+      left: 0;
+      letter-spacing: 0.4px;
+      font-size: 16px;
+    }
+    padding: 10px 15px 0 !important;
+    line-height: 30px !important;
+  }
+  // Input
+  input {
+    height: 50px;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: $white;
+    border: none;
+    width: 100%;
+    background: transparent;
+    position: relative;
+    transition: color 0.5s $easeOutSine;
+    z-index: 1;
+    padding: 17px 0;
+    letter-spacing: 0.4px;
+
+    @media screen and ($mobile_sm) {
+      // // @include vw(font-size, 21px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 21px;
+    }
+
+    @media screen and ($min1024) {
+      // // @include vw(font-size, 21px);
+      @include vw(padding, 17px 0);
+      //@include vw(letter-spacing, 0.4px);
+    }
+
+    @media screen and ($min1920) {
+      // font-size: 21px;
+      padding: 17px 0;
+      letter-spacing: 0.4px;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      color: $gray-34;
+    }
+
+    &::placeholder {
+      line-height: 30px;
+      font-weight: 400;
+      color: $white;
+      backface-visibility: hidden;
+      transform-origin: 0% 50%;
+      transition:
+        top 0.25s $easeOutSine,
+        color 0.25s $easeOutSine,
+        transform 0.25s $easeOutSine,
+        opacity 0.25s $easeOutSine;
+      z-index: 0;
+      left: 0;
+      letter-spacing: 0.4px;
+      font-size: 16px;
+
+      @media screen and ($min1024) {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        line-height: 30px;
+
+        top: 6px;
+        padding: 0 15px;
+        background: 0 0;
+        backface-visibility: hidden;
+        color: #fff;
+        font-size: 16px !important;
+        font-weight: 400;
+        left: 0;
+        letter-spacing: 0.4px;
+        line-height: 30px;
+        transform-origin: 0 50%;
+        transition:
+          top 0.25s cubic-bezier(0.61, 1, 0.88, 1),
+          color 0.25s cubic-bezier(0.61, 1, 0.88, 1),
+          transform 0.25s cubic-bezier(0.61, 1, 0.88, 1),
+          opacity 0.25s cubic-bezier(0.61, 1, 0.88, 1);
+        z-index: 0;
+      }
+    }
+
+    // Message
+    .message-input {
+      @media screen and ($min1024) {
+        @include vw(margin-top, 84px);
+
+        .form-label {
+          top: 3px;
+        }
+      }
+
+      @media screen and ($min1920) {
+        margin-top: 84px;
+      }
+
+      &::placeholder {
+        position: absolute;
+        top: 20px;
+      }
+    }
+
+    // Submit button
+    &[type='submit'] {
+      background-color: $green-1;
+      color: $blue-1;
+      border-radius: 50%;
+
+      @media screen and ($mobile_sm) {
+        // // @include vw(font-size, 24px, 500);
+        @include vw(width, 228px, 500);
+        @include vw(height, 228px, 500);
+      }
+
+      font-size: 24px;
+      @media screen and ($mobile_lg) {
+        width: 228px;
+        height: 228px;
+      }
+
+      @media screen and ($min1024) {
+        // // @include vw(font-size, 24px);
+        @include vw(width, 228px);
+        @include vw(height, 228px);
+      }
+
+      @media screen and ($min1920) {
+        // font-size: 24px;
+        width: 228px;
+        height: 228px;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+    }
+  }
+  @media screen and ($min1024) {
+    label {
+      transition: opacity 0.1 $easeOutSine !important;
+      &.filled {
+        // opacity: 0.75 !important;
+        opacity: 0 !important;
+        // transform: translateY(-25px);
+        // font-size: 14px !important;
+      }
+    }
+  }
+}
+
+.equipment-form {
+  .confirmation-body {
+    h2,
+    .h2,
+    h3,
+    .h3 {
+      color: $blue-1 !important;
+    }
+    .survey-results {
+      p {
+        color: $blue-1 !important;
+      }
+    }
+    .confirmation-footer {
+      @media screen and ($min1024) {
+        @include vw(margin-top, 50px);
+      }
+      margin-top: 0px;
+      .btn-txt {
+        color: $blue-1 !important;
+      }
+    }
+  }
+
+  // Question heading
+  legend {
+    color: $blue-1;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 50px;
+
+    @media screen and ($mobile_sm) {
+      // @include vw(font-size, 48px, 500px);
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 48px;
+    }
+
+    @media screen and ($min1024) {
+      // @include vw(font-size, 48px);
+      @include vw(margin-bottom, 120px);
+    }
+
+    @media screen and ($min1920) {
+      font-size: 48px;
+      margin-bottom: 120px;
+    }
+  }
+}
+
+//////////// Landing page first footer form //////////////
+.first-footer {
+  form {
+    display: flex;
+    margin-top: 26px;
+  }
+
+  // form input
+  input {
+    background-color: transparent;
+    border: 1px solid $blue-23;
+    font-weight: 400;
+    color: $white;
+    transition:
+      border 0.5s $easeOutSine,
+      color 0.5s $easeOutSine;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    color: $white;
+    padding: 13px;
+    width: 100%;
+
+    @media screen and (max-width: 380px) {
+      padding: 12px;
+    }
+
+    @media screen and ($mobile_sm) {
+      // @include vw(font-size, 21px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 21px;
+    }
+
+    @media screen and ($min1024) {
+      // @include vw(font-size, 21px);
+      @include vw(padding, 10px);
+      //@include vw(letter-spacing, 0.4px);
+    }
+
+    @media screen and ($min1920) {
+      font-size: 21px;
+      padding: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    &:focus,
+    &:active {
+      border: 1px solid $green-1;
+    }
+
+    // form submit button
+    &[type='submit'] {
+      background-color: $green-1;
+      color: $blue-1;
+      font-weight: 700;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 40px;
+      z-index: 0;
+      transition:
+        transform 0.6s $easeOutSine,
+        background-color 0.6s $easeOutSine;
+      backface-visibility: hidden;
+
+      @media screen and ($mobile_sm) {
+        @include vw(padding, 21px 45px, 500);
+        // @include vw(font-size, 18px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        padding: 21px 45px;
+        font-size: 18px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(padding, 18px 45px);
+        // @include vw(font-size, 18px);
+        margin-top: 26px;
+      }
+
+      @media screen and ($min1920) {
+        padding: 18px 45px;
+        font-size: 18px;
+        margin-top: 26px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 130%;
+        height: calc(100% + 10px);
+        z-index: 0;
+        transform-origin: 0 0;
+        transform: translateX(100%) skewX(-45deg);
+        transition:
+          transform 0.5s $easeOutSine,
+          background-color 0.5s $easeOutSine;
+        backface-visibility: hidden;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $white;
+        transform: scale(1.05);
+
+        &::before {
+          transform: translateX(0) skewX(-45deg) scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+// Blog newsletter subscribe form
+.blog-subscribe-form {
+  form {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    @media screen and ($max1024) {
+      flex-direction: column;
+      align-items: left;
+    }
+
+    @media screen and ($mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type='email'] {
+      color: $white;
+      line-height: 30px;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50px;
+      width: 100%;
+      font-size: 18px;
+      padding: 18px 15px;
+      width: 420px;
+
+      @media screen and ($mobile) {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 15px;
+      }
+
+      @media screen and ($min1024) {
+        // @include vw(font-size, 18px);
+        @include vw(padding, 18px 15px);
+        margin-right: 15px;
+      }
+
+      @media screen and ($min1920) {
+        font-size: 18px;
+        padding: 18px 15px;
+      }
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        font-style: normal;
+        opacity: 1;
+
+        @media screen and ($mobile_sm) {
+          // @include vw(font-size, 18px, 500);
+        }
+
+        @media screen and ($mobile_lg) {
+          font-size: 18px;
+        }
+
+        @media screen and ($min1024) {
+          // @include vw(font-size, 18px);
+        }
+
+        @media screen and ($min1920) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    input[type='submit'] {
+      background-color: $green-1;
+      color: $blue-1;
+      border-radius: 50px;
+      font-weight: 700;
+      border: none;
+      padding: 20px 20px;
+      transition:
+        background-color 0.2s $easeOutSine,
+        color 0.2s $easeOutSine;
+
+      @media screen and ($mobile_sm) {
+        // @include vw(font-size, 18px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        font-size: 18px;
+      }
+
+      @media screen and ($min1024) {
+        // @include vw(font-size, 18px);
+        @include vw(padding, 20px 25px);
+      }
+
+      @media screen and ($max1024) {
+        display: block;
+        margin-top: 15px;
+      }
+
+      @media screen and ($min1920) {
+        font-size: 18px;
+        padding: 20px 25px;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        background-color: $white;
+        color: $blue-1;
+      }
+    }
+  }
+}
+
+// Full width Gravity form field
+.full-width-form-row {
+  width: 100% !important;
+  display: block;
+}

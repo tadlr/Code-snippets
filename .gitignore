@@ -243,3 +243,21 @@ wp-config.php
 /drupal.phar
 /drupal
 
+.vscode/
+.idea/
+uploads/
+webp-express/
+
+sites/files/
+
+android/
+ios/
+
+.ddev/traefik/
+
+*.zip
+
+vendor/
+vendors/
+
+kallyas/

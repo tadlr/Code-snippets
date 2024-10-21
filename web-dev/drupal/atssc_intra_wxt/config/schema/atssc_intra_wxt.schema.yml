@@ -1,0 +1,12 @@
+# Schema for the theme setting configuration file of the THEMETITLE theme.
+
+atssc_intra_wxt.settings:
+  type: theme_settings
+  label: "WD/WxT Theme settings"
+  mapping:
+    cdn_provider:
+      type: string
+      label: "CDN Provider"
+    breadcrumb_home:
+      type: integer
+      label: "Breadcrumb Home"

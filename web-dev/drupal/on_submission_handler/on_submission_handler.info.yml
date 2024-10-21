@@ -1,0 +1,7 @@
+name: OntarioNorthland Webform Handler
+description: handles gated form submits, redirects users to gated content.
+package: OntarioNorthland
+type: module
+version: 1.0
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10

@@ -1,0 +1,77 @@
+//
+//  SavedView.swift
+//  DoorsOpenOttawa
+//
+//  Created by Tay on 2023-12-12.
+//
+
+import SwiftUI
+
+struct SavedView: View {
+	@EnvironmentObject var viewModel: BuildingsDataStore
+	@EnvironmentObject var lang: LanguageManager
+	@State var selectedBuilding: Building?
+	@State var isSheetPresented = false
+	@State var isSearchVisible = false
+	@State var isSearching = false
+
+	var body: some View {
+		VStack(alignment: .leading) {
+			SearchView(
+				isSearching: $isSearching,
+				isSearchVisible: $isSearchVisible
+			)
+			BuildingsListView(
+				selectedBuilding: $selectedBuilding,
+				isSearching: $isSearching,
+				onlyFavs: true
+			)
+		}
+		.sheet(isPresented: $isSheetPresented) {
+			FilterOptionsSheet(
+				selectedBuilding: $selectedBuilding,
+				isSheetPresented: $isSheetPresented,
+				isSearchVisible: $isSearchVisible,
+				isSearching: $isSearching
+			)
+		}
+		.onReceive(NotificationCenter.default.publisher(for: .languageChanged)) { _ in
+			viewModel.loadBuildingsData()
+		}
+		.navigationTitle(t("Saved"))
+		.toolbar {
+			Group {
+				Button {
+					isSearchVisible.toggle()
+					isSearching = false
+				} label: {
+					Image(systemName: isSearchVisible ? "xmark.circle" : "magnifyingglass")
+						.frame(maxWidth: 18, alignment: .center)
+				}
+				.accessibilityLabel(isSearchVisible ? t("Close") : t("Search"))
+
+				Button {
+					isSheetPresented.toggle()
+				} label: {
+					Image(systemName: "line.3.horizontal.decrease.circle")
+						.frame(width: 18, alignment: .center)
+				}
+				.accessibilityLabel(t("Filter"))
+			}
+		}
+		.toolbarColorScheme(.dark, for: .navigationBar)
+		.toolbarBackground(
+			Color("Topbar"),
+			for: .navigationBar
+		)
+		.toolbarBackground(.visible, for: .navigationBar)
+	}
+}
+
+#Preview {
+	NavigationView {
+		SavedView()
+	}
+	.environmentObject(BuildingsDataStore())
+	.environmentObject(LanguageManager())
+}

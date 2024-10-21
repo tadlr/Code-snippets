@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ *
+ * @ingroup templates
+ */
+#}
+{% if breadcrumb %}
+  {% block breadcrumb %}
+    <nav id="wb-bc" property="breadcrumb" aria-labelledby="breadcrumbTitle">
+      <h2{{ title_attributes.setAttribute('id', 'breadcrumbTitle') }}>{{ 'You are here'|t }}</h2>
+      <ol class="breadcrumb">
+        {% block items %}
+          {% for item in breadcrumb %}
+            <li {{ item.attributes }}>
+              {% if item.url %}
+                <a href="{{ item.url }}">{{ item.text }}</a>
+              {% else %}
+                {{ item.text }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% endblock %}
+      </ol>
+    </nav>
+  {% endblock %}
+{% endif %}

@@ -1,0 +1,121 @@
+// Global
+fieldset {
+  border: none;
+}
+
+// Confirmation pages
+.confirmation-body {
+  .survey-results {
+    display: flex;
+    @media screen and ($mobile) {
+      flex-direction: column;
+    }
+    font-size: 20px;
+    justify-content: space-between;
+    .survey-res-heading {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .survey-txt {
+      line-height: 1.5;
+    }
+    .res-column {
+      width: 100%;
+      display: grid;
+      grid-template-rows: auto 50px 1fr;
+      @media screen and ($max1024) {
+        grid-template-rows: auto 100px 1fr;
+      }
+
+      @media screen and ($min1024) {
+        width: calc(32.33% - 2.084vw);
+      }
+
+      @media screen and ($min1920) {
+        width: calc(32.33% - 40px);
+      }
+
+      @media screen and ($mobile) {
+        margin-bottom: 30px;
+      }
+      &.equipment-res {
+        width: 100%;
+        .res-images {
+          img {
+            max-width: 200px;
+            @media screen and ($mobile_all) {
+              display: block;
+              margin-right: 0;
+            }
+            @media screen and ($min1024) {
+              display: inline-block;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+    .res-images {
+      @media screen and ($min1024) {
+        margin-top: 40px;
+      }
+      margin-top: 20px;
+    }
+    .res-images.single-images {
+      img {
+        display: block;
+        @media screen and ($min1024) {
+          margin-bottom: 30px;
+        }
+        margin-bottom: 20px;
+      }
+    }
+    .res-img-text {
+      display: flex;
+      align-items: center;
+      @media screen and ($min1024) {
+        margin-bottom: 30px;
+      }
+      margin-bottom: 20px;
+      img {
+        margin-right: 20px;
+      }
+      p {
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .query-button-next {
+    .scroll-btn-img {
+      transform: rotate(90deg) !important;
+      top: 28%;
+      left: 36%;
+    }
+  }
+
+  .query-button-next {
+    .btn-txt {
+      right: -88%;
+    }
+  }
+}
+
+.confirmation-footer {
+  @include vw(margin-top, 180px);
+  display: flex;
+  @media screen and ($mobile) {
+    flex-direction: column;
+  }
+  align-items: center;
+  .cta-back {
+    width: 100%;
+    @media screen and ($min1024) {
+      width: 35%;
+    }
+    @media screen and ($mobile) {
+      margin-bottom: 20px;
+    }
+  }
+}

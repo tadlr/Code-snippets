@@ -1,0 +1,21 @@
+{# Block--blog-quote #}
+{% extends "block-sk-block-base.twig" %}
+{% block block_content %}
+{% set bgMode = background ? 'bg-blue': 'bg-white' %}
+{% set textMode = background ? 'text-white': 'text-blue' %}
+<div class='case-quote {{bgMode}}'>
+  <div class='inner-quote {{textMode}}'>
+    <div class='quote-content'>
+      <div class='quote-text'>
+        {{ field.quote }}
+      </div>
+      {% if field.author %}
+        <div class='author'>
+          <span class='person'>{{ field.author }}</span>
+          <span class='company'>{{ field.company }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,191 @@
+.form-contact-section-home {
+  background-color: $blue-6;
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  .gfield_label {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  .gform_heading {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  .content-wrap {
+    @media screen and ($min1024) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  .txt-size-60 {
+    @media screen and ($mobile_sm) {
+      @include vw(margin-bottom, 26px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      margin-bottom: 26px;
+    }
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 33px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 33px;
+    }
+  }
+
+  .txt-size-30 {
+    @media screen and ($mobile_sm) {
+      @include vw(margin-bottom, 7px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      margin-bottom: 7px;
+    }
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 23px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 23px;
+    }
+  }
+
+  .txt-post-rtf {
+    @media screen and ($mobile_all) {
+      line-height: 1.6;
+    }
+  }
+
+  .txt-content {
+    flex: 0 0 auto;
+
+    @media screen and ($mobile_sm) {
+      @include vw(margin-bottom, 35px, 500);
+    }
+    @media screen and ($mobile_lg) {
+      margin-bottom: 35px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(padding-left, 0);
+      @include vw(width, 516px);
+      @include vw(padding-right, 90px);
+    }
+
+    @media screen and ($min1920) {
+      padding-left: 0;
+      width: 516px;
+      padding-right: 90px;
+    }
+  }
+
+  .form-content {
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, -14px);
+      width: calc(100% - 26.875vw);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: -14px;
+      width: calc(100% - 516px);
+    }
+  }
+
+  .button-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 25px;
+
+    @media screen and ($min1024) {
+      padding-top: 28px;
+      justify-content: flex-end;
+    }
+  }
+
+  .inner-circles-wrap {
+    pointer-events: none;
+    position: absolute;
+    border-radius: 50%;
+
+    @media screen and ($mobile_all) {
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+
+    @media screen and ($mobile_sm) {
+      @include vw(width, 400px, 500);
+      @include vw(height, 400px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      width: 400px;
+      height: 400px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(bottom, -510px);
+      @include vw(left, -560px);
+      @include vw(width, 948px);
+      @include vw(height, 948px);
+    }
+
+    @media screen and ($min1920) {
+      bottom: -510px;
+      left: -560px;
+      width: 948px;
+      height: 948px;
+    }
+  }
+
+  .inner-circle-base {
+    @include abs-cover-el;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .inner-circle-outer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden;
+    border-radius: 50%;
+    z-index: 2;
+    width: 65.3%;
+    height: 65.3%;
+  }
+
+  .inner-circle-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden;
+    border-radius: 50%;
+    z-index: 3;
+    width: 25%;
+    height: 25%;
+  }
+
+  .circle-full {
+    .inner-circle-base {
+      background-color: $green-6;
+    }
+    .inner-circle-outer {
+      background-color: $blue-6;
+    }
+
+    .inner-circle-core {
+      background-color: $green-6;
+    }
+  }
+}

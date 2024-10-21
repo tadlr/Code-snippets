@@ -1,0 +1,7 @@
+services:
+  osfi_theme_negotiator.theme.negotiator:
+    class: Drupal\osfi_theme_negotiator\Theme\ThemeNegotiator
+    arguments:
+      - '@router.admin_context'
+    tags:
+      - { name: theme_negotiator, priority: 1000 }

@@ -1,0 +1,48 @@
+.nav-tabs{
+  &.page-tabs{
+    border-bottom: none;
+    border-top: 1px solid $brand-primary;
+    display: flex;
+
+    li{
+      flex-grow: 1;
+      margin: 0;
+
+      > a{
+        background: $light;
+        border-radius: 0 0 $border-radius-base $border-radius-base;
+        color: $text-color;
+        height: 100%;
+        text-align: center;
+        text-decoration: none!important;
+
+        &:visited{
+          color: $text-color;
+        }
+        
+        &:hover,
+        &:focus,
+        .is-active{
+          background: $brand-primary;
+          color: $nav-tabs-active-link-hover-color;
+        }
+      }
+
+      &:last-child{
+        a{
+          margin-right: 0;
+        }
+      }
+
+      &.active{
+        a{
+          background: $brand-primary;
+
+          &:visited{
+            color: $nav-tabs-active-link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}

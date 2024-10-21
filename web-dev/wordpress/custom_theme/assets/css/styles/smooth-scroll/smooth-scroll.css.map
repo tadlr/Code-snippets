@@ -1,0 +1,1 @@
+{"version":3,"sources":["smooth-scroll/_header.scss","smooth-scroll/smooth-scroll.css"],"names":[],"mappings":"AACE,0BADF,KAEI,eCCF,CACF","file":"smooth-scroll.css","sourcesContent":["html {\n  @media ($min1024) {\n    overflow: hidden;\n  }\n}\n","@media (min-width: 1025px) {\n  html {\n    overflow: hidden;\n  }\n}"]}

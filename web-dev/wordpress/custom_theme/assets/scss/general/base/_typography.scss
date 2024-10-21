@@ -1,0 +1,55 @@
+.sk-block,
+.sk-content,
+.sk-content-block,
+.sk-page-modal,
+.sk-blog-content .article-body > .article-content,
+.page-block {
+  ul {
+    list-style-type: none;
+    li {
+      font-size: $ft-18;
+      &::before {
+        content: '•';
+        color: $blue-1;
+        display: inline-block;
+        font-size: 17px;
+        font-weight: 700;
+        margin-left: -1em;
+        width: 1em;
+        text-align: center;
+      }
+    }
+  }
+
+  $headings: (
+    'h1-tablet-size': 64px,
+    'h1-tablet-line-height': 75px,
+  );
+
+  @include Typography($headings);
+
+  .text-white,
+  &.text-white {
+    @include WhiteText;
+  }
+  .text-blue,
+  &.text-blue {
+    @include BlueText;
+  }
+
+  p {
+    margin-bottom: $contentPadding;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  h5,
+  .h5 {
+    font-weight: 600;
+  }
+
+  .char {
+    opacity: 1 !important;
+  }
+}

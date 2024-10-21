@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods. Only method names starting with "get", "has", or "is" and
+ *   a few common methods such as "id", "label", and "bundle" are available.
+ *   For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in
+ *   an exception.
+ *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
+ * - name: Name of the media item.
+ * - content: Media content.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set figcaption %}
+    {% if content.field_caption.0|render|trim %}
+    <figcaption>
+      <details>
+        <summary>{{ name }}</summary>
+        <div class="details-wrapper">
+          {{ content.field_caption.0 }}
+        </div>
+      </details>
+    {% else %}
+    <figcaption class="sr-only">
+      <p>{{ name }}</p>
+    {% endif %}
+  </figcaption>
+{% endset %}
+
+<figure{{ attributes.addClass('wb-mltmd') }}>
+  {{ title_suffix.contextual_links }}
+  <video poster="{{ content.field_media_image.0 }}" title="{{ name }}">
+    <source type="{{ filemime }}" src="{{ content.field_media_video_file.0 }}" />
+
+    {% if content.field_video_caption_file.0|render|trim %}
+      <track kind="captions" src="{{ content.field_video_caption_file.0 }}" data-type="{{ captions_type }}" srclang="{{ language }}" />
+    {% endif %}
+  </video>
+  
+  {{ figcaption }}
+</figure>

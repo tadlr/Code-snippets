@@ -1,0 +1,369 @@
+@import "pages";
+
+.contact {
+    &-page {
+        background-color: $blue-1;
+
+        strong {
+            color: $green-1;
+        }
+
+        .contacts-hero {
+            h3,
+            .h3 {
+                @media ($min1024) {
+                    margin-bottom: 30px;
+                }
+
+                @media ($min1440) {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+        .txt-content {
+            width: 100%;
+            max-width: 525px;
+
+            @media ($mobile_all) {
+                padding-right: 40px;
+            }
+
+            @media ($min1024) {
+                @include vw(max-width, 525px);
+            }
+
+            @media ($min1920) {
+                max-width: 525px;
+            }
+        }
+
+        .team-images {
+            right: 0;
+            top: 50px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+
+            @media ($mobile_all) {
+                display: none;
+            }
+
+            @media ($min1024) {
+                @include vw(width, 750px);
+            }
+
+            @media ($min1440) {
+                @include vw(width, 1000px);
+            }
+
+            @media ($min1920) {
+                width: 1000px;
+            }
+
+            .single-team-member {
+                display: inline-block;
+
+                img {
+                    border-radius: 50%;
+                }
+
+                @media ($min1024) {
+                    @include vw(width, 148px);
+                    @include vw(height, 148px);
+                }
+
+                @media ($min1440) {
+                    @include vw(width, 198px);
+                    @include vw(height, 198px);
+                }
+
+                @media ($min1920) {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+
+        .mobile-team-images {
+            right: 0;
+            top: 50px;
+            width: 140px;
+
+            @media ($min1024) {
+                display: none;
+            }
+
+            .single-team-member {
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+
+                img {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        // Contact us
+        .background-svg-wrap {
+            &.svg-contact-hero {
+                left: 0;
+                top: 30px;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: flex-start;
+
+                @media ($min1024) {
+                    @include vw(width, 1260px);
+                    @include vw(height, 1260px);
+                }
+
+                @media ($min1920) {
+                    width: 1260px;
+                    height: 1260px;
+                }
+
+                .background-flower-path-svg {
+                    @media ($min1024) {
+                        @include vw(width, 630px);
+                        @include vw(height, 630px);
+                    }
+
+                    @media ($min1920) {
+                        width: 630px;
+                        height: 630px;
+                    }
+                }
+
+                .st0 {
+                    fill: none;
+                    stroke-miterlimit: 10;
+                }
+
+                .svg-full {
+                    opacity: 0.1;
+
+                    .st0 {
+                        fill: $blue-18;
+                    }
+                }
+
+                .svg-stroke {
+                    opacity: 0.2;
+
+                    .st0 {
+                        stroke: $blue-18;
+                    }
+
+                    .st1 {
+                        fill: $blue-18;
+                    }
+                }
+
+                @media ($mobile_all) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-tabs {
+        z-index: 9;
+        display: flex;
+        flex-direction: column;
+
+        @media ($min1024) {
+            flex-direction: row;
+        }
+
+        // update
+        .container {
+            display: flex;
+
+            @media ($mobile_all) {
+                flex-direction: column;
+            }
+
+            // .form-content-tab {
+            //     @media ($mobile_all) {
+            //         order: 2;
+            //     }
+            // }
+            .testimonial-content-tab {
+                z-index: 2;
+
+                @media ($mobile_all) {
+                    order: 1;
+                }
+
+                @media ($min1024) {
+                    position: absolute;
+                    left: 0;
+                    top: 200px;
+                }
+
+                img {
+                    max-width: 100px;
+                }
+            }
+        }
+
+        //
+        // Tabs nav
+        .tabs-nav {
+            z-index: 3;
+
+            @media ($mobile_all) {
+                margin-bottom: 40px;
+            }
+
+            li {
+                font-weight: 700;
+                background-color: $white;
+                border-bottom: 1px solid $blue-1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                @media ($min1024) {
+                    width: 350px;
+                }
+
+                @media ($min1440) {
+                    width: 425px;
+                }
+
+                &:hover,
+                &:focus {
+                    cursor: pointer;
+                }
+
+                a {
+                    width: 100%;
+                    padding: 20px 0 20px 20px;
+
+                    @media ($min1024) {
+                        padding: 20px 0 20px 30px;
+                        padding-right: 40px;
+                    }
+
+                    background-color: $green-1;
+                    transition: background-color 0.3s ease;
+
+                    &.inactive {
+                        background-color: transparent;
+                        transition: background-color 0.3s ease;
+                    }
+
+                    span {
+                        float: right;
+                        padding-right: 20px;
+                        transition: padding-right 0.3s ease;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        span {
+                            padding-right: 10px;
+                            transition: padding-right 0.3s ease;
+                        }
+                    }
+                }
+            }
+        }
+
+        // User testimonial
+        .user-testimonial {
+            display: flex;
+
+            @media ($min1024) {
+                width: 350px;
+            }
+
+            @media ($min1440) {
+                width: 425px;
+            }
+
+            background-color: $gray-21;
+            padding: 25px;
+            margin-top: 70px;
+
+            .user-img {
+                flex: 0 0 auto;
+                margin-right: 25px;
+
+                @media ($mobile) {
+                    width: 60px;
+                }
+            }
+
+            .testimonial-content {
+                img {
+                    height: 24px;
+                    margin-bottom: 15px;
+                }
+
+                .txt-size-18 {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        // Tabs content
+        .tab-content {
+            @media ($min1024) {
+                @include vw(margin-left, 100px);
+            }
+
+            .tab-content-heading {
+                font-weight: 700;
+            }
+
+            .tab-subheading {
+                font-weight: 700;
+                margin: 25px 0px;
+
+                @media ($min1024) {
+                    @include vw(margin-top, 50px);
+                    @include vw(margin-bottom, 50px);
+                }
+            }
+        }
+
+        .tab-contacts {
+            @media ($min1024) {
+                margin-bottom: 40px;
+            }
+        }
+
+        .single-tab-contact {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: 30px;
+            }
+        }
+
+        // Forms
+        .contacts-tab-form {
+            .form-styles {
+                .form-label {
+                    background-color: $white;
+                    color: $blue-1;
+                }
+
+                .form-input {
+                    color: $blue-1;
+                }
+            }
+        }
+
+        .contacts-tab-form .hbspt-form .submitted-message.hs-main-font-element {
+            color: #002ea6 !important;
+        }
+    }
+}

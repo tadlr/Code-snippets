@@ -1,0 +1,85 @@
+// general utilities
+.padded {
+  @include padded;
+
+  &-sm {
+    @include padded-small;
+  }
+
+  &-lg {
+    @include padded-large;
+  }
+}
+
+.vertical-padding {
+  @include vertical-padding;
+
+  &-sm {
+    @include vertical-padding-small;
+  }
+
+  &-lg {
+    @include vertical-padding-large;
+  }
+}
+
+.no-padding{
+  @include no-padding;
+
+  &-x {
+    @include no-padding-x;
+  }
+
+  &-y {
+    @include no-padding-y;
+  }
+
+  &-top{
+    @include no-padding-top;
+  }
+
+  &-bottom{
+    @include no-padding-bottom;
+  }
+
+  &-left{
+    @include no-padding-left;
+  }
+
+  &-right{
+    @include no-padding-right;
+  }
+}
+
+.justify {
+  &-start {
+    justify-content: flex-start;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+  &-around {
+    justify-content: space-around;
+  }
+  &-evenly {
+    justify-content: space-evenly;
+  }
+}
+
+.align {
+  &-start {
+    align-items: flex-start;
+  }
+  &-end {
+    align-items: flex-end;
+  }
+  &-center {
+    align-items: center;
+  }
+}

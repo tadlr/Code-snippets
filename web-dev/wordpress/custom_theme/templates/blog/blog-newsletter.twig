@@ -1,0 +1,20 @@
+{% if get_post(7489).meta %}
+  {% set row = fn('get_field', 'newsletter_section_blog', 7489) %}
+
+  <div
+    class='bg-image b-lazy dont-show newsletter-background-img'
+    data-src='{{ fn('get_template_directory_uri') }}/assets/media/images/blog/newsletter-signup.webp'
+  ></div>
+  <div class='newsletter-inner-holder'>
+    {% set heading = row.heading %}
+    {% set content = row.content %}
+    {% set form = row.form %}
+    <p class='txt-size-24 c-white fw-700'>{{ heading }}</p>
+    <p class='txt-size-18 c-white newsletter-description'>{{ content }}</p>
+    <div class='subscribe-newsletter-form blog-subscribe-form'>
+      <script>
+        hbspt.forms.create({ region: 'na1', portalId: '4438792', formId: '3b6792fb-f3dd-4b88-bf39-d923061cc138' });
+      </script>
+    </div>
+  </div>
+{% endif %}

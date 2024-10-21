@@ -1,0 +1,87 @@
+{% extends "block-sk-block-base.twig" %}
+{% set ctaText = field.cta_text %}
+{% set ctaLink = field.cta_link %}
+{% set class = field.image ? 'w-image': 'w-svg' %}
+{% set class = field.show_newsletter_form ? class~' w-form': class %}
+{% set imageStyle = field.image_style == 'round' ? 'round' : 'square' %}
+{% block block_base %}
+{% set attributes = attributes.addClass('py-0') %}
+{{ parent() }}
+{% endblock %}
+{% block block_content %}
+{% if field.title or field.content %}
+  <div class='sk-blog-block blog-cta col-xs-12 bg-blue d-inline-block w-100 {{class}} {{imageStyle}}'>
+    {% if field.image %}
+      <div class='image-block'>
+        {{ Image(field.image, 'full', {class: 'cta-img'}) }}
+      </div>
+    {% endif %}
+    <div class='inner-wrapper text-white'>
+      <div class='col-xs-12 col-md-10 col-lg-8 cta-content'>
+        {% if field.title %}
+          <h2>
+            {{ field.title }}
+          </h2>
+        {% endif %}
+        {% if field.content %}
+          {{ field.content }}
+        {% endif %}
+        {% if ctaText and ctaLink %}
+          {% set target = field.external_link == 'same'? '': 'target="_blank"' %}
+          <a href='{{ctaLink}}' class='btn btn-download' {{ target }}>
+            {{ ctaText }}
+          </a>
+          {% elseif field.external_link == 'form' %}
+          <button href='#' class='btn btn-download header-open-form-btn opacity-100' data-target='.landing-page-form'>
+            {{ ctaText }}
+          </button>
+        {% endif %}
+      </div>
+      {% if field.show_newsletter_form %}
+        {% set customSubmitText = field.newsletter_submit_text == ''? '': 'btn-custom-text' %}
+        <div class='col-xs-12 col-md-10 col-lg-8 cta-form {{ customSubmitText }}'>
+          <div class='newsletter-form'>
+            <script>
+              hbspt.forms.create({
+                region: 'na1',
+                portalId: '4438792',
+                formId: 'd74be8e6-676d-43a4-a3cf-5f796747705f',
+              });
+            </script>
+            {% if field.newsletter_submit_text != '' %}
+              <script>
+                jQuery(document).ready(function($){
+                  var hubspotSubmitButtonText = setInterval(function () {
+                    if ($('.blog-cta .btn-custom-text button.hs-button').length) {
+                      var submit = $('.blog-cta .btn-custom-text button.hs-button');
+                      var submitWrap = submit.parents('.actions');
+                      var bgColour = 'section-color-white';
+                      var label = "{{ field.newsletter_submit_text }}";
+                      submit.remove();
+
+                      if (submit.parents('.callback-popup-form').length || submit.parents('.talk-to-us-block-popup-form').length || submit.parents('.form--container').length || submit.parents('.popup-form').length) {
+                        var bgColour = 'section-color-blue';
+                      }
+
+                      submitWrap.append(
+                        '<button type="submit" class="hs-button custom-label primary large btn-default size-18-txt ltr-spc-pos-0_25 c-blue-1 btn-green-1 btn-offset-10 fw-700 ' +
+                        bgColour +
+                        '" value="' +
+                        label +
+                        '"><span class="btn-bg-el"></span><span class="btn-txt">' +
+                        label +
+                        '</span></button>',
+                      );
+                      clearInterval(hubspotSubmitButtonText);
+                    }
+                  }, 500);
+                });
+              </script>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+{% endblock %}

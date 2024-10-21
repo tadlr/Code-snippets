@@ -1,0 +1,99 @@
+{# page-bk3--section-circles #}
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {% set attributes = attributes.addClass('sk-block circle-info-blue-section prel ov-hidden') %}
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  <div class='prel op-0 content-block'>
+    <div class='container'>
+      <div class='images-wrap images-top'>
+        <div class='inner-circles-wrap inner-left-circle circle-opacity'>
+          <div class='inner-circle-base'></div>
+          <div class='inner-circle-outer'></div>
+          <div class='inner-circle-core'></div>
+        </div>
+
+        <div class='inner-img-wrap'>
+          <img
+            width='280'
+            height='280'
+            alt='{{ t('Business owner viewing credit card statement') }}'
+            data-src='{{ get_template_directory_uri() }}/assets/media/images/home/statement-analysis-img-1.webp'
+            class='b-lazy circle-img'
+          >
+        </div>
+        <div class='inner-circles-wrap inner-right-circle circle-border'>
+          <svg class='border-svg' viewbox='0 0 115 115'>
+            <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="57"/>
+            <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="37"/>
+            <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="14"/>
+          </svg>
+        </div>
+      </div>
+      <div class='images-wrap images-mid'>
+        <div class='inner-circles-wrap inner-left-circle circle-border'>
+          <svg class='border-svg' viewbox='0 0 115 115'>
+            <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="57"/>
+            <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="37"/>
+            <circle class="border-circle" fill="none" cx="57.5" cy="57.5" r="14"/>
+          </svg>
+        </div>
+        <div class='inner-img-wrap'>
+          <img
+            width='280'
+            height='280'
+            alt='{{ t('Merchant accepting credit card payment') }}'
+            data-src='{{ get_template_directory_uri() }}/assets/media/images/home/statement-analysis-img-2.webp'
+            class='b-lazy circle-img desktop-image'
+          >
+        </div>
+      </div>
+      <div class='images-wrap images-bot'>
+        <div class='inner-circles-wrap inner-left-circle circle-full'>
+          <div class='inner-circle-base'></div>
+          <div class='inner-circle-outer'></div>
+          <div class='inner-circle-core'></div>
+        </div>
+        <div class='inner-img-wrap'>
+          <img
+            width='280'
+            height='280'
+            alt='{{ t('Customer paying through credit card') }}'
+            data-src='{{ get_template_directory_uri() }}/assets/media/images/home/statement-analysis-img-3.webp'
+            class='b-lazy circle-img'
+          >
+        </div>
+      </div>
+      <div class='content-wrap prel'>
+        <div class='txt-content prel'>
+          <img
+            width='500'
+            height='500'
+            alt='{{ t('Merchant accepting credit card payment') }}'
+            data-src='{{ get_template_directory_uri() }}/assets/media/images/home/statement-analysis-img-2-mobile.webp'
+            class='b-lazy circle-img mobile-image m-auto mb-5'
+          >
+
+          <h2 class='heading-anim col-sm-12 col-lg-8 col-xl-5' style='color: {{heading_color}}'>
+            {{ heading|striptags('<a><strong>') }}
+          </h2>
+          <div class=' c-white txt-size-18 lh-1_66 ltr-spc-pos-0_2 col-sm-12 col-lg-8 col-xl-5 mb-3'>
+            <p>{{ subheading }}</p>
+          </div>
+          <div class='btn-wrap col-sm-12'>
+            <a
+              href='{{link_url}}'
+              class='btn-default ltr-spc-neg-0_25 c-blue-1 btn-green-1 section-color-blue btn-offset-5'
+            >
+              <span class='btn-bg-el'></span>
+              <span class='btn-txt'>{{ link_text }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

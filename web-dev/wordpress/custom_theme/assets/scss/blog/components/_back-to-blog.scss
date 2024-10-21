@@ -1,0 +1,20 @@
+// Search results
+.back-to-blog {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+
+  &:hover,
+  &:focus {
+    img {
+      margin-right: 10px;
+      transition: margin-right 0.3s ease;
+    }
+  }
+
+  img {
+    margin-right: 20px;
+    transform: rotate(-180deg);
+    transition: margin-right 0.3s ease;
+  }
+}

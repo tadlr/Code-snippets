@@ -1,0 +1,31 @@
+name: "ATSSC Intranet - WxT Sub-Theme"
+description: "WxT sub-theme(s) support leveraging WxT Bootstrap. Source files for Bootstrap are defined as part of the WxT Library module."
+type: theme
+core_version_requirement: ^8 || ^9 || ^10
+base theme: wxt_bootstrap
+ckeditor_stylesheets:
+  - css/ckeditor.css
+ckeditor5-stylesheets:
+  - css/ckeditor5.css
+
+regions:
+  branding: "Branding"
+  breadcrumb: "Breadcrumbs"
+  language_toggle: "Language Toggle"
+  banner: "Banner"
+  search: "Search"
+  navigation: "Navigation"
+  header: "Header"
+  highlighted: "Highlighted"
+  content: "Content"
+  content_footer: "Content Footer"
+  footer: "Footer"
+
+libraries:
+  - atssc_intra_wxt/theme-scripts
+
+libraries-override:
+  wxt_bootstrap/framework:
+    css:
+      theme:
+        css/style.css: false

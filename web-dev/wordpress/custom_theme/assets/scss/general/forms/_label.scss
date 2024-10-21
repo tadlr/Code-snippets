@@ -1,0 +1,53 @@
+.article-content,
+.sk-lander {
+  .hbspt-form {
+    .hs-form-field {
+      position: relative;
+      margin-bottom: 30px !important;
+      label:not(.hs-form-checkbox-display):not(.hs-error-msg) {
+        position: absolute;
+        z-index: 3;
+        top: -12px;
+        left: 22px;
+        color: $white;
+        background-color: $blue-1;
+        padding: 0 10px 0 10px;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        font-family: $libre;
+
+        @media screen and ($max1024) {
+          position: relative;
+          top: 0;
+          left: 0;
+          background-color: transparent;
+          display: block;
+          margin-bottom: 8px;
+        }
+
+        @media screen and ($min1024) {
+          @include vw(top, -12px);
+          @include vw(left, 22px);
+          @include vw(padding, 0 10px 0 10px);
+          letter-spacing: 0.6px;
+        }
+
+        @media screen and ($min1920) {
+          top: -12px;
+          left: 22px;
+          padding: 0 10px 0 10px;
+          letter-spacing: 0.6px;
+        }
+      }
+      label.hs-form-booleancheckbox-display {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        padding: 0 !important;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

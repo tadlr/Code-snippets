@@ -1,0 +1,23 @@
+{
+  "plugins": [
+    "@destination/prettier-plugin-twig",
+    "@prettier/plugin-php",
+    "@wordpress/prettier-config"
+  ],
+  "singleQuote": true,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.php",
+
+      "options": {
+        "parser": "php",
+        "phpVersion": "8.2",
+        "trailingCommaPHP": true,
+        "braceStyle": "1tbs",
+        "proseWrap": "preserve",
+        "htmlWhitespaceSensitivity": "strict"
+      }
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+$prefix: 'skre-';
+
+// scss-docs-start theme-color-variables
+$primary: $blue-1;
+$secondary: $green-5;
+$success: $green-2;
+$info: $green-8;
+$warning: $red-9;
+$danger: $red-6;
+$light: $fw-bg;
+$dark: $gray-17;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+);
+
+$enable-caret: false;
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-reduced-motion: false;
+$enable-smooth-scroll: false;
+$enable-grid-classes: true;
+$enable-container-classes: true;
+$enable-cssgrid: false;
+$enable-button-pointers: true;
+$enable-rfs: false;
+$enable-validation-icons: false;
+// $enable-negative-margins: false;
+// $enable-deprecation-messages: true;
+$enable-important-utilities: true;
+// $color-mode-type: "media-query";
+$enable-dark-mode: false;
+
+// $screen--xs: 0;
+// $screen--sm: 900px;
+// $screen--md: 990px;
+// $screen--lg: 1080px;
+// $screen--xl: 1260px;
+// $screen--xxl: 1440px;
+
+// $container-sm: 520px;
+// $container-md: 840px;
+// $container-lg: 1040px;
+// $container-xl: 1180px;
+// $container-xxl: 1360px;
+
+$grid-gutter-width: 45px;
+
+$screen-xxs: 480px;
+$screen-xs: 570px;
+$screen-sm: 880px;
+$screen-md: 1024px;
+$screen-lg: 1200px;
+$screen-xl: 1450px;
+$screen-xxl: 1600px;
+$screen-xxxl: 1800px;
+$screen-ws: 2100px;
+
+// Extra Small screen / phone
+$container-xs: ($screen-sm - 40px + $grid-gutter-width);
+$container-xs: ($screen-sm - $grid-gutter-width);
+
+// Small screen / tablet
+$container-sm: ($screen-sm - 48px) + $grid-gutter-width;
+$container-sm: $screen-sm - $grid-gutter-width;
+
+// Medium screen / desktop
+$container-md: ($screen-md - 52px + $grid-gutter-width);
+$container-md: ($screen-md - $grid-gutter-width);
+
+// Large screen / wide desktop
+$container-lg: ($screen-lg - 64px + $grid-gutter-width);
+$container-lg: ($screen-lg - $grid-gutter-width);
+
+// Extra Large screen / wide desktop
+$container-xl: ($screen-xl - 146px + $grid-gutter-width);
+$container-xl: ($screen-xl - $grid-gutter-width);
+
+$container-xxl: ($screen-xxl - 164px + $grid-gutter-width);
+$container-xxl: ($screen-xxl - $grid-gutter-width);
+
+$container-xxxl: ($screen-xxxl - $grid-gutter-width);
+$container-ws: ($screen-ws - $grid-gutter-width);
+
+$body-color: $white;
+$text: $body-color;
+$font-size-root: 18px;
+$font-size-base: 1rem;
+$paragraph-margin-bottom: 1.3rem;
+
+$link-decoration: none;
+
+$screen--sm: $screen-sm;
+$screen--md: $screen-md;
+$screen--lg: $screen-lg;
+$screen--xl: $screen-xl;
+$screen--xxl: $screen-xxl;
+$screen--xxxl: $screen-xxxl;
+$screen--ws: $screen-ws;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: $screen--sm,
+  md: $screen--md,
+  lg: $screen--lg,
+  xl: $screen--xl,
+  xxl: $screen--xxl,
+  xxxl: $screen--xxxl,
+  ws: $screen--ws,
+);
+// scss-docs-end grid-breakpoints
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: $container-sm,
+  md: $container-md,
+  lg: $container-lg,
+  xl: $container-xl,
+  xxl: $container-xxl,
+  xxxl: $container-xxxl,
+  ws: $container-ws,
+);
+
+// scss-docs-end container-max-widths
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: $grid-gutter-width;
+$grid-row-columns: 12;
+
+$h1-font-size: $font-size-base * 3.611;
+$h2-font-size: $font-size-base * 2.666;
+$h3-font-size: $font-size-base * 1.777;
+$h4-font-size: $font-size-base * 1.522;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$font-family-sans-serif:
+  'Libre Franklin',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  'Noto Sans',
+  'Liberation Sans',
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji';
+
+$font-family-heading:
+  'Red Hat Display',
+  sans-serif,
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  'Noto Sans',
+  'Liberation Sans',
+  Arial,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji';
+
+// $headings-margin-bottom: $spacer * 0.5;
+$headings-font-family: $font-family-heading;
+$headings-color: $primary;
+$headings-font-weight: bold;
+$headings-margin-bottom: $contentPadding;
+
+$line-height-base: 1.8;
+$line-height-sm: 1.3333;
+$line-height-lg: 2.2222;
+
+$blockquote-font-size: 1rem;
+
+$list-group-item-padding-x: 35px;

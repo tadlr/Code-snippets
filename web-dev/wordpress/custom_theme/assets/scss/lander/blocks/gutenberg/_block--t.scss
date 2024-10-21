@@ -1,0 +1,20 @@
+.block-legacy--t {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3 {
+    color: $white;
+  }
+
+  .btn-default:hover {
+    .btn-txt {
+      color: $blue-1;
+    }
+  }
+
+  .h4 {
+    padding-top: 12px;
+  }
+}

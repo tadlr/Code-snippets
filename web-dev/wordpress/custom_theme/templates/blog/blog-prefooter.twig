@@ -1,0 +1,87 @@
+{# <section data-scroll-section class='inner-pages-contact-section prel offset-x-desktop-304 blog-social-media'> #}
+<section class='inner-pages-contact-section contact-block prel sk-page-block block--s talk-us-block blog-social-media'>
+  <div class='op-0'>
+    {% if get_post(7487).meta %}
+      {% set row = fn('get_field', 'blog_prefooter', 7487) %}
+
+      <div
+        class='bg-image b-lazy dont-show'
+        data-src='{{ fn('get_template_directory_uri') }}/assets/media/images/inner/contact-section-bgr.webp'
+      ></div>
+      <div class='background-flower-path-patterns'>
+        <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+          <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+          <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+          <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+          <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+        </svg>
+        <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+          <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+          <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+          <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+          <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+        </svg>
+        <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+          <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+          <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+          <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+          <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+        </svg>
+        <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+          <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+          <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+          <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+          <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+        </svg>
+      </div>
+      <div class='container z-3 prel px-sm-0 px-md-0'>
+        <div class='txt-content'>
+          <!-- Left Side -->
+          <div class='single-block txt-content-block'>
+            <div class='px-4 px-lg-0'>
+              <p class='ff-libre upper fw-400 ltr-spc-pos-5 talk-left-subheading' data-mh='talk--subheading'>
+                {{ row.left_side_small_heading }}
+              </p>
+              <h2 class='txt-size-60 txt-size-48-m c-white fw-700 ltr-spc-pos-0_5 talk-left-heading heading-anim'>
+                {{ row.left_side_heading | striptags }}
+              </h2>
+              <div class='buttons-wrap'>
+                {{ include('element/prefooter-social-icon.twig', { linkuri: row.facebook_link, linktext: 'Facebook', linkicon: 'facebook' }) }}
+                {{ include('element/prefooter-social-icon.twig', { linkuri: row.twitter_link, linktext: 'X', linkicon: 'x' }) }}
+                {{ include('element/prefooter-social-icon.twig', { linkuri: row.instagram_link, linktext: 'Instagram', linkicon: 'instagram' }) }}
+                {{ include('element/prefooter-social-icon.twig', { linkuri: row.youtube_link, linktext: 'YouTube', linkicon: 'youtube' }) }}
+                {{ include('element/prefooter-social-icon.twig', { linkuri: row.linkedin_link, linktext: 'LinkedIn', linkicon: 'linkedin' }) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          {# <div class='single-block contact-block prel offset-x-mobile-38 blog-contact-block'> #}
+          <div class='single-block contact-block prel'>
+            <div class='px-4 px-lg-0'>
+              <p
+                class=' ff-libre upper fw-400 ltr-spc-pos-3_7 talk-right-subheading c-blue-1'
+                data-mh='talk--subheading'
+              >
+                {{ row.right_side_small_heading }}
+              </p>
+              <h2 class='txt-size-60 txt-size-48-m c-blue-1 fw-700 ltr-spc-pos-0_5 talk-right-heading heading-anim'>
+                {# <h2 class='txt-size-60 txt-size-48-m c-blue-1 lh-1 fw-700 ltr-spc-pos-0_5 heading-anim'> #}
+                {{ row.right_side_heading | striptags }}
+              </h2>
+              {# <div class='txt-post-rtf c-blue-1 txt-size-18 lh-1_66 ltr-spc-pos-0_2 text-blue'> #}
+              <div class='txt-post-rtf fw-400 text-blue lh-1_66 ltr-spc-pos-0_2 talk-right-content'>
+                <p class='text-highlight'>{{ row.right_side_content | striptags }}</p>
+                <div class='blog-external-links'>
+                  {{ include('element/prefooter-contact-item.twig', { linkuri: row.link_one_url, linktext: row.link_one_text, linkicon: 'guides' }) }}
+                  {{ include('element/prefooter-contact-item.twig', { linkuri: row.link_two_url, linktext: row.link_two_text, linkicon: 'cs-hub' }) }}
+                  {{ include('element/prefooter-contact-item.twig', { linkuri: row.link_three_url, linktext: row.link_three_text, linkicon: 'case-studies' }) }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>

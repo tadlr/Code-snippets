@@ -1,0 +1,61 @@
+{% extends "block-sk-block-base.twig" %}
+{% block block_content %}
+  <div class='container prel slider-arrows'>
+    <div class='row'>
+      {{ include('field/field--full-w-heading.twig', { heading: field.heading, content: field.content }) }}
+      <div class='table-multi-block content-block multi-column-table col-xs-12 mt-1'>
+        <div class='table-responsive'>
+          {% if field.rows %}
+            {% block table %}
+              <table class='table-multi-comparison table d-none d-desktop-table'>
+                {% set noRows = 1 %}
+                {% for row in field.rows %}
+                  {% if row.acf_fc_layout == 'heading_row' %}
+                    <thead>
+                      <tr class='multi-columns-heading-row'>
+                        {% set headingTemplate = 'field/field--comparison-table-heading-dev.twig' %}
+                        {% set noRows = row.cell|length %}
+                        {% for index,cell in row.cell %}
+                          {{ include(headingTemplate, { heading: cell.heading, image: cell.image, render: true, index: index }) }}
+                        {% endfor %}
+                      </tr>
+                    </thead>
+                  {% endif %}
+                {% endfor %}
+                <tbody>
+                  {% for row in field.rows %}
+                    {% if row.acf_fc_layout == 'table_content' %}
+                      {% if row.table_inner_heading %}
+                        <tr class='inner-multi-table-heading'>
+                          <th colspan='{{ noRows }}'>
+                            {{ row.table_inner_heading }}
+                          </th>
+                        </tr>
+                      {% endif %}
+                      {% if row.table_row %}
+                        {% for table_row in row.table_row %}
+                          <tr>
+                            {% set rowTemplate = 'field/field--comparison-table-row-dev.twig' %}
+                            {% for index,column in table_row.column %}
+                              {{ include(rowTemplate, { text: column.content, radio: column.checkmark, image: column.image, index: index, use_stars: column.use_stars }) }}
+                            {% endfor %}
+                          </tr>
+                        {% endfor %}
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% endblock %}
+          {% endif %}
+        </div>
+        <div class='d-none d-tablet-block d-mobile-block'>
+          {{ include('tables/multi-table-mobile.twig', {use_stars: column.use_stars}) }}
+        </div>
+        {% if field.footer %}
+          {{ include('field/field--footer.twig', { footer: field.footer }) }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

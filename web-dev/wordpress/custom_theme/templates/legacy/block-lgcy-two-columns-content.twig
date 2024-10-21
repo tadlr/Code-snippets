@@ -1,0 +1,59 @@
+<div
+  id='{{ scroll_to_section_id }}'
+  data-scroll-section
+  class='content-block-holder sk-block two-columns-content {{ classes }}'
+  data-link-scroll-target-section-id='{{ scroll_to_section_id }}'
+>
+  <div class='container'>
+    <div class='media-block content-block row row-eq-height'>
+      {% if content_one or column_listed_content %}
+        <div class='txt-content col-sm-12 col-md-12 col-lg-12 col-xl-6 heading-anim {{ content_colour }}'>
+          {{ content_one | raw }}
+
+          <!-- Column List -->
+          {% if column_listed_content %}
+            <div class='block-list txt-size-18 {{ content_colour }} my-5'>
+              {% for item in column_listed_content %}
+                <div class='list-item'>
+                  <div class='item-num'>{{ loop.index }}</div>
+                  <p class='item-title title-highlight'>{{ item.list_item_title }}</p>
+                  <p class='item-content'>{{ item.list_item_content }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if content_two %}
+        <div class='txt-content col-sm-12 col-md-12 col-lg-12 col-xl-6 heading-anim {{ content_colour }}'>
+          {{ content_two | raw }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if cta_text %}
+      {%
+        set cta_options = {
+        'yes': { 'target': '_blank', 'href': cta_link },
+        'same': { 'target': '_self', 'href': cta_link },
+        'modal': { 'href': '#', 'class': 'header-open-form-btn open-form-modal' },
+        'section': { 'href': '#', 'class': 'scroll-to-section-btn anchor-link', 'data-target': cta_scroll_to_section },
+        'no': { 'href': '#', 'class': 'scroll-to-section-btn btn-scroll-to-footer', 'data-target': '.inner-pages-contact-section' }
+        }[external_link]
+      %}
+      {% set btn_colour = (field.btnColour == 'blue') ? 'section-color-blue' : 'section-color-white' %}
+      <a
+        href='{{ cta_options.href }}'
+        target='{{ cta_options.target|default('_self') }}'
+        class='btn-default c-blue-1 btn-green-1 {{ btn_colour }} btn-offset-9 {{ cta_options.class|default('') }}'
+        data-target='{{ cta_options['data-target']|default('') }}'
+      >
+        <span class='btn-bg-el'></span>
+        <span class='btn-txt'>
+          {{ cta_text }}
+        </span>
+      </a>
+    {% endif %}
+  </div>
+</div>

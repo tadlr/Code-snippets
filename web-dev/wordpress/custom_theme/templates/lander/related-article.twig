@@ -1,0 +1,17 @@
+{% extends "blog/related-article.twig" %}
+{% block featured_meta %}
+{% endblock %}
+{% block featured_read_time %}
+{% endblock %}
+{% block featured_title %}
+<h3 aria-label='{{ fn('get_the_title', post.ID) }}' class='h5 mt-3 c-blue-1' data-mh='blog-rp-title'>
+  <a href='{{ fn('get_the_permalink', post.ID) }}' class='c-blue-1 text-decoration-none'>
+    {{ fn('get_the_title', post.ID) }}
+  </a>
+</h3>
+{% endblock %}
+{% block featured_text %}
+<p data-mh='blog-rp-exp' class='txt-post-rtf c-blue-1 txt-size-18 lh-1_5625 ltr-spc-pos-0_2'>
+  {{ fn('get_the_excerpt', post.ID) }}
+</p>
+{% endblock %}

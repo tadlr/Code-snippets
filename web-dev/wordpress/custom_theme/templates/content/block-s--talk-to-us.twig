@@ -1,0 +1,127 @@
+{% extends 'block-sk-block-base.twig' %}
+{% block sk_block %}
+  <section class='inner-pages-contact-section prel sk-block block--sk5 talk-us-block'>
+    <div
+      class='bg-image b-lazy dont-show prel'
+      data-src='{{ get_template_directory_uri() }}/assets/media/images/inner/contact-section-bgr.webp'
+    >
+      <div class='op-0 container'>
+        <div class='background-flower-path-patterns'>
+          <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+            <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+            <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+            <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+            <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+          </svg>
+          <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+            <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+            <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+            <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+            <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+          </svg>
+          <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+            <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+            <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+            <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+            <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+          </svg>
+          <svg viewbox='0 0 451.3 451.3' class='background-flower-path-svg'>
+            <path class="st0" d="M225.7 225.7c124.4 0 225.1 100.8 225.1 225.2-124.3-.1-225.1-100.9-225.1-225.2z"></path>
+            <path class="st0" d="M450.8.5c0 124.4-100.8 225.2-225.1 225.2C225.7 101.3 326.5.5 450.8.5z"></path>
+            <path class="st0" d="M225.7 225.7c0 124.4-100.8 225.2-225.2 225.2 0-124.4 100.8-225.2 225.2-225.2z"></path>
+            <path class="st0" d="M.5.5c124.4 0 225.2 100.8 225.2 225.2C101.3 225.7.5 124.9.5.5z"></path>
+          </svg>
+        </div>
+        <div class='prel'>
+          <div class='txt-content row'>
+            <div class='col-sm-12 col-md-6 single-block txt-content-block'>
+              <div class='w-500'>
+                <p class='ff-libre upper fw-400 ltr-spc-pos-5 talk-left-subheading text-white'>
+                  {{ field.left_subheading }}
+                </p>
+                <h2 class='txt-size-60 txt-size-48-m c-white  fw-700 ltr-spc-pos-0_5 talk-left-heading heading-anim'>
+                  {{ field.left_main_heading }}
+                </h2>
+                <div class='buttons-wrap'>
+                  {% set phone = sm_toll_free_number(field.phone) %}
+                  <a href='tel:{{phone}}' class='contact-section-btn txt-size-24 lh-1_25 c-white fw-700'>
+                    <img
+                      class='contact-btn-icon b-lazy'
+                      alt=''
+                      role='presentation'
+                      width='60'
+                      height='60'
+                      data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/talk-to-us-icon.webp'
+                    >
+                    <span class='btn-txt text-white'>
+                      {{ field.phone_link_text }}
+                    </span>
+                    {% if (get_the_id() == 11835) %}
+                      <span style='display: none;'>
+                        {{ apply_filters("ucomm_format_gfn", field.phone) }}
+                      </span>
+                    {% endif %}
+                  </a>
+                  <button class='contact-section-btn txt-size-24 lh-1_25 c-white fw-700 block-callback-popup-btn'>
+                    <img
+                      class='contact-btn-icon b-lazy'
+                      alt=''
+                      role='presentation'
+                      width='60'
+                      height='60'
+                      data-src='{{ get_template_directory_uri() }}/assets/media/images/pictograms/callback-icon.webp'
+                    >
+                    <span class='btn-txt text-white'>
+                      {{ field.contacts_text }}
+                    </span>
+                  </button>
+                </div>
+                <div class='txt-post-rtf fw-400 c-white  lh-1_66 ltr-spc-pos-0_2 talk-left-content'>
+                  <p>
+                    {{ field.left_text_content }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class='col-sm-12 col-md-6 single-block contact-block prel ps-5'>
+              <div class='w-500'>
+                <p class='ff-libre upper fw-400 ltr-spc-pos-3_7 text-white talk-right-subheading'>
+                  {{ field.right_subheading }}
+                </p>
+                <h2 class='txt-size-60 txt-size-48-m c-white  fw-700 ltr-spc-pos-0_5 talk-right-heading heading-anim'>
+                  {{ field.right_main_heading }}
+                </h2>
+                <div class='txt-post-rtf fw-400 c-white  lh-1_66 ltr-spc-pos-0_2 talk-right-content'>
+                  <p>
+                    {{ field.right_text_content }}
+                  </p>
+                  {{ field.bullet_list }}
+                </div>
+                <div class='newsletter-form col prel'>
+                  {% set spanish_pages = get_field('spanish_pages', 'option') %}
+                  {% if post.id in spanish_pages or lang == 'es' %}
+                    <script>
+                      hbspt.forms.create({
+                        region: 'na1',
+                        portalId: '4438792',
+                        formId: '38ad7a0c-4b18-4299-86c0-6c83fb91031f',
+                      });
+                    </script>
+                  {% else %}
+                    <script>
+                      hbspt.forms.create({
+                        region: 'na1',
+                        portalId: '4438792',
+                        formId: 'd74be8e6-676d-43a4-a3cf-5f796747705f',
+                      });
+                    </script>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

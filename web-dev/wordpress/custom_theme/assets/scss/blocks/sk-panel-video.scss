@@ -1,0 +1,120 @@
+@import 'block-base';
+@import 'heros/_hero-aa';
+@import 'heros/_hero-ab';
+@import 'heros/_hero-ac';
+@import 'heros/_hero-ad';
+@import 'heros/_hero-ae';
+
+.block--sk1.sk-block-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+  @media screen and ($mobile) {
+    // margin-top: 75px;
+
+    &.sk-hero-ac {
+      margin-top: 0;
+    }
+  }
+}
+
+.block--sk1.sk-hero-ab {
+  @media screen and ($max1024) {
+    &.sk-hero-ab {
+      padding-top: 0 !important;
+      margin-top: 0;
+    }
+  }
+}
+
+.block--sk1 {
+  .column-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @media screen and ($mobile) {
+      padding-top: 64px;
+    }
+  }
+
+  .btn-default {
+    margin-top: 5px;
+  }
+
+  .container-fw {
+    .column {
+      &:first-of-type .column-inner {
+        @media screen and ($max1024) {
+          padding: 0 35px !important;
+        }
+        @media screen and ($max720) {
+          padding: 0 35px !important;
+        }
+      }
+
+      &:last-of-type .column-inner {
+        @media screen and ($max1024) {
+          padding: 0 64px 0 0 !important;
+        }
+
+        @media screen and ($max720) {
+          padding: 0 64px !important;
+        }
+      }
+    }
+  }
+
+  .phone-cta {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    svg {
+      margin-right: 5px;
+    }
+    p {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+  }
+
+  .section {
+    &-video,
+    &-image {
+      background-position: center center;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+
+      @media screen and ($mobile) {
+        margin-top: 15px;
+        min-height: 55vh;
+      }
+    }
+  }
+
+  overflow: clip;
+
+  .bg-banner-media {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .media-item {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .talk-us-block
+    .hbspt-form
+    label:not(.hs-error-msg):not(.hs-main-font-element) {
+    background-color: transparent !important;
+  }
+}

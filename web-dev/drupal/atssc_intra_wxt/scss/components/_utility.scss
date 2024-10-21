@@ -1,0 +1,344 @@
+// general utilities
+
+.padding {
+  &-container {
+    &-left {
+      @media (min-width: $screen-md-min) {
+        padding: $padding $padding $padding calc((100vw - #{$container-md}) / 2 + 1.5vw) !important;
+      }
+      @media (min-width: $screen-lg-min) {
+        padding: $padding $padding $padding calc((100vw - #{$container-lg}) / 2 + 1.4vw) !important;
+      }
+      @media (min-width: $screen-xl-min) {
+        padding: $padding $padding $padding calc((100vw - #{$container-xl}) / 2 + 1.3vw) !important;
+      }
+      @media (min-width: $screen-xxl-min) {
+        padding: $padding $padding $padding calc((100vw - #{$container-xxl}) / 2 + 0.95vw) !important;
+      }
+    }
+
+    &-right {
+      @media (min-width: $screen-md-min) {
+        padding: $padding calc((100vw - #{$container-md}) / 2 + 1.5vw) $padding $padding !important;
+      }
+      @media (min-width: $screen-lg-min) {
+        padding: $padding calc((100vw - #{$container-lg}) / 2 + 1.4vw) $padding $padding !important;
+      }
+      @media (min-width: $screen-xl-min) {
+        padding: $padding calc((100vw - #{$container-xl}) / 2 + 1.3vw) $padding $padding !important;
+      }
+      @media (min-width: $screen-xxl-min) {
+        padding: $padding calc((100vw - #{$container-xxl}) / 2 + 0.95vw) $padding $padding !important;
+      }
+    }
+  }
+}
+.padded {
+  @include padded;
+
+  &-sm {
+    @include padded-small;
+  }
+
+  &-lg {
+    @include padded-large;
+  }
+}
+
+.pl,
+.padding-left {
+  &-sm {
+    @include left-padding-small;
+  }
+
+  &-lg {
+    @include left-padding-large;
+  }
+
+  &-in {
+    &-sm {
+      > .column-inner {
+        @include left-padding-small;
+      }
+    }
+
+    &-lg {
+      > .column-inner {
+        @include left-padding-large;
+      }
+    }
+
+    &-xl {
+      > .column-inner {
+        @include left-padding-xlarge;
+      }
+    }
+  }
+}
+
+.pr,
+.padding-right {
+  &-sm {
+    @include right-padding-small;
+  }
+
+  &-lg {
+    @include right-padding-large;
+  }
+
+  &-in {
+    &-sm {
+      > .column-inner {
+        @include right-padding-small;
+      }
+    }
+
+    &-lg {
+      > .column-inner {
+        @include right-padding-large;
+      }
+    }
+
+    &-xl {
+      > .column-inner {
+        @include right-padding-xlarge;
+      }
+    }
+  }
+}
+
+.vp,
+.vertical-padding {
+  @include vertical-padding;
+
+  &-sm {
+    @include vertical-padding-small;
+  }
+
+  &-lg {
+    @include vertical-padding-large;
+  }
+}
+
+.hp,
+.horizontal-padding {
+  @include vertical-padding;
+
+  &-sm {
+    @include horizontal-padding-small;
+  }
+
+  &-lg {
+    @include horizontal-padding-large;
+  }
+}
+
+.container-fluid .column.np,
+.no-padding,
+.np {
+  @include no-padding;
+
+  &-x {
+    @include no-padding-x;
+  }
+
+  &-y {
+    @include no-padding-y;
+  }
+
+  &-top,
+  &-t {
+    @include no-padding-top;
+  }
+
+  &-bottom,
+  &-b {
+    @include no-padding-bottom;
+  }
+
+  &-left,
+  &-l {
+    @include no-padding-left;
+  }
+
+  &-right,
+  &-r {
+    @include no-padding-right;
+  }
+}
+
+.no-margin,
+.nm {
+  @include no-margin;
+
+  &-x {
+    @include no-margin-x;
+  }
+
+  &-y {
+    @include no-margin-y;
+  }
+
+  &-top,
+  &-t {
+    @include no-margin-top;
+  }
+
+  &-bottom,
+  &-b {
+    @include no-margin-bottom;
+  }
+
+  &-left,
+  &-l {
+    @include no-margin-left;
+  }
+
+  &-right,
+  &-r {
+    @include no-margin-right;
+  }
+}
+
+.d-flex {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.justify {
+  &-start {
+    justify-content: flex-start;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+  &-around {
+    justify-content: space-around;
+  }
+  &-evenly {
+    justify-content: space-evenly;
+  }
+}
+
+.brdr {
+  $borders: (
+    "left": "lft",
+    "right": "rght",
+    "top": "tp",
+    "bottom": "bttm"
+  );
+  @each $direction, $class in $borders {
+    &-#{$class} {
+      border-#{$direction}-width: 4px;
+    }
+  }
+}
+
+.align {
+  &-start {
+    align-items: flex-start;
+  }
+  &-end {
+    align-items: flex-end;
+  }
+  &-center {
+    align-items: center;
+  }
+}
+
+.bg-icon {
+  background-repeat: no-repeat;
+  background-size: 125% auto;
+
+  &-white {
+    background-image: url("../assets/svg/faded-chevron-white.svg");
+  }
+
+  &-right {
+    background-position: center right;
+  }
+}
+
+.flex-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.flex-0 {
+  flex: 0;
+  min-width: fit-content;
+}
+
+.w- {
+  &-100 {
+    width: 100%;
+  }
+  &-75 {
+    width: 75%;
+  }
+  &-50 {
+    width: 50%;
+  }
+  &-25 {
+    width: 25%;
+  }
+
+  &-auto {
+    width: auto;
+  }
+}
+.page-section.container-fw,
+.container-fw {
+  .row {
+    .column {
+      @extend .no-padding-x;
+
+      &:first-of-type {
+        .column-inner {
+          @media (min-width: $screen-md-min) {
+            padding: $padding 0 $padding calc((100vw - #{$container-md}) / 2.3 - #{$desiredSpaceVW}) !important;
+          }
+          @media (min-width: $screen-lg-min) {
+            padding: $padding 0 $padding calc((100vw - #{$container-lg}) / 2.3 - #{$desiredSpaceVW}) !important;
+          }
+          @media (min-width: $screen-xl-min) {
+            padding: $padding 0 $padding calc((100vw - #{$container-xl}) / 2.3 - #{$desiredSpaceVW}) !important;
+          }
+          @media (min-width: $screen-xxl-min) {
+            padding: $padding 0 $padding calc((100vw - #{$container-xxl}) / 1.85 - #{$desiredSpaceVW}) !important;
+          }
+
+          &.np-y {
+            @extend .np-y;
+          }
+        }
+      }
+      &:last-of-type {
+        .column-inner {
+          @media (min-width: $screen-md-min) {
+            padding: $padding calc((100vw - #{$container-md}) / 2.3 - #{$desiredSpaceVW}) $padding 0 !important;
+          }
+          @media (min-width: $screen-lg-min) {
+            padding: $padding calc((100vw - #{$container-lg}) / 2.3 - #{$desiredSpaceVW}) $padding 0 !important;
+          }
+          @media (min-width: $screen-xl-min) {
+            padding: $padding calc((100vw - #{$container-xl}) / 2.3 - #{$desiredSpaceVW}) $padding 0 !important;
+          }
+          @media (min-width: $screen-xxl-min) {
+            padding: $padding calc((100vw - #{$container-xxl}) / 1.85 - #{$desiredSpaceVW}) $padding 0 !important;
+          }
+          &.np-y {
+            @extend .np-y;
+          }
+        }
+      }
+    }
+  }
+}

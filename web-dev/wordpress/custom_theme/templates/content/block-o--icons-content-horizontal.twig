@@ -1,0 +1,39 @@
+{% if is_preview %}
+  [O] Two columns with icons
+{% endif %}
+{% block content %}
+{% set classes = field.full_width_with_background == 'Yes' ? 'full-width-bg' : '' %}
+{% set extra_classes = field.section_classes %}
+<div
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} {{ extra_classes }} sk-block block--o'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='icons-content-block-horizontal content-block'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-sm-12'>
+          {% set heading = field.heading %}
+          {% set content = field.content %}
+          {% include 'field/field--heading.twig' %}
+        </div>
+        <div class='col-sm-12'>
+          <div class='row pt-5 icon-row justify-content-between'>
+            {% if field.columns %}
+              {% for row in field.columns %}
+                {% include 'block/block--text-w-icon-left.twig' %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        {% if field.footer %}
+          <div class='col-sm-12'>
+            {% set footer = field.footer %}
+            {% include 'field/field--footer.twig' %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,202 @@
+.feed--block {
+  padding-top: 0 !important;
+  .content-title {
+    @include sr-only;
+  }
+  .wdcb-view.paragraph {
+    padding: 0 !important;
+  }
+}
+.policies-feed {
+  .view-content {
+    border: 1px solid transparentize($color: $cyan, $amount: 0.8);
+    border-radius: 8px;
+  }
+  a {
+    cursor: pointer !important;
+  }
+  .views-row {
+    &:nth-of-type(even) {
+      .feed-item.teaser {
+        background-color: $white;
+
+        &:hover {
+          background-color: darken($white, 5%);
+        }
+      }
+    }
+    &:first-of-type {
+      .feed-item.teaser {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+    }
+    &:last-of-type {
+      .feed-item.teaser {
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+    }
+    .feed-item.teaser {
+      padding: 25px 5px 20px;
+      flex: 1;
+
+      background-color: $light;
+      &:hover {
+        background-color: darken($light, 1%);
+      }
+
+      & h3 {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      // margin-bottom: 15px;
+
+      .btn {
+        width: 100%;
+        // max-width: 182px;
+        // display: flex;
+        // justify-content: center;
+      }
+
+      .feed-details {
+        // display: flex;
+        // justify-content: space-between;
+        .field--label-inline {
+          display: inline-block;
+        }
+        margin-bottom: 0;
+        .field--label {
+          font-weight: 600;
+          display: inline-block;
+
+          &::after {
+            content: ":";
+          }
+        }
+        .field--item {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .view-filters {
+    .form-type-textfield {
+      .control-label {
+        display: block;
+      }
+      .input-group {
+        width: 100%;
+        .input-group-addon {
+          display: none;
+        }
+      }
+      width: 100%;
+    }
+    .exposed-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .sort-filters {
+      padding-top: 10;
+    }
+    .search-filters {
+      display: flex;
+      justify-content: space-between;
+
+      .form-item {
+        min-width: 250px;
+      }
+      .form-item-items-per-page {
+        min-width: 150px;
+        margin-right: 45px;
+      }
+      .field--label-inline {
+        display: inline-block;
+      }
+      margin-bottom: 0;
+      .field--label {
+        font-weight: 600;
+        display: inline-block;
+
+        &::after {
+          content: ":";
+        }
+      }
+      .field--item {
+        display: inline-block;
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    li {
+      border: none;
+      // justify-items: center;
+      // display: flex;
+      // align-items: center;
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+
+      a {
+        background-color: $light;
+        border: 1px solid transparentize($color: $cyan-light, $amount: 0.5);
+        display: flex;
+        border-radius: 50%;
+
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        &:hover,
+        &:focus {
+          background: $cyan-light;
+          color: $black;
+        }
+      }
+
+      &.active,
+      &.is-active {
+        a {
+          background: $green;
+          color: $black;
+          &:hover,
+          &:focus {
+            background: $green;
+            color: $black;
+          }
+        }
+      }
+
+      &.pager__item--next,
+      &.pager__item--previous,
+      &.pager__item--last,
+      &.pager__item--first {
+        width: initial;
+        height: initial;
+        margin-left: -7.5px;
+        a {
+          background-color: transparent;
+          padding: 0 7.5px;
+          border-radius: 8px;
+          &:hover,
+          &:focus {
+            background: $cyan-light;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+.lang-fr .policies-feed .views-row .feed-item.teaser .feed-details .field--label::after {
+  content: " :";
+}

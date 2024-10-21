@@ -1,0 +1,119 @@
+@import 'block-base';
+.block--j {
+  .icons-content-block-vertical {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin: 0 0 -25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin, 0px -12px);
+    }
+
+    @media screen and ($min1920) {
+      margin: -30px -12px;
+    }
+
+    .txt-post-rtf {
+      width: 100%;
+    }
+
+    ul {
+      margin-left: 0px !important;
+    }
+
+    .icons-block-item {
+      width: 100%;
+      margin: 0 0 25px;
+
+      @media screen and ($min1024) {
+        width: calc(33.33% - 1.25vw);
+        @include vw(margin, 30px 12px);
+        @include vw(padding-right, 150px);
+      }
+
+      @media screen and ($min1920) {
+        width: calc(33.33% - 24px);
+        margin: 30px 12px;
+        padding-right: 150px;
+      }
+    }
+
+    .img-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 25px;
+
+      @media screen and ($mobile_sm) {
+        @include vw(height, 90px, 500);
+        justify-content: flex-start;
+      }
+
+      @media screen and ($mobile_lg) {
+        height: 90px;
+        justify-content: flex-start;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(height, 90px);
+        @include vw(margin-bottom, 25px);
+        @include vw(padding-right, 40px);
+      }
+
+      @media screen and ($min1920) {
+        height: 90px;
+        margin-bottom: 25px;
+        padding-right: 40px;
+      }
+
+      img {
+        max-height: 100%;
+      }
+    }
+  }
+  .img--wrap,
+  .img--wrap img {
+    width: 90px;
+    height: 75px;
+    margin-bottom: 25px;
+  }
+  .img--wrap img {
+    object-fit: contain;
+    object-position: left center;
+    margin-bottom: 15px;
+  }
+
+  .img--container {
+    text-align: center;
+
+    img {
+      max-width: 300px;
+      max-height: 300px;
+      @media screen and ($mobile) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  p.h6 {
+    font-size: 1.094rem !important;
+    letter-spacing: 0.026vw !important;
+    color: $blue-1 !important;
+    font-weight: 700 !important;
+  }
+
+  .icons--item {
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 64px;
+    }
+
+    .img--container {
+      margin-bottom: 32px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@mixin abs-cover-el {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@mixin pabs {
+  position: absolute;
+}
+
+@mixin inline_block {
+  display: inline-block;
+}
+
+@mixin fit {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin prel {
+  position: relative;
+}
+
+@mixin background-contrast-fix {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 101%,
+    rgba(0, 0, 0, 0.01) 102%
+  );
+}
+
+@mixin responsive-display {
+  @media screen and (#{$desktop}) {
+    .d-desktop,
+    .d-none.d-desktop {
+      @content;
+    }
+  }
+  @media screen and (#{$tablet}) {
+    .d-tablet,
+    .d-none.d-tablet {
+      @content;
+    }
+  }
+  @media screen and (#{$mobile}) {
+    .d-mobile,
+    .d-none.d-mobile {
+      @content;
+    }
+  }
+}

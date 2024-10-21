@@ -1,0 +1,286 @@
+.media-content-block,
+.block--f,
+.block--d,
+.block--e {
+  .media-block {
+    display: flex;
+    align-items: center;
+
+    // Video button in media block
+
+    .landing-video-btn {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      flex: 0 0 auto;
+      display: flex;
+
+      &:hover,
+      &:focus {
+        .circle-core {
+          background-color: $blue-1;
+        }
+
+        .play-video-icon-landing {
+          border-color: transparent transparent transparent $green-1;
+        }
+      }
+
+      @media screen and ($mobile_all) {
+        right: 0;
+      }
+
+      @media screen and ($mobile_sm) {
+        @include vw(width, 141px, 500);
+        @include vw(height, 141px, 500);
+      }
+
+      @media screen and ($mobile_lg) {
+        width: 141px;
+        height: 141px;
+      }
+
+      @media screen and ($min1024) {
+        @include vw(width, 141px);
+        @include vw(height, 141px);
+      }
+
+      @media screen and ($min1920) {
+        width: 141px;
+        height: 141px;
+      }
+
+      .circle-core {
+        @include pabs;
+        @include inline_block;
+        @include fit;
+        top: 0;
+        left: 0;
+        background-color: $gray-14;
+        border-radius: 50%;
+        transition: background-color 0.5s $easeOutSine;
+      }
+
+      .circle-outer {
+        @include pabs;
+        @include inline_block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        backface-visibility: hidden;
+        border: 1px solid $gray-11;
+        width: 215%;
+        height: 215%;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .circle-inner {
+        @include pabs;
+        @include inline_block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        backface-visibility: hidden;
+        border: 1px solid $gray-11;
+        width: 130%;
+        height: 130%;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .play-video-icon-landing {
+        @include pabs;
+        @include inline_block;
+        backface-visibility: hidden;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent $gray-15;
+        transition: border-color 0.5s $easeOutSine;
+
+        @media screen and ($mobile_sm) {
+          top: calc(50% - 2vw);
+          left: calc(50% - 1.2vw);
+          @include vw(border-width, 9px 0 9px 16px, 500);
+        }
+
+        @media screen and ($mobile_lg) {
+          top: calc(50% - 10px);
+          left: calc(50% - 6px);
+          border-width: 9px 0 9px 16px;
+        }
+
+        @media screen and ($min1024) {
+          top: calc(50% - 0.521vw);
+          left: calc(50% - 0.313vw);
+          @include vw(border-width, 9px 0 9px 16px);
+        }
+
+        @media screen and ($min1920) {
+          top: calc(50% - 10px);
+          left: calc(50% - 6px);
+          border-width: 9px 0 9px 16px;
+        }
+      }
+    }
+
+    @media screen and ($max1024) {
+      .col-sm-12.col-lg-6,
+      .col-sm-12.col-lg-5,
+      .col-sm-12.col-lg-7 {
+        width: 100%;
+      }
+    }
+
+    .img-wrap {
+      @media screen and (max-width: 1024px) {
+        margin-bottom: 35px !important;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      flex-flow: column nowrap;
+    }
+
+    .btn-default {
+      margin-top: 25px;
+
+      @media screen and ($min1024) {
+        @include vw(margin-top, 40px);
+      }
+
+      @media screen and ($min1920) {
+        margin-top: 40px;
+      }
+    }
+
+    .img-content {
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
+
+      picture {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      max-width: 450px;
+
+      @media screen and (min-width: 1024px) and (max-width: 1200px) {
+        max-height: 400px;
+        max-width: 400px;
+      }
+
+      @media screen and ($mobile_all) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.half-image-column {
+        width: 600px;
+        height: 600px;
+        border-radius: unset;
+
+        @media screen and ($min1024) {
+          @include vw(width, 700px);
+          @include vw(height, 700px);
+        }
+
+        @media screen and ($min1440) {
+          @include vw(width, 700px);
+          @include vw(height, 700px);
+        }
+
+        @media screen and ($mobile_sm) {
+          @include vw(width, 424px, 500);
+          @include vw(height, 424px, 500);
+        }
+
+        @media screen and ($mobile_lg) {
+          width: 424px;
+          height: 424px;
+        }
+
+        @media screen and ($mobile_all) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+
+    .img-wrap.img-alt {
+      @media screen and ($desktop) {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: left;
+        .img-content {
+          max-height: unset;
+          max-width: unset;
+        }
+      }
+    }
+
+    .txt-content {
+      margin-top: 25px;
+
+      @media screen and ($min1024) {
+        @include vw(margin-top, 50px);
+      }
+
+      @media screen and ($min1920) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &.full-width-content {
+    .text-content {
+      width:100% !important;
+    }
+  }
+
+  .txt-content {
+    margin-top: 0 !important;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .row {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .row {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .media-left {
+    @media screen and (min-width: 1024px) {
+      flex-direction: row-reverse;
+    }
+    @media screen and (max-width: 1024px) {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .media-block {
+    .img-wrap {
+      text-align: center;
+      @media screen and ($max1024) {
+        margin-bottom: $paddingBottomText !important;
+      }
+    }
+  }
+
+  .media-block {
+    align-items: center;
+  }
+}

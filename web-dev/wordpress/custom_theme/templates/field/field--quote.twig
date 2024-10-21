@@ -1,0 +1,43 @@
+{% if quote %}
+  {% set testimonial = quote.testimonial %}
+  {% set text = testimonial.quote_text %}
+  {% set company = testimonial.person_company %}
+  {% set name = testimonial.person_name %}
+  {% set image = testimonial.person_image %}
+  {% set rating = testimonial.start_rating %}
+
+  {% if image %}
+    <div class='person-img-wrap'>
+      {{ Image(image, 'img-130-130', {'width':150, 'height':150}) }}
+
+      {% if rating > 0 %}
+        <div class='star--rating'>
+          <i class='fa fa-star{{ rating >= 0.5 ? '' : '-o' }}'></i>
+          <i class='fa fa-star{{ rating >= 1.5 ? '' : rating >= 1 ? '-half-o' : '-o' }}'></i>
+          <i class='fa fa-star{{ rating >= 2.5 ? '' : rating >= 2 ? '-half-o' : '-o' }}'></i>
+          <i class='fa fa-star{{ rating >= 3.5 ? '' : rating >= 3 ? '-half-o' : '-o' }}'></i>
+          <i class='fa fa-star{{ rating >= 4.5 ? '' : rating >= 4 ? '-half-o' : '-o' }}'></i>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class='txt-content'>
+    <div class='quote-img-wrap'>
+      {% set icon = fn('get_template_directory_uri') ~ '/assets/media/icons/quote-icon-red.webp' %}
+      <img width='26' height='24' class='quotes-img b-lazy' data-src='{{ icon }}' alt='Quote icon'>
+    </div>
+    <div class='txt-content-inner'>
+      <p class='quote-by-txt'>{{ text | striptags }}</p>
+      {% if name or company %}
+        <p class='quote-by-info'>
+          {% if name %}
+            <strong>{{ name }}</strong><br>
+          {% endif %}
+          {% if company %}
+            <span class='company-name'>{{ company }}</span>
+          {% endif %}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

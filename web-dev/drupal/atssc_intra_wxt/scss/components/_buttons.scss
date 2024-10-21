@@ -1,0 +1,197 @@
+.btn {
+  // $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius
+  @include button-size(10px, 10px, 14px, $line-height-base, $btn-border-radius-base);
+  // letter-spacing: 0.06em;
+  transition: all 300ms ease-in-out;
+  font-family: $font-family-base;
+
+  &:hover,
+  &:focus,
+  &.hover {
+    color: $white;
+    background: $cyan !important;
+  }
+
+  &-default {
+    font-weight: 400;
+    color: $cyan;
+    &.hover,
+    &:hover,
+    &:focus {
+      color: $white;
+      border-color: $cyan !important;
+    }
+
+    &.hover {
+      color: $white !important;
+    }
+  }
+  &-primary {
+    font-weight: 600;
+    &.hover,
+    &:hover,
+    &:focus {
+      background-color: $white !important;
+      color: $cyan !important;
+      border-color: $btn-primary-border !important;
+    }
+  }
+
+  &-info {
+    color: $black;
+    background-color: $brand-secondary;
+    border-color: $brand-secondary !important;
+    font-weight: 500;
+    &.hover,
+    &:hover,
+    &:focus {
+      background: $white !important;
+      color: $black;
+      border-color: $brand-secondary !important;
+    }
+    &:visited {
+      color: $black;
+    }
+  }
+
+  &-secondary,
+  &-secondary:visited {
+    margin-top: 1rem;
+    border-radius: 30px;
+    border: 1px solid $white;
+    background-color: $white;
+    font-weight: 500;
+    font-size: 16px;
+    color: $black;
+    display: flex;
+    width: fit-content;
+    margin: initial;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    text-transform: uppercase;
+    margin-right: 10px;
+
+    &.hover,
+    &::after,
+    &::before {
+      content: "";
+      background-repeat: no-repeat;
+      transition: all 250ms ease-in-out;
+    }
+    &::after {
+      background-image: url(../assets/svg/btn-arrow.svg);
+      width: 24px;
+      height: 24px;
+      align-self: center;
+      margin-left: 5px;
+    }
+    &::before {
+      background-image: url(../assets/svg/btn-arrow-hover.svg);
+      background-size: cover;
+      filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1));
+      position: absolute;
+      right: 0;
+      width: 46px;
+      height: 24px;
+      opacity: 0;
+    }
+    position: relative;
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &.hover {
+      background: $white !important;
+      border-color: #f3821a !important;
+      color: $black;
+
+      &::before {
+        right: -15px;
+        opacity: 1;
+      }
+      &:after {
+        opacity: 0;
+      }
+    }
+  }
+
+  &-link,
+  &-link:visited,
+  &-link-news,
+  &-link-news:visited {
+    color: $brand-primary;
+    padding: 5px 10px;
+    justify-content: space-between;
+    min-width: 150px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    border: 1px solid transparent;
+    align-items: center;
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &.hover {
+      border-color: transparent !important;
+      text-decoration: solid underline $brand-primary 2px;
+      color: $brand-primary;
+      background-color: transparent !important;
+
+      &:after {
+        background-color: $brand-info;
+        background-size: 20px;
+      }
+    }
+
+    &::after {
+      content: "";
+
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      transition: all 250ms ease-in-out;
+      background-image: url(../assets/svg/btn-arrow-d.svg);
+      background-size: 25px;
+      margin-top: -2px;
+      width: 25px;
+      height: 25px;
+      align-self: center;
+      margin-left: 5px;
+      background-position: center center;
+      display: inline-flex;
+    }
+  }
+
+  &-reset,
+  &-danger,
+  &[data-drupal-selector="edit-reset"] {
+    background-color: $danger !important;
+    color: $white !important;
+
+    border: 1px solid $danger !important;
+    &.hover,
+    &:hover,
+    &:focus {
+      background-color: $white !important;
+      color: $danger !important;
+      border-color: $danger !important;
+    }
+  }
+
+  &-clear {
+    border-radius: 10px;
+    border: 1px solid $cyan;
+  }
+
+  &-lg {
+    @include button-size($padding-small, $padding-large, $font-size-h3, $line-height-large, $btn-border-radius-base);
+  }
+
+  &-sm {
+    @include button-size(0, $padding-small, 15px, 2.2, $btn-border-radius-base);
+  }
+}

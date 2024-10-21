@@ -1,0 +1,22 @@
+@import 'block-base';
+.block--l {
+  .table-block {
+    overflow: visible !important;
+  }
+  .table-block.content-block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .table-block table tbody tr td:first-of-type {
+    @media screen and ($min1024) {
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 600;
+    }
+    @media screen and ($max1024) {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,299 @@
+#ensModalWrapper {
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  background-color: rgb(0 0 0 / 38%) !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ensModal {
+  position: absolute;
+  left: 0;
+  right: auto;
+  top: auto;
+  bottom: 0;
+  width: 50vw;
+  padding: 24px 64px !important;
+  font-family: Libre Franklin !important;
+  background:#F2F4FA;
+}
+
+@media (max-width:1024px){
+  .ensModal {
+    width: 100vw;
+  }
+}
+@media (max-width:768px){
+  .ensModal {
+    padding:24px !important;
+  }
+  #ensModalWrapper > .ensModal {
+    height:100vh;
+    overflow-y: scroll;
+  }
+}
+
+#lang-modal-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 16px !important;
+}
+
+#policy-block, #warning-block, #lang-modal-wrap, .ensButtons {
+  justify-content: flex-start !important;
+}
+
+.ensToggleRowWrapper {
+  margin:20px 0 !important;
+}
+
+.ensToggleLabel {
+  position:relative;
+  display:inline-block;
+  font-family: Red Hat Display !important;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  color:#002EA6;
+  text-transform: lowercase;
+  padding-left:22px !important;
+  background-color: transparent !important;
+  border-bottom: solid 1px #008FC5;
+  border-radius: 0 !important;
+}
+.ensToggleLabel::first-letter {
+  text-transform: capitalize;
+}
+
+.ensToggleLabel .card {
+  position:absolute !important;
+  right:5px;
+  top: calc(50% - 5px);
+  transform: translateY(-50%);
+  margin:0 !important;
+}
+
+.ensToggleLabel.chevron::before {
+  position:absolute !important;
+  left:0;
+  top: 50% !important;
+  transform: translateY(-50%) rotate(45deg) !important;
+  border-width: 1.5px 1.5px 0 0 !important;
+}
+.ensToggleLabel.chevron.bottom:before {
+  transform: translateY(-50%) rotate(135deg) !important;
+}
+.ensModal .tagContainer .ensToggleLabel {
+  padding-left:0px !important;
+}
+.ensModal .switch {
+  height: 10px !important;
+  background: transparent !important;
+  border: solid 1px #002ea6;
+  border-radius: 6px !important;
+}
+.ensModal .toggle {
+  height: 20px !important;
+  width: 20px !important;
+  background: #002ea6 !important;
+  border-radius: 50% !important;
+  top: -5px !important;
+}
+.ensModal input[type="checkbox"]:checked ~ .toggle,
+.ensModal input[type="checkbox"]:checked ~ .switch {
+  background: #002ea6 !important;
+}
+.ensModal .ensTagsContent {
+  padding: 0 0 0 16px !important;
+}
+.ensModal .ensTagsContent .description,
+.ensModal .ensTagsContent .domain-description {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color:#000;  
+  margin: 8px 0 !important;
+}
+.ensModal .ensTagsContent .description {
+  max-width:none !important;
+}
+.ensToggleLabel a {
+  color:#002EA6 !important;
+}
+
+#ensTitle {
+  position:absolute;
+  top: 20px;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  font-family: 'Red Hat Display' !important;
+  color: #002ea6 !important;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  background-color: transparent !important;
+  pointer-events:none;
+  text-transform: lowercase;
+}
+#ensTitle::first-letter {
+  text-transform: capitalize;
+}
+
+.modal-close {
+  position:absolute;
+  right: 64px !important;
+  top: 24px !important;
+  width:24px;
+  height:24px;
+  line-height: 25px;
+  color:#fff;
+  background:#002EA6;
+  border-radius: 50%;
+}
+@media (max-width:768px){
+  #ensTitle {
+    position:relative !important;
+    top:0 !important;
+  }
+  .modal-close {
+    right:24px !important;
+  }
+}
+#lang-modal-wrap:after {
+  right: 3px;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+  height: 6px;
+  width: 6px;
+  content: "";
+  border-bottom: 1.5px solid #002EA6 !important;
+  border-left: 1.5px solid #002EA6 !important;
+  border-right-color: #002EA6 !important;
+  border-top-color: #002EA6 !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#lang-modal-dropdown {
+  top: 30px !important;
+  margin:0 !important;
+}
+#lang-modal-dropdown > li {
+  padding: 0px !important;
+}
+#lang-modal-dropdown > li a {
+  display:block;
+  padding: 0px 9px !important;
+  color:#002ea6 !important;
+}
+#lang-modal-dropdown > li a:hover,
+#lang-modal-dropdown > li a:focus {
+  color:#fff !important;
+  background:#002ea6 !important;
+}
+
+#lang-modal-sel {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  color:#002EA6;
+}
+
+#ensDescription {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color:#000;
+  margin-bottom:15px;
+}
+
+#policy-consent-checkbox, #warning-block {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+#warning-block {
+  margin-bottom:15px;
+  padding-left: 17px;
+}
+#policy-warning {
+  color: #ff034a !important;
+}
+
+.ensButtons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end !important;
+  align-items: flex-start;
+  flex-wrap:wrap;
+}
+#ensModalAcceptAll, #ensSave {
+  height: 40px;
+  padding: 0 60px;
+  font-family: 'Red Hat Display' !important;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #002ea6;
+  border-radius: 58px;
+  transition:all 0.3s ease;
+}
+#ensModalAcceptAll {
+  margin-right:16px;
+  background: #17FCC4;
+  border: solid 1px #17FCC4;
+}
+#ensModalAcceptAll:hover, #ensModalAcceptAll:focus {
+  color: #17FCC4;
+  background: #002ea6;
+  border-color: #002ea6;
+}
+#ensSave {
+  background: transparent !important;
+  border: solid 1px #002ea6;
+}
+#ensSave:hover, #ensSave:focus {
+  color:#17FCC4;
+  background: #002ea6 !important;
+}
+#ensModalAcceptAllText, #ensSaveText {
+  text-transform: lowercase;
+}
+#ensModalAcceptAllText::first-letter, #ensSaveText::first-letter {
+  text-transform: capitalize;
+}
+@media (max-width:768px){
+  #ensModalAcceptAll, #ensSave {
+    height:auto;
+    padding:6.5px 60px;
+  }
+  #ensSave {
+    margin-bottom:20px;
+  }
+}
+
+.privacy-link {
+  text-transform: lowercase;
+}
+.privacy-link::first-letter {
+  text-transform: capitalize;
+}
+.privacy-link, .privacy-statement-link {
+  font-family:'Libre Franklin' !important;
+  font-size:16px !important;
+  line-height:20px !important;
+  font-weight:700 !important;
+  color:#002ea6 !important;
+}

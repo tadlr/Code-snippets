@@ -1,0 +1,252 @@
+.navbar {
+  border-radius: 0;
+  margin: 0;
+
+  @media screen and (max-width: $screen-xs-max) {
+    background: $brand-primary;
+    border-radius: 8px;
+    margin: 10px auto;
+    max-width: calc(100% - 20px);
+    padding: 10px;
+  }
+
+  &-header{
+    align-items: center;
+    display: flex;
+    float: none;
+    position: relative;
+    width: 100%;
+    
+    @media screen and (min-width: $screen-sm-min) {
+      border-bottom: 1px solid $light;
+    }
+    
+    @media screen and (min-width: $screen-lg) {
+      justify-content: center;
+    }
+
+    .region-branding{
+      flex-grow: 1;
+
+      @media screen and (min-width: $screen-lg) {
+        margin: 0 250px;
+      }
+    }
+
+    .region-header{
+      align-items: center;
+      display: flex;
+
+      @media screen and (min-width: $screen-lg) {
+        padding-right: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &-brand{
+    display: block;
+    height: auto;
+    max-width: 500px;
+    
+    .logo{
+      img{
+        max-height: 80px;
+        max-width: auto;
+        width: 100%;
+      }
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+      float: none;
+      margin: 0 auto!important;
+      width: auto;
+    }
+  }
+
+  &-toggle{
+    background: none!important;
+    border: none!important;
+    margin: 0;
+
+    .icon-bar{
+      background-color: $white!important;
+    }
+
+    &:focus{
+      outline: 1px solid $white;
+    }
+  }
+
+  &-collapse{
+    padding: 0;
+  }
+
+  &-nav {
+    margin: 0;
+    width: 100%;
+    
+    @media screen and (min-width: $screen-sm-min) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    > li {
+      position: relative;
+
+      a {
+        text-decoration: none!important;
+        transition: all 300ms;
+
+        &[aria-haspopup=true]{
+          @media screen and (min-width: $screen-sm-min) {
+            padding-right: ($padding + $padding-xs);
+
+            &:after{
+              background: url('../assets/svg/icon-chevron-down.svg') no-repeat center / contain;
+              content: "";
+              display: block;
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              right: ($padding-xs * 2);
+              top: 50%;
+              transform: translateY(-50%);
+              transition: all 300ms;
+            }
+          }
+
+        }
+
+        &[aria-expanded=true]{
+          & + ul.sub-nav{
+            top: 100%;
+            transform: translateY(0);
+            opacity: 1;
+            z-index: 1;
+
+            &.align-right{
+              right: 0;
+            }
+          }
+        }
+
+        &:visited{
+          color: $navbar-default-link-color!important;
+        }
+
+        &:hover,
+        &:focus,
+        &.is-active{
+          color: $navbar-default-link-hover-color;
+          background: $navbar-default-link-hover-bg;
+
+          &:visited{
+            color: $navbar-default-link-hover-color!important;
+          }
+
+          &:after{
+            background-image: url('../assets/svg/icon-chevron-down-white.svg');
+          }
+        }
+        
+        @media screen and (min-width: $screen-sm-min) {
+          padding: $padding-xs $padding;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          color: $white!important;
+
+          &:visited{
+            color: $white!important;
+          }
+        }
+      }
+
+      &.active{
+        > a{
+          &:after{
+            background-image: url('../assets/svg/icon-chevron-down-white.svg');
+          }
+
+          &:visited{
+            color: $navbar-default-link-hover-color!important;
+          }
+        }
+      }
+
+      &.dropdown{
+        display: flex;
+        flex-wrap: wrap;
+
+        > a,
+        > span{
+          flex-grow: 1;
+        }
+
+        button.dropdown-toggle{
+          background: none;
+          border: none;
+          border-left: 1px solid $white;
+          width: 45px;
+
+          .caret{
+            border-width: 5px;
+            color: $white;
+            transform: rotate(-90deg);
+            transition: all 300ms;
+          }
+        }
+
+        &.open{
+          button.dropdown-toggle{
+            .caret{
+              transform: rotate(0);
+            }
+          }
+        }
+      }
+
+      ul{
+        &.sub-nav{
+          background: $white;
+          opacity: 0;
+          transition: all 200ms;
+          z-index: -1;
+          
+          @media screen and (min-width: $screen-sm-min) {
+            box-shadow: 0 0 4px $gray-light;
+            max-width: 300px;
+            position: absolute;
+            width: max-content;
+            transform: translateY(-20px);
+          }
+        }
+
+        &.dropdown-menu{
+          margin: 0;
+          width: 100%!important;
+
+          > li{
+            > a{ 
+              background: $white;
+              color: $text-color!important;
+              padding: 10px 15px!important;
+              white-space: normal;
+
+              &.is-active,
+              &:focus{
+                background: $light!important;
+                color: $text-color!important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

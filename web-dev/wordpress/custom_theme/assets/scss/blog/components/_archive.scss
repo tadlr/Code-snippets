@@ -1,0 +1,49 @@
+.archive-pagination {
+  text-align: center;
+  width: 100%;
+
+  @media screen and ($min1024) {
+    padding-top: 5.208vw;
+    padding-bottom: 5.208vw;
+  }
+
+  @media screen and ($mobile_all) {
+    padding-bottom: 40px;
+  }
+
+  span {
+    font-size: 21px;
+    color: $blue-1;
+    display: inline-block;
+    padding: 0 10px;
+
+    &.current {
+      color: $green-1;
+      font-size: $contentPadding;
+      font-weight: 700;
+    }
+  }
+
+  .page-numbers {
+    color: $blue-1;
+    font-size: 20px;
+    margin: 0 10px;
+
+    &.prev {
+      display: none !important;
+    }
+
+    &.next {
+      display: none !important;
+    }
+  }
+}
+
+.page-id-3152 {
+  .single-article-section {
+    z-index: 1;
+  }
+  .inner-pages-contact-section.blog-social-media {
+    z-index: 0;
+  }
+}

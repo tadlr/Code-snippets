@@ -1,0 +1,248 @@
+.article-content,
+.sk-lander {
+  .hbspt-form {
+    padding: 45px;
+    background: $blue-1;
+    border-radius: 50px;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $white !important;
+    }
+    p {
+      font-family: $libre;
+      font-size: 18px;
+      font-weight: 600;
+      color: $white !important;
+      line-height: 30px;
+    }
+    fieldset {
+      max-width: none !important;
+      width: 100%;
+      margin-bottom: 0px !important;
+    }
+
+    @media screen and ($max1024) {
+      .form-columns-2 .hs-form-field {
+        width: 100% !important;
+      }
+    }
+
+    .submitted-message.hs-main-font-element {
+      color: $white !important;
+      p,
+      * {
+        color: $white !important;
+      }
+    }
+
+    .hs-error-msgs {
+      font-family: $libre;
+      // margin-bottom: 0 !important;
+      padding-left: 0;
+      list-style: none;
+      li {
+        list-style: none;
+        &::before {
+          content: none !important;
+        }
+      }
+    }
+  }
+}
+.content-block-holder.bg-blue {
+  .hbspt-form {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+}
+.customTheme-block.bg-blue {
+  .hbspt-form {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+}
+.hs-error-msgs {
+  .hs-main-font-element {
+    padding: 0;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    line-height: 20px;
+  }
+}
+.hs-form-booleancheckbox-display {
+  display: flex;
+  padding-left: 0 !important;
+}
+.hs-form-booleancheckbox {
+  list-style-type: none;
+  &::before {
+    content: none !important;
+  }
+}
+#ui-datepicker-div {
+  display: none;
+  width: 240px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 30%);
+  .ui-datepicker-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  .ui-datepicker-title {
+    display: flex;
+    width: 100%;
+    select {
+      flex: 1;
+    }
+  }
+  .ui-datepicker-calendar {
+    width: 100%;
+    th {
+      text-align: center;
+    }
+    td {
+      text-align: center;
+    }
+  }
+}
+.landing-page-form {
+  .hbspt-form {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    fieldset {
+      margin-bottom: 0 !important;
+    }
+    .hs-error-msgs {
+      // margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+  }
+}
+.firefox {
+  .hbspt-form {
+    .hs-fieldtype-file {
+      label {
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 0;
+        background: transparent;
+      }
+    }
+    fieldset {
+      .hs-input[type='file'] {
+        padding: 0;
+        line-height: unset;
+        border: none;
+      }
+    }
+  }
+  .hs-fieldtype-file {
+    .hs-input {
+      background-color: transparent !important;
+      font-size: 0.9rem;
+    }
+    input[type='file'] {
+      &::file-selector-button {
+        margin-right: 20px;
+        border: none;
+        background: #17fcc4;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        border-radius: 20px;
+        color: $blue-1;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+        &:hover {
+          background: #fff;
+        }
+        &:active {
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 880px) {
+  .hbspt-form {
+    .hs-form-field {
+      label {
+        font-size: 14px;
+      }
+      label#label-how_has_partnering_with_customTheme_helped_to_improve_your_business_and_what_challenges_did_you_face_bef-8da3bd32-0a4b-430a-bc8e-6ee0c9f08f38 {
+        top: -30px;
+      }
+    }
+    fieldset {
+      .hs-richtext {
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+    .hs-button {
+      padding: 0.99rem 2.125rem !important;
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  .hbspt-form {
+    padding: 45px 30px;
+    .hs-form-field {
+      label {
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .hbspt-form {
+    .hs-form-field {
+      label#label-how_has_partnering_with_customTheme_helped_to_improve_your_business_and_what_challenges_did_you_face_bef-8da3bd32-0a4b-430a-bc8e-6ee0c9f08f38 {
+        top: auto;
+      }
+      margin-bottom: 20px;
+      label {
+        display: inline-block;
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 0;
+        margin-bottom: 10px;
+        letter-spacing: 0;
+        background: transparent;
+      }
+    }
+    fieldset {
+      margin-bottom: 0 !important;
+      .input {
+        margin-right: 0 !important;
+      }
+      .hs-input {
+        width: 100% !important;
+      }
+    }
+  }
+  .hs-fieldtype-file {
+    .input {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

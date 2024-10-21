@@ -1,0 +1,434 @@
+.hero-section {
+  background-color: $blue-1;
+  z-index: 5;
+  will-change: transform;
+
+  .h1-spacer {
+    display: block;
+  }
+
+  @media screen and ($min1024) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include vw(padding-top, 88px);
+    @include vw(padding-bottom, 157px);
+    min-height: 100vh;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      background-color: $blue-1;
+      width: 100%;
+      left: 0;
+      height: 3px;
+      bottom: -2px;
+      z-index: -5;
+    }
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 88px;
+    padding-bottom: 157px;
+  }
+
+  .section-content-wrapper {
+    width: 100%;
+  }
+
+  .bg-el-wrap {
+    @include abs-cover-el;
+    overflow: hidden;
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    .bg-image {
+      opacity: 0;
+    }
+  }
+
+  .payments-section-position-el {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 350px);
+      @include vw(height, 350px);
+      @include vw(top, 370px);
+      @include vw(left, 885px);
+    }
+
+    @media screen and ($min1920) {
+      width: 350px;
+      height: 350px;
+      top: 370px;
+      left: 885px;
+    }
+  }
+
+  .payments-section-img {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @media screen and ($mobile_all) {
+      display: none;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 350px);
+      @include vw(height, 350px);
+      @include vw(top, 370px);
+      @include vw(left, 885px);
+    }
+
+    @media screen and ($min1920) {
+      width: 350px;
+      height: 350px;
+      top: 370px;
+      left: 885px;
+    }
+  }
+
+  .bg-image {
+    background-size: cover;
+    background-position: 50% 0%;
+
+    &.active-img {
+      background-size: 68% auto;
+      background-position: 105% 50%;
+    }
+  }
+
+  .svg-wrap {
+    @include abs-cover-el;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+  }
+
+  .mask-svg {
+    @include abs-cover-el;
+
+    #svg-background {
+      fill: $blue-1;
+    }
+  }
+
+  .content-wrap {
+    @media screen and ($mobile_sm) {
+      @include vw(padding-top, 247px, 500);
+      @include vw(padding-bottom, 106px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      padding-top: 247px;
+      padding-bottom: 106px;
+    }
+  }
+
+  .txt-content {
+    position: relative;
+    z-index: 2;
+
+    @media screen and ($min1024) {
+      @include vw(width, 700px);
+    }
+
+    @media screen and ($min1920) {
+      width: 700px;
+    }
+  }
+
+  .txt-size-120 {
+    @media screen and ($mobile_sm) {
+      @include vw(max-width, 424px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      max-width: 424px;
+    }
+  }
+
+  .txt-post-rtf {
+    @media screen and ($mobile_sm) {
+      @include vw(margin-top, 18px, 500);
+      @include vw(letter-spacing, 0.2px, 500);
+      @include vw(max-width, 296px, 500);
+
+      a {
+        @include vw(letter-spacing, 0.6px, 500);
+      }
+    }
+
+    @media screen and ($mobile_lg) {
+      margin-top: 18px;
+      letter-spacing: 0.2px;
+      max-width: 296px;
+
+      a {
+        letter-spacing: 0.6px;
+      }
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 37px);
+      @include vw(margin-left, 8px);
+      @include vw(margin-right, 150px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 37px;
+      margin-left: 8px;
+      margin-right: 150px;
+    }
+  }
+
+  .btn-wrap {
+    margin-top: 35px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 55px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 55px;
+    }
+  }
+
+  .section-scroll-btn {
+    position: relative !important;
+    left: 30px;
+    margin-top: 45px;
+  }
+
+  .mobile-image {
+    display: none;
+
+    @media screen and ($mobile_all) {
+      display: block;
+    }
+  }
+
+  .desktop-image {
+    display: none;
+
+    @media screen and ($min1024) {
+      display: block;
+    }
+  }
+
+  .hero-icons-wrap {
+    @include pabs;
+    z-index: 2;
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and ($max1024) {
+      display: none;
+    }
+  }
+
+  .icon-part {
+    backface-visibility: hidden;
+    position: absolute;
+  }
+
+  .hero-icons-1 {
+    @media screen and ($min1024) {
+      @include vw(top, -50px);
+      @include vw(left, 947px);
+      @include vw(width, 89px);
+      @include vw(height, 89px);
+    }
+    @media screen and ($min1920) {
+      top: -50px;
+      left: 947px;
+      width: 89px;
+      height: 89px;
+    }
+  }
+
+  .hero-icons-2 {
+    @media screen and ($min1024) {
+      @include vw(top, 161px);
+      @include vw(right, 46px);
+      @include vw(width, 188px);
+      @include vw(height, 188px);
+    }
+    @media screen and ($min1920) {
+      top: 161px;
+      right: 46px;
+      width: 188px;
+      height: 188px;
+    }
+  }
+
+  .hero-icons-3 {
+    @media screen and ($min1024) {
+      @include vw(top, -3px);
+      @include vw(left, 1012px);
+      @include vw(width, 47px);
+      @include vw(height, 47px);
+    }
+    @media screen and ($min1920) {
+      top: -3px;
+      left: 1012px;
+      width: 47px;
+      height: 47px;
+    }
+  }
+
+  .hero-icons-4 {
+    @media screen and ($min1024) {
+      @include vw(top, 64px);
+      @include vw(left, 904px);
+      @include vw(width, 89px);
+      @include vw(height, 89px);
+    }
+    @media screen and ($min1920) {
+      top: 64px;
+      left: 904px;
+      width: 89px;
+      height: 89px;
+    }
+  }
+
+  .hero-icons-5 {
+    @media screen and ($min1024) {
+      @include vw(top, 158px);
+      @include vw(left, 980px);
+      @include vw(width, 140px);
+      @include vw(height, 70px);
+    }
+    @media screen and ($min1920) {
+      top: 158px;
+      left: 980px;
+      width: 140px;
+      height: 70px;
+    }
+  }
+
+  .hero-icons-6 {
+    @media screen and ($min1024) {
+      @include vw(top, 318px);
+      @include vw(left, 1313px);
+      @include vw(width, 86px);
+      @include vw(height, 86px);
+    }
+    @media screen and ($min1920) {
+      top: 318px;
+      left: 1313px;
+      width: 86px;
+      height: 86px;
+    }
+  }
+
+  .hero-icons-7 {
+    @media screen and ($min1024) {
+      @include vw(top, 386px);
+      @include vw(right, 92px);
+      @include vw(width, 73px);
+      @include vw(height, 73px);
+    }
+    @media screen and ($min1920) {
+      top: 386px;
+      right: 92px;
+      width: 73px;
+      height: 73px;
+    }
+  }
+
+  .hero-icons-8 {
+    @media screen and ($min1024) {
+      @include vw(top, 456px);
+      @include vw(right, 163px);
+      @include vw(width, 148px);
+      @include vw(height, 148px);
+    }
+    @media screen and ($min1920) {
+      top: 456px;
+      right: 163px;
+      width: 148px;
+      height: 148px;
+    }
+  }
+
+  .hero-icons-9 {
+    @media screen and ($min1024) {
+      @include vw(top, 459px);
+      @include vw(right, 17px);
+      @include vw(width, 147px);
+      @include vw(height, 147px);
+    }
+    @media screen and ($min1920) {
+      top: 459px;
+      right: 17px;
+      width: 147px;
+      height: 147px;
+    }
+  }
+
+  .hero-icons-10 {
+    @media screen and ($min1024) {
+      @include vw(top, 313px);
+      @include vw(right, 165px);
+      @include vw(width, 147px);
+      @include vw(height, 147px);
+    }
+    @media screen and ($min1920) {
+      top: 313px;
+      right: 165px;
+      width: 147px;
+      height: 147px;
+    }
+  }
+
+  .main-img-wrap {
+    z-index: 1;
+    position: absolute;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 50%;
+    top: 0;
+    @media screen and ($mobile_sm) {
+      @include vw(top, 15px, 500);
+      @include vw(left, 162px, 500);
+      @include vw(width, 477px, 500);
+      @include vw(height, 477px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      left: 163px;
+      width: 600px;
+      height: 600px;
+    }
+
+    @media screen and ($min1024) {
+      top: 40.2%;
+      transform: translateY(-50%);
+      @include vw(width, 795px);
+      @include vw(height, 795px);
+      @include vw(right, 70px);
+    }
+
+    @media screen and ($min1920) {
+      width: 795px;
+      height: 795px;
+      right: 70px;
+    }
+  }
+  .txt-content {
+    will-change: transform;
+  }
+}

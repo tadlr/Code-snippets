@@ -1,0 +1,96 @@
+// Divider Gutenberg block
+.divider {
+  // size
+  &.small {
+    height: 15px;
+
+    @media screen and ($mobile_sm) {
+      height: 15px;
+    }
+
+    @media screen and ($mobile_lg) {
+      height: 20px;
+    }
+
+    @media screen and ($mobile) {
+      height: 20px;
+    }
+
+    @media screen and ($min1024) {
+      height: 30px;
+    }
+
+    @media screen and ($min1440) {
+      height: 30px;
+    }
+  }
+
+  &.medium {
+    height: 30px;
+
+    @media screen and ($mobile_sm) {
+      height: 20px;
+    }
+
+    @media screen and ($mobile_lg) {
+      height: 30px;
+    }
+
+    @media screen and ($mobile) {
+      height: 30px;
+    }
+
+    @media screen and ($min1024) {
+      height: 50px;
+    }
+
+    @media screen and ($min1440) {
+      height: 60px;
+    }
+  }
+
+  &.large {
+    height: 40px;
+
+    @media screen and ($mobile_sm) {
+      height: 40px;
+    }
+
+    @media screen and ($mobile_lg) {
+      height: 40px;
+    }
+
+    @media screen and ($mobile) {
+      height: 40px;
+    }
+
+    @media screen and ($min1024) {
+      height: 70px;
+    }
+
+    @media screen and ($min1440) {
+      height: 80px;
+    }
+  }
+
+  // background color
+  &.white {
+    background-color: $white;
+  }
+
+  &.grey {
+    background-color: #f2f4faa7;
+  }
+
+  &.blue {
+    background-color: $blue-1;
+  }
+
+  &.green {
+    background-color: $green-1;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+}

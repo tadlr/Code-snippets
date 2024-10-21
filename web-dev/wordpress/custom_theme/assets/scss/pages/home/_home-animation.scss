@@ -1,0 +1,44 @@
+// .demo-img {
+//   $easeOutQuart: cubic-bezier(0.25, 1, 0.5, 1);
+//   $easeInOutCirc: cubic-bezier(0.85, 0, 0.15, 1);
+//   $easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+//   $easeOutSine: cubic-bezier(0.61, 1, 0.88, 1);
+//   .image-container {
+//     position: absolute;
+//     width: 100vw;
+//     height: 100vh;
+//     object-fit: cover;
+//     animation: shrink-to-circle 2s forwards $easeInOutCirc;
+//     animation-delay: 4s;
+//     background-size: cover;
+//     background-position: top right;
+//     top: 0;
+//     right: 0;
+//     z-index: 3;
+//   }
+
+//   @keyframes shrink-to-circle {
+//     0% {
+//       border-radius: 0;
+
+//       top: 10%;
+
+//       right: 10%;
+//     }
+
+//     // 50% {
+//     //   width: 50vh;
+//     //   height: 50vh;
+//     // }
+//     100% {
+//       width: 50vh;
+//       height: 50vh;
+//       border-radius: 50%;
+//       top: 10%;
+
+//       right: 10%;
+//       // transform: translateY(50%);
+//       // transform: translatex(-50%);
+//     }
+//   }
+// }

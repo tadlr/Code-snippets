@@ -1,0 +1,98 @@
+{% extends 'block-sk-block-base.twig' %}
+{% block block_content %}
+  <div
+    class='container'
+  >
+    <div
+      class='row'
+    >
+      {{ include('field/field--full-w-heading.twig', { heading: field.heading, content: field.content }) }}
+      <div
+        class='table-block content-block four-column-table col-sm-12  mt-1'
+      >
+        <div
+          class='table-responsive d-none d-lg-block'
+        >
+          {% if field.rows %}
+            {% block table %}
+              <table
+                class='table-comparison table'
+              >
+                {% for row in field.rows %}
+                  {% if row.acf_fc_layout == 'heading_row' %}
+                    <thead>
+                      <tr
+                        class='four-columns-heading-row'
+                      >
+                        <th>
+                          {% if row.heading_one %}
+                            {{ row.heading_one }}
+                          {% endif %}
+                          {% if row.image_one %}
+                            {% set id = fn('attachment_url_to_postid', row.image_one) %}
+                            {% set alt = fn('get_post_meta', id, '_wp_attachment_image_alt', true) %}
+                            <img
+                              alt='{{ alt }}'
+                              class='b-lazy'
+                              data-src='{{ row.image_one }}'
+                            >
+                          {% endif %}
+                        </th>
+
+                        {% set headingTemplate = 'field/field--comparison-table-heading.twig' %}
+                        {{ include(headingTemplate, { heading: row.heading_two, image: row.image_two }) }}
+                        {{ include(headingTemplate, { heading: row.heading_three, image: row.image_three }) }}
+                        {{ include(headingTemplate, { heading: row.heading_four, image: row.image_four }) }}
+                        {{ include(headingTemplate, { heading: row.heading_five, image: row.image_five }) }}
+                      </tr>
+                    </thead>
+                  {% endif %}
+
+                  {% if row.acf_fc_layout == 'table_content' %}
+                    <tbody>
+                      {% if row.table_inner_heading %}
+                        <tr
+                          class='inner-table-heading'
+                        >
+                          <td>{{ row.table_inner_heading }}</td>
+                        </tr>
+                      {% endif %}
+                      {% if row.table_row %}
+                        {% for table_row in row.table_row %}
+                          <tr>
+                            {#                             <td>{{ fn('template_parse',table_row.column_one) }}</td> #}
+                            <td>{{ table_row.column_one }}</td>
+
+                            {% set rowTemplate = 'field/field--comparison-table-row.twig' %}
+                            {{ include(rowTemplate, { text: table_row.column_two_text, radio: table_row.column_two_radio }) }}
+                            {{ include(rowTemplate, { text: table_row.column_three_text, radio: table_row.column_three_radio }) }}
+                            {{ include(rowTemplate, { text: table_row.column_four_text, radio: table_row.column_four_radio, bold: table_row.bold }) }}
+                            {{ include(rowTemplate, { text: table_row.column_five_text, radio: table_row.column_five_choice }) }}
+                          </tr>
+                        {% endfor %}
+                      {% endif %}
+                    </tbody>
+                  {% endif %}
+                {% endfor %}
+              </table>
+            {% endblock %}
+          {% endif %}
+        </div>
+        <div
+          class='mobile-compare d-xs-block d-sm-block d-md-block d-lg-none'
+        >
+          {% for single_table in table %}
+            {{ include('block/block--comparison-box.twig', { content: single_table }) }}
+          {% endfor %}
+        </div>
+      </div>
+      {% if field.footer %}
+        <div
+          class='py-5'
+        >
+          {{ include('field/field--footer.twig', { footer: field.footer }) }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

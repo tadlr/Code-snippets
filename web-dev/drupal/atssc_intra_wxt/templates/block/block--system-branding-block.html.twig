@@ -1,0 +1,32 @@
+{% extends "block--bare.html.twig" %}
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup templates
+ */
+#}
+{% set logo = (language == 'en') ? site_logo : '/themes/custom/atssc_intra_wxt/assets/logo/logo-fr.svg' %}
+{% block content %}
+	<a class="navbar-brand" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+		<span class="logo">
+			<picture>
+				<source media="(min-width: 768px)" srcset="{{ logo }}">
+				<img src="{{ logo }}" alt="{{ site_name }}"/>
+			</picture>
+		</span>
+		<span class="sr-only">{{ site_name }}</span>
+	</a>
+	{% if site_slogan %}
+		<p class="navbar-text">{{ site_slogan }}</p>
+	{% endif %}
+{% endblock %}

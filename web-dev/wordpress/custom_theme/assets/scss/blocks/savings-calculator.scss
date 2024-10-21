@@ -1,0 +1,987 @@
+// .block--bsk6 {
+@import 'block-base';
+.calculator-section {
+  // background-color: $white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media screen and ($min1024) {
+    @include vw(padding-top, 81px);
+    @include vw(padding-bottom, 257px);
+  }
+
+  @media screen and ($min1920) {
+    padding-top: 81px;
+    padding-bottom: 257px;
+  }
+
+  .calculator-form-wrapper {
+    @media screen and ($min1024) {
+      width: fit-content;
+      min-height: 335px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+  .calculator-title {
+    position: relative;
+    z-index: 4;
+    margin-bottom: 25px;
+    width: 100%;
+
+    @media screen and ($min1024) {
+      @include vw(width, 650px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 53px;
+      width: 650px;
+    }
+  }
+
+  .calculate-values-btn-wrap {
+    margin-top: 25px;
+
+    @media screen and ($mobile_all) {
+      text-align: center;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(margin-top, 50px);
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 50px;
+    }
+  }
+
+  .calculate-values-btn {
+    transition:
+      color 0.5s $easeOutSine,
+      opacity 0.5s $easeOutSine;
+
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  .calculator-info-txt {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+
+    @media screen and ($mobile_all) {
+      br {
+        display: none;
+      }
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 750px);
+    }
+
+    @media screen and ($min1920) {
+      width: 750px;
+    }
+  }
+
+  .calc-value-dropdown-wrap {
+    display: inline-block;
+    position: relative;
+
+    &.opened-calc-js-dropdown {
+      .dropdown-arrow-btn {
+        transform: rotate(180deg);
+      }
+
+      .info-txt-dropdown-wrap {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+
+  .info-txt-dropdown-wrap {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    transition:
+      opacity 0.3s $easeOutSine,
+      visibility 0.3s $easeOutSine;
+    @include vw(border-radius, 0 0 20px 20px, 1024);
+
+    @media screen and ($min1024) {
+      @include vw(border-radius, 0 0 20px 20px);
+    }
+
+    @media screen and ($min1920) {
+      border-radius: 0 0 20px 20px;
+    }
+  }
+
+  .info-txt-custom-select-item {
+    transition:
+      background-color 0.3s $easeOutSine,
+      border-bottom 0.3s $easeOutSine,
+      color 0.3s $easeOutSine;
+    @include vw(padding, 10px 15px, 500);
+
+    @media screen and ($min500) {
+      padding: 10px 15px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(padding, 10px 15px);
+    }
+
+    @media screen and ($min1920) {
+      padding: 10px 15px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $blue-1;
+      color: $white;
+      border-bottom: 1px solid $blue-1;
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $blue-5;
+    }
+  }
+
+  .calc-value-dropdown-wrap-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    position: relative;
+    @include vw(width, 187px, 500);
+    @include vw(padding, 3px 40px 8px 15px, 500);
+
+    @media screen and ($min500) {
+      width: 187px;
+      padding: 3px 40px 8px 15px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(width, 187px);
+      @include vw(padding, 3px 40px 8px 15px);
+    }
+
+    @media screen and ($min1920) {
+      width: 187px;
+      padding: 3px 40px 8px 15px;
+    }
+  }
+
+  .calc-chosen-val-wrap {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: 1px solid $blue-1;
+    cursor: pointer;
+    position: relative;
+    line-height: 1;
+  }
+
+  .calc-value-dropdown-wrap-title {
+    display: inline-block;
+  }
+
+  .info-txt-custom-input-wrap {
+    position: relative;
+    padding: 10px 15px;
+
+    @media screen and ($min1024) {
+      @include vw(padding, 10px 15px);
+    }
+
+    @media screen and ($min1920) {
+      padding: 10px 15px;
+    }
+  }
+
+  .info-txt-custom-input-btn {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .green-arrow-icon {
+    width: 21px;
+    backface-visibility: hidden;
+    will-change: transform;
+
+    @media screen and ($min1024) {
+      @include vw(width, 21px, 1660);
+    }
+
+    @media screen and ($min1660) {
+      width: 21px;
+    }
+  }
+
+  .info-txt-custom-input {
+    border: 1px solid $blue-5;
+    width: 100%;
+    padding: 5px 30px 5px 5px;
+
+    @media screen and ($min1024) {
+      @include vw(padding, 5px 30px 5px 5px);
+    }
+
+    @media screen and ($min1920) {
+      padding: 5px 30px 5px 5px;
+    }
+  }
+
+  .custom-input-content-wrap {
+    position: relative;
+  }
+
+  .dropdown-arrow-btn {
+    display: inline-block;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.3s $easeOutSine;
+    transform-origin: 50% 55%;
+    top: calc(50% - 20px);
+    width: 30px;
+    height: 30px;
+    right: 0;
+
+    @media screen and ($min1024) {
+      top: -3px;
+      @include vw(width, 30px);
+      @include vw(height, 30px);
+      @include vw(right, 12px);
+    }
+
+    @media screen and ($min1920) {
+      width: 30px;
+      height: 30px;
+      right: 12px;
+    }
+  }
+
+  .dropdown-arrow-btn::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    backface-visibility: hidden;
+    left: 50%;
+    top: 50%;
+    transition:
+      transform 0.3s $easeOutSine,
+      border-color 0.3s $easeOutSine;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: $blue-5;
+    width: 6px;
+    height: 6px;
+    border-left-width: 2.5px;
+    border-bottom-width: 2.5px;
+
+    @media screen and ($min1024) {
+      @include vw(width, 6px);
+      @include vw(height, 6px);
+      @include vw(border-left-width, 2.5px);
+      @include vw(border-bottom-width, 2.5px);
+    }
+
+    @media screen and ($min1920) {
+      width: 6px;
+      height: 6px;
+      border-left-width: 2.5px;
+      border-bottom-width: 2.5px;
+    }
+  }
+
+  .calculator-results-container {
+    @media screen and ($min1024) {
+      @include vw(padding-top, 189px, 1660);
+      @include vw(padding-bottom, 49px);
+    }
+
+    @media screen and ($min1660) {
+      padding-top: 189px;
+    }
+
+    @media screen and ($min1920) {
+      padding-bottom: 49px;
+    }
+    .text-results {
+      padding: 20px 0;
+    }
+
+    @media screen and ($mobile_all) {
+      padding-top: 59px;
+    }
+
+    .calculator-graphic-wrap {
+      @media screen and ($mobile_all) {
+        left: 20px;
+      }
+    }
+  }
+
+  .calculator-results-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 49px;
+
+    @media screen and ($min1024) {
+      @include vw(padding-top, 189px, 1660);
+      @include vw(padding-bottom, 49px);
+    }
+
+    @media screen and ($min1660) {
+      padding-top: 180px;
+    }
+
+    @media screen and ($min1920) {
+      padding-bottom: 49px;
+    }
+    .text-results {
+      padding: 20px 0;
+    }
+  }
+
+  .info-row-name-txt {
+    flex: 0 0 auto;
+    padding-right: 25px;
+  }
+
+  .info-row-name-txt,
+  .info-row-name-value {
+    font-size: 16px;
+    color: $gray-18;
+    margin-bottom: 0;
+  }
+
+  .info-row-name-value {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 25px;
+  }
+
+  .results-col {
+    width: 100%;
+
+    @media screen and ($min1024) {
+      width: 50%;
+    }
+
+    &:first-of-type {
+      @media screen and ($mobile_all) {
+        order: 2;
+      }
+
+      .results-col-info-row {
+        padding-right: 25px;
+
+        &:not(:first-of-type)::before {
+          left: 0;
+        }
+      }
+    }
+
+    .results-col-info-row {
+      padding-left: 25px;
+
+      &:not(:first-of-type)::before {
+        right: 0;
+      }
+    }
+
+    &:last-of-type {
+      @media screen and ($mobile_all) {
+        order: 1;
+        margin-bottom: 25px;
+      }
+
+      .results-col-title {
+        @media screen and ($min1024) {
+          // @include vw(padding-left, 67px);
+          padding-left: 25px;
+        }
+
+        @media screen and ($min1920) {
+          // padding-left: 67px;
+          padding-left: 25px;
+        }
+      }
+
+      .results-col-info-row {
+        &:not(:first-of-type)::before {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .results-col-title {
+    margin-bottom: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-bottom, 38px);
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 38px;
+    }
+  }
+
+  .results-col-info-row {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    @media screen and ($min1024) {
+      @include vw(padding, 10px 0);
+    }
+
+    @media screen and ($min1920) {
+      padding: 10px 0;
+    }
+
+    &:nth-of-type(odd) {
+      background-color: $blue-4;
+    }
+
+    &:not(:first-of-type)::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      backface-visibility: hidden;
+      background-color: $gray-26;
+      height: 1px;
+      width: 100%;
+
+      @media screen and ($min1024) {
+        width: calc(100% - 3.49vw);
+      }
+
+      @media screen and ($min1920) {
+        width: calc(100% - 67px);
+      }
+    }
+  }
+
+  .graphic-info-top-wrap {
+    position: absolute;
+    top: 0;
+
+    @media screen and ($mobile_all) {
+      left: 0;
+    }
+
+    @media screen and ($min1024) {
+      right: 0;
+      @include vw(top, -42px, 1660);
+      @include vw(padding-right, 10px, 1660);
+    }
+
+    @media screen and ($min1660) {
+      top: -42px;
+      padding-right: 10px;
+    }
+
+    &.shortcode {
+      @media screen and ($mobile_all) {
+        left: 18px;
+      }
+    }
+  }
+
+  .info-top-wrap-title {
+    margin-bottom: 25px;
+    width: 94px;
+
+    @media screen and ($min1024) {
+      @include vw(width, 94px, 1660);
+      @include vw(margin-bottom, 52px);
+    }
+
+    @media screen and ($min1660) {
+      width: 94px;
+    }
+
+    @media screen and ($min1920) {
+      margin-bottom: 52px;
+    }
+
+    @media screen and ($mobile_all) {
+      &.stcde {
+        left: 15px;
+      }
+    }
+  }
+
+  .background-graphic-paths-svg {
+    position: absolute;
+    z-index: 3;
+    @include vw(left, -26px, 1024);
+    @include vw(top, -25px, 1024);
+    @include vw(width, 970px, 1024);
+    @include vw(height, 600px, 1024);
+
+    @media screen and ($mobile_all) {
+      &.stcde {
+        left: 0 !important;
+      }
+    }
+
+    @media screen and ($min1024) {
+      @include vw(left, -21px, 1660);
+      @include vw(top, -20px, 1660);
+      @include vw(width, 795px, 1660);
+      @include vw(height, 492px, 1660);
+    }
+
+    @media screen and ($min1660) {
+      left: -21px;
+      top: -20px;
+      width: 795px;
+      height: 492px;
+    }
+
+    path {
+      fill: none;
+      stroke: none;
+    }
+
+    .control-element-line {
+      stroke-width: 0.5;
+      stroke: $white;
+    }
+
+    &.svg-show {
+      .control-element-line,
+      .control-element-customTheme,
+      .control-element-other {
+        opacity: 1;
+      }
+    }
+  }
+
+  .draggable-text {
+    opacity: 0;
+    font-size: 4px;
+    fill: $blue-18;
+  }
+
+  .control-element-line,
+  .control-element-customTheme,
+  .control-element-other {
+    opacity: 0;
+    transition: opacity 0.5s $easeOutSine;
+  }
+
+  .info-top-wrap-col-txt {
+    position: relative;
+    line-height: 1;
+    @include vw(padding, 4px 5px 14px 30px, 1024);
+
+    @media screen and ($min1024) {
+      @include vw(padding, 4px 5px 14px 30px, 1660);
+    }
+
+    @media screen and ($min1660) {
+      padding: 4px 5px 14px 30px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      border-radius: 50%;
+      @include vw(width, 20px, 1024);
+      @include vw(height, 20px, 1024);
+
+      @media screen and ($min1024) {
+        @include vw(width, 20px, 1660);
+        @include vw(height, 20px, 1660);
+      }
+
+      @media screen and ($min1660) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .graphic-info-bot-wrap {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    @include vw(left, -53px, 1024);
+    @include vw(width, 1001px, 1024);
+
+    @media screen and ($mobile_all) {
+      top: 100%;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(bottom, 3px, 1660);
+      @include vw(left, -43px, 1660);
+      // @include vw(width, 820px, 1660);
+      @include vw(width, 757px, 1660);
+    }
+
+    @media screen and ($min1660) {
+      bottom: 3px;
+      left: -43px;
+      width: 820px;
+    }
+    @media screen and ($mobile_all) {
+      &.stcde {
+        left: 15px;
+      }
+    }
+  }
+
+  .graphic-el-wrap.img-swapped {
+    .graphic-img {
+      opacity: 1;
+    }
+
+    .graphic-img-empty {
+      opacity: 0;
+    }
+  }
+
+  .graphic-img-empty {
+    @include abs-cover-el;
+  }
+
+  .graphic-img,
+  .graphic-img-empty {
+    transition: opacity 0.5s $easeOutSine;
+
+    @media screen and ($mobile_all) {
+      width: 100%;
+    }
+  }
+
+  .graphic-img {
+    opacity: 0;
+  }
+
+  .graphic-el-wrap {
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    @include vw(top, -9px, 1024);
+    @include vw(width, 924px, 1024);
+    @include vw(height, 572px, 1024);
+
+    @media screen and ($min1024) {
+      @include vw(top, -7px, 1660);
+      @include vw(width, 757px, 1660);
+      @include vw(height, 469px, 1660);
+    }
+
+    @media screen and ($min1660) {
+      top: -7px;
+      width: 757px;
+      height: 469px;
+    }
+
+    &.stcde {
+      @media screen and ($mobile_all) {
+        left: 15px;
+      }
+    }
+  }
+
+  .control-element-customTheme {
+    stroke: $white;
+    fill: $blue-1;
+    stroke-width: 0.75;
+  }
+
+  .control-element-other {
+    stroke: $white;
+    fill: $blue-18;
+    stroke-width: 0.75;
+  }
+
+  .info-bot-wrap-step {
+    text-align: center;
+    width: 16.66%;
+    opacity: 0;
+    transition: opacity 0.5s $easeOutSine;
+
+    &.active-step {
+      opacity: 1;
+    }
+
+    &:first-of-type {
+      opacity: 1;
+    }
+  }
+
+  .customTheme-info-col {
+    .info-top-wrap-col-txt::before {
+      background-color: $blue-1;
+    }
+  }
+
+  .other-info-col {
+    .info-top-wrap-col-txt::before {
+      background-color: $blue-18;
+    }
+  }
+
+  .info-top-wrap-col {
+    &:not(:last-of-type) {
+      @include vw(margin-bottom, 48px, 1024);
+
+      @media screen and ($min1024) {
+        @include vw(margin-bottom, 48px);
+      }
+
+      @media screen and ($min1920) {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  .calculator-graphic-wrap {
+    z-index: 3;
+    position: relative;
+    @include vw(width, 1078px, 1024);
+    @include vw(height, 623px, 1024);
+
+    @media screen and ($mobile_all) {
+      margin-top: 100px;
+    }
+
+    @media screen and ($min1024) {
+      right: 0;
+      position: absolute;
+      @include vw(width, 883px, 1660);
+      @include vw(height, 510px, 1660);
+      @include vw(top, 22px, 1660);
+    }
+
+    @media screen and ($min1660) {
+      width: 883px;
+      height: 510px;
+      top: 22px;
+    }
+  }
+
+  .btn-wrap {
+    .btn-txt-arrow {
+      @media screen and ($min1024) {
+        @include vw(margin-left, -7px);
+      }
+
+      @media screen and ($min1920) {
+        margin-left: -7px;
+      }
+    }
+
+    .short-disclaimer {
+      margin-top: 20px;
+    }
+  }
+}
+// }
+
+.sk-block {
+  .calculator-section {
+    padding-bottom: 0;
+    .calculator-results-wrap {
+      padding-top: 0px;
+    }
+
+    .calculator-results-title-wrap {
+      // padding-top: 150px !important;
+      padding-bottom: 50px !important;
+
+      @include vw(padding-top, 50px, 350);
+    }
+
+    .graphic-info-top-wrap {
+      padding-right: 0;
+      align-items: flex-start;
+    }
+
+    .dropdown-arrow-btn:before {
+      border-color: #002ea6;
+    }
+
+    // .graphic-info-bot-wrap {
+    //     @media screen and (min-width: 1024px) {
+    //         bottom: -30px;
+    //         left: 0;
+    //         width: 45.602vw;
+    //     }
+
+    //     @media screen and (max-width: 1024px) {
+    //         &.stcde {
+    //             top: 95%;
+    //             left: 0;
+    //             width: 95%;
+    //         }
+    //     }
+
+    //     @media screen and (max-width: 840px) {
+    //         &.stcde {
+    //             top: 90%;
+    //         }
+    //     }
+    // }
+
+    .info-top-wrap-col-txt {
+      &:before {
+        top: 4px;
+        @media screen and (max-width: 1024px) {
+          top: 8px;
+          left: 0;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        &:before {
+          top: 10px;
+          left: 0px;
+        }
+      }
+    }
+    .calculator-results-container .text-results {
+      padding: 0;
+    }
+
+    .calculator-info-txt p {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .calc-value-dropdown-wrap {
+      margin-bottom: 5px;
+    }
+
+    .calc-value-dropdown-wrap-title,
+    .info-txt-custom-select-item {
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 30px;
+    }
+
+    .info-txt-custom-select-item {
+      padding: 0 0.781vw;
+    }
+
+    // .calculator-inputs,
+    // .calculate-values-btn-wrap {
+    //     @media screen and (max-width: 1024px) {
+    //         width: 100%;
+    //         text-align: left;
+    //     }
+    // }
+
+    .graphic-info-top-wrap {
+      margin-right: -20px;
+      @media screen and (max-width: 1250px) {
+        margin-right: -10%;
+      }
+      @media screen and (max-width: 500px) {
+        right: 0;
+        top: -60px;
+      }
+    }
+    $calculatorWidth: 100%;
+    $calculatorHeight: 350px;
+
+    .graphic-el-wrap,
+    .calculator-graphic-wrap,
+    .background-graphic-paths-svg,
+    .graphic-info-bot-wrap {
+      @media screen and ($tablet) {
+        @include vw(width, 720px, 1024);
+        // width: $calculatorWidth;
+        margin: auto;
+        margin-top: 60px;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1024px) {
+        @include vw(width, 962px, 1024);
+      }
+    }
+
+    @media screen and ($mobile) {
+      .graphic-el-wrap,
+      .calculator-graphic-wrap,
+      .background-graphic-paths-svg,
+      .graphic-info-bot-wrap {
+        width: $calculatorWidth;
+      }
+
+      .graphic-info-bot-wrap {
+        left: 0;
+        margin-top: 15px;
+        z-index: 100;
+      }
+      .graphic-el-wrap,
+      .calculator-graphic-wrap,
+      .background-graphic-paths-svg {
+        // height: $calculatorHeight;
+        // @include vw(height, 450px, 1024);
+        left: 0;
+        top: 0;
+        overflow: unset;
+        max-height: 315px;
+      }
+    }
+  }
+
+  .faq-question a[href^='tel:']:not(.btn-default) {
+    font-weight: 600;
+  }
+
+  .calculator-wrap > .container {
+    @media screen and (max-width: 1024px) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+}

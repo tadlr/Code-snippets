@@ -1,0 +1,10 @@
+{% extends "block-sk-block-base.twig" %}
+{% block sk_block %}
+<section
+  id='{{ sectionID }}'
+  class='content-block-holder {{ classes }} sk-block block--{{block_id}}'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  {{ savings_calculator() }}
+</section>
+{% endblock %}

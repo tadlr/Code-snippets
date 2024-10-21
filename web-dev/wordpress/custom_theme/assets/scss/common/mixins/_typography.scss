@@ -1,0 +1,722 @@
+@mixin Typography($args: ()) {
+  $redhat: if(map-get($args, 'redhat'), map-get($args, 'redhat'), $redhat);
+  $color-primary: if(
+    map-get($args, 'color-1'),
+    map-get($args, 'color-1'),
+    $blue-1
+  );
+
+  $h1-desktop-size: if(
+    map-get($args, 'h1-desktop-size'),
+    map-get($args, 'h1-desktop-size'),
+    $h1-desktop-size
+  );
+  $h1-desktop-line-height: if(
+    map-get($args, 'h1-desktop-line-height'),
+    map-get($args, 'h1-desktop-line-height'),
+    $h1-desktop-line-height
+  );
+  $h1-tablet-size: if(
+    map-get($args, 'h1-tablet-size'),
+    map-get($args, 'h1-tablet-size'),
+    $h1-tablet-size
+  );
+  $h1-tablet-line-height: if(
+    map-get($args, 'h1-tablet-line-height'),
+    map-get($args, 'h1-tablet-line-height'),
+    $h1-tablet-line-height
+  );
+  $h1-mobile-size: if(
+    map-get($args, 'h1-mobile-size'),
+    map-get($args, 'h1-mobile-size'),
+    $h1-mobile-size
+  );
+  $h1-mobile-line-height: if(
+    map-get($args, 'h1-mobile-line-height'),
+    map-get($args, 'h1-mobile-line-height'),
+    $h1-mobile-line-height
+  );
+
+  $h2-desktop-size: if(
+    map-get($args, 'h2-desktop-size'),
+    map-get($args, 'h2-desktop-size'),
+    $h2-desktop-size
+  );
+  $h2-desktop-line-height: if(
+    map-get($args, 'h2-desktop-line-height'),
+    map-get($args, 'h2-desktop-line-height'),
+    $h2-desktop-line-height
+  );
+  $h2-mobile-size: if(
+    map-get($args, 'h2-mobile-size'),
+    map-get($args, 'h2-mobile-size'),
+    $h2-mobile-size
+  );
+  $h2-mobile-line-height: if(
+    map-get($args, 'h2-mobile-line-height'),
+    map-get($args, 'h2-mobile-line-height'),
+    $h2-mobile-line-height
+  );
+
+  $h3-desktop-size: if(
+    map-get($args, 'h3-desktop-size'),
+    map-get($args, 'h3-desktop-size'),
+    $h3-desktop-size
+  );
+  $h3-desktop-line-height: if(
+    map-get($args, 'h3-desktop-line-height'),
+    map-get($args, 'h3-desktop-line-height'),
+    $h3-desktop-line-height
+  );
+  $h3-mobile-size: if(
+    map-get($args, 'h3-mobile-size'),
+    map-get($args, 'h3-mobile-size'),
+    $h3-mobile-size
+  );
+  $h3-mobile-line-height: if(
+    map-get($args, 'h3-mobile-line-height'),
+    map-get($args, 'h3-mobile-line-height'),
+    $h3-mobile-line-height
+  );
+
+  $h4-desktop-size: if(
+    map-get($args, 'h4-desktop-size'),
+    map-get($args, 'h4-desktop-size'),
+    $h4-desktop-size
+  );
+  $h4-desktop-line-height: if(
+    map-get($args, 'h4-desktop-line-height'),
+    map-get($args, 'h4-desktop-line-height'),
+    $h4-desktop-line-height
+  );
+  $h4-mobile-size: if(
+    map-get($args, 'h4-mobile-size'),
+    map-get($args, 'h4-mobile-size'),
+    $h4-mobile-size
+  );
+  $h4-mobile-line-height: if(
+    map-get($args, 'h4-mobile-line-height'),
+    map-get($args, 'h4-mobile-line-height'),
+    $h4-mobile-line-height
+  );
+
+  $h5-desktop-size: if(
+    map-get($args, 'h5-desktop-size'),
+    map-get($args, 'h5-desktop-size'),
+    $h5-desktop-size
+  );
+  $h5-desktop-line-height: if(
+    map-get($args, 'h5-desktop-line-height'),
+    map-get($args, 'h5-desktop-line-height'),
+    $h5-desktop-line-height
+  );
+  $h5-mobile-size: if(
+    map-get($args, 'h5-mobile-size'),
+    map-get($args, 'h5-mobile-size'),
+    $h5-mobile-size
+  );
+  $h5-mobile-line-height: if(
+    map-get($args, 'h5-mobile-line-height'),
+    map-get($args, 'h5-mobile-line-height'),
+    $h5-mobile-line-height
+  );
+
+  $h6-desktop-size: if(
+    map-get($args, 'h6-desktop-size'),
+    map-get($args, 'h6-desktop-size'),
+    $h6-desktop-size
+  );
+  $h6-desktop-line-height: if(
+    map-get($args, 'h6-desktop-line-height'),
+    map-get($args, 'h6-desktop-line-height'),
+    $h6-desktop-line-height
+  );
+  $h6-mobile-size: if(
+    map-get($args, 'h6-mobile-size'),
+    map-get($args, 'h6-mobile-size'),
+    $h6-mobile-size
+  );
+  $h6-mobile-line-height: if(
+    map-get($args, 'h6-mobile-line-height'),
+    map-get($args, 'h6-mobile-line-height'),
+    $h6-mobile-line-height
+  );
+
+  $text-highlight-desktop-size: if(
+    map-get($args, 'text-highlight-desktop-size'),
+    map-get($args, 'text-highlight-desktop-size'),
+    $text-highlight-desktop-size
+  );
+
+  $text-highlight-desktop-line-height: if(
+    map-get($args, 'text-highlight-desktop-line-height'),
+    map-get($args, 'text-highlight-desktop-line-height'),
+    $text-highlight-desktop-line-height
+  );
+
+  $text-highlight-mobile-size: if(
+    map-get($args, 'text-highlight-mobile-size'),
+    map-get($args, 'text-highlight-mobile-size'),
+    $text-highlight-mobile-size
+  );
+
+  $text-highlight-mobile-line-height: if(
+    map-get($args, 'text-highlight-mobile-line-height'),
+    map-get($args, 'text-highlight-mobile-line-height'),
+    $text-highlight-mobile-line-height
+  );
+
+  .h1,
+  h1 {
+    font-family: $redhat;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: $h1PaddingBottomText;
+    b,
+    strong,
+    b {
+      font-weight: bold;
+    }
+    @media screen and ($desktop) {
+      font-size: $h1-desktop-size;
+      line-height: $h1-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      font-size: $h1-tablet-size;
+      line-height: $h1-tablet-line-height;
+    }
+    @media screen and ($mobile) {
+      font-size: $h1-mobile-size;
+      line-height: $h1-mobile-line-height;
+    }
+  }
+
+  b,
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  .h2,
+  h2 {
+    font-family: $redhat;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: $h2PaddingBottomText;
+    b,
+    strong,
+    b {
+      font-weight: bold;
+    }
+
+    @media screen and ($desktop) {
+      font-size: $h2-desktop-size;
+      line-height: $h2-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      font-size: $h2-desktop-size;
+      line-height: $h2-desktop-line-height;
+    }
+    @media screen and ($mobile) {
+      font-size: $h2-mobile-size;
+      line-height: $h2-mobile-line-height;
+    }
+  }
+
+  .h3,
+  h3 {
+    font-family: $redhat;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: $paddingBottomText;
+    b,
+    strong,
+    b {
+      font-weight: bold;
+    }
+    @media screen and ($desktop) {
+      font-size: $h3-desktop-size;
+      line-height: $h3-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      font-size: $h3-desktop-size;
+      line-height: $h3-desktop-line-height;
+    }
+    @media screen and ($mobile) {
+      font-size: $h3-mobile-size;
+      line-height: $h3-mobile-line-height;
+    }
+  }
+
+  .h4,
+  h4 {
+    font-family: $redhat;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: $paddingBottomText;
+    b,
+    strong,
+    b {
+      font-weight: bold;
+    }
+    @media screen and ($desktop) {
+      font-size: $h4-desktop-size;
+      line-height: $h4-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      font-size: $h4-desktop-size;
+      line-height: $h4-desktop-line-height;
+    }
+    @media screen and ($mobile) {
+      font-size: $h4-mobile-size;
+      line-height: $h4-mobile-line-height;
+    }
+  }
+
+  .h5,
+  h5 {
+    font-family: $redhat;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: $paddingBottomText;
+    b,
+    strong,
+    b {
+      font-weight: bold;
+    }
+    @media screen and ($desktop) {
+      font-size: $h5-desktop-size;
+      line-height: $h5-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      font-size: $h5-desktop-size;
+      line-height: $h5-desktop-line-height;
+    }
+    @media screen and ($mobile) {
+      font-size: $h5-mobile-size;
+      line-height: $h5-mobile-line-height;
+    }
+  }
+  .h6,
+  h6 {
+    font-family: $redhat;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: $paddingBottomText;
+    b,
+    strong,
+    b {
+      font-weight: bold;
+    }
+    @media screen and ($desktop) {
+      font-size: $h6-desktop-size;
+      line-height: $h6-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      font-size: $h6-desktop-size;
+      line-height: $h6-desktop-line-height;
+    }
+    @media screen and ($mobile) {
+      font-size: $h6-mobile-size;
+      line-height: $h6-mobile-line-height;
+    }
+  }
+
+  blockquote,
+  .quote-by-txt {
+    color: $color-primary;
+    font-family: $redhat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $ft-18;
+    line-height: 30px;
+  }
+  p,
+  .text,
+  .txt-content,
+  .p,
+  .txt-post-rtf p {
+    font-family: $libre;
+    color: $color-primary;
+    font-size: $ft-18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  li {
+    font-family: $libre;
+    color: $color-primary;
+    font-size: $ft-18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .text-highlight,
+  p.text-highlight,
+  .title-highlight {
+    font-family: $libre;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: 600;
+    display: block;
+    margin-bottom: $paddingBottomText;
+
+    strong,
+    b {
+      font-weight: 600;
+    }
+
+    @media screen and ($desktop) {
+      font-size: $text-highlight-desktop-size;
+      line-height: $text-highlight-desktop-line-height;
+    }
+    @media screen and ($tablet) {
+      font-size: $text-highlight-desktop-size;
+      line-height: $text-highlight-desktop-line-height;
+    }
+    @media screen and ($mobile) {
+      font-size: $text-highlight-mobile-size;
+      line-height: $text-highlight-mobile-line-height;
+    }
+  }
+
+  .text-overline {
+    @extend .text-overline;
+  }
+
+  // .ol {
+  .list-num {
+    counter-reset: item;
+
+    li {
+      list-style-type: none;
+      counter-increment: item;
+      margin-bottom: 13px;
+      position: relative;
+      padding-left: 35px;
+
+      &:before {
+        content: counter(item);
+        background-color: $color-primary;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 26px;
+        height: 26px;
+        text-align: center;
+        border-radius: 50%;
+        font-family: $libre;
+        color: $white;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  // }
+
+  .disclaimer {
+    font-family: $libre;
+    color: $color-primary;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    line-height: 20px;
+
+    a[href^='tel:']:not(.btn-default):not(.contact-section-btn) {
+      color: $blue-1 !important;
+      font-weight: bold;
+      text-decoration: underline;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .section-title {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 200 !important;
+    letter-spacing: 7px;
+  }
+
+  input[type='submit'] {
+    font-family: $redhat;
+    color: $color-primary;
+    font-size: 16px !important;
+    font-style: normal;
+    font-weight: medium !important;
+    line-height: 20px !important;
+  }
+
+  .btn-default,
+  .btn-txt {
+    font-family: $redhat;
+    color: $color-primary;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: medium;
+    line-height: 20px;
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+      // text-decoration: underline !important;
+    }
+  }
+
+  .section-color-blue {
+    &:hover,
+    &:focus {
+      .btn-default,
+      .btn-txt {
+        color: $blue-1;
+      }
+    }
+    .btn-default,
+    .btn-txt {
+      &:hover,
+      &:focus {
+        color: $blue-1;
+        // text-decoration: underline !important;
+      }
+    }
+  }
+
+  .section-color-white {
+    &:hover,
+    &:focus {
+      .btn-default,
+      .btn-txt {
+        color: $green-1;
+      }
+    }
+    .btn-default,
+    .btn-txt {
+      &:hover,
+      &:focus {
+        color: $green-1;
+        // text-decoration: underline !important;
+      }
+    }
+  }
+
+  .c-white {
+    .h1,
+    h1,
+    .h2,
+    h2,
+    .h3,
+    h3,
+    blockquote,
+    p,
+    .text,
+    .p,
+    li,
+    .title-highlight,
+    .text-highlight {
+      color: $white !important;
+    }
+  }
+
+  .c-green {
+    .h1,
+    h1,
+    .h2,
+    h2,
+    .h3,
+    h3,
+    blockquote,
+    p,
+    .text,
+    .p,
+    li,
+    .title-highlight .text-highlight {
+      color: $white !important;
+    }
+  }
+
+  .text,
+  .c {
+    &-black {
+      color: $black;
+    }
+
+    &-white {
+      color: $white;
+    }
+
+    &-blue-1 {
+      color: $blue-1;
+    }
+
+    &-red-2 {
+      color: $red-2;
+    }
+
+    &-blue-7 {
+      color: $blue-7;
+    }
+
+    &-blue-15 {
+      color: $blue-15;
+    }
+
+    &-green-1 {
+      color: $green-1;
+    }
+
+    &-gray-2 {
+      color: $gray-2;
+    }
+
+    &-gray-8 {
+      color: $gray-8;
+    }
+
+    &-gray-18 {
+      color: $gray-18;
+    }
+
+    &-blue-5 {
+      color: $blue-5;
+    }
+
+    &-green-5 {
+      color: $green-5;
+    }
+  }
+
+  .fw {
+    &-300 {
+      font-weight: 300;
+    }
+
+    &-400 {
+      font-weight: 400;
+    }
+
+    &-500 {
+      font-weight: 500;
+    }
+
+    &-600 {
+      font-weight: 600;
+    }
+
+    &-700 {
+      font-weight: 700;
+    }
+
+    &-800 {
+      font-weight: 800;
+    }
+  }
+
+  .list-title,
+  .list-title h3 {
+    font-family: $libre;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .text-headline {
+    text-transform: uppercase;
+    font-family: $libre;
+    font-size: 14px;
+    font-weight: 250;
+    line-height: 24px;
+    letter-spacing: 7px;
+    text-align: left;
+  }
+  .phone-icon {
+    display: inline-flex;
+    &:before {
+      margin-right: 15px;
+      content: '';
+      display: inline-block;
+      background-image: url($ROOT_PATH + 'media/svgs/phone-icon.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      position: relative;
+    }
+  }
+
+  .text-white,
+  &.text-white {
+    @include WhiteText;
+  }
+  .text-blue,
+  &.text-blue {
+    @include BlueText;
+  }
+
+  .mb-3 {
+    margin-bottom: 27px !important;
+  }
+
+  p {
+    margin-bottom: $contentPadding;
+  }
+}
+
+@mixin WhiteText {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  span:not(.btn-txt),
+  a:not(button, .btn, .btn-primary, .btn-default, .btn-txt),
+  .title-highlight,
+  li,
+  p {
+    color: $white;
+  }
+}
+
+@mixin BlueText {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  span:not(.btn-txt),
+  a:not(button, .btn, .btn-primary, .btn-default, .btn-txt),
+  .title-highlight,
+  li,
+  p {
+    color: $blue-1;
+  }
+}

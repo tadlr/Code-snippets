@@ -1,0 +1,22 @@
+<div class='icon-columns icon-sidebar justify-content-center flex-column h-lg-100 prel'>
+  {% for index,icon in content.slider %}
+    {% set image = icon.image %}
+    {# {{ dump(index, icon, image) }} #}
+
+    <div class='icons--item'>
+      <div class='list-image'>
+        {% if image %}
+          {% if field.use_img %}
+            <div class='img--container'>
+              {{ Image(image, 'img-300-300', {class: "f-image", 'width':300, 'height': 300}) }}
+            </div>
+          {% else %}
+            <div class='img--wrap mb-2'>
+              {{ Image(image, 'img-200-200', {'width':200, 'height': 200}) }}
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a webform example composite.
+ *
+ * Available variables:
+ * - content: The webform example composite to be output.
+
+ * @see template_preprocess_webform_example_composite()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="signature-and-date">
+	{% set class = item['#flex']? " webform-flex--" ~ item['#flex']: ' webform-flex--1' %}
+	<div class="webform--webform_signature">
+		{{ content.signature  }}
+	</div>
+	<div class="webform-flexbox">
+		{% for item in content|without('signature') %}
+			<div class="webform-flex {{class}} webform--{{ item['#type'] }}">
+				<div class="webform-flex--container">
+					{{ item }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

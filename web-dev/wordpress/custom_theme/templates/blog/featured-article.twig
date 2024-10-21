@@ -1,0 +1,49 @@
+<section data-scroll-section class='prel offset-x-mobile-38 offset-x-desktop-215'>
+  <div
+    class='bg-image featured-article-bg no-negative-translate'
+    style="background-image: url('{{featured.featured_bg_url}}')"
+  ></div>
+  <div class='breadcrumb-wrap prel'>
+    <ul class='breadcrumb-list ff-libre fw-400 lh-1 txt-size-12 ltr-spc-pos-0_2'>
+      <li>
+        <a href='{{ home_url }}'> Home </a>
+      </li>
+    </ul>
+    <p class='txt-size-12 upper lh-1 fw-400 ltr-spc-pos-4_6 current-page-breadcrumb-title'>Blog</p>
+  </div>
+  <h1 class='visually-hidden'>CustomTheme Blog</h1>
+  <div class=''>
+    <div class='featured-article-wrap'>
+      <div class='featured-article-meta c-white'>
+        <p class='txt-size-16 upper cat-holder fw-700'>
+          {% for category in featured.category %}
+            <a href='{{ category.link }}' class='post-single-category'>
+              {{ category.name }}
+            </a>
+          {% endfor %}
+        </p>
+        <p class='txt-size-16'>
+          {{ featured.date }}
+        </p>
+      </div>
+      <h2 class='txt-size-48 txt-size-48-m lh-1_2 c-white-1'>
+        <a href='{{ featured.link }}' class='c-white-1'>
+          {{ featured.title }}
+        </a>
+      </h2>
+      <p class='anim-translate-x txt-size-18 c-white lh-1_4'>
+        {{ featured.excerpt }}
+      </p>
+      <p class='anim-translate-x txt-size-16 reading-time'>
+        {{ featured.readtime }}
+      </p>
+      <a
+        href='{{ featured.link }}'
+        class='anim-translate-x btn-default size-18-txt c-blue-1 btn-green-1 section-color-white btn-offset-9 read-more-button'
+      >
+        <span class='btn-bg-el'></span>
+        <span class='btn-txt'> Read more </span>
+      </a>
+    </div>
+  </div>
+</section>

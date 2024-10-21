@@ -1,0 +1,17 @@
+@mixin sr_only {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: 0;
+  margin-bottom: 0px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin undo_sr_only {
+  clip: auto !important;
+  height: auto !important;
+  overflow: hidden !important;
+  position: relative !important;
+  width: auto !important;
+}

@@ -1,0 +1,5 @@
+@use 'sass:math';
+// aspect ratio box generator
+@mixin aspectRatioBox($width, $height) {
+  padding-top: math.div($height, $width) * 100%;
+}

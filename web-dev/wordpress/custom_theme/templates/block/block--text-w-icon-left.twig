@@ -1,0 +1,74 @@
+{% set icon = row.icon %}
+{% set class = 'media-'~ row.image_position %}
+<div class='col-lg-6 op-0 d-md-flex align-items-between pb-5 {{class}} px-4'>
+  {% if icon %}
+    <div class='img-icon flex-1'>
+      {{ Image(icon, 'full', {'width': 54, 'height':73}) }}
+    </div>
+  {% endif %}
+  <div class='flex-3 op-0 content-block plain-txt-block pt-0'>
+    <h3 class='box-heading'>
+      {{ row.heading }}
+    </h3>
+    <p>
+      {{ row.content }}
+    </p>
+    {% if row.cta_text %}
+      {% set ctaText = row.cta_text %}
+      {% set ctaLink = row.cta_link %}
+      {% if row.external_link == 'yes' %}
+        <a
+          href='{{ ctaLink }}'
+          target='_blank'
+          class='btn-default c-blue-1 btn-green-1 section-color-white btn-offset-9'
+        >
+          <span class='btn-bg-el'></span>
+          <span class='btn-txt'>
+            {{ ctaText }}
+          </span>
+        </a>
+        {% elseif row.external_link == 'same' %}
+        <a href='{{ ctaLink }}' class='btn-default c-blue-1 btn-green-1 section-color-white btn-offset-9'>
+          <span class='btn-bg-el'></span>
+          <span class='btn-txt'>
+            {{ ctaText }}
+          </span>
+        </a>
+        {% elseif row.external_link == 'video' %}
+        {% if row.video_type == 'youtube' %}
+          <a
+            href='#'
+            class='btn-default c-blue-1 btn-green-1 section-color-white btn-offset-9 popup-trigger'
+            data-video-embed-id='{{ row.youtube_video_id }}'
+          >
+            <span class='btn-bg-el'></span>
+            <span class='btn-txt'>
+              {{ ctaText }}
+            </span>
+          </a>
+        {% else %}
+          <a
+            href='#'
+            class='btn-default c-blue-1 btn-green-1 section-color-white btn-offset-9 popup-trigger'
+            data-vimeo-embed-id='{{ row.vimeo_video_id }}'
+          >
+            <span class='btn-bg-el'></span>
+            <span class='btn-txt'>
+              {{ ctaText }}
+            </span>
+          </a>
+        {% endif %}
+      {% else %}
+        <button
+          class='btn-default c-blue-1 btn-green-1 section-color-white btn-offset-9 scroll-to-section-btn btn-scroll-to-footer'
+          data-target='.inner-pages-contact-section'
+        >
+          <span class='btn-bg-el'></span>
+          <span class='btn-txt'>
+            {{ ctaText }}
+          </span>
+        </button>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

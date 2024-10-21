@@ -1,0 +1,64 @@
+@import 'block-base';
+.sk-the-symbol {
+  .symbol-wrapper {
+    text-align: center;
+  }
+  .symbol-section-svg {
+    flex: 0 0 auto;
+    margin-bottom: 0px;
+    max-height: 450px;
+    min-height: 530px;
+    @media screen and ($min1024) {
+      padding-right: 35px;
+    }
+    @media screen and ($max1024) {
+      padding-bottom: 64px;
+    }
+  }
+
+  .st0 {
+    fill: none;
+  }
+
+  .st1 {
+    fill: $blue-7;
+  }
+
+  .st2 {
+    fill: $green-2;
+  }
+
+  .st3 {
+    fill: $blue-2;
+  }
+
+  .st4 {
+    fill: $red-1;
+  }
+
+  // .symbol-section-svg {
+  //   animation: bird-up 16s cubic-bezier(0.65, 0, 0.35, 1) infinite normal
+  //     forwards;
+  // }
+}
+
+// @keyframes bird-up {
+//   0% {
+//     transform: rotate(0deg) translate(0, 0);
+//   }
+//   18.75% {
+//     transform: rotate(5deg) translate(10px, -34px);
+//   }
+//   37.5% {
+//     transform: rotate(5deg) translate(10px, -34px);
+//   }
+//   56.25% {
+//     transform: rotate(0deg) translate(0px, 0px);
+//   }
+//   75% {
+//     transform: rotate(0deg) translate(0, 0);
+//   }
+//   100% {
+//     transform: rotate(0deg) translate(0, 0);
+//   }
+// }

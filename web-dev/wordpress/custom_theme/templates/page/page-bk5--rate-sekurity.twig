@@ -1,0 +1,59 @@
+{# page-bk5--rate-sekurity #}
+
+{% extends "page-sk-block-base.twig" %}
+
+{% block block_base %}
+  {# {% set attributes = attributes.addClass('circle-info-white-section offset-y-rates prel rate-guarantee sk-block') %} #}
+  {{ parent() }}
+{% endblock %}
+
+{% block block_content %}
+  {% set fieldId = field.rate_sekurity_guarantee %}
+  {% set block_field = get_fields(fieldId) %}
+
+  {% set cta_text = field.cta_text %}
+  {% set external_link = field.external_link %}
+  {% set cta_link = field.cta_link %}
+
+  {% if fieldId and block_field %}
+    <div class='content-block-holder {{ classes }} sk-block page--i-rate-guarantee'>
+      <div class='container'>
+        <div class='circle-info-white-block content-block row row-eq-height'>
+          <div class='txt-content col-sm-12 col-lg-4'>
+            {% if block_field.heading %}
+              <h2>
+                {{ block_field.heading|striptags('<a><strong>') }}
+              </h2>
+            {% endif %}
+            <div class='my-3'>
+              {{ block_field.description }}
+            </div>
+            {% include 'field/field--cta-btn.twig' %}
+          </div>
+          <div class='img-txt-col col-sm-12 col-lg-8'>
+            <div class='inner-content'>
+              <div class='img-wrap pb-sm-0'>
+                {{ Image(27556, 'img-664-664', {width: 664, height: 664, class:"info-white-section-img"}) }}
+                <div class='arc-border-pink abs-cover-el'></div>
+                <div class='arc-light-pink abs-cover-el'></div>
+              </div>
+              <div class='img-txt-content'>
+                <div class='inner-text'>
+                  <p class='img-txt-quote'>
+                    {{ block_field.quote }}
+                  </p>
+                  <div class='quote-details'>
+                    <p class='img-txt-col-person-name'>{{ block_field.author_name }},</p>
+                    <p class='img-txt-col-person-position'>
+                      {{ block_field.position }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

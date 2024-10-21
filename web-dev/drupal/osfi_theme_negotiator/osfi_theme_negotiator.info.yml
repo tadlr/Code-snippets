@@ -1,0 +1,5 @@
+name: OSFI Theme negotiator
+type: module
+description: Controls toggling between the OSFI theme and the OCA sub-theme based on the site section field
+package: OSFI
+core_version_requirement: ^9 || ^10

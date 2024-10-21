@@ -1,0 +1,279 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int       @id @default(autoincrement())
+  uuid        String    @unique @default(uuid())
+  displayName String
+  email       String    @unique
+  password    String
+  role        Role      @default(USER)
+  banned      Boolean   @default(false)
+  banExpiry   DateTime?
+
+  posts      Post[]
+  comments   Comment[]
+  followers  Follow[]  @relation("follower")
+  followings Follow[]  @relation("following")
+
+  chatGroups   UserOnChat[]
+  chatMessages ChatMessage[]
+
+  ownedStickerPacks StickerPack[]     @relation("OwnedStickerPacks")
+  userStickerPacks  UserStickerPack[]
+
+  // BlockChat relationships
+  blockedBy    BlockChat[] @relation("BlockedBy") // Users who blocked others
+  blockedUsers BlockChat[] @relation("BlockedUser") // Users who were blocked
+
+  createdAt           DateTime              @default(now())
+  userPreferences     UserPreferences?
+  UserRoleOnChatGroup UserRoleOnChatGroup[]
+  BlockChat           BlockChat[]
+}
+
+enum Role {
+  USER
+  MODERATOR
+  ADMIN
+}
+
+model UserPreferences {
+  id                         Int     @id @default(autoincrement())
+  uuid                       String  @unique @default(uuid())
+  userId                     Int     @unique
+  allowChatsFromNonFollowers Boolean @default(false)
+  showNSFW                   Boolean @default(false)
+  user                       User    @relation(fields: [userId], references: [id])
+}
+
+model Follow {
+  id          Int      @id @default(autoincrement())
+  uuid        String   @unique @default(uuid())
+  followerId  Int
+  followingId Int
+  createdAt   DateTime @default(now())
+
+  follower  User @relation("follower", fields: [followerId], references: [id])
+  following User @relation("following", fields: [followingId], references: [id])
+
+  @@unique([followerId, followingId])
+}
+
+model ChatGroup {
+  id           Int                   @id @default(autoincrement())
+  uuid         String                @unique @default(uuid())
+  name         String?
+  isPrivate    Boolean               @default(false) // 1-on-1 or group
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  participants UserOnChat[]
+  messages     ChatMessage[]
+  settings     ChatGroupSettings? // One-to-One relationship
+  roles        UserRoleOnChatGroup[] // Roles assigned to users in this group
+  BlockChat    BlockChat[]
+}
+
+model ChatGroupSettings {
+  id             Int                   @id @default(autoincrement())
+  chatGroupId    Int                   @unique
+  description    String?
+  joinPermission JoinPermission        @default(INVITE_ONLY)
+  imageUrl       String?
+  rules          String?
+  specialRoles   UserRoleOnChatGroup[]
+
+  chatGroup ChatGroup @relation(fields: [chatGroupId], references: [id])
+}
+
+enum JoinPermission {
+  INVITE_ONLY
+  PUBLIC_SEARCHABLE
+  PUBLIC_WITH_LINK
+}
+
+model UserRoleOnChatGroup {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  chatGroupId Int
+  role        ChatRole @default(USER)
+
+  user                User               @relation(fields: [userId], references: [id])
+  chatGroup           ChatGroup          @relation(fields: [chatGroupId], references: [id])
+  ChatGroupSettings   ChatGroupSettings? @relation(fields: [chatGroupSettingsId], references: [id])
+  chatGroupSettingsId Int?
+
+  @@unique([userId, chatGroupId]) // Each user has one role per group
+}
+
+enum ChatRole {
+  USER
+  MODERATOR
+  ADMIN
+  OWNER
+}
+
+model BlockChat {
+  id            Int      @id @default(autoincrement())
+  uuid          String   @unique @default(uuid())
+  blockedById   Int
+  blockedUserId Int
+  chatGroupId   Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  blockedBy   User      @relation("BlockedBy", fields: [blockedById], references: [id])
+  blockedUser User      @relation("BlockedUser", fields: [blockedUserId], references: [id])
+  chatGroup   ChatGroup @relation(fields: [chatGroupId], references: [id])
+  User        User?     @relation(fields: [userId], references: [id])
+  userId      Int?
+
+  @@unique([blockedById, blockedUserId, chatGroupId])
+}
+
+model UserOnChat {
+  id          Int       @id @default(autoincrement())
+  chatGroupId Int
+  userId      Int
+  user        User      @relation(fields: [userId], references: [id])
+  chatGroup   ChatGroup @relation(fields: [chatGroupId], references: [id])
+
+  @@unique([chatGroupId, userId])
+}
+
+model ChatMessage {
+  id          Int      @id @default(autoincrement())
+  uuid        String   @unique @default(uuid())
+  content     String?
+  senderId    Int
+  chatGroupId Int
+  stickerId   Int?
+  createdAt   DateTime @default(now())
+
+  sender    User        @relation(fields: [senderId], references: [id])
+  chatGroup ChatGroup   @relation(fields: [chatGroupId], references: [id])
+  media     ChatMedia[]
+  sticker   Sticker?    @relation("StickerMessages", fields: [stickerId], references: [id])
+}
+
+model ChatMedia {
+  id            Int       @id @default(autoincrement())
+  uuid          String    @unique @default(uuid())
+  url           String
+  type          MediaType
+  chatMessageId Int
+  createdAt     DateTime  @default(now())
+
+  chatMessage ChatMessage @relation(fields: [chatMessageId], references: [id])
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  AUDIO
+  FILE
+}
+
+model Sticker {
+  id          Int         @id @default(autoincrement())
+  uuid        String      @unique @default(uuid())
+  name        String
+  imageUrl    String
+  packId      Int
+  stickerPack StickerPack @relation(fields: [packId], references: [id])
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  chatMessages ChatMessage[] @relation("StickerMessages")
+}
+
+model StickerPack {
+  id               Int               @id @default(autoincrement())
+  uuid             String            @unique @default(uuid())
+  name             String
+  description      String?
+  ownerId          Int
+  owner            User              @relation("OwnedStickerPacks", fields: [ownerId], references: [id])
+  stickers         Sticker[]
+  userStickerPacks UserStickerPack[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+}
+
+model UserStickerPack {
+  id            Int @id @default(autoincrement())
+  userId        Int
+  stickerPackId Int
+
+  user        User        @relation(fields: [userId], references: [id])
+  stickerPack StickerPack @relation(fields: [stickerPackId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, stickerPackId])
+}
+
+model Post {
+  id        Int       @id @default(autoincrement())
+  uuid      String    @unique @default(uuid())
+  title     String
+  imageUrl  String
+  nsfw      Boolean   @default(false)
+  isPrivate Boolean   @default(false)
+  authorId  Int
+  author    User      @relation(fields: [authorId], references: [id])
+  tags      PostTag[]
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Tag {
+  id        Int       @id @default(autoincrement())
+  uuid      String    @unique @default(uuid())
+  name      String    @unique
+  nsfw      Boolean   @default(false)
+  banned    Boolean   @default(false)
+  posts     PostTag[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model PostTag {
+  postId Int
+  tagId  Int
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  uuid      String   @unique @default(uuid())
+  content   String
+  postId    Int
+  authorId  Int
+  post      Post     @relation(fields: [postId], references: [id])
+  author    User     @relation(fields: [authorId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Block {
+  id            Int      @id @default(autoincrement())
+  uuid          String   @unique @default(uuid())
+  blockedById   Int
+  blockedUserId Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([blockedById, blockedUserId])
+}

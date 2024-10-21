@@ -1,0 +1,69 @@
+{% if is_preview %}
+  [I] Three Columns Table
+{% endif %}
+{% set heading = field.heading %}
+{% set leftHeading = field.heading_on_the_left %}
+{% set columnOneHeading = field.column_one_heading %}
+{% set imageOne = field.image_one %}
+{% set imageTwo = field.image_two %}
+{% set imageThree = field.image_three %}
+{% if post.ID == 22929 %}
+  {{ include('dev/table-l.twig') }}
+{% else %}
+  <div
+    id='{{ sectionID }}'
+    class='content-block-holder sk-block block--l'
+    data-link-scroll-target-section-id='{{sectionID}}'
+  >
+    <div class='container'>
+      <div class='table-block content-block'>
+        <div class='table-responsive'>
+          <table class='table-comparison table'>
+            <thead>
+              <tr class='four-columns-heading-row'>
+                <th>
+                  {{ columnOneHeading }}
+                  {% if field.image_one %}
+                    {{ Image(field.image_one, 'full', {'width':170, 'height': 52}) }}
+                  {% endif %}
+                </th>
+                <th>
+                  {{ leftHeading }}
+                  {% if field.image_two %}
+                    {{ Image(field.image_two, 'full', {'width':170, 'height': 52}) }}
+                  {% endif %}
+                </th>
+                <th>
+                  {{ heading }}
+                  {% if field.image_three %}
+                    {{ Image(field.image_three, 'full', {'width':170, 'height': 52}) }}
+                  {% endif %}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in field.table_content %}
+                {% set colOne = row.column_one %}
+                <tr>
+                  <td>
+                    {{ colOne }}
+                  </td>
+                  <td>
+                    {% if row.column_two_radio == 'Yes' or row.column_two_radio == 'No' %}
+                      {{ checkmark(row.column_two_radio) }}
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if row.column_three_radio == 'Yes' or row.column_three_radio == 'No' %}
+                      {{ checkmark(row.column_three_radio) }}
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,819 @@
+textarea {
+  resize: none;
+}
+form:not(.guide-form):not(.form-styles) {
+  position: relative;
+  transition: opacity 0.5s $easeOutSine;
+
+  &.form-loading {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+
+  .form-row {
+    position: relative;
+    transition: border 0.5s $easeOutSine;
+
+    &:not(.custom-select-row):not(.checkbox-row) {
+      border-bottom: 1px solid $gray-3;
+    }
+
+    &:not(:last-of-type) {
+      @media screen and ($mobile_all) {
+        margin-bottom: 25px;
+      }
+    }
+
+    &.user-typing {
+      .form-label {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+
+    &:not(.checkbox-row):not(.custom-select-row).form-error {
+      border: 1px solid $red-9;
+
+      .form-input {
+        color: $red-9;
+      }
+
+      .form-label {
+        color: $red-9;
+      }
+
+      &[data-error-txt]::after {
+        opacity: 1;
+      }
+    }
+
+    &[data-error-txt]::after {
+      content: attr(data-error-txt);
+      line-height: 1;
+      color: $red-9;
+      position: absolute;
+      transition: opacity 0.5s $easeOutSine;
+      top: calc(100% + 0.5em);
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      opacity: 0;
+      left: 35px;
+
+      @media screen and ($min1024) {
+        font-size: 10px;
+        @include vw(left, 35px);
+      }
+
+      @media screen and ($min1280) {
+        font-size: 11px;
+      }
+
+      @media screen and ($min1440) {
+        font-size: 12px;
+      }
+
+      @media screen and ($min1920) {
+        left: 35px;
+      }
+    }
+  }
+
+  .form-success-msg {
+    box-shadow: $box-shadow;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: $white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    backface-visibility: hidden;
+    max-width: calc(100% - 50px);
+    text-align: center;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s $easeOutSine,
+      visibility 0.5s $easeOutSine,
+      transform 0.5s $easeOutSine;
+
+    &.show-success {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .form-rows-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 25px;
+
+    @media screen and ($min1024) {
+      @include vw(margin-left, -10px);
+      @include vw(margin-right, -10px);
+      @include vw(margin-bottom, 60px);
+    }
+
+    @media screen and ($min1920) {
+      margin-left: -10px;
+      margin-right: -10px;
+      margin-bottom: 60px;
+    }
+
+    &[data-cols] {
+      .form-row {
+        width: 100%;
+      }
+    }
+
+    @media screen and ($min1024) {
+      &[data-cols='2'] {
+        .form-row {
+          @include vw(margin, 0 10px);
+          width: calc(50% - 1.042vw);
+        }
+      }
+
+      &[data-cols='3'] {
+        .form-row {
+          @include vw(margin, 0 10px);
+          width: calc(33.33% - 1.042vw);
+        }
+      }
+    }
+
+    @media screen and ($min1920) {
+      &[data-cols='2'] {
+        .form-row {
+          margin: 0 10px;
+          width: calc(50% - 40px);
+        }
+      }
+
+      &[data-cols='3'] {
+        .form-row {
+          margin: 0 10px;
+          width: calc(33.33% - 40px);
+        }
+      }
+    }
+  }
+
+  .form-label {
+    line-height: 1;
+    pointer-events: none;
+    // font-weight: 700;
+    font-weight: 400;
+    color: $white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    backface-visibility: hidden;
+    transform-origin: 0% 50%;
+    transition:
+      top 0.25s $easeOutSine,
+      color 0.25s $easeOutSine,
+      transform 0.25s $easeOutSine,
+      opacity 0.25s $easeOutSine;
+    z-index: 0;
+    left: 0;
+    letter-spacing: 0.4px;
+    font-size: 12px;
+    // @media screen and ($mobile_sm) {
+    //     @include vw(font-size, 21px, 500);
+    // }
+
+    // @media screen and ($mobile_lg) {
+    //     font-size: 21px;
+    // }
+
+    @media screen and ($min1024) {
+      // @include vw(font-size, 21px);
+      @include vw(letter-spacing, 0.4px);
+    }
+
+    @media screen and ($min1920) {
+      // font-size: 21px;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  .form-input {
+    line-height: 1;
+    font-weight: 700;
+    color: $white;
+    border: none;
+    width: 100%;
+    background: transparent;
+    position: relative;
+    transition: color 0.5s $easeOutSine;
+    z-index: 1;
+    padding: 17px 0;
+    letter-spacing: 0.4px;
+
+    @media screen and ($mobile_sm) {
+      @include vw(font-size, 21px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 21px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(font-size, 21px);
+      @include vw(padding, 17px 0);
+      @include vw(letter-spacing, 0.4px);
+    }
+
+    @media screen and ($min1920) {
+      font-size: 21px;
+      padding: 17px 0;
+      letter-spacing: 0.4px;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      color: $gray-34;
+
+      & ~ .form-label {
+        color: $gray-34;
+      }
+    }
+  }
+
+  .message-row {
+    @media screen and ($min1024) {
+      @include vw(margin-top, 84px);
+
+      .form-label {
+        top: 3px;
+      }
+    }
+
+    @media screen and ($min1920) {
+      margin-top: 84px;
+    }
+  }
+}
+
+.guide-form {
+  .contact-form-row {
+    border: 1px solid $gray-3;
+    position: relative;
+    transition: border 0.5s $easeOutSine;
+
+    &.user-typing {
+      .form-label {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+
+    &[data-error-txt]::after {
+      content: attr(data-error-txt);
+      line-height: 1;
+      color: $red-9;
+      position: absolute;
+      transition: opacity 0.5s $easeOutSine;
+      top: calc(100% + 0.5em);
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      opacity: 0;
+      left: 35px;
+
+      @media screen and ($min1024) {
+        font-size: 10px;
+        @include vw(left, 35px);
+      }
+
+      @media screen and ($min1280) {
+        font-size: 11px;
+      }
+
+      @media screen and ($min1440) {
+        font-size: 12px;
+      }
+
+      @media screen and ($min1920) {
+        left: 35px;
+      }
+    }
+  }
+
+  .form-input {
+    color: $white;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    padding: 18px 15px;
+
+    @media screen and ($min1024) {
+      @include vw(font-size, 18px);
+      @include vw(padding, 18px 15px);
+    }
+
+    @media screen and ($min1920) {
+      font-size: 18px;
+      padding: 18px 15px;
+    }
+  }
+
+  .form-label {
+    font-style: italic;
+    color: $gray-3;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    font-weight: 300;
+    transform: translateY(-50%);
+    left: 15px;
+    font-size: 18px;
+    letter-spacing: -0.2px;
+
+    @media screen and ($min1024) {
+      @include vw(left, 15px);
+      @include vw(font-size, 18px);
+      @include vw(letter-spacing, -0.2px);
+    }
+
+    @media screen and ($min1920) {
+      left: 15px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+  }
+  // Blog newsletter form
+  &.blog-newsletter-form {
+    .contact-form-row {
+      width: 420px;
+      border-radius: 50px;
+      margin-right: 20px;
+      @media screen and ($mobile) {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+    display: flex;
+    @media screen and ($mobile) {
+      flex-direction: column;
+    }
+    input {
+      &::placeholder {
+        opacity: 1;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+[type='checkbox'] {
+  display: none;
+
+  &:checked ~ .checkbox-label {
+    &::after {
+      opacity: 1;
+    }
+
+    &::before {
+      border: 1px solid $green-1;
+    }
+  }
+}
+
+.checkbox-row {
+  border: none;
+  border-radius: inherit;
+
+  &.form-error {
+    .checkbox-label::before {
+      border: 1px solid $red-1;
+    }
+
+    &[data-error-txt]::after {
+      opacity: 1;
+    }
+  }
+
+  &[data-error-txt]::after {
+    left: 46px;
+
+    @media screen and ($min1024) {
+      @include vw(left, 46px);
+    }
+
+    @media screen and ($min1920) {
+      left: 46px;
+    }
+  }
+}
+
+.checkbox-label {
+  cursor: pointer;
+  color: $white;
+  line-height: 1.25;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  padding: 9px 70px;
+
+  @media screen and ($min1024) {
+    @include vw(font-size, 20px);
+    @include vw(letter-spacing, 0.3px);
+    @include vw(padding, 9px 70px);
+  }
+
+  @media screen and ($min1920) {
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    padding: 9px 70px;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    backface-visibility: hidden;
+    transition: border 0.5s $easeOutQuart;
+    border: 1px solid $white;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+
+    @media screen and ($min1024) {
+      @include vw(border-radius, 10px);
+      @include vw(width, 38px);
+      @include vw(height, 38px);
+    }
+
+    @media screen and ($min1920) {
+      border-radius: 10px;
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    transform: rotate(-45deg) translateY(-50%);
+    top: calc(50% - 3px);
+    border-bottom: 3px solid $green-1;
+    border-left: 3px solid $green-1;
+    opacity: 0;
+    transition: opacity 0.5s $easeOutSine;
+    left: 15px;
+    width: 12px;
+    height: 6px;
+
+    @media screen and ($min1024) {
+      @include vw(left, 15px);
+      @include vw(width, 12px);
+      @include vw(height, 6px);
+    }
+
+    @media screen and ($min1920) {
+      left: 15px;
+      width: 12px;
+      height: 6px;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: $white;
+  }
+}
+
+.newsletter-form {
+  @extend .ff-libre;
+  position: relative;
+
+  .form-input {
+    font-weight: 300;
+    font-size: 11px;
+
+    @media screen and ($min400) {
+      font-size: 12px;
+    }
+
+    @media screen and ($min480) {
+      font-size: 13px;
+    }
+
+    @media screen and ($min640) {
+      font-size: 14px;
+    }
+
+    @media screen and ($min1024) {
+      font-size: 12px;
+    }
+
+    @media screen and ($min1280) {
+      font-size: 13px;
+    }
+
+    @media screen and ($min1440) {
+      font-size: 14px;
+    }
+  }
+
+  .form-label {
+    font-weight: 300;
+    left: 3px;
+    font-size: 11px;
+
+    @media screen and ($min400) {
+      font-size: 12px;
+    }
+
+    @media screen and ($min480) {
+      font-size: 13px;
+    }
+
+    @media screen and ($min640) {
+      font-size: 14px;
+    }
+
+    @media screen and ($min1024) {
+      font-size: 12px;
+    }
+
+    @media screen and ($min1280) {
+      font-size: 13px;
+    }
+
+    @media screen and ($min1440) {
+      font-size: 14px;
+    }
+  }
+
+  .green-arrow-submit-btn {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: translateY(-50%);
+    top: 53%;
+    z-index: 2;
+    right: 4px;
+    width: 23px;
+    height: 19px;
+  }
+
+  .form-row {
+    &:not(.custom-select-row):not(.checkbox-row) {
+      border-bottom: 1px solid $gray-4;
+    }
+  }
+}
+
+.form-styles {
+  @extend .ff-libre;
+
+  &.form-design-3 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin: 0 0 -40px;
+    @media screen and ($min1024) {
+      @include vw(margin, -20px -22px);
+    }
+
+    @media screen and ($min1920) {
+      margin: -20px -22px;
+    }
+
+    .form-row {
+      flex: 0 0 auto;
+      width: 100%;
+      margin: 0 0 40px;
+
+      @media screen and ($min1024) {
+        width: calc(50% - 44px);
+        @include vw(margin, 20px 22px);
+      }
+
+      @media screen and ($min1920) {
+        width: calc(50% - 44px);
+        margin: 20px 22px;
+      }
+    }
+  }
+
+  .form-styles-input-label-styles-standard {
+    @media screen and ($mobile_sm) {
+      @include vw(letter-spacing, 0.2px, 500);
+      @include vw(font-size, 18px, 500);
+    }
+
+    @media screen and ($mobile_lg) {
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(font-size, 18px);
+      @include vw(letter-spacing, 0.2px);
+    }
+
+    @media screen and ($min1920) {
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+  }
+
+  .form-input {
+    @include fit;
+    background-color: transparent;
+    border: 1px solid $blue-23;
+    font-weight: 400;
+    color: $white;
+    transition:
+      border 0.5s $easeOutSine,
+      color 0.5s $easeOutSine;
+    @extend .form-styles-input-label-styles-standard;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+
+    padding: 13px;
+
+    &:focus,
+    &:active {
+      border: 1px solid $green-1;
+    }
+
+    @media screen and ($min1024) {
+      @include vw(padding, 13px);
+    }
+
+    @media screen and ($min1920) {
+      padding: 13px;
+    }
+  }
+
+  .form-label {
+    background-color: $blue-1;
+    line-height: 1;
+    pointer-events: none;
+    font-weight: 300;
+    color: $white;
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transition: color 0.5s $easeOutSine;
+    z-index: 0;
+    @extend .form-styles-input-label-styles-standard;
+    top: -12px;
+    left: 22px;
+    padding: 0 10px 0 13px;
+
+    @media screen and ($min1024) {
+      @include vw(top, -12px);
+      @include vw(left, 22px);
+      @include vw(padding, 0 10px 0 13px);
+    }
+
+    @media screen and ($min1920) {
+      top: -12px;
+      left: 22px;
+      padding: 0 10px 0 13px;
+    }
+  }
+
+  .button-row {
+    width: 100%;
+    text-align: center;
+    &.right-aligned {
+      text-align: right;
+      @media screen and ($min1024) {
+        margin-right: 20px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .form-row {
+    position: relative;
+
+    &.user-typing {
+      .form-label {
+        color: $green-1;
+      }
+
+      .form-input {
+        border: 1px solid $green-1;
+      }
+    }
+
+    &.form-error {
+      .form-input {
+        border: 1px solid $red-9;
+        color: $red-9;
+      }
+
+      .form-label {
+        color: $red-9;
+      }
+
+      &[data-error-txt]::after {
+        opacity: 1;
+      }
+    }
+
+    &[data-error-txt]::after {
+      content: attr(data-error-txt);
+      line-height: 1;
+      color: $red-9;
+      position: absolute;
+      transition: opacity 0.5s $easeOutSine;
+      top: calc(100% + 0.5em);
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      opacity: 0;
+      left: 35px;
+
+      @media screen and ($min1024) {
+        font-size: 10px;
+        @include vw(left, 35px);
+      }
+
+      @media screen and ($min1280) {
+        font-size: 11px;
+      }
+
+      @media screen and ($min1440) {
+        font-size: 12px;
+      }
+
+      @media screen and ($min1920) {
+        left: 35px;
+      }
+    }
+  }
+
+  .form-success-msg {
+    box-shadow: $box-shadow;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: $white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    backface-visibility: hidden;
+    max-width: calc(100% - 50px);
+    text-align: center;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s $easeOutSine,
+      visibility 0.5s $easeOutSine,
+      transform 0.5s $easeOutSine;
+
+    &.show-success {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.upload-btn {
+  width: 100%;
+}
+
+.form-row {
+  &.full-width-row {
+    @media screen and ($min1024) {
+      width: calc(100% - 44px) !important;
+    }
+    textarea {
+      @media screen and ($min1440) {
+        height: 100px;
+      }
+    }
+  }
+}
+
+.sk-form-hbsp .hs-recaptcha.hs-form-field,
+.hbspt-form .hs-recaptcha.hs-form-field {
+  @extend .visually-hidden;
+}

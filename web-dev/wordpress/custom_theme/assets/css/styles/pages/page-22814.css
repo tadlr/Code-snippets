@@ -1,0 +1,10 @@
+.slick-slide {
+    display: flex !important;
+    justify-content: center;
+    transition: 0.3s;
+}
+.vc-slide {
+    position: relative;
+    padding-bottom: 7.025%;
+    margin: 0 30px;
+}

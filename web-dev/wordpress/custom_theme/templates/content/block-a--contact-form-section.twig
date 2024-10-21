@@ -1,0 +1,83 @@
+{% if is_preview %}
+  [A] Content with contact form
+{% endif %}
+{% set class = (field.full_width_with_background == 'Yes')? 'full-width-bg': '' %}
+{% set textContent = field.text_content %}
+{% set showForm = field.show_form_on_mobile %}
+{% set webform = field.form ? field.form: field.form_script %}
+{% set textBellowTestimonial = field.text_bellow_testimonial %}
+{% set formHeading = field.form_heading %}
+{% set formSubheading = field.form_subheading %}
+{% set Sticky = 'sk-sticky' %}
+{% set ab_classes = (field.ab_testing == true)? field.ab_classes: '' %}
+{% set ab_check = fn('ab_testing_check') %}
+
+{% set formClass = showForm ? 'mt-5' : 'd-none d-lg-block hide-m-form' %}
+<div
+  id='{{ sectionID }}'
+  class='contact-form-block sk-block block--a {{ ab_classes }} {{ ab_check }}'
+  data-link-scroll-target-section-id='{{sectionID}}'
+>
+  <div class='container'>
+    <div class='row justify-content-between'>
+      <div class='left-content col-sm-12 col-lg-6'>
+        <div class='inner-content {{Sticky}}'>
+          <div class='plain-txt-block txt-post-rtf content-block c-blue-1'>
+            {{ textContent }}
+          </div>
+          {% if textBellowTestimonial %}
+            <div class='plain-txt-block txt-post-rtf content-block'>
+              {{ textBellowTestimonial }}
+            </div>
+          {% endif %}
+          {% set testimonial = field.testimonial %}
+          {% set quote = testimonial.quote_text %}
+          {% set name = testimonial.person_name %}
+          {% set company = testimonial.person_company %}
+          {% if quote %}
+            <div class='person-quote-block content-block'>
+              {% if testimonial.person_image %}
+                <div class='person-img-wrap'>
+                  {{ Image(testimonial.person_image, "img-130-130", {width: 150, height: 150}) }}
+                </div>
+              {% endif %}
+              <div class='txt-content'>
+                <blockquote>
+                  <div class='txt-content-inner'>
+                    <p class='quote-by-txt'>
+                      {{ quote }}
+                    </p>
+                    <p class='quote-by-info'>
+                      {% if name %}
+                        <span class='person-name'>{{ name }}</span><br>
+                      {% endif %}
+                      {% if company %}
+                        {{ company }}
+                      {% endif %}
+                    </p>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class='right-content-form right-form landing-page-form {{ formClass }} col-sm-12 col-lg-6 ps-lg-8'>
+        <div class='right-content-form landing-page-form px-5 bg-primary py-5 my-1 {{Sticky}}'>
+          <h2 class='form-heading h3 pt-2 text-white'>{{ formHeading }}</h2>
+          <p class='form-subheading c-green-1'>
+            {{ formSubheading }}
+          </p>
+          <div class='form-block-area'>
+            <div class='form--container'>
+              {{ webform }}
+            </div>
+          </div>
+        </div>
+        {% if field.bellow_form %}
+          {{ field.bellow_form }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

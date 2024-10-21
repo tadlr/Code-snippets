@@ -1,0 +1,26 @@
+{% extends "html-base.twig" %}
+{% block header %}
+{% include 'html-top.twig' %}
+{% endblock %}
+{% block content %}
+{% include 'featured-article.twig' %}
+{% include 'blog-home-content.twig' %}
+{% endblock %}
+{% block footer %}
+<div
+  class='popup-blog-form'
+>
+  <!-- Form pop-up -->
+  <div class='popup-form'>
+    <div class='mobile-contact-form landing-page-form '>
+      <button aria-label='Close search popup' class='form-popup-close-btn'>
+        Close search form
+        <span class='x-icon'></span>
+      </button>
+      <h3 class='txt-size-36 c-white'>Search in stories</h3>
+      {{ get_search_form() }}
+    </div>
+  </div>
+</div>
+{% include 'html-bottom.twig' %}
+{% endblock %}

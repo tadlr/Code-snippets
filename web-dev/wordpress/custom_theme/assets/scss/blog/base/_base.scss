@@ -1,0 +1,48 @@
+// .single-post {
+//   &.f0 {
+//     font-size: 1rem;
+//   }
+//   // color: $text;
+
+//   .article-meta {
+//     p {
+//       margin-bottom: 0;
+//     }
+//   }
+// }
+:host {
+  position: sticky;
+  display: block; // this is the same as shown above
+  top: 0;
+}
+
+:focus {
+  outline: 3px dotted $green-4;
+  outline-offset: 7px;
+  // box-shadow: 0 0 0 1px $blue-23;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px dotted $green-4;
+  outline-offset: 7px;
+  // box-shadow: 0 0 0 1px $blue-23;
+}
+
+cite {
+  font-style: inherit;
+}
+
+.single-post.f0 {
+  font-size: initial !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+.pl-0 {
+  padding-left: 0 !important;
+}

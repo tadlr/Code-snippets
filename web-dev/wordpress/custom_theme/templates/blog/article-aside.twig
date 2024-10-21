@@ -1,0 +1,32 @@
+<div class='sk-sticky'>
+  <h2 class='anim-translate-y txt-size-12 upper fw-400 ltr-spc-pos-4_6 current-page-breadcrumb-title c-blue-1'>
+    Categories
+  </h2>
+  <div class='posts-categories'>
+    {% for category in categories %}
+      <a href='{{ fn('get_category_link',category.term_id) }}' class='anim-translate-y fw-700 c-blue-1'>
+        {{ category.name }}
+        ({{ category.count }})
+      </a>
+    {% endfor %}
+
+    {#
+      <details>
+      <summary class='anim-translate-y fw-700 c-blue-1 border-bottom border-2 border-primary pb-2'>
+      <h2 class='anim-translate-y txt-size-18 upper fw-400 ltr-spc-pos-4_6 current-page-breadcrumb-title c-blue-1 d-inline'>
+      {{ 'Categories' | t }}
+      </h2>
+      </summary>
+      <div class='posts-categories'>
+      {% for category in categories %}
+      <a href='{{ fn('get_category_link',category.term_id) }}' class='anim-translate-y fw-700 c-blue-1'>
+      {{ category.name }}
+      ({{ category.count }})
+      </a>
+      {% endfor %}
+      <a href='/blog' class='anim-translate-y fw-700 c-blue-1'>See all</a>
+      </div>
+      </details>
+    #}
+  </div>
+</div>

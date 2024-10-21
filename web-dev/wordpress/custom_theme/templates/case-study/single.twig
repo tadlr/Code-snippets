@@ -1,0 +1,34 @@
+{% extends "html-base.twig" %}
+{% block header %}
+{% include 'html-top.twig' %}
+{% endblock %}
+{% block content %}
+<article
+  id='post-{{ post.ID }}'
+  data-scroll-section
+  class='prel container single-article-section sk-case-study sk-blog-content'
+>
+  <div class='prel'>
+    {% include 'case-study/breadcrumbs.twig' %}
+    <div class='article-body row'>
+      {% if field.slidebar_content %}
+        <div class='article-content col-lg-10 ps-lg-0'>
+          {% include 'case-study/article-content.twig' %}
+        </div>
+        <div class='article-aside col-lg-2'>
+          {% include 'case-study/article-aside.twig' %}
+        </div>
+      {% else %}
+        <div class='article-content col-lg-12 ps-lg-0'>
+          {% include 'case-study/article-content.twig' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</article>
+{% include 'blog/blog-prefooter.twig' %}
+{% endblock %}
+{% block footer %}
+{% include 'html-bottom.twig' %}
+
+{% endblock %}

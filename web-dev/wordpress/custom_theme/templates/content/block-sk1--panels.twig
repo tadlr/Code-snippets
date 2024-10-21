@@ -1,0 +1,94 @@
+{# Block--sk1 #}
+{% set bgImage = field.bg_image and field.design == 'ab' ? 'style="background-image: url('~field.bg_image~')"' :'' %}
+{% set bgImage = field.bg_image and field.design == 'ab' ? true :false %}
+{% set class = 'sk-hero-'~field.design %}
+{% set innerClass = (field.design != 'ac' or field.design != 'aa') ? 'py-0 column-inner': 'pe-md-5 py-0 column-inner' %}
+<div
+  id='{{ sectionID }}'
+  class='panel-video sk-block block--sk1 {{class}} {{field.section_classes}}'
+  data-link-scroll-target-section-id='{{sectionID}}'
+  {#
+  {{ bgImage }}
+  #}
+>
+  {% if bgImage %}
+    <div class='bg-banner-media'>
+      {{ Image(field.bg_image, 'panel-img',  {width: 1200, height: 1305, class: 'media-item'}) }}
+    </div>
+  {% endif %}
+
+  {% if field.design != 'ae' %}
+  {% if field.design == 'ae' or field.design == 'ab'  %}
+    <div class='container'>
+    {% else %}
+    <div class='container-fw'>
+    {% endif %}
+
+      {% if field.design == 'ab1' or field.design == 'aa' or field.design == 'ac' %}
+        <div class='d-none d-mobile-block mobile-pic'>
+          {{ Image(field.bg_image, 'hero-article',  {width: 1200, height: 'auto', class: 'media-lander w-100'}) }}
+        </div>
+      {% endif %}
+      <div class='row'>
+        <div class='column col-sm-12 col-md-10 col-lg-6 column-content py-100'>
+          <div class='{{innerClass}}'>
+            {% set content_area = field.content_area %}
+            {% if content_area %}
+              {% if content_area.content %}
+                {{ content_area.content }}
+              {% endif %}
+
+              {% if content_area.cta_type == 'form' and content_area.form_position != 'image' %}
+                {% if content_area.form %}
+                  <div class='form-cta'>
+                    {{ content_area.form }}
+                  </div>
+                {% endif %}
+              {% else %}
+                {% if content_area.cta %}
+                  <div class='phone-cta'>
+                    {% if content_area.cta.phone_icon %}
+                      <svg
+                        class='phone-icon'
+                        role='graphics-document'
+                        aria-label='phone icon'
+                        alt='phone icon'
+                        width='48'
+                        height='49'
+                        viewbox='0 0 48 49'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <g clip-path="url(#clip0_163_310)">
+                          <path d="M23.9925 0.65918C10.7481 0.65918 0 11.4072 0 24.6517C0 37.8962 10.7481 48.6442 23.9925 48.6442C37.237 48.6442 47.985 37.8962 47.985 24.6517C47.985 11.4072 37.2519 0.65918 23.9925 0.65918ZM36.938 33.4564C36.8782 33.5611 36.8035 33.6807 36.7287 33.8003C35.9963 34.9065 34.4416 36.5508 34.4416 36.5508C32.005 38.4194 26.7431 35.8333 26.7431 35.8333C16.6229 30.6013 11.4656 21.079 11.4656 21.079C9.52227 17.1923 12.6914 13.1114 12.6914 13.1114C14.5002 10.9438 17.2208 12.917 17.2208 12.917L20.0311 15.1444C21.8399 16.6392 19.9116 18.5975 19.9116 18.5975C17.3703 21.0192 19.0445 22.6785 19.0445 22.6785C21.0626 25.2945 26.459 29.7791 26.459 29.7791C28.4771 30.7358 29.673 28.2244 29.673 28.2244C30.6596 26.5651 32.7674 27.9852 32.7674 27.9852L35.0246 29.6445C36.8035 31.0796 37.521 32.3801 36.9231 33.4564H36.938Z" fill="#002EA6"/>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_163_310">
+                            <rect width="48" height="48" fill="white" transform="translate(0 0.65918)"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    {% endif %}
+                    {{ content_area.cta.cta_text }}
+
+                    {% set btnColour = field.design == 'ad' or field.design == 'ab'? 'blue': 'white' %}
+                    {% include 'field/field--cta-btn.twig' %}
+
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+        {% if field.design == 'ad' %}
+          {% include 'hero-video.twig' %}
+        {% else %}
+          {% include 'hero-image.twig' %}
+        {% endif %}
+      </div>
+    </div>
+  {% else %}
+    {% include 'hero-ae.twig' %}
+  {% endif %}
+</div>
+

@@ -1,0 +1,60 @@
+{% set cellTemplate = 'field/field--mobile-table-cell.twig' %}
+{% set headerTemplate = 'field/field--mobile-table-header-cell.twig' %}
+{% for index, row in field.rows | slice(1) %}
+  <p class='text-highlight'>
+    {{ row.table_inner_heading }}
+  </p>
+  <div class='mb-table-container'>
+    <span class='mb-button-holder'>
+      <span class='sticky-m'>
+        <button class='slider-control blaze-prev d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}-{{index}}'>
+          prev
+        </button>
+        <button class='slider-control blaze-next d-none d-tablet-block d-mobile-block' data-btn-for='{{uid}}-{{index}}'>
+          next
+        </button>
+      </span>
+    </span>
+    <div class='mb-table mb-multi-compare-legacy' id='{{uid}}-{{index}}'>
+      <div class='fixed-column'>
+        <div class='fixed-column-inner'>
+          {% set headerContent = field.rows.0 %}
+          {% if headerContent.acf_fc_layout == 'heading_row' %}
+            {% set rowContent1 = { heading: headerContent.heading_one, image: headerContent.image_one } %}
+            {% set rowContent2 = { heading: headerContent.heading_two, image: headerContent.image_two } %}
+            {% set rowContent3 = { heading: headerContent.heading_three, image: headerContent.image_three } %}
+            {% set rowContent4 = { heading: headerContent.heading_four, image: headerContent.image_four } %}
+            {% set rowContent5 = { heading: headerContent.heading_five, image: headerContent.image_five } %}
+            {{ include(headerTemplate, {id: "#{uid}-header", class: "mt-header", rowId: 0, cell: rowContent1}) }}
+            {{ include(headerTemplate, {id: "#{uid}-#{index}-1",class: "mt-box mt-logo mt-primary", rowId: 1, cell: rowContent2}) }}
+            {{ include(headerTemplate, {id: "#{uid}-#{index}-2",class: "mt-box mt-logo mt-secondary", rowId: 2, cell: rowContent3}) }}
+            {{ include(headerTemplate, {id: "#{uid}-#{index}-3",class: "mt-box mt-logo mt-secondary", rowId: 3, cell: rowContent4}) }}
+            {{ include(headerTemplate, {id: "#{uid}-#{index}-4",class: "mt-box mt-logo mt-secondary", rowId: 4, cell: rowContent5}) }}
+          {% endif %}
+        </div>
+      </div>
+      <div class='scrolling-column'>
+        <div class='scrolling-column-inner blaze-container blaze-slider'>
+          <div class='blaze-track-container'>
+            <div class='blaze-track'>
+              {% for rowId,column in row.table_row %}
+                <div class='mt-box-inner'>
+                  {% set cellContent1 = { content: column.column_one  } %}
+                  {% set cellContent2 = { content: column.column_two_text, checkmark: column.column_two_radio } %}
+                  {% set cellContent3 = { content: column.column_three_text, checkmark: column.column_three_radio } %}
+                  {% set cellContent4 = { content: column.column_four_text, checkmark: column.column_four_radio } %}
+                  {% set cellContent5 = { content: column.column_five_text, checkmark: column.column_five_choice } %}
+                  {{ include(cellTemplate, {id: "#{uid}-header", class: "mt-header", rowId: 0, row: cellContent1}) }}
+                  {{ include(cellTemplate, {id: "#{uid}-#{index}-1", class: "mt-box mt-ctn mt-primary", rowId: 1, row: cellContent2}) }}
+                  {{ include(cellTemplate, {id: "#{uid}-#{index}-2", class: "mt-box mt-ctn mt-secondary", rowId: 2, row: cellContent3}) }}
+                  {{ include(cellTemplate, {id: "#{uid}-#{index}-3", class: "mt-box mt-ctn mt-secondary", rowId: 3, row: cellContent4}) }}
+                  {{ include(cellTemplate, {id: "#{uid}-#{index}-4", class: "mt-box mt-ctn mt-secondary", rowId: 4, row: cellContent5}) }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

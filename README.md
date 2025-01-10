@@ -1,7 +1,7 @@
-Supreme Coding Examples
+Coding Examples
 =======================
 
-Welcome to this repository! I have created it to showcase my coding skills and development approach specifically for Supreme.
+Welcome to this repository! I have created it to showcase my coding skills and development approach.
 
 About This Repository
 ---------------------
@@ -24,7 +24,7 @@ This repository contains various code snippets and small projects, including:
 Tay Fox or Gustavo Ramirez?
 ---------------------------
 
-You might see both names associated with my work. **Taylor Jay Fox** is the pen name I use for my creative editorial projects, while **Gustavo Ramirez** is my real name. I use the Tay Fox identity for my creative pursuits, such as writing, storytelling, and other artistic endeavors, while I reserve my given name for professional software development and technical projects. Both identities reflect different aspects of my skills and passions.
+You might see both names associated with my work. **Taylor Jay Fox** is the pen name I use for my creative editorial projects, while **Gustavo Ramirez** is my real name. I use the Tay Fox identity for my creative pursuits, such as writing, storytelling, and other artistic endeavours, while I reserve my given name for professional software development and technical projects. Both identities reflect different aspects of my skills and passions.
 
 How to Use This Repository
 --------------------------
@@ -34,7 +34,7 @@ Feel free to explore the different folders and code examples to get a sense of m
 Why This Matters
 ----------------
 
-At Supreme, I understand the importance of delivering high-quality, scalable, and secure software solutions. The examples here reflect my commitment to following industry best practices and delivering code that meets project objectives while maintaining a clean and maintainable codebase.
+I understand the importance of delivering high-quality, scalable, and secure software solutions. The examples here reflect my commitment to following industry best practices and delivering code that meets project objectives while maintaining a clean and maintainable codebase.
 
 Contact
 -------

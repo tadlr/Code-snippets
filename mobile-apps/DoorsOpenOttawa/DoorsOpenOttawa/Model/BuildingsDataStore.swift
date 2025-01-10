@@ -6,7 +6,6 @@
 //
 
 import Combine
-import FirebaseStorage
 import Foundation
 import MapKit
 import SwiftUI
@@ -104,20 +103,26 @@ class BuildingsDataStore: NSObject, ObservableObject, CLLocationManagerDelegate 
 		return filtered
 	}
 
-	func loadBuildingsData() {
-		ready = false
-		if NetworkManager.shared.isConnected {
-			loadJsonFromFirebase { success in
-				if !success {
-					self.loadFromLocalStorageOrShowError()
-				}
-				self.ready = true
-			}
-		} else {
-			loadFromLocalStorageOrShowError()
-			ready = true
-		}
-	}
+//	func loadBuildingsData() {
+//		ready = false
+//		if NetworkManager.shared.isConnected {
+//			loadJsonFromFirebase { success in
+//				if !success {
+//					self.loadFromLocalStorageOrShowError()
+//				}
+//				self.ready = true
+//			}
+//		} else {
+//			loadFromLocalStorageOrShowError()
+//			ready = true
+//		}
+//	}
+    
+    func loadBuildingsData() {
+        ready = false
+        loadJsonFromAssets() // Load directly from assets
+        ready = true
+    }
 
 	private func loadFromLocalStorageOrShowError() {
 		if loadJsonFromLocalStorage() {
@@ -127,21 +132,21 @@ class BuildingsDataStore: NSObject, ObservableObject, CLLocationManagerDelegate 
 		}
 	}
 
-	func loadJsonFromFirebase(completion: @escaping (Bool) -> Void) {
-		let storage = Storage.storage()
-		let jsonRef = storage.reference().child("buildings.json")
-
-		jsonRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
-			if let error = error {
-				print("Error fetching data from Firebase: \(error)")
-				completion(false)
-			} else if let data = data {
-				self?.saveToLocalStorage(jsonData: data)
-				self?.parseAndSave(jsonData: data)
-				completion(true)
-			}
-		}
-	}
+//	func loadJsonFromFirebase(completion: @escaping (Bool) -> Void) {
+//		let storage = Storage.storage()
+//		let jsonRef = storage.reference().child("buildings.json")
+//
+//		jsonRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+//			if let error = error {
+//				print("Error fetching data from Firebase: \(error)")
+//				completion(false)
+//			} else if let data = data {
+//				self?.saveToLocalStorage(jsonData: data)
+//				self?.parseAndSave(jsonData: data)
+//				completion(true)
+//			}
+//		}
+//	}
 
 	func filterBuildings() {
 		filteredBuildings = applyFilters()
@@ -180,43 +185,86 @@ class BuildingsDataStore: NSObject, ObservableObject, CLLocationManagerDelegate 
 		}
 		return false
 	}
+    
 
-	private func loadJsonFromAssets() {
-		var language = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"
+    private func loadJsonFromAssets() {
+        // Detect the user's preferred language or default to "en"
+        var language = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"
+        language = language == "fr-CA" ? "fr" : language
 
-		language = language == "fr-CA" ? "fr" : language
+        // Locate the `buildings.json` file in the app bundle
+        guard let url = Bundle.main.url(forResource: "buildings", withExtension: "json"),
+              let data = try? Data(contentsOf: url) else {
+            print("Error: Couldn't load data from assets")
+            return
+        }
 
-		guard let url = Bundle.main.url(forResource: "buildings", withExtension: "json"),
-		      let data = try? Data(contentsOf: url)
-		else {
-			print("Error: Couldn't load data from assets")
-			return
-		}
-		parseAndSave(jsonData: data)
-	}
+        // Parse the JSON data
+        parseAndSave(jsonData: data)
+    }
 
-	private func parseAndSave(jsonData: Data) {
-		var language = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"
+    private func parseAndSave(jsonData: Data) {
+        var language = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"
+        language = language == "fr-CA" ? "fr" : language
 
-		language = language == "fr-CA" ? "fr" : language
+        let favoriteBuildingIDs = UserDefaults.standard.array(forKey: "favoriteBuildingIds") as? [Int] ?? []
 
-		let favoriteBuildingIDs = UserDefaults.standard.array(forKey: "favoriteBuildingIds") as? [Int] ?? []
+        do {
+            // Decode the JSON file into BuildingList objects
+            let buildingList = try JSONDecoder().decode([BuildingList].self, from: jsonData)
 
-		do {
-			let buildingList = try JSONDecoder().decode([BuildingList].self, from: jsonData)
-			buildings = buildingList.first { $0.language == language }?.buildings.map { building in
-				var modifiedBuilding = building
-				modifiedBuilding.isFavorite = favoriteBuildingIDs.contains(building.id)
+            // Filter buildings based on the selected language
+            buildings = buildingList.first { $0.language == language }?.buildings.map { building in
+                var modifiedBuilding = building
+                modifiedBuilding.isFavorite = favoriteBuildingIDs.contains(building.id)
+                return modifiedBuilding
+            } ?? []
 
-				return modifiedBuilding
-			} ?? []
-			saveToLocalStorage(jsonData: jsonData)
-			print("Success: Loaded data for language \(language) from assets")
-			updateCategories()
-		} catch {
-			print("Error: Couldn't parse JSON data - \(error)")
-		}
-	}
+            // Update categories for filtering
+            updateCategories()
+            print("Success: Loaded data for language \(language) from assets")
+        } catch {
+            print("Error: Couldn't parse JSON data - \(error)")
+        }
+    }
+
+
+//	private func loadJsonFromAssets() {
+//		var language = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"
+//
+//		language = language == "fr-CA" ? "fr" : language
+//
+//		guard let url = Bundle.main.url(forResource: "buildings", withExtension: "json"),
+//		      let data = try? Data(contentsOf: url)
+//		else {
+//			print("Error: Couldn't load data from assets")
+//			return
+//		}
+//		parseAndSave(jsonData: data)
+//	}
+
+//	private func parseAndSave(jsonData: Data) {
+//		var language = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"
+//
+//		language = language == "fr-CA" ? "fr" : language
+//
+//		let favoriteBuildingIDs = UserDefaults.standard.array(forKey: "favoriteBuildingIds") as? [Int] ?? []
+//
+//		do {
+//			let buildingList = try JSONDecoder().decode([BuildingList].self, from: jsonData)
+//			buildings = buildingList.first { $0.language == language }?.buildings.map { building in
+//				var modifiedBuilding = building
+//				modifiedBuilding.isFavorite = favoriteBuildingIDs.contains(building.id)
+//
+//				return modifiedBuilding
+//			} ?? []
+//			saveToLocalStorage(jsonData: jsonData)
+//			print("Success: Loaded data for language \(language) from assets")
+//			updateCategories()
+//		} catch {
+//			print("Error: Couldn't parse JSON data - \(error)")
+//		}
+//	}
 
 	private func saveToLocalStorage(jsonData: Data) {
 		UserDefaults.standard.set(jsonData, forKey: "buildingsData")
